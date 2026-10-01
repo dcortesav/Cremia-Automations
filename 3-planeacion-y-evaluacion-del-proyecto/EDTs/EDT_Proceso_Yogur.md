@@ -8,26 +8,7 @@
 
 ---
 
-## 1. Qué es la EDT y cómo se lee este documento
-
-La **EDT** descompone el proyecto en **entregables** (sustantivos: cosas que existen al terminar) y **paquetes de trabajo** (la unidad mínima que se puede estimar en horas y asignar a una persona). No es una lista de tareas ni el organigrama del equipo.
-
-Se usan **tres niveles**:
-
-| Nivel | Código | Qué es | En este EDT |
-|---|---|---|---|
-| Proyecto | `1.0` | El resultado completo | Proceso productivo de la línea de yogur saborizado con fruta |
-| Entregable (cuenta de control) | `1.1` | Algo que existe al terminar una fase; aquí se controlan plazo y presupuesto | Yogur saborizado y envasado |
-| Paquete de trabajo | `1.1.1` | Unidad estimable y asignable (8–80 h) | Envasado del yogur |
-
-**Reglas aplicadas:**
-
-- **Regla del 100 %:** la suma de los hijos de cada elemento da exactamente el padre (todo el alcance está, y nada dos veces).
-- **Regla 8–80:** cada paquete de trabajo se estima entre 8 y 80 horas. Por debajo es microgestión; por encima es una caja negra.
-
----
-
-## 2. Resumen de la EDT
+## 1. Resumen de la EDT
 
 | Código | Entregable | Paquetes | Horas |
 |---|---|---|---:|
@@ -44,7 +25,7 @@ Se usan **tres niveles**:
 
 ---
 
-## 3. Diagrama de la EDT
+## 2. Diagrama de la EDT
 
 ```mermaid
 graph TD
@@ -92,7 +73,7 @@ graph TD
 
 ---
 
-## 4. Desglose detallado (árbol EDT)
+## 3. Árbol de la EDT
 
 ### 1.0 Proceso productivo de la línea de yogur saborizado con fruta
 
@@ -137,7 +118,7 @@ graph TD
 
 ---
 
-## 5. Diccionario de la EDT
+## 4. Diccionario de la EDT
 
 Cada paquete indica qué incluye, qué **no** incluye, cómo se sabe que está terminado, quién responde, la estimación y de qué depende.
 
@@ -171,7 +152,7 @@ Cada paquete indica qué incluye, qué **no** incluye, cómo se sabe que está t
 
 ---
 
-## 6. Parámetros clave del proceso (base del PDF)
+## 5. Parámetros clave del proceso
 
 | Etapa | Parámetro crítico | Valor |
 |---|---|---|
@@ -188,21 +169,7 @@ Cada paquete indica qué incluye, qué **no** incluye, cómo se sabe que está t
 
 ---
 
-## 7. Comprobación de las reglas
-
-- **Regla del 100 %:** 1.0 = suma(1.1…1.7) = 540 h; cada entregable = suma de sus paquetes. No hay alcance fuera de la EDT ni duplicado.
-- **Regla 8–80:** todos los paquetes están entre 12 h y 40 h; ninguno queda por debajo de 8 h ni por encima de 80 h.
-
-**Errores evitados deliberadamente**
-
-- Se nombraron los entregables como **sustantivos** ("Yogur fermentado"), no como verbos.
-- No se bajó a cinco niveles: los paquetes ya caen en la franja 8–80 h.
-- Se incluyó el **trabajo de gestión** (1.7.4) y las actividades de calidad/inocuidad (1.7), que suelen quedar fuera.
-- Ningún entregable tiene un solo paquete.
-
----
-
-## 8. Uso posterior
+## 6. Uso posterior
 
 1. **Diccionario → cronograma:** cada paquete de trabajo se convierte en una actividad con fechas y predecesoras (según la columna *Depende de*).
 2. **Diccionario → responsables:** asignar una persona por paquete y cargar las horas al presupuesto.
@@ -210,7 +177,7 @@ Cada paquete indica qué incluye, qué **no** incluye, cómo se sabe que está t
 
 ---
 
-## 9. Referencias
+## 7. Referencias
 
 - Watson Dairy Consulting - Proceso Industrial del Yogur: https://dairyconsultant.co.uk/proceso-industrial-yogurt.php
 - Rock.so — *EDT (WBS): qué es, ejemplos y constructor* (estructura de tres niveles, regla del 100 % y regla 8–80, diccionario de la EDT): https://www.rock.so/es/blog/edt-estructura-desglose-trabajo

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" font-family="'Segoe UI', Arial, Helvetica, sans-serif">
+<rect width="200" height="200" fill="#ffffff"/>
+  <path d="M100 20 C121 59 160 86 160 125 A60 60 0 0 1 40 125 C40 86 79 59 100 20 Z" fill="#0b4f6c"/>
+  <circle cx="100" cy="119" r="25.5" fill="#ffffff"/>
+  <rect x="122.5" y="113.0" width="12" height="12" fill="#ffffff" transform="rotate(0 128.5 119.0)"/>
+  <rect x="114.2" y="133.2" width="12" height="12" fill="#ffffff" transform="rotate(45 120.2 139.2)"/>
+  <rect x="94.0" y="141.5" width="12" height="12" fill="#ffffff" transform="rotate(90 100.0 147.5)"/>
+  <rect x="73.8" y="133.2" width="12" height="12" fill="#ffffff" transform="rotate(135 79.8 139.2)"/>
+  <rect x="65.5" y="113.0" width="12" height="12" fill="#ffffff" transform="rotate(180 71.5 119.0)"/>
+  <rect x="73.8" y="92.8" width="12" height="12" fill="#ffffff" transform="rotate(225 79.8 98.8)"/>
+  <rect x="94.0" y="84.5" width="12" height="12" fill="#ffffff" transform="rotate(270 100.0 90.5)"/>
+  <rect x="114.2" y="92.8" width="12" height="12" fill="#ffffff" transform="rotate(315 120.2 98.8)"/>
+  <circle cx="100" cy="119" r="12" fill="#3aa6c9"/>
+</svg>

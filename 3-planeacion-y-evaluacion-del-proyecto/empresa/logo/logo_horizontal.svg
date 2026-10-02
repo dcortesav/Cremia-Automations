@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" width="520" height="180" font-family="'Segoe UI', Arial, Helvetica, sans-serif">
+<rect width="520" height="180" fill="#ffffff"/>
+  <path d="M90 23 C107.5 55.5 140 78 140 110.5 A50 50 0 0 1 40 110.5 C40 78 72.5 55.5 90 23 Z" fill="#0b4f6c"/>
+  <circle cx="90" cy="105.5" r="21.25" fill="#ffffff"/>
+  <rect x="108.8" y="100.5" width="10" height="10" fill="#ffffff" transform="rotate(0 113.8 105.5)"/>
+  <rect x="101.8" y="117.3" width="10" height="10" fill="#ffffff" transform="rotate(45 106.8 122.3)"/>
+  <rect x="85.0" y="124.3" width="10" height="10" fill="#ffffff" transform="rotate(90 90.0 129.3)"/>
+  <rect x="68.2" y="117.3" width="10" height="10" fill="#ffffff" transform="rotate(135 73.2 122.3)"/>
+  <rect x="61.3" y="100.5" width="10" height="10" fill="#ffffff" transform="rotate(180 66.3 105.5)"/>
+  <rect x="68.2" y="83.7" width="10" height="10" fill="#ffffff" transform="rotate(225 73.2 88.7)"/>
+  <rect x="85.0" y="76.8" width="10" height="10" fill="#ffffff" transform="rotate(270 90.0 81.8)"/>
+  <rect x="101.8" y="83.7" width="10" height="10" fill="#ffffff" transform="rotate(315 106.8 88.7)"/>
+  <circle cx="90" cy="105.5" r="10" fill="#3aa6c9"/>
+  <text x="175" y="96" font-size="64" font-weight="700" fill="#0b4f6c" letter-spacing="1">Cremia</text>
+  <text x="178" y="134" font-size="24" font-weight="600" fill="#3aa6c9" letter-spacing="9">AUTOMATIONS</text>
+</svg>

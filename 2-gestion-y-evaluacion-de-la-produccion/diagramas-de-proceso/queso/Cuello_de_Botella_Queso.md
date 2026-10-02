@@ -52,7 +52,7 @@ Capacidad actual: 2 prensas × 200 kg = 400 kg por ciclo. Un lote de 666,7 kg ne
 | Porcionado | 53 | — | — | 2.664 cuñas a 50 cortes/min |
 | Empaque | 95 | 33 | 37 | 28, 20 y 6 und/min |
 | Etiquetado de peso variable | — | — | 13 | 222 und a 17 und/min |
-| Paletizado (compartido) | 11 | 6 | 6 | 10 cajas/min |
+| Encajonado y paletizado manual | 22 | 11 | 11 | 111, 55 y 55 cajas a 5 cajas/min |
 | Oreo | 600 | 480 | 720 | Demora; el cuarto admite 4 lotes a la vez |
 
 ---
@@ -80,7 +80,7 @@ En QC-250 el **empaque** (95 min) es el segundo recurso más cargado, casi al ni
 | kg de queso por turno | 1.684 | 2.133 | 1.455 |
 | Unidades por turno | 6.730 cuñas | 2.131 bloques | 484 bloques |
 
-El **oreo** (8–12 h) no limita la capacidad mientras el cuarto admita 4 lotes. Aun así, es la mayor demora del flujo de valor: representa entre el 60 % y el 75 % del MLT, que va de 10 a 16 h.
+El **oreo** (8–12 h) no limita la capacidad mientras el cuarto admita 4 lotes. Aun así, es la mayor demora del flujo de valor: representa entre el 55 % y el 61 % del MLT, que va de 14,5 a 19,6 h según la presentación.
 
 ---
 
@@ -106,7 +106,7 @@ La moldeadora dosifica la cuajada por peso con celdas de carga (WT-201) en molde
 
 ### 3.3 Túnel de enfriamiento rápido (reduce el MLT)
 
-Un túnel de aire forzado a 0–2 °C reduce el oreo de 8–12 h a 2–3 h. Esto baja el MLT de 10–16 h a 5–7 h y reduce el WIP en el cuarto frío.
+Un túnel de aire forzado a 0–2 °C reduce el oreo de 8–12 h a 2–3 h. Junto con el prensado en un solo ciclo, baja el MLT de 14,5–19,6 h a 6,5–8,4 h y reduce el WIP en el cuarto frío.
 
 ### 3.4 Programación del pasteurizador compartido
 
@@ -122,7 +122,7 @@ Los lotes de queso se agrupan en campañas para minimizar los cambios de tempera
 | Lotes por turno | 2,5 → 4,5 | 3,2 → 4,5 | 2,2 → 4,5 |
 | kg por turno | 1.684 → 3.019 | 2.133 → 3.019 | 1.455 → 3.019 |
 | Aumento de throughput | +79 % | +42 % | +108 % |
-| MLT (h) | 11–15 → 5–7 | 10–14 → 5–7 | 12–16 → 6–8 |
+| MLT (h) | 18,2 → 8,4 | 14,5 → 6,5 | 19,6 → 8,1 |
 | Moldes manipulados a mano por lote | 222 → 0 | 666 → 0 | 222 → 0 |
 
 Estos resultados se verificarán con la simulación de eventos discretos en Siemens Tecnomatix y se reflejarán en el VSM "antes y después".

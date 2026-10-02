@@ -167,7 +167,7 @@ Leche 5.000 L (≈5.160 kg) + sal ≈12 kg + aditivos ≈2 kg
 | ⟳ | **Limpieza CIP** de la tina, tuberías y pasteurizador | Enjuague → soda 1–2 % a 75 °C → enjuague → ácido 0,5–1 % a 65 °C → enjuague | 45 – 60 min entre lotes | Batch (servicio) | E24 |
 
 **Tiempo de un lote en la tina (pasos 6 a 13):** ≈ 1,7 – 2,5 h.
-**MLT aproximado, de leche pasteurizada a queso empacado:** ≈ 10 – 16 h, donde el oreo (paso 17) es la demora dominante.
+**MLT aproximado, de leche pasteurizada a queso empacado:** ≈ 14,5 – 19,6 h según la presentación; el oreo (paso 17) es la demora dominante.
 
 ---
 

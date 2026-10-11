@@ -11,4 +11,4 @@ Entregables de la línea de yogur.
 | Arquitectura ISA-95 y flujo de información entre OT e IT | [Abrir](https://docs.google.com/document/d/1b37Z9EyKX3Wu3arOeB_WgwNK0vgNhspExGAgoMF9EBU/edit) |
 | Equipos, sensores, actuadores, variables y comunicaciones | [Abrir](https://docs.google.com/document/d/1spMO-Vy00_5qNQvk6opeh2CanFKjmcis8-Qxc25g61I/edit) |
 
-La investigación de la línea de queso campesino está en [`estado-del-arte/queso`](../estado-del-arte/queso).
+La investigación de la línea de queso campesino está en [`estado-del-arte/queso`](../0-estado-del-arte/queso).

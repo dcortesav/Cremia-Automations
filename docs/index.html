@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cremia Automations · Línea de yogur</title>
+<meta name="description" content="Transformación Digital Industrial de la línea de yogur de La Hacienda. Proyecto Integrador APM 2026-2S, Universidad Nacional de Colombia.">
+<link rel="icon" href="isotipo.svg">
+<style>
+  :root { --azul:#0b4f6c; --azul2:#127ea8; --crema:#f6f1e7; --tinta:#1d2733; --gris:#5b6875; --linea:#dfe5ea; --fondo:#ffffff; --tarjeta:#f7f9fb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --azul:#7cc4e0; --azul2:#4fa9cc; --crema:#16212b; --tinta:#e8eef3; --gris:#a3b1bd; --linea:#2a3947; --fondo:#0f1820; --tarjeta:#16212b; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Segoe UI", system-ui, Arial, sans-serif; color:var(--tinta); background:var(--fondo); line-height:1.55; }
+  a { color:var(--azul2); }
+  header { background:var(--crema); border-bottom:1px solid var(--linea); }
+  .barra { max-width:1040px; margin:0 auto; padding:14px 16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .barra img { width:36px; height:36px; border-radius:6px; }
+  .barra strong { font-size:1.05rem; color:var(--azul); letter-spacing:.02em; }
+  nav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; font-size:.92rem; }
+  nav a { text-decoration:none; color:var(--gris); }
+  nav a:hover { color:var(--azul); }
+  main { max-width:1040px; margin:0 auto; padding:0 16px 56px; }
+  .hero { padding:48px 0 28px; }
+  .hero p.sobre { color:var(--azul2); font-weight:600; margin:0 0 6px; text-transform:uppercase; font-size:.8rem; letter-spacing:.08em; }
+  h1 { font-size:clamp(1.8rem, 4.5vw, 2.7rem); line-height:1.15; margin:0 0 12px; color:var(--azul); text-wrap:balance; }
+  .hero p.lema { max-width:62ch; color:var(--gris); font-size:1.08rem; margin:0; }
+  h2 { font-size:1.4rem; color:var(--azul); margin:44px 0 12px; padding-top:8px; border-top:1px solid var(--linea); }
+  .cifras { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:12px; margin-top:28px; }
+  .cifra { background:var(--tarjeta); border:1px solid var(--linea); border-radius:10px; padding:14px 16px; }
+  .cifra b { display:block; font-size:1.55rem; color:var(--azul); font-variant-numeric:tabular-nums; }
+  .cifra span { color:var(--gris); font-size:.9rem; }
+  .rejilla { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:14px; }
+  .tarjeta { background:var(--tarjeta); border:1px solid var(--linea); border-radius:10px; padding:16px; }
+  .tarjeta h3 { margin:0 0 6px; font-size:1.02rem; color:var(--tinta); }
+  .tarjeta p, .tarjeta ul { margin:0; color:var(--gris); font-size:.94rem; }
+  .tarjeta ul { padding-left:18px; }
+  .tabla { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; font-size:.94rem; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--linea); vertical-align:top; }
+  th { color:var(--gris); font-weight:600; }
+  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .persona { display:flex; gap:12px; align-items:center; }
+  .avatar { flex:none; width:52px; height:52px; border-radius:50%; background:var(--azul); color:var(--fondo); display:grid; place-items:center; font-weight:700; }
+  .persona small { color:var(--gris); display:block; }
+  footer { border-top:1px solid var(--linea); color:var(--gris); font-size:.88rem; }
+  footer div { max-width:1040px; margin:0 auto; padding:18px 16px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="barra">
+    <img src="isotipo.svg" alt="Isotipo de Cremia Automations">
+    <strong>CREMIA AUTOMATIONS</strong>
+    <nav>
+      <a href="#cliente">Cliente</a>
+      <a href="#propuesta">Propuesta</a>
+      <a href="#productos">Productos</a>
+      <a href="#arquitectura">Arquitectura</a>
+      <a href="#proyecto">Proyecto</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#documentos">Documentos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="sobre">Transformación Digital Industrial · Sector lácteo</p>
+    <h1>De un lote diario a dos, con tres productos y trazabilidad completa</h1>
+    <p class="lema">Cremia Automations integra el proceso, el control, la supervisión y la gestión de la línea de yogur de La Hacienda, desde el sensor hasta el indicador de gestión.</p>
+    <div class="cifras">
+      <div class="cifra"><b>1 → 2</b><span>lotes diarios de 550 L de leche</span></div>
+      <div class="cifra"><b>1 → 3</b><span>referencias de producto</span></div>
+      <div class="cifra"><b>601 → 493</b><span>minutos de tiempo estándar por lote</span></div>
+      <div class="cifra"><b>5,06 → 1,5 %</b><span>producto no conforme (meta)</span></div>
+    </div>
+  </section>
+
+  <h2 id="cliente">El cliente y su situación actual</h2>
+  <p>La Hacienda Productos Alimenticios es una planta pequeña de derivados lácteos. Su línea de yogur procesa un lote diario de 550 L de leche y entrega 3.052 bolsas de 200 ml con cuatro operarios. El estado actual se toma de un estudio de tiempos de la planta.</p>
+  <div class="rejilla">
+    <div class="tarjeta"><h3>Operación manual</h3><p>Los insumos se pesan a mano, las válvulas de vapor y agua se abren a mano y la acidez se mide con muestra y acidómetro.</p></div>
+    <div class="tarjeta"><h3>Un tanque, un lote</h3><p>La preparación toma 391 de los 601 minutos del lote. El yogur se enfría durante la noche en el tanque, que no puede recibir otra carga.</p></div>
+    <div class="tarjeta"><h3>Sin información</h3><p>Los registros se llevan en papel. No hay trazabilidad por lote ni medición de paradas, y el 5,06 % de las bolsas sale no conforme.</p></div>
+  </div>
+
+  <h2 id="propuesta">La propuesta</h2>
+  <div class="tabla">
+  <table>
+    <tr><th>Etapa</th><th>Hoy</th><th>Con la propuesta</th></tr>
+    <tr><td>Dosificación de insumos</td><td>Cálculo y pesaje manual</td><td>Dosificación automática por peso desde la receta</td></tr>
+    <tr><td>Tratamiento térmico</td><td>Válvulas manuales</td><td>Control automático de temperatura con registro continuo</td></tr>
+    <tr><td>Fin de la incubación</td><td>Muestra y acidómetro</td><td>pH en línea</td></tr>
+    <tr><td>Enfriamiento</td><td>Natural, durante la noche</td><td>Intercambiador de placas en menos de 30 minutos</td></tr>
+    <tr><td>Envasado</td><td>Empacadora de bolsas</td><td>Empacadora de bolsas y llenadora de vasos</td></tr>
+    <tr><td>Control de peso</td><td>Una de cada cinco bolsas</td><td>100 % de las unidades, con rechazo automático</td></tr>
+    <tr><td>Transporte al cuarto frío</td><td>Canastas llevadas a mano</td><td>Bandas y celda de encanastado</td></tr>
+    <tr><td>Información</td><td>Papel</td><td>PLC, SCADA, MES y ERP</td></tr>
+  </table>
+  </div>
+  <p>El análisis de la leche por cantina y la inspección del sellado de las bolsas se mantienen manuales; sus resultados se registran en el sistema.</p>
+
+  <h2 id="productos">Tres referencias, una sola base</h2>
+  <div class="rejilla">
+    <div class="tarjeta"><h3>YB-200 · Bolsa de 200 ml</h3><p>Yogur bebible de fresa. Producto actual de la planta: 3.052 bolsas por lote.</p></div>
+    <div class="tarjeta"><h3>YV-150 · Vaso de 150 ml</h3><p>Yogur con mora, 8 % de fruta. Cerca de 4.330 vasos por lote.</p></div>
+    <div class="tarjeta"><h3>YV-300 · Vaso de 300 ml</h3><p>Yogur con trozos de melocotón, 12 % de fruta. Cerca de 2.240 vasos por lote.</p></div>
+  </div>
+  <p>Cada referencia tiene una receta maestra según ISA-88. El MES crea la receta de control de cada lote, escala la fórmula y descarga los parámetros al PLC.</p>
+
+  <h2 id="arquitectura">Arquitectura según ISA-95</h2>
+  <div class="tabla">
+  <table>
+    <tr><th>Nivel</th><th>Función</th><th>Elementos</th></tr>
+    <tr><td>4</td><td>Gestión empresarial</td><td>ERP: pedidos, compras, inventarios y costos</td></tr>
+    <tr><td>3</td><td>Gestión de operaciones</td><td>MES: órdenes, recetas, registro de lote, trazabilidad e indicadores</td></tr>
+    <tr><td>2</td><td>Supervisión</td><td>SCADA con historiador y HMI en planta</td></tr>
+    <tr><td>1</td><td>Control</td><td>PLC, variadores, controladoras de peso, llenadora, empacadora y robot</td></tr>
+    <tr><td>0</td><td>Proceso</td><td>Tanques, intercambiador, bombas, 21 sensores y 16 actuadores</td></tr>
+  </table>
+  </div>
+  <p>Campo en 4–20 mA e IO-Link, control en EtherNet/IP, OPC UA hacia SCADA y MES, y servicios web hacia el ERP.</p>
+
+  <h2 id="proyecto">El proyecto</h2>
+  <div class="cifras">
+    <div class="cifra"><b>35 semanas</b><span>de ejecución (8 meses)</span></div>
+    <div class="cifra"><b>COP 1.640 M</b><span>de inversión estimada, sin IVA</span></div>
+    <div class="cifra"><b>26,6 %</b><span>de TIR estimada a cinco años</span></div>
+    <div class="cifra"><b>2,8 años</b><span>de recuperación estimada</span></div>
+  </div>
+  <p>Las cifras económicas son preliminares y dependen de que el cliente venda la producción adicional. La solución se valida en un gemelo digital antes de intervenir la planta, de modo que la parada por montaje se limita a una semana.</p>
+
+  <h2 id="equipo">Equipo</h2>
+  <div class="rejilla">
+    <div class="tarjeta persona"><div class="avatar">DC</div><div><b>David Santiago Cortés Ávila</b><small>Gerente de proyecto</small></div></div>
+    <div class="tarjeta persona"><div class="avatar">AO</div><div><b>Ana María Orozco Reyes</b><small>Líder de simulación y mejora</small></div></div>
+    <div class="tarjeta persona"><div class="avatar">JR</div><div><b>Jesús Alberto Rivera Molina</b><small>Líder de arquitectura digital</small></div></div>
+    <div class="tarjeta persona"><div class="avatar">DF</div><div><b>David Felipe Cárdenas Cubides</b><small>Líder de gestión de producción</small></div></div>
+    <div class="tarjeta persona"><div class="avatar">CH</div><div><b>Cristian Stiven Hoyos Peralta</b><small>Líder financiero y comercial</small></div></div>
+    <div class="tarjeta persona"><div class="avatar">JZ</div><div><b>José Andrés Zapata Piñeros</b><small>Líder de procesos e instrumentación</small></div></div>
+  </div>
+
+  <h2 id="documentos">Documentos</h2>
+  <div class="rejilla">
+    <div class="tarjeta"><h3>Módulo 1 · Transformación Digital Industrial</h3><ul>
+      <li>Estado del arte y selección de la línea</li><li>Parámetros de proceso</li><li>Recetas y lotes</li><li>Modelos ISA-88</li><li>Arquitectura ISA-95</li><li>Equipos e instrumentación</li></ul></div>
+    <div class="tarjeta"><h3>Módulo 2 · Gestión de la Producción</h3><ul>
+      <li>Tiempos y capacidades</li><li>VSM e indicadores</li><li>Información para MES y ERP</li></ul></div>
+    <div class="tarjeta"><h3>Módulo 3 · Planeación y Evaluación</h3><ul>
+      <li>Propuesta empresarial</li><li>Propuesta económica</li><li>EDT y cronograma</li><li>Actas de reunión</li></ul></div>
+  </div>
+  <p>Todos los entregables están en el <a href="https://github.com/dcortesav/Cremia-Automations">repositorio del proyecto</a>.</p>
+</main>
+
+<footer><div>Cremia Automations · Proyecto Integrador de Automatización de Procesos de Manufactura 2026-2S · Universidad Nacional de Colombia</div></footer>
+</body>
+</html>

@@ -1,159 +1,235 @@
 <!doctype html>
 <html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cremia Automations · Línea de yogur</title>
-<meta name="description" content="Transformación Digital Industrial de la línea de yogur de La Hacienda. Proyecto Integrador APM 2026-2S, Universidad Nacional de Colombia.">
-<link rel="icon" href="isotipo.svg">
-<style>
-  :root { --azul:#0b4f6c; --azul2:#127ea8; --crema:#f6f1e7; --tinta:#1d2733; --gris:#5b6875; --linea:#dfe5ea; --fondo:#ffffff; --tarjeta:#f7f9fb; }
-  @media (prefers-color-scheme: dark) {
-    :root { --azul:#7cc4e0; --azul2:#4fa9cc; --crema:#16212b; --tinta:#e8eef3; --gris:#a3b1bd; --linea:#2a3947; --fondo:#0f1820; --tarjeta:#16212b; }
-  }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:"Segoe UI", system-ui, Arial, sans-serif; color:var(--tinta); background:var(--fondo); line-height:1.55; }
-  a { color:var(--azul2); }
-  header { background:var(--crema); border-bottom:1px solid var(--linea); }
-  .barra { max-width:1040px; margin:0 auto; padding:14px 16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-  .barra img { width:36px; height:36px; border-radius:6px; }
-  .barra strong { font-size:1.05rem; color:var(--azul); letter-spacing:.02em; }
-  nav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; font-size:.92rem; }
-  nav a { text-decoration:none; color:var(--gris); }
-  nav a:hover { color:var(--azul); }
-  main { max-width:1040px; margin:0 auto; padding:0 16px 56px; }
-  .hero { padding:48px 0 28px; }
-  .hero p.sobre { color:var(--azul2); font-weight:600; margin:0 0 6px; text-transform:uppercase; font-size:.8rem; letter-spacing:.08em; }
-  h1 { font-size:clamp(1.8rem, 4.5vw, 2.7rem); line-height:1.15; margin:0 0 12px; color:var(--azul); text-wrap:balance; }
-  .hero p.lema { max-width:62ch; color:var(--gris); font-size:1.08rem; margin:0; }
-  h2 { font-size:1.4rem; color:var(--azul); margin:44px 0 12px; padding-top:8px; border-top:1px solid var(--linea); }
-  .cifras { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:12px; margin-top:28px; }
-  .cifra { background:var(--tarjeta); border:1px solid var(--linea); border-radius:10px; padding:14px 16px; }
-  .cifra b { display:block; font-size:1.55rem; color:var(--azul); font-variant-numeric:tabular-nums; }
-  .cifra span { color:var(--gris); font-size:.9rem; }
-  .rejilla { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:14px; }
-  .tarjeta { background:var(--tarjeta); border:1px solid var(--linea); border-radius:10px; padding:16px; }
-  .tarjeta h3 { margin:0 0 6px; font-size:1.02rem; color:var(--tinta); }
-  .tarjeta p, .tarjeta ul { margin:0; color:var(--gris); font-size:.94rem; }
-  .tarjeta ul { padding-left:18px; }
-  .tabla { overflow-x:auto; }
-  table { border-collapse:collapse; width:100%; font-size:.94rem; }
-  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--linea); vertical-align:top; }
-  th { color:var(--gris); font-weight:600; }
-  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
-  .persona { display:flex; gap:12px; align-items:center; }
-  .avatar { flex:none; width:52px; height:52px; border-radius:50%; background:var(--azul); color:var(--fondo); display:grid; place-items:center; font-weight:700; }
-  .persona small { color:var(--gris); display:block; }
-  footer { border-top:1px solid var(--linea); color:var(--gris); font-size:.88rem; }
-  footer div { max-width:1040px; margin:0 auto; padding:18px 16px; }
-</style>
-</head>
-<body>
-<header>
-  <div class="barra">
-    <img src="isotipo.svg" alt="Isotipo de Cremia Automations">
-    <strong>CREMIA AUTOMATIONS</strong>
-    <nav>
-      <a href="#cliente">Cliente</a>
-      <a href="#propuesta">Propuesta</a>
-      <a href="#productos">Productos</a>
-      <a href="#arquitectura">Arquitectura</a>
-      <a href="#proyecto">Proyecto</a>
-      <a href="#equipo">Equipo</a>
-      <a href="#documentos">Documentos</a>
-    </nav>
-  </div>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cremia Automations: ingeniería y transformación digital para operaciones más inteligentes."
+    />
+    <title>Cremia Automations | Ingeniería que transforma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<main>
-  <section class="hero">
-    <p class="sobre">Transformación Digital Industrial · Sector lácteo</p>
-    <h1>De un lote diario a dos, con tres productos y trazabilidad completa</h1>
-    <p class="lema">Cremia Automations integra el proceso, el control, la supervisión y la gestión de la línea de yogur de La Hacienda, desde el sensor hasta el indicador de gestión.</p>
-    <div class="cifras">
-      <div class="cifra"><b>1 → 2</b><span>lotes diarios de 550 L de leche</span></div>
-      <div class="cifra"><b>1 → 3</b><span>referencias de producto</span></div>
-      <div class="cifra"><b>601 → 493</b><span>minutos de tiempo estándar por lote</span></div>
-      <div class="cifra"><b>5,06 → 1,5 %</b><span>producto no conforme (meta)</span></div>
-    </div>
-  </section>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#inicio" aria-label="Cremia Automations, ir al inicio">
+          <!-- Si cambia el logo, reemplazar por la ruta exacta de images/logo.svg -->
+          <img src="images/logos-and-banners/logo_horizontal.svg" alt="Cremia Automations" />
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#equipo">Nuestro Equipo</a>
+          <a href="#problema-necesidades">Diagnóstico</a>
+          <a class="nav-cta" href="#solucion">Nuestra solución <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
 
-  <h2 id="cliente">El cliente y su situación actual</h2>
-  <p>La Hacienda Productos Alimenticios es una planta pequeña de derivados lácteos. Su línea de yogur procesa un lote diario de 550 L de leche y entrega 3.052 bolsas de 200 ml con cuatro operarios. El estado actual se toma de un estudio de tiempos de la planta.</p>
-  <div class="rejilla">
-    <div class="tarjeta"><h3>Operación manual</h3><p>Los insumos se pesan a mano, las válvulas de vapor y agua se abren a mano y la acidez se mide con muestra y acidómetro.</p></div>
-    <div class="tarjeta"><h3>Un tanque, un lote</h3><p>La preparación toma 391 de los 601 minutos del lote. El yogur se enfría durante la noche en el tanque, que no puede recibir otra carga.</p></div>
-    <div class="tarjeta"><h3>Sin información</h3><p>Los registros se llevan en papel. No hay trazabilidad por lote ni medición de paradas, y el 5,06 % de las bolsas sale no conforme.</p></div>
-  </div>
+    <main>
+      <section class="hero section" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> Ingeniería · Automatización · Impacto</p>
+            <h1>Convertimos complejidad en <em>fluidez.</em></h1>
+            <p class="hero-description">
+              Diseñamos soluciones de transformación digital que conectan personas, datos y procesos para que tu operación avance con claridad.
+            </p>
+            <a class="button button-primary" href="#solucion">Conoce nuestra propuesta <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-art" aria-label="Diagrama abstracto de conexión de sistemas">
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <div class="art-core">
+              <img src="images/logos-and-banners/isotipo.svg" alt="" />
+              <span>TRANSFORMACIÓN<br /><b>EN MOVIMIENTO</b></span>
+            </div>
+            <span class="art-label label-top">PROCESOS</span>
+            <span class="art-label label-right">PERSONAS</span>
+            <span class="art-label label-bottom">TECNOLOGÍA</span>
+            <span class="art-label label-left">ESTRATEGIA</span>
+          </div>
+          <div class="hero-meta">
+            <div><strong>01</strong><span>Diagnóstico<br />con propósito</span></div>
+            <div><strong>02</strong><span>Diseño<br />inteligente</span></div>
+            <div><strong>03</strong><span>Resultados<br />medibles</span></div>
+          </div>
+        </div>
 
-  <h2 id="propuesta">La propuesta</h2>
-  <div class="tabla">
-  <table>
-    <tr><th>Etapa</th><th>Hoy</th><th>Con la propuesta</th></tr>
-    <tr><td>Dosificación de insumos</td><td>Cálculo y pesaje manual</td><td>Dosificación automática por peso desde la receta</td></tr>
-    <tr><td>Tratamiento térmico</td><td>Válvulas manuales</td><td>Control automático de temperatura con registro continuo</td></tr>
-    <tr><td>Fin de la incubación</td><td>Muestra y acidómetro</td><td>pH en línea</td></tr>
-    <tr><td>Enfriamiento</td><td>Natural, durante la noche</td><td>Intercambiador de placas en menos de 30 minutos</td></tr>
-    <tr><td>Envasado</td><td>Empacadora de bolsas</td><td>Empacadora de bolsas y llenadora de vasos</td></tr>
-    <tr><td>Control de peso</td><td>Una de cada cinco bolsas</td><td>100 % de las unidades, con rechazo automático</td></tr>
-    <tr><td>Transporte al cuarto frío</td><td>Canastas llevadas a mano</td><td>Bandas y celda de encanastado</td></tr>
-    <tr><td>Información</td><td>Papel</td><td>PLC, SCADA, MES y ERP</td></tr>
-  </table>
-  </div>
-  <p>El análisis de la leche por cantina y la inspección del sellado de las bolsas se mantienen manuales; sus resultados se registran en el sistema.</p>
+      </section>
 
-  <h2 id="productos">Tres referencias, una sola base</h2>
-  <div class="rejilla">
-    <div class="tarjeta"><h3>YB-200 · Bolsa de 200 ml</h3><p>Yogur bebible de fresa. Producto actual de la planta: 3.052 bolsas por lote.</p></div>
-    <div class="tarjeta"><h3>YV-150 · Vaso de 150 ml</h3><p>Yogur con mora, 8 % de fruta. Cerca de 4.330 vasos por lote.</p></div>
-    <div class="tarjeta"><h3>YV-300 · Vaso de 300 ml</h3><p>Yogur con trozos de melocotón, 12 % de fruta. Cerca de 2.240 vasos por lote.</p></div>
-  </div>
-  <p>Cada referencia tiene una receta maestra según ISA-88. El MES crea la receta de control de cada lote, escala la fórmula y descarga los parámetros al PLC.</p>
+      <section class="team-section section" id="equipo">
+        <div class="container team-block">
+          <div class="section-heading team-heading">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> El equipo detrás del cambio</p>
+              <h2>Talento que entiende<br /><span>el panorama completo.</span></h2>
+            </div>
+            <p>Un equipo multidisciplinario que convierte preguntas difíciles en decisiones accionables.</p>
+          </div>
+          <div class="team-grid">
+            <!-- Cambia src y el nombre visible por el nombre exacto de cada archivo en images/members/. -->
+            <article class="member-card">
+              <img src="images/members/David Cortes.png" alt="David Cortes" />
+              <div class="member-info"><h3>David Cortés</h3><p>Gerente de proyecto y de producto</p></div>
+              <span class="member-index">01</span>
+            </article>
+            <article class="member-card">
+              <img src="images/members/Ana.jpg" alt="Ana" />
+              <div class="member-info"><h3>Ana Orozco</h3><p>Líder de simulación y mejora</p></div>
+              <span class="member-index">02</span>
+            </article>
+            <article class="member-card">
+              <img src="images/members/Jesus.jpg" alt="Jesús" />
+              <div class="member-info"><h3>Jesús Rivera</h3><p>Líder de arquitectura digital</p></div>
+              <span class="member-index">03</span>
+            </article>
+            <article class="member-card">
+              <img src="images/members/Andres Zapata.jpg" alt="Andrés Zapata" />
+              <div class="member-info"><h3>Andrés Zapata</h3><p>Líder de procesos e instrumentación</p></div>
+              <span class="member-index">04</span>
+            </article>
+            <article class="member-card">
+              <img src="images/members/David Cardenas.jpg" alt="David Cárdenas" />
+              <div class="member-info"><h3>David Cárdenas</h3><p>Líder de gestión de producción</p></div>
+              <span class="member-index">05</span>
+            </article>
+            <article class="member-card">
+              <img src="images/members/Cristian.jpg" alt="Cristian" />
+              <div class="member-info"><h3>Cristian Hoyos</h3><p>Líder financiero y comercial</p></div>
+              <span class="member-index">06</span>
+            </article>
+          </div>
+        </div>
+      </section>
 
-  <h2 id="arquitectura">Arquitectura según ISA-95</h2>
-  <div class="tabla">
-  <table>
-    <tr><th>Nivel</th><th>Función</th><th>Elementos</th></tr>
-    <tr><td>4</td><td>Gestión empresarial</td><td>ERP: pedidos, compras, inventarios y costos</td></tr>
-    <tr><td>3</td><td>Gestión de operaciones</td><td>MES: órdenes, recetas, registro de lote, trazabilidad e indicadores</td></tr>
-    <tr><td>2</td><td>Supervisión</td><td>SCADA con historiador y HMI en planta</td></tr>
-    <tr><td>1</td><td>Control</td><td>PLC, variadores, controladoras de peso, llenadora, empacadora y robot</td></tr>
-    <tr><td>0</td><td>Proceso</td><td>Tanques, intercambiador, bombas, 21 sensores y 16 actuadores</td></tr>
-  </table>
-  </div>
-  <p>Campo en 4–20 mA e IO-Link, control en EtherNet/IP, OPC UA hacia SCADA y MES, y servicios web hacia el ERP.</p>
+      <section class="diagnostic section dark-section" id="problema-necesidades">
+        <div class="container">
+          <div class="diagnostic-heading">
+            <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Diagnóstico y necesidades del cliente</p>
+            <h2>Diagnóstico del Problema<br /><span>y Necesidades del Cliente.</span></h2>
+            <p class="diagnostic-subtitle">Transformación Digital Industrial para Productos Alimenticios La Hacienda</p>
+          </div>
 
-  <h2 id="proyecto">El proyecto</h2>
-  <div class="cifras">
-    <div class="cifra"><b>35 semanas</b><span>de ejecución (8 meses)</span></div>
-    <div class="cifra"><b>COP 1.640 M</b><span>de inversión estimada, sin IVA</span></div>
-    <div class="cifra"><b>26,6 %</b><span>de TIR estimada a cinco años</span></div>
-    <div class="cifra"><b>2,8 años</b><span>de recuperación estimada</span></div>
-  </div>
-  <p>Las cifras económicas son preliminares y dependen de que el cliente venda la producción adicional. La solución se valida en un gemelo digital antes de intervenir la planta, de modo que la parada por montaje se limita a una semana.</p>
+          <div class="context-banner">
+            <span class="context-label">Contexto actual</span>
+            <p>
+              Productos Alimenticios La Hacienda se encuentra en una fase estratégica de ampliación de infraestructura y diversificación de su portafolio. Sin embargo, la poca automatización de sus procesos productivos generan incertidumbre sobre su capacidad real de producción y dificultan la toma de decisiones para abastecer el mercado.
+            </p>
+          </div>
 
-  <h2 id="equipo">Equipo</h2>
-  <div class="rejilla">
-    <div class="tarjeta persona"><div class="avatar">DC</div><div><b>David Santiago Cortés Ávila</b><small>Gerente de proyecto</small></div></div>
-    <div class="tarjeta persona"><div class="avatar">AO</div><div><b>Ana María Orozco Reyes</b><small>Líder de simulación y mejora</small></div></div>
-    <div class="tarjeta persona"><div class="avatar">JR</div><div><b>Jesús Alberto Rivera Molina</b><small>Líder de arquitectura digital</small></div></div>
-    <div class="tarjeta persona"><div class="avatar">DF</div><div><b>David Felipe Cárdenas Cubides</b><small>Líder de gestión de producción</small></div></div>
-    <div class="tarjeta persona"><div class="avatar">CH</div><div><b>Cristian Stiven Hoyos Peralta</b><small>Líder financiero y comercial</small></div></div>
-    <div class="tarjeta persona"><div class="avatar">JZ</div><div><b>José Andrés Zapata Piñeros</b><small>Líder de procesos e instrumentación</small></div></div>
-  </div>
+          <div class="challenge-grid">
+            <article class="challenge-card">
+              <span class="challenge-icon" aria-hidden="true">📉</span>
+              <div><h3>Ineficiencia Operativa</h3><p>Procesos que no han evolucionado y que consumen más tiempo del que deberían.</p></div>
+            </article>
+            <article class="challenge-card">
+              <span class="challenge-icon" aria-hidden="true">⚙️</span>
+              <div><h3>Inflexibilidad Operativa</h3><p>Dificultad para alternar eficientemente entre sabores y presentaciones distintas.</p></div>
+            </article>
+            <article class="challenge-card">
+              <span class="challenge-icon" aria-hidden="true">⏱️</span>
+              <div><h3>Cuellos de Botella</h3><p>Paradas frecuentes en distintas etapas por desajustes en las máquinas.</p></div>
+            </article>
+            <article class="challenge-card">
+              <span class="challenge-icon" aria-hidden="true">📋</span>
+              <div><h3>Inspección y Trazabilidad Manual</h3><p>Controles manuales de pesaje y acidez que consumen tiempo improductivo, sin integración digital entre planta (OT) y gestión (IT).</p></div>
+            </article>
+          </div>
 
-  <h2 id="documentos">Documentos</h2>
-  <div class="rejilla">
-    <div class="tarjeta"><h3>Módulo 1 · Transformación Digital Industrial</h3><ul>
-      <li>Estado del arte y selección de la línea</li><li>Parámetros de proceso</li><li>Recetas y lotes</li><li>Modelos ISA-88</li><li>Arquitectura ISA-95</li><li>Equipos e instrumentación</li></ul></div>
-    <div class="tarjeta"><h3>Módulo 2 · Gestión de la Producción</h3><ul>
-      <li>Tiempos y capacidades</li><li>VSM e indicadores</li><li>Información para MES y ERP</li></ul></div>
-    <div class="tarjeta"><h3>Módulo 3 · Planeación y Evaluación</h3><ul>
-      <li>Propuesta empresarial</li><li>Propuesta económica</li><li>EDT y cronograma</li><li>Actas de reunión</li></ul></div>
-  </div>
-  <p>Todos los entregables están en el <a href="https://github.com/dcortesav/Cremia-Automations">repositorio del proyecto</a>.</p>
-</main>
+          <div class="requirements">
+            <div class="requirements-heading">
+              <p class="eyebrow"><span class="eyebrow-line"></span> Alcance de la solución</p>
+              <h3>Requerimientos clave<br /><span>del proyecto.</span></h3>
+            </div>
+            <ul class="requirements-list">
+              <li><span aria-hidden="true">✓</span><p><strong>Gestión de Recetas:</strong> Flexibilidad para programar lotes de 3 sabores y 3 formatos de envase.</p></li>
+              <li><span aria-hidden="true">✓</span><p><strong>Control Automático:</strong> Monitoreo continuo de pH, temperatura y pesaje dinámico con rechazo automático en línea.</p></li>
+              <li><span aria-hidden="true">✓</span><p><strong>Reducción de Downtime:</strong> Supervisión SCADA para detección temprana de fallas en empaque.</p></li>
+              <li><span aria-hidden="true">✓</span><p><strong>Integración OT/IT:</strong> Flujo continuo de datos hacia sistemas MES y ERP para trazabilidad total.</p></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<footer><div>Cremia Automations · Proyecto Integrador de Automatización de Procesos de Manufactura 2026-2S · Universidad Nacional de Colombia</div></footer>
-</body>
+      <section class="solution section" id="solucion">
+        <div class="container solution-heading">
+          <p class="eyebrow"><span class="eyebrow-line"></span> La transformación propuesta</p>
+          <h2>Solución de Automatización<br /><span>y Transformación Digital.</span></h2>
+          <p class="solution-subtitle">Arquitectura integral basada en los estándares ANSI/ISA-88 e ISA-95 para la planta La Hacienda</p>
+        </div>
+
+        <div class="container solution-summary">
+          <span class="context-label">Resumen ejecutivo</span>
+          <p>Diseñamos una solución de ingeniería que automatiza y digitaliza la producción por lotes de yogur para 3 referencias comerciales. La arquitectura integra control de proceso en tiempo real, envasado flexible, robótica industrial y supervisión SCADA conectada a capas MES/ERP.</p>
+        </div>
+
+        <div class="container physical-model">
+          <div class="model-visual">
+            <p class="solution-kicker">Modelo físico 3D y distribución de unidades <span>(ISA-88)</span></p>
+            <figure class="model-figure">
+              <img src="images/ISA-88/ISA-88-modelo-fisico.jpg" alt="Modelo físico 3D de la arquitectura ISA-88 para la planta La Hacienda" />
+              <figcaption>Esquema ilustrativo del Modelo Físico ANSI/ISA-88 de la propuesta.</figcaption>
+            </figure>
+          </div>
+          <div class="unit-legend">
+            <p class="solution-kicker">Identificación de unidades</p>
+            <ul>
+              <li><strong>U1 Recepción</strong><span>Plataforma, tanque de recepción e inspección.</span></li>
+              <li><strong>U2 Insumos</strong><span>Dosificación automatizada de azúcar, estabilizante y preparados.</span></li>
+              <li><strong>U3 Tanque Proceso</strong><span>Mezcla, homogeneización, pasteurización y fermentación.</span></li>
+              <li><strong>U4 Enfriamiento</strong><span>Intercambiador de placas y transferencia.</span></li>
+              <li><strong>U5 Tanque Pulmón</strong><span>Almacenamiento intermedio previo a envasado.</span></li>
+              <li><strong>U6 Envasado Bolsas</strong><span>Formado, llenado y sellado de bolsas YB-200.</span></li>
+              <li><strong>U7 Envasado Vasos</strong><span>Dosificación de fruta, llenado y sellado YV-150 / YV-300.</span></li>
+              <li><strong>U8 Robot &amp; Paletizado</strong><span>Celda robotizada para encanastado, encajonado y paletizado.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container technology-pillars">
+          <div class="pillars-heading">
+            <p class="solution-kicker">Matriz de pilares tecnológicos</p>
+          </div>
+          <div class="pillar-grid">
+            <article><span class="pillar-icon" aria-hidden="true">🧬</span><h3>Gestión de Recetas</h3><p>Control por lotes estructurado que automatiza la dosificación de ingredientes, formulaciones, temperaturas y adición de preparados de fruta.</p></article>
+            <article><span class="pillar-icon" aria-hidden="true">🌡️</span><h3>Control de Proceso en Línea</h3><p>Lazos de control cerrado PID para pasteurización e incubación, con monitoreo continuo de pH/acidez que elimina detenciones manuales.</p></article>
+            <article><span class="pillar-icon" aria-hidden="true">🔀</span><h3>Envasado Flexible y Multilínea</h3><p>Enrutamiento automatizado hacia la línea de bolsas o llenadora de vasos según la receta de control del lote en ejecución.</p></article>
+            <article><span class="pillar-icon" aria-hidden="true">⚖️</span><h3>Control Metrológico Dinámico</h3><p>Pesaje en línea dinámico con sistema neumático de rechazo automático para garantizar productos en tolerancia de peso/volumen.</p></article>
+            <article><span class="pillar-icon" aria-hidden="true">🤖</span><h3>Celda Robotizada</h3><p>Robot industrial para encanastado, encajonado y paletizado automático, adaptable a la geometría de bolsas y vasos.</p></article>
+            <article><span class="pillar-icon" aria-hidden="true">📊</span><h3>Integración IT/OT y SCADA</h3><p>Supervisión HMI/SCADA, comunicando campo (EtherNet/IP, OPC UA) con sistemas MES y ERP para trazabilidad total.</p></article>
+          </div>
+        </div>
+
+        <div class="container impact-box">
+          <div>
+            <p class="solution-kicker">Impacto y beneficios esperados</p>
+            <h3>Una operación más<br /><span>predecible y conectada.</span></h3>
+          </div>
+          <ul>
+            <li>Capacidad real de producción garantizada y repetible.</li>
+            <li>Eliminación de errores de formulación y reducción de tiempos de setup.</li>
+            <li>Trazabilidad digital del lote de principio a fin.</li>
+            <li>Minimización del tiempo de inactividad mediante mantenimiento preventivo por SCADA.</li>
+          </ul>
+        </div>
+        <div class="container solution-bottom"><span>Construimos lo que sigue.</span><span class="solution-line"></span><span>Cremia Automations © 2026</span></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <a class="footer-brand" href="#inicio">Cremia<span>.</span></a>
+        <p>Ingeniería que transforma.</p>
+        <a href="mailto:info@cremia.automation">info@cremia.automation <span aria-hidden="true">↗</span></a>
+      </div>
+    </footer>
+  </body>
 </html>

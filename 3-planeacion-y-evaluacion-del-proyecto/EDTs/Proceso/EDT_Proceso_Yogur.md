@@ -21,46 +21,7 @@
 
 ## 2. Diagrama de la EDT
 
-```mermaid
-graph TD
-    P["1.0 Línea de yogur<br/>saborizado con fruta"]
-    P --> A["1.1 Materias primas<br/>recepcionadas y almacenadas"]
-    P --> B["1.2 Leche acondicionada<br/>(mezcla normalizada)"]
-    P --> C["1.3 Mezcla pasteurizada<br/>y enfriada"]
-    P --> D["1.4 Yogur fermentado<br/>(coágulo cortado)"]
-    P --> E["1.5 Yogur saborizado<br/>con fruta y envasado"]
-    P --> F["1.6 Control de calidad<br/>y Almacenamiento"]
-    P --> G["1.7 Sistema de gestión<br/>de la producción"]
-
-    A --> A1["1.1.1 Recepción y control<br/>de leche cruda"]
-    A --> A2["1.1.2 Almacenamiento<br/>refrigerado de leche"]
-    A --> A3["1.1.3 Recepción y control<br/>de insumos"]
-    A --> A4["1.1.4 Almacenamiento<br/>de insumos"]
-
-    B --> B1["1.2.1 Estandarización<br/>de materia grasa"]
-    B --> B2["1.2.2 Normalización de<br/>sólidos totales"]
-    B --> B3["1.2.3 Homogeneización"]
-    B --> B4["1.2.4 Formulación y<br/>dosificación de aditivos"]
-
-    C --> C1["1.3.1 Pasteurización"]
-    C --> C2["1.3.2 Enfriamiento a<br/>temperatura de inoculación"]
-
-    D --> D1["1.4.1 Inoculación<br/>con cultivos starter"]
-    D --> D2["1.4.2 Fermentación<br/>controlada"]
-    D --> D3["1.4.3 Corte de<br/>fermentación"]
-    D --> D4["1.4.4 Control de<br/>la coagulación"]
-
-    E --> E1["1.5.1 Preparación y dosificación<br/>de fruta y saborizante"]
-    E --> E2["1.5.2 Envasado del yogur"]
-    E --> E3["1.5.3 Etiquetado y<br/>codificación"]
-
-    F --> F1["1.6.1 Inspección de<br/>producto"]
-    F --> F2["1.6.2 Encanastado y<br/>paletizado"]
-    F --> F3["1.6.3 Transporte hasta<br/>cuarto de refrigeración"]
-
-    G --> G1["1.7.1 CIP entre lotes"]
-    G --> G2["1.7.2 Documentación y<br/>trazabilidad"]
-```
+![Diagrama de la EDT](./EDT%20Yogurt.png)
 
 ---
 

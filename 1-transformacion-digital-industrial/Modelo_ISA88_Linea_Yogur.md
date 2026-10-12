@@ -276,7 +276,7 @@ Las señales de campo usan 4–20 mA, IO-Link y 24 VDC según el instrumento. La
 
 ## 7. Referencias de contexto
 
-- [EDT de Proceso - Línea de Yogur](../3-planeacion-y-evaluacion-del-proyecto/EDTs/EDT_Proceso_Yogur.md), especialmente la sección 3, Árbol de la EDT.
+- [EDT de Proceso - Línea de Yogur](../3-planeacion-y-evaluacion-del-proyecto/EDTs/Proceso/EDT_Proceso_Yogur.md), especialmente la sección 3, Árbol de la EDT.
 - *Recetas y lotes - Línea de yogur*, estructura de referencias, formulaciones, parámetros y trazabilidad.
 - *Equipos, sensores, actuadores, variables y comunicaciones - Línea de yogur*, inventario de equipos, instrumentos, control y comunicaciones.
 - ANSI/ISA-88, como marco para separar modelo físico, procedimientos, recetas y ejecución por lotes.

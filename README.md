@@ -12,7 +12,7 @@ Proyecto Integrador de Automatización de Procesos de Manufactura (APM) 2026-2S,
 | Referencias | Bolsa de 200 ml | Bolsa de 200 ml y vasos de 150 y 300 ml |
 | Tiempo estándar por lote | 601 min | ≈ 493 min |
 | Producto no conforme | 5,06 % | 1,5 % o menos |
-| Instrumentación conectada | Ninguna | 21 sensores y 16 actuadores |
+| Instrumentación conectada | Ninguna | 23 sensores y 19 actuadores |
 | Gestión de la información | Registros en papel | PLC, SCADA, MES y ERP |
 
 El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y Salamanca, 2015).

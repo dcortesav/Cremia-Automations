@@ -35,6 +35,8 @@ El lote es la unidad de ejecución y trazabilidad. Una orden de producción sele
 
 ## 2. Modelo físico
 
+![Modelo físico](./ISA-88-modelo-fisico.jpg)
+
 ### 2.1 Jerarquía física de la línea
 
 ```text
@@ -83,6 +85,8 @@ La recepción y el análisis por cantina se mantienen como actividad manual asis
 ---
 
 ## 3. Modelo procedimental
+
+![Modelo físico](./ISA-88-modelo-procedimental.jpg)
 
 ### 3.1 Nivel de procedimiento de lote
 

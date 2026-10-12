@@ -21,10 +21,10 @@ El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y
 
 | Carpeta | Contenido |
 |---|---|
+| [`0-estado-del-arte`](0-estado-del-arte) | Investigación de la línea de queso campesino y versión inicial del proyecto con tres líneas |
 | [`1-transformacion-digital-industrial`](1-transformacion-digital-industrial) | Estado del arte, parámetros de proceso, recetas y lotes, modelos ISA-88, arquitectura ISA-95, equipos e instrumentación |
 | [`2-gestion-y-evaluacion-de-la-produccion`](2-gestion-y-evaluacion-de-la-produccion) | Tiempos y capacidades, VSM e indicadores, necesidades de información con MES y ERP |
 | [`3-planeacion-y-evaluacion-del-proyecto`](3-planeacion-y-evaluacion-del-proyecto) | Empresa, EDT, cronograma, presupuesto, análisis económico y trabajo en equipo |
-| [`estado-del-arte`](estado-del-arte) | Investigación de la línea de queso campesino y versión inicial del proyecto con tres líneas |
 | [`docs`](docs) | Página web del proyecto |
 
 Cada carpeta de módulo tiene un `README.md` con el índice de sus entregables.

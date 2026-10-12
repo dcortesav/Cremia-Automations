@@ -59,12 +59,12 @@ Empresa: Productos Alimenticios La Hacienda
 | Unidad | Función | Módulos de equipo principales | Módulos de control y señales |
 |---|---|---|---|
 | **U1 Recepción** | Recibir, analizar, pesar y transferir leche aprobada | PL-101 plataforma de recepción; TK-101 tanque de recepción con filtro; P-101 bomba sanitaria | WT-101 peso; FT-101 caudal; motor y variador de P-101; registro manual de laboratorio LAB-101 |
-| **U2 Dosificación de insumos** | Alistar y dosificar ingredientes de la receta | DS-201 dosificador de azúcar; DS-202 microdosificador de estabilizante; P-203/P-204 bombas de saborizante y colorante; BL-205 estación de pesaje de cultivo | WT-201, WT-202 y WT-205 peso; FQ-203/FQ-204 dosificación por pulsos; M-201/M-202 motores |
-| **U3 Tanque de proceso** | Mezclar, estandarizar, homogeneizar, pasteurizar, inocular, fermentar y acondicionar | T-301 tanque de proceso de 600 L con chaqueta, agitador y descarga; M-301 agitador | TT-301 temperatura; TIC-301 control de temperatura; TV-301/TV-302 válvulas; LT-301 nivel; AT-301 pH; ST-301 velocidad; XV-301 descarga |
+| **U2 Dosificación de insumos** | Alistar y dosificar ingredientes de la receta | DS-201 dosificador de azúcar; DS-202 microdosificador de estabilizante; P-203/P-204 bombas de saborizante y colorante; BL-205 estación de pesaje de cultivo; DS-206 dosificador de leche en polvo | WT-201, WT-202, WT-205 y WT-206 peso; FQ-203/FQ-204 dosificación por pulsos; M-201/M-202 motores |
+| **U3 Tanque de proceso** | Mezclar, estandarizar, homogeneizar, pasteurizar, inocular, fermentar y acondicionar | T-301 tanque de proceso de 600 L con chaqueta, agitador y descarga; M-301 agitador; H-301 homogeneizador en recirculación | TT-301 temperatura; TIC-301 control de temperatura; TV-301/TV-302 válvulas; LT-301 nivel; AT-301 pH; ST-301 velocidad; PT-302 presión de homogeneización; XV-302 recirculación; XV-301 descarga |
 | **U4 Enfriamiento y transferencia** | Enfriar, filtrar y transferir el yogur al tanque pulmón | E-301 intercambiador de placas; P-301 bomba de lóbulos; F-301 filtro en línea | TT-302 temperatura; TIC-302; TV-303; PT-301 presión; variador de P-301 |
 | **U5 Tanque pulmón de envasado** | Almacenar temporalmente y habilitar la alimentación a la ruta de envasado | T-302 tanque pulmón de 650 L; derivaciones hacia bolsas o vasos | LT-302 nivel; TT-303 temperatura; XV-401 ruta a U6; XV-402 ruta a U7 |
-| **U6 Envasado de bolsas** | Formar, llenar, sellar, pesar y rechazar bolsas YB-200 | EMP-401 empacadora; CK-401 controladora de peso; CV-401 banda | WT-401 peso; XY-401 sellado; ZS-401 estado; M-401 accionamiento |
-| **U7 Envasado de vasos** | Dosificar fruta, llenar, sellar, pesar y rechazar vasos YV-150/YV-300 | P-403 bomba de preparado; MX-403 mezclador o dosificador de fruta; LL-402 llenadora-selladora; CK-402; CV-402 | WT-402 peso; XY-402 sellado; ZS-402 tapa; ZS-403 estado; M-402 accionamiento |
+| **U6 Envasado de bolsas** | Formar, llenar, sellar, pesar y rechazar bolsas YB-200 | EMP-401 empacadora; CD-401 codificador; CK-401 controladora de peso; CV-401 banda | WT-401 peso; XY-401 expulsor de rechazo; ZS-401 presencia de producto; M-401 accionamiento |
+| **U7 Envasado de vasos** | Dosificar fruta, llenar, sellar, pesar y rechazar vasos YV-150/YV-300 | P-403 bomba de preparado; MX-403 mezclador o dosificador de fruta; LL-402 llenadora-selladora; CD-402 codificador; CK-402; CV-402 | WT-402 peso; XY-402 expulsor de rechazo; ZS-402 presencia de producto; ZS-403 tapa sellada; M-402 accionamiento |
 | **U8 Encanastado y paletizado** | Agrupar, encajonar o encanastar, paletizar y transportar a frío | R-501 celda robotizada; CV-501 banda hacia CF-501 | ZS-501 estado; M-501 accionamiento; TT-501 temperatura del cuarto frío |
 
 ### 2.3 Recursos compartidos
@@ -251,7 +251,7 @@ Una desviación de parámetro no se resuelve cambiando silenciosamente el estado
 | Presión de transferencia | PT-301 | Protección de la línea |
 | Fruta | P-403, MX-403 | Relación de 8 % o 12 % según receta |
 | Peso de envase | WT-401, WT-402 | Aceptación y rechazo automático |
-| Sellado y tapa | XY-401, XY-402, ZS-402, ZS-403 | Integridad del envase |
+| Rechazo y tapa | XY-401, XY-402, ZS-403 | Retiro de unidades fuera de peso y verificación de tapa |
 | Cuarto frío | TT-501 | Cadena de frío a 4 °C |
 
 ### 5.2 Arquitectura de información

@@ -26,7 +26,7 @@ La transformación digital de la planta no termina con la puesta en marcha. El p
 | Trazabilidad | Registros en papel; un retiro de producto afecta varios días de producción | Registro electrónico de cada lote, desde la cantina de leche hasta la estiba | Tiempo para reconstruir la genealogía de un lote: de horas a minutos |
 | Disponibilidad de información | No hay datos: la programación es verbal y los registros son manuales | Tablero diario con OEE, rendimiento, no conformes, consumos, paradas y alarmas | Indicadores disponibles el mismo día |
 | Toma de decisiones | Por experiencia del operario y sin datos | Qué referencia producir según su margen, cuánta leche comprar según el plan semanal y cuándo intervenir un equipo según sus horas de trabajo | Reunión semanal de indicadores con la gerencia |
-| Resultado financiero | Margen de contribución de COP 494,4 millones al año | Beneficio neto adicional de COP 738 millones al año; VPN al 15 % de COP 657 millones, TIR de 31,9 % y recuperación en 2,6 años | Flujo de caja real frente al proyectado |
+| Resultado financiero | Margen de contribución de COP 494,4 millones al año | Beneficio neto adicional de COP 738 millones al año; VPN al 15 % de COP 617 millones, TIR de 30,6 % y recuperación en 2,7 años | Flujo de caja real frente al proyectado |
 
 Las cifras de producción salen del documento de recetas y lotes (semana de referencia de 10 lotes) y las financieras, de la propuesta económica. El costo de mano de obra por unidad usa un costo de COP 33,6 millones al año por operario: 4 operarios para 915.600 unidades hoy y 5 operarios para 1.981.320 unidades con la propuesta.
 
@@ -54,7 +54,7 @@ Las cifras de producción salen del documento de recetas y lotes (semana de refe
 
 | Grupo | Qué cambia para ellos | Qué necesitan | Nivel de impacto |
 | --- | --- | --- | --- |
-| Dueños y gerencia | Deciden con indicadores diarios; invierten COP 1.286,7 millones | Ver el retorno y entender el tablero | Medio |
+| Dueños y gerencia | Deciden con indicadores diarios; invierten COP 1.325,8 millones | Ver el retorno y entender el tablero | Medio |
 | Jefe de producción | Programa lotes en el MES, sigue el avance en el SCADA y lidera la reunión diaria | Dominio del MES y de los indicadores | Alto |
 | Operarios (hoy 4) | Dejan de pesar insumos y abrir válvulas a mano; operan desde la HMI y atienden alarmas | Capacitación práctica y seguridad sobre su puesto | Alto |
 | Operario nuevo del segundo lote | Se integra con la línea ya automatizada | Inducción completa | Alto |

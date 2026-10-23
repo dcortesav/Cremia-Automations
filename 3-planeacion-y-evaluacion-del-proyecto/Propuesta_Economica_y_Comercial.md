@@ -11,7 +11,7 @@ Este documento reúne la evaluación económica y la oferta comercial de Cremia 
 
 El análisis considera exclusivamente la línea de yogur. Responde tres preguntas: cuánto cuesta producir hoy cada unidad, en cuánto se vende en el mercado colombiano y cuánto cambia la rentabilidad de la planta al pasar de uno a dos lotes diarios y de una a tres referencias mediante automatización. Todas las cifras están en pesos colombianos de 2026, sin IVA y antes de impuestos.
 
-**Versión revisada (octubre de 2026).** Atiende las observaciones de la sustentación: el plazo baja de 35 a 16 semanas, la ingeniería se cobra por las horas de la EDT en dos contratos (diseño e implementación), la celda robotizada pasa a una etapa posterior y la suscripción del ERP en la nube entra en los costos de operación. La inversión baja de COP 1.803,8 a 1.286,7 millones.
+**Versión revisada (octubre de 2026).** Atiende las observaciones de la sustentación: el plazo baja de 35 a 16 semanas, la ingeniería se cobra por las horas de la EDT a una tarifa que refleja el valor que aporta cada integrante, en dos contratos (diseño e implementación), la celda robotizada pasa a una etapa posterior y la suscripción del ERP en la nube entra en los costos de operación. La inversión baja de COP 1.803,8 a 1.325,8 millones.
 
 ## 2. Situación de partida
 
@@ -136,26 +136,40 @@ La tarifa de venta al cliente se obtiene aplicando un factor de administración,
 | Utilidad | 15 % | Costo más administración e imprevistos |
 | Factor multiplicador resultante | 1,39 | Costo directo de personal |
 
-Con ese factor, las tarifas horarias de venta son:
+Con ese factor, las tarifas de referencia por cargo son las siguientes; para el proyecto se ajustan según el valor que aporta cada integrante, como se explica a continuación:
 
-| Cargo | Costo por hora (COP) | Tarifa de venta por hora (COP) |
+| Cargo | Costo por hora (COP) | Tarifa de referencia con el factor 1,39 (COP/h) |
 | --- | --- | --- |
 | Gerente de proyecto | 50.110 | 69.700 (≈ USD 17,4) |
 | Líder de área | 33.407 | 46.500 (≈ USD 11,6) |
 
-El valor de la ingeniería sale de las horas de la EDT multiplicadas por la tarifa de cada cargo, no de los meses de nómina. Así las horas, el plazo y el costo son coherentes: el proyecto de 16 semanas ocupa el 76 % de la capacidad del equipo y el resto se dedica a la coordinación interna y a la gestión comercial de Cremia.
+El valor de la ingeniería sale de las horas de la EDT multiplicadas por la tarifa de cada integrante, no de los meses de nómina, porque no todos aportan el mismo tipo ni la misma cantidad de valor:
 
-| Contrato | Alcance (cuentas de la EDT) | Semanas | Horas del gerente | Horas de líderes de área | Millones de COP |
-| --- | --- | --- | --- | --- | --- |
-| 1. Diseño y procura | Gestión, ingeniería básica y de detalle, procura (1.1 a 1.4) | 1–13 | 140 | 980 | 55,3 |
-| 2. Implementación, puesta en marcha y adopción | Software, gemelo digital, montaje, pruebas, gestión del cambio y capacitación (1.5 a 1.9) | 4–16 | 390 | 1.550 | 99,3 |
-| **Total** | | **1–16** | **530** | **2.530** | **154,6** |
+| Integrante | Rol | Valor que aporta al proyecto | Tipo de valor | Horas | Tarifa (COP/h) | Factor sobre su costo | Millones de COP |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| David Santiago Cortés Ávila | Gerente de proyecto | Dirige el proyecto, programa las fases ISA-88 del PLC y responde por la puesta en marcha virtual y las pruebas SAT | Dirección y control | 530 | 80.000 | 1,60 | 42,40 |
+| Jesús Alberto Rivera Molina | Líder de arquitectura digital | Diseña la red OT/IT, la ciberseguridad según IEC 62443, los tableros y el PLC de envasado | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
+| David Felipe Cárdenas Cubides | Líder de gestión de producción | Desarrolla el SCADA, el MES y la integración con el ERP, de donde salen la trazabilidad y los indicadores | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
+| José Andrés Zapata Piñeros | Líder de procesos e instrumentación | Especifica equipos e instrumentos, estructura las recetas y lidera el montaje y el arranque con producto | Núcleo técnico del proceso | 520 | 60.000 | 1,80 | 31,20 |
+| Ana María Orozco Reyes | Líder de simulación y mejora | Construye el gemelo digital y valida el estado propuesto antes de intervenir la planta | Núcleo técnico de validación | 470 | 60.000 | 1,80 | 28,20 |
+| Cristian Stiven Hoyos Peralta | Líder financiero y comercial | Compras, contratos, control de costos y gestión del cambio | Gestión y soporte | 500 | 47.000 | 1,41 | 23,50 |
+| **Total** | | | | **3.060** | **62.400 en promedio** | | **190,82** |
+
+La tarifa de cada integrante no sale solo de su salario. Parte de su costo por hora (salario con prestaciones) y lo multiplica por un factor que refleja el tipo de valor que aporta: 1,9 para las especialidades escasas y críticas para el resultado (arquitectura OT/IT y ciberseguridad; SCADA, MES y ERP), 1,8 para el núcleo técnico del proceso y de la validación (instrumentación, recetas y gemelo digital), 1,6 para la dirección del proyecto, que ya parte de un costo mayor, y 1,4 para la gestión y el soporte. El factor incluye la administración, los imprevistos, la utilidad y la prima por especialización. Las horas muestran cuánto aporta cada uno; la tarifa, qué tipo de valor.
+
+La ingeniería se factura en dos contratos:
+
+| Contrato | Alcance (cuentas de la EDT) | Semanas | Horas | Millones de COP |
+| --- | --- | --- | --- | --- |
+| 1. Diseño y procura | Gestión, ingeniería básica y de detalle, procura (1.1 a 1.4) | 1–13 | 1.120 | 67,6 |
+| 2. Implementación, puesta en marcha y adopción | Software, gemelo digital, montaje, pruebas, gestión del cambio y capacitación (1.5 a 1.9) | 4–16 | 1.940 | 123,2 |
+| **Total** | | **1–16** | **3.060** | **190,8** |
 | Concepto | Millones de COP |
-| Costo directo de personal: 530 h × 50.110 + 2.530 h × 33.407 | 111,1 |
-| Administración, imprevistos y utilidad incluidos en la tarifa (factor 1,39) | 43,5 |
-| **Valor de venta de los servicios de ingeniería** | **154,6** |
+| Nómina completa del equipo durante las 16 semanas (39,52 millones al mes) | 145,9 |
+| Administración, imprevistos y utilidad de Cremia | 44,9 |
+| **Valor de venta de los servicios de ingeniería** | **190,8** |
 
-La utilidad de Cremia es de unos COP 20 millones, el 13 % del valor facturado por servicios. Frente a la primera versión de la oferta (35 semanas y COP 439,0 millones por ocho meses de nómina completa), el cliente paga 284,4 millones menos y recibe la línea funcionando unos cuatro meses antes.
+El valor facturado cubre la nómina completa de las 16 semanas, aunque el proyecto ocupe el 76 % de la capacidad del equipo; el resto del tiempo se dedica a la coordinación interna y a la gestión comercial de Cremia. Frente a la primera versión de la oferta (35 semanas y COP 439,0 millones por ocho meses de nómina completa), el cliente paga 248,2 millones menos y recibe la línea funcionando unos cuatro meses antes.
 
 ## 6. Presupuesto de inversión (CAPEX)
 
@@ -182,24 +196,24 @@ El presupuesto detalla los 16 rubros tecnológicos del proyecto. La celda roboti
 | 15 | Dosificador de leche en polvo por peso | 20,0 |
 | 16 | Dos codificadores de lote y fecha de vencimiento | 25,0 |
 | | **Subtotal de equipos y software** | **960,0** |
-| | Servicios de ingeniería de Cremia Automations (3.060 h en dos contratos) | 154,6 |
+| | Servicios de ingeniería de Cremia Automations (3.060 h en dos contratos, con tarifa por integrante) | 190,8 |
 | | Montaje mecánico y eléctrico por contratistas certificados (8 % de equipos) | 76,8 |
-| | **Subtotal** | **1.191,4** |
-| | Contingencia del proyecto (8 %) | 95,3 |
-| | **Inversión total** | **1.286,7** |
+| | **Subtotal** | **1.227,6** |
+| | Contingencia del proyecto (8 %) | 98,2 |
+| | **Inversión total** | **1.325,8** |
 | | Margen no percibido por 5 días de parada de planta durante el montaje | 8,2 |
-| | **Desembolso total del año 0** | **1.294,9** |
+| | **Desembolso total del año 0** | **1.334,0** |
 
 ### 6.2 Composición de la inversión
 
 | Grupo | Rubros | Millones de COP | Participación |
 | --- | --- | --- | --- |
-| Equipos de proceso | 1, 3, 4, 5, 7, 13, 14 y 15 | 420,0 | 32,6 % |
-| Envasado, inspección y transporte | 6, 8, 9 y 16 | 305,0 | 23,7 % |
-| Instrumentación, control y software | 2, 10, 11 y 12 | 235,0 | 18,3 % |
-| Ingeniería de Cremia | — | 154,6 | 12,0 % |
-| Montaje y contingencia | — | 172,1 | 13,4 % |
-| **Total** | | **1.286,7** | **100 %** |
+| Equipos de proceso | 1, 3, 4, 5, 7, 13, 14 y 15 | 420,0 | 31,7 % |
+| Envasado, inspección y transporte | 6, 8, 9 y 16 | 305,0 | 23,0 % |
+| Instrumentación, control y software | 2, 10, 11 y 12 | 235,0 | 17,7 % |
+| Ingeniería de Cremia | — | 190,8 | 14,4 % |
+| Montaje y contingencia | — | 175,0 | 13,2 % |
+| **Total** | | **1.325,8** | **100 %** |
 
 Los valores de equipos son estimaciones de orden de magnitud a partir de catálogos y cotizaciones de referencia de proveedores del sector lácteo; la cotización formal de cada rubro es parte del paquete de procura de la EDT (1.4.1). La contingencia del 8 % cubre la incertidumbre de esas estimaciones, la variación de la tasa de cambio en los equipos importados y los cambios menores que puedan surgir por pedir los equipos de largo plazo en la semana 3.
 
@@ -207,11 +221,11 @@ Los valores de equipos son estimaciones de orden de magnitud a partir de catálo
 
 | Hito | Semana | Porcentaje | Millones de COP |
 | --- | --- | --- | --- |
-| Firma del contrato (anticipo) | 1 | 30 % | 386,0 |
-| Pruebas FAT aprobadas, con validación en el gemelo digital | 13 | 30 % | 386,0 |
-| Puesta en marcha y pruebas SAT | 15 | 30 % | 386,0 |
-| Cierre y entrega de la documentación | 16 | 10 % | 128,7 |
-| **Total** | | **100 %** | **1.286,7** |
+| Firma del contrato (anticipo) | 1 | 30 % | 397,7 |
+| Pruebas FAT aprobadas, con validación en el gemelo digital | 13 | 30 % | 397,7 |
+| Puesta en marcha y pruebas SAT | 15 | 30 % | 397,7 |
+| Cierre y entrega de la documentación | 16 | 10 % | 132,7 |
+| **Total** | | **100 %** | **1.325,8** |
 
 ## 7. Beneficios y costos anuales de la propuesta
 
@@ -245,37 +259,37 @@ El horizonte es de cinco años. Se modela una rampa de adopción comercial conse
 
 | Concepto financiero | Año 0 | Año 1 | Año 2 | Año 3 | Año 4 | Año 5 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Inversión y parada por montaje | −1.294,9 | — | — | — | — | — |
+| Inversión y parada por montaje | −1.334,0 | — | — | — | — | — |
 | Margen adicional (rampa de ventas) | — | 418,8 | 628,2 | 837,6 | 837,6 | 837,6 |
 | Operación, mantenimiento, operario y ERP | — | −99,6 | −99,6 | −99,6 | −99,6 | −99,6 |
-| **Flujo neto anual** | **−1.294,9** | **319,2** | **528,6** | **738,0** | **738,0** | **738,0** |
-| Flujo de caja acumulado | −1.294,9 | −975,7 | −447,1 | 290,9 | 1.028,9 | 1.766,9 |
+| **Flujo neto anual** | **−1.334,0** | **319,2** | **528,6** | **738,0** | **738,0** | **738,0** |
+| Flujo de caja acumulado | −1.334,0 | −1.014,8 | −486,2 | 251,8 | 989,8 | 1.727,8 |
 
 ### 8.1 Valor presente de cada año
 
 | Año | Flujo neto (millones de COP) | Factor de descuento al 15 % | Valor presente (millones de COP) |
 | --- | --- | --- | --- |
-| 0 | −1.294,9 | 1,0000 | −1.294,9 |
+| 0 | −1.334,0 | 1,0000 | −1.334,0 |
 | 1 | 319,2 | 0,8696 | 277,6 |
 | 2 | 528,6 | 0,7561 | 399,7 |
 | 3 | 738,0 | 0,6575 | 485,2 |
 | 4 | 738,0 | 0,5718 | 422,0 |
 | 5 | 738,0 | 0,4972 | 366,9 |
-| **Valor presente neto** | | | **656,5 ≈ 657** |
+| **Valor presente neto** | | | **617,4 ≈ 617** |
 
-El periodo de recuperación sale del flujo acumulado: al final del año 2 faltan 447,1 millones, que se recuperan con el 61 % del flujo del año 3 (447,1 ÷ 738,0). Por eso la recuperación es de 2,6 años.
+El periodo de recuperación sale del flujo acumulado: al final del año 2 faltan 486,2 millones, que se recuperan con el 66 % del flujo del año 3 (486,2 ÷ 738,0). Por eso la recuperación es de 2,7 años.
 
 ## 9. Indicadores financieros
 
 | Indicador financiero | Valor obtenido | Lectura |
 | --- | --- | --- |
-| VPN con tasa del 15 % (tasa de oportunidad del cliente) | COP 657 millones | Positivo: el proyecto crea valor |
-| VPN con tasa del 18 % (con crédito bancario) | COP 508 millones | Positivo también con el costo del crédito |
-| Tasa interna de retorno (TIR) | 31,9 % | Mayor que la tasa de descuento (31,9 % > 15,0 %) |
-| Periodo de recuperación | 2,6 años | Dentro del horizonte de cinco años |
-| Relación beneficio-costo (valor presente de los flujos ÷ inversión) | 1,51 | Cada peso invertido devuelve 1,51 pesos en valor presente |
+| VPN con tasa del 15 % (tasa de oportunidad del cliente) | COP 617 millones | Positivo: el proyecto crea valor |
+| VPN con tasa del 18 % (con crédito bancario) | COP 469 millones | Positivo también con el costo del crédito |
+| Tasa interna de retorno (TIR) | 30,6 % | Mayor que la tasa de descuento (30,6 % > 15,0 %) |
+| Periodo de recuperación | 2,7 años | Dentro del horizonte de cinco años |
+| Relación beneficio-costo (valor presente de los flujos ÷ inversión) | 1,46 | Cada peso invertido devuelve 1,46 pesos en valor presente |
 
-Frente a la primera versión de la oferta (VPN de 170 millones, TIR de 18,4 % y recuperación en 3,3 años), el proyecto mejora por tres razones: la ingeniería se cobra por horas reales (284,4 millones menos), la celda robotizada sale del alcance (180 millones menos en equipos) y el montaje y la contingencia bajan con la inversión.
+Frente a la primera versión de la oferta (VPN de 170 millones, TIR de 18,4 % y recuperación en 3,3 años), el proyecto mejora por tres razones: la ingeniería se cobra por horas reales a la tarifa de cada integrante (248,2 millones menos), la celda robotizada sale del alcance (180 millones menos en equipos) y el montaje y la contingencia bajan con la inversión.
 
 ## 10. Sensibilidad, financiación y estrategia por fases
 
@@ -285,23 +299,23 @@ El volumen se expresa como porcentaje de la producción de la propuesta que efec
 
 | Escenario | Volumen vendido | VPN al 15 % (COP) | TIR | Recuperación |
 | --- | --- | --- | --- | --- |
-| Base (esperado) | 100 % del plan | 657 millones | 31,9 % | 2,6 años |
-| Moderado | 90 % del plan | 293 millones | 22,9 % | 3,0 años |
-| Conservador | 80 % del plan | −70 millones | 13,0 % | 3,7 años |
-| Pesimista | 60 % del plan | −797 millones | Negativa | Más de 5 años |
+| Base (esperado) | 100 % del plan | 617 millones | 30,6 % | 2,7 años |
+| Moderado | 90 % del plan | 254 millones | 21,7 % | 3,1 años |
+| Conservador | 80 % del plan | −109 millones | 11,9 % | 3,7 años |
+| Pesimista | 60 % del plan | −836 millones | Negativa | Más de 5 años |
 
-El punto de equilibrio está en el 81,9 % del plan: por debajo de ese volumen el VPN al 15 % se vuelve negativo.
+El punto de equilibrio está en el 83,0 % del plan: por debajo de ese volumen el VPN al 15 % se vuelve negativo.
 
 ### 10.2 Sensibilidad a precio, leche e inversión
 
 | Variable | Cambio | VPN al 15 % (COP) | TIR | Recuperación |
 | --- | --- | --- | --- | --- |
-| Precio de venta de las tres referencias | −5 % | 387 millones | 25,3 % | 2,9 años |
-| Precio de venta de las tres referencias | +5 % | 926 millones | 38,2 % | 2,4 años |
-| Precio de la leche cruda | +10 % | 562 millones | 29,7 % | 2,7 años |
-| Precio de la leche cruda | −10 % | 751 millones | 34,2 % | 2,5 años |
-| Inversión (CAPEX) | +10 % | 528 millones | 27,7 % | 2,8 años |
-| Inversión (CAPEX) | −10 % | 785 millones | 36,9 % | 2,4 años |
+| Precio de venta de las tres referencias | −5 % | 348 millones | 24,1 % | 3,0 años |
+| Precio de venta de las tres referencias | +5 % | 887 millones | 36,7 % | 2,4 años |
+| Precio de la leche cruda | +10 % | 523 millones | 28,4 % | 2,8 años |
+| Precio de la leche cruda | −10 % | 712 millones | 32,8 % | 2,6 años |
+| Inversión (CAPEX) | +10 % | 485 millones | 26,4 % | 2,8 años |
+| Inversión (CAPEX) | −10 % | 750 millones | 35,5 % | 2,5 años |
 
 Los cambios de precio y de leche se aplican a la diferencia entre la propuesta y la situación actual, que es lo que mueve el flujo del proyecto. El precio de venta sigue siendo la variable más sensible, pero ningún cambio de la tabla deja el VPN en negativo.
 
@@ -309,31 +323,31 @@ Los cambios de precio y de leche se aplican a la diferencia entre la propuesta y
 
 La inversión se organiza en dos frentes dentro de las mismas 16 semanas y una etapa posterior fuera del proyecto:
 
-- **Preparación y línea de bolsas (COP 1.003,8 millones).** Dosificación, leche en polvo, homogeneización, intercambiador de placas, chiller, CIP, empacadora de bolsas existente con su controladora de peso y su codificador, PLC, SCADA y MES, con toda la ingeniería. Con esto se duplica la producción de bolsas, un mercado que el cliente ya tiene.
-- **Línea de vasos (COP 282,9 millones).** Llenadora, dosificación de fruta, segunda controladora de peso y segundo codificador. Se confirma en la semana 2 con cartas de intención de los distribuidores; si no se confirma, la inversión baja a COP 1.003,8 millones.
+- **Preparación y línea de bolsas (COP 1.042,9 millones).** Dosificación, leche en polvo, homogeneización, intercambiador de placas, chiller, CIP, empacadora de bolsas existente con su controladora de peso y su codificador, PLC, SCADA y MES, con toda la ingeniería. Con esto se duplica la producción de bolsas, un mercado que el cliente ya tiene.
+- **Línea de vasos (COP 282,9 millones).** Llenadora, dosificación de fruta, segunda controladora de peso y segundo codificador. Se confirma en la semana 2 con cartas de intención de los distribuidores; si no se confirma, la inversión baja a COP 1.042,9 millones.
 - **Etapa posterior, fuera de este proyecto.** Celda robotizada de encanastado y paletizado (unos COP 180 millones en equipos), cuando el volumen lo justifique.
 
 ### 10.4 Estructura de financiación
 
-Si el cliente financia el 70 % de la inversión (COP 900,7 millones) con un crédito de modernización industrial a cinco años, al 18 % efectivo anual, la cuota anual es de COP 288,0 millones. El flujo neto del año 1 (COP 319,2 millones) alcanza a cubrirla, de modo que no hace falta un periodo de gracia.
+Si el cliente financia el 70 % de la inversión (COP 928,1 millones) con un crédito de modernización industrial a cinco años, al 18 % efectivo anual, la cuota anual es de COP 296,8 millones. El flujo neto del año 1 (COP 319,2 millones) alcanza a cubrirla, de modo que no hace falta un periodo de gracia.
 
 | Año | Intereses (millones de COP) | Abono a capital | Cuota | Saldo al final del año | Flujo neto del proyecto | Flujo después de la deuda |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 162,1 | 125,9 | 288,0 | 774,8 | 319,2 | 31,2 |
-| 2 | 139,5 | 148,6 | 288,0 | 626,2 | 528,6 | 240,6 |
-| 3 | 112,7 | 175,3 | 288,0 | 450,9 | 738,0 | 450,0 |
-| 4 | 81,2 | 206,9 | 288,0 | 244,1 | 738,0 | 450,0 |
-| 5 | 43,9 | 244,1 | 288,0 | 0,0 | 738,0 | 450,0 |
+| 1 | 167,1 | 129,7 | 296,8 | 798,4 | 319,2 | 22,4 |
+| 2 | 143,7 | 153,1 | 296,8 | 645,3 | 528,6 | 231,8 |
+| 3 | 116,2 | 180,6 | 296,8 | 464,7 | 738,0 | 441,2 |
+| 4 | 83,6 | 213,1 | 296,8 | 251,5 | 738,0 | 441,2 |
+| 5 | 45,3 | 251,5 | 296,8 | 0,0 | 738,0 | 441,2 |
 
-El flujo después de la deuda es positivo todos los años. El 30 % restante (COP 386,0 millones) lo aporta el cliente con recursos propios y coincide con el anticipo a la firma del contrato.
+El flujo después de la deuda es positivo todos los años. El 30 % restante (COP 397,7 millones) lo aporta el cliente con recursos propios y coincide con el anticipo a la firma del contrato.
 
 ## 11. Riesgos y mitigación
 
 | Riesgo | Efecto | Probabilidad | Mitigación |
 | --- | --- | --- | --- |
-| Las referencias en vaso se venden menos de lo previsto | VPN negativo por debajo del 81,9 % del plan | Media | La línea de vasos se confirma en la semana 2 con cartas de intención |
-| Baja del precio de venta en el canal | Una baja del 5 % reduce el VPN a 387 millones | Media | Contratos de suministro con precio indexado; mezcla de referencias con más vasos |
-| Sobrecosto de equipos importados por tasa de cambio | Un 10 % más de inversión reduce el VPN a 528 millones | Media | Contingencia del 8 %; cotizaciones en pesos con validez de 90 días |
+| Las referencias en vaso se venden menos de lo previsto | VPN negativo por debajo del 83,0 % del plan | Media | La línea de vasos se confirma en la semana 2 con cartas de intención |
+| Baja del precio de venta en el canal | Una baja del 5 % reduce el VPN a 348 millones | Media | Contratos de suministro con precio indexado; mezcla de referencias con más vasos |
+| Sobrecosto de equipos importados por tasa de cambio | Un 10 % más de inversión reduce el VPN a 485 millones | Media | Contingencia del 8 %; cotizaciones en pesos con validez de 90 días |
 | Retraso en la fabricación de los equipos | La entrega se corre más allá de la semana 16 | Media | Pedido en la semana 3 con hojas de datos aprobadas, seguimiento semanal de fabricación y FAT antes del despacho |
 | Retraso del montaje | Más días de parada y margen no percibido | Baja | Preinstalación sin detener la planta y puesta en marcha virtual en el gemelo digital antes de intervenir el tanque |
 | Resistencia del personal al cambio | Rendimiento menor al esperado en el primer año | Media | Plan de gestión del cambio (EDT 1.9.1), capacitación por rol (1.9.2), acompañamiento de 8 semanas y rampa de adopción del 50 % y 75 % |
@@ -383,8 +397,8 @@ La propuesta de valor y el plan de gestión del cambio se desarrollan en el docu
 | Elemento contractual | Condición ofertada |
 | --- | --- |
 | Alcance del suministro | Ingeniería de detalle, suministro de equipos, montaje, programación del PLC y del SCADA, MES, pruebas FAT y SAT, puesta en marcha, gestión del cambio y capacitación |
-| Valor total de la oferta | COP 1.286,7 millones, sin IVA (preparación y bolsas: 1.003,8 millones; línea de vasos: 282,9 millones) |
-| Servicios de ingeniería | COP 154,6 millones en dos contratos: diseño y procura (55,3) e implementación (99,3) |
+| Valor total de la oferta | COP 1.325,8 millones, sin IVA (preparación y bolsas: 1.042,9 millones; línea de vasos: 282,9 millones) |
+| Servicios de ingeniería | COP 190,8 millones en dos contratos: diseño y procura (67,6) e implementación (123,2), con tarifa según el valor que aporta cada integrante |
 | Plazo de ejecución | 16 semanas, del 18 de enero al 7 de mayo de 2027 |
 | Forma de pago por hitos | 30 % de anticipo a la firma, 30 % contra pruebas FAT validadas en el gemelo digital, 30 % con la puesta en marcha y las pruebas SAT, y 10 % al cierre |
 | Garantía y soporte | 12 meses de garantía integral sobre la integración, 8 semanas de acompañamiento en planta después de la entrega y contrato opcional de soporte y analítica del 8 % anual |

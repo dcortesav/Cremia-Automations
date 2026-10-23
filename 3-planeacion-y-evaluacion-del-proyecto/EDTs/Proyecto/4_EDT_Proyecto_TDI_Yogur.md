@@ -32,7 +32,7 @@ La EDT sigue la Guía del PMBOK (7.ª edición) y el Practice Standard for Work 
 
 - La duración baja de 35 a 16 semanas: la ingeniería conceptual de la oferta se valida en sitio, los equipos de largo plazo se piden en la semana 3 y el software se prueba en el gemelo digital durante la fabricación.
 - Las horas bajan de 6.320 a 3.060 y se reparten para que nadie supere el 80 % de su capacidad; en la primera versión una persona quedaba al 101 % y otra al 20 %.
-- La ingeniería se cobra por las horas de la EDT y no por meses de nómina completa, de modo que horas, plazo y costo son coherentes.
+- La ingeniería se cobra por las horas de la EDT a una tarifa propia de cada integrante, según el valor que aporta, y no por meses de nómina completa; así horas, plazo y costo son coherentes.
 - La cuenta 1.9 incluye la gestión del cambio (paquete 1.9.1) además de la capacitación y el cierre.
 - La celda robotizada sale del alcance; el paquete 1.3.4 diseña la estación de encanastado y reserva el espacio para la celda.
 
@@ -177,13 +177,21 @@ La capacidad del equipo es de 6 personas × 16 semanas × 42 h = 4.032 h. La EDT
 
 ## 7. Contratos y valor de la ingeniería
 
-La ingeniería se factura en dos contratos, con las horas de la EDT a la tarifa de cada cargo (69.700 COP/h para el gerente de proyecto y 46.500 COP/h para los líderes de área, que incluyen administración, imprevistos y utilidad):
+La ingeniería se factura en dos contratos, con las horas de la EDT a una tarifa propia de cada integrante. La tarifa parte del costo por hora de cada uno y lo multiplica por un factor según el tipo de valor que aporta: 1,9 para las especialidades escasas y críticas (arquitectura OT/IT y ciberseguridad; SCADA, MES y ERP), 1,8 para el núcleo técnico del proceso y de la validación, 1,6 para la dirección del proyecto y 1,4 para la gestión y el soporte.
 
-| Contrato | Cuentas de la EDT | Semanas | Horas | Millones de COP |
+| Integrante | Tipo de valor | Horas | Tarifa (COP/h) | Millones de COP |
 | --- | --- | --- | --- | --- |
-| 1. Diseño y procura | 1.1 a 1.4 | 1–13 | 1.120 | 55,3 |
-| 2. Implementación, puesta en marcha y adopción | 1.5 a 1.9 | 4–16 | 1.940 | 99,3 |
-| **Total** | | **1–16** | **3.060** | **154,6** |
+| David Santiago Cortés Ávila | Dirección y control | 530 | 80.000 | 42,40 |
+| Jesús Alberto Rivera Molina | Especialidad escasa y crítica | 520 | 63.000 | 32,76 |
+| David Felipe Cárdenas Cubides | Especialidad escasa y crítica | 520 | 63.000 | 32,76 |
+| José Andrés Zapata Piñeros | Núcleo técnico del proceso | 520 | 60.000 | 31,20 |
+| Ana María Orozco Reyes | Núcleo técnico de validación | 470 | 60.000 | 28,20 |
+| Cristian Stiven Hoyos Peralta | Gestión y soporte | 500 | 47.000 | 23,50 |
+| **Total** | | **3.060** | **62.400 en promedio** | **190,82** |
+| Contrato | Cuentas de la EDT | Semanas | Horas | Millones de COP |
+| 1. Diseño y procura | 1.1 a 1.4 | 1–13 | 1.120 | 67,6 |
+| 2. Implementación, puesta en marcha y adopción | 1.5 a 1.9 | 4–16 | 1.940 | 123,2 |
+| **Total** | | **1–16** | **3.060** | **190,8** |
 
 ## 8. Articulación con el cronograma y el presupuesto
 
@@ -191,13 +199,13 @@ La ingeniería se factura en dos contratos, con las horas de la EDT a la tarifa 
 
 | Hito de pago | Semana | Porcentaje | Millones de COP |
 | --- | --- | --- | --- |
-| Firma del contrato | 1 | 30 % | 386,0 |
-| Pruebas FAT aprobadas | 13 | 30 % | 386,0 |
-| Pruebas SAT y puesta en marcha | 15 | 30 % | 386,0 |
-| Entrega y documentación | 16 | 10 % | 128,7 |
-| **Total** | | **100 %** | **1.286,7** |
+| Firma del contrato | 1 | 30 % | 397,7 |
+| Pruebas FAT aprobadas | 13 | 30 % | 397,7 |
+| Pruebas SAT y puesta en marcha | 15 | 30 % | 397,7 |
+| Entrega y documentación | 16 | 10 % | 132,7 |
+| **Total** | | **100 %** | **1.325,8** |
 
-Con los equipos (960,0), la ingeniería (154,6), el montaje (76,8) y la contingencia (95,3), la inversión total es de COP 1.286,7 millones. Para el cliente, el VPN al 15 % es de COP 657 millones, la TIR de 31,9 % y la recuperación de 2,6 años, según la propuesta económica.
+Con los equipos (960,0), la ingeniería (190,8), el montaje (76,8) y la contingencia (98,2), la inversión total es de COP 1.325,8 millones. Para el cliente, el VPN al 15 % es de COP 617 millones, la TIR de 30,6 % y la recuperación de 2,7 años, según la propuesta económica.
 
 ## 9. Criterios de la descomposición
 

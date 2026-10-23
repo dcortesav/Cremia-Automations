@@ -26,7 +26,7 @@ La primera versión del cronograma tenía 35 semanas: pedía los equipos en la s
 | Programar el PLC, el SCADA y el MES mientras se fabrican los equipos | El software no alarga el plazo | La puesta en marcha virtual en el gemelo digital prueba el programa antes de que lleguen los equipos |
 | Preinstalar tuberías, tableros y bases sin detener la planta | La parada se limita a 5 días | Solo la conexión al tanque de proceso T-301 exige detener la producción |
 | Dejar la celda robotizada para una etapa posterior | Sin instalación ni pruebas de la celda dentro del proyecto | El encanastado manual no limita los dos lotes diarios; la celda se justifica cuando crezca el volumen |
-| Cobrar la ingeniería por horas de la EDT | Las horas, el plazo y el costo cuadran | 3.060 horas a la tarifa de cada cargo, en dos contratos: diseño e implementación |
+| Cobrar la ingeniería por horas de la EDT | Las horas, el plazo y el costo cuadran | 3.060 horas a la tarifa de cada integrante según el valor que aporta, en dos contratos: diseño e implementación |
 
 El riesgo de pedir equipos antes de cerrar todo el detalle se controla con tres medidas: las hojas de datos de largo plazo se aprueban con el cliente en la semana 2, la contingencia del 8 % cubre cambios menores y los contratos de compra fijan las interfaces (conexiones sanitarias, señales y protocolo) desde el pedido.
 
@@ -39,8 +39,8 @@ El riesgo de pedir equipos antes de cerrar todo el detalle se controla con tres 
 | Horas de ingeniería | 6.320 h | 3.060 h |
 | Ocupación del equipo | 72 %, con una persona al 101 % | 76 %, nadie por encima del 80 % |
 | Parada de planta | 5 días | 5 días |
-| Servicios de ingeniería | COP 439,0 millones (8 meses de nómina) | COP 154,6 millones (horas × tarifa) |
-| Inversión total | COP 1.803,8 millones | COP 1.286,7 millones |
+| Servicios de ingeniería | COP 439,0 millones (8 meses de nómina) | COP 190,8 millones (horas × tarifa de cada integrante) |
+| Inversión total | COP 1.803,8 millones | COP 1.325,8 millones |
 
 ## 3. Cronograma por paquete de trabajo
 

@@ -44,11 +44,25 @@ Factor prestacional de 1,52 (seguridad social, parafiscales, cesantías, prima y
 | Imprevistos | 5 % | Costo directo más administración |
 | Utilidad | 15 % | Costo más administración e imprevistos |
 | Factor multiplicador | 1,39 | Costo directo de personal |
-| Cargo | Costo por hora (COP) | Tarifa de venta por hora (COP) |
+| Cargo | Costo por hora (COP) | Tarifa de referencia con el factor 1,39 (COP/h) |
 | Gerente de proyecto | 50.110 | 69.700 |
 | Líder de área | 33.407 | 46.500 |
 
-El valor de la ingeniería se calcula con las horas de la EDT a la tarifa de cada cargo. El proyecto de 16 semanas tiene 3.060 horas y vale COP 154,6 millones en dos contratos (diseño y procura, 55,3 millones; implementación, puesta en marcha y adopción, 99,3 millones), con un costo directo de COP 111,1 millones y una utilidad para Cremia de unos COP 20 millones. El proyecto ocupa el 76 % de la capacidad del equipo; el resto se dedica a la coordinación interna y a la gestión comercial.
+El valor de la ingeniería no es solo el salario: se calcula con las horas de la EDT a una tarifa propia de cada integrante, según el tipo de valor que aporta.
+
+| Integrante | Rol | Valor que aporta al proyecto | Tipo de valor | Horas | Tarifa (COP/h) | Factor sobre su costo | Millones de COP |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| David Santiago Cortés Ávila | Gerente de proyecto | Dirige el proyecto, programa las fases ISA-88 del PLC y responde por la puesta en marcha virtual y las pruebas SAT | Dirección y control | 530 | 80.000 | 1,60 | 42,40 |
+| Jesús Alberto Rivera Molina | Líder de arquitectura digital | Diseña la red OT/IT, la ciberseguridad según IEC 62443, los tableros y el PLC de envasado | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
+| David Felipe Cárdenas Cubides | Líder de gestión de producción | Desarrolla el SCADA, el MES y la integración con el ERP, de donde salen la trazabilidad y los indicadores | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
+| José Andrés Zapata Piñeros | Líder de procesos e instrumentación | Especifica equipos e instrumentos, estructura las recetas y lidera el montaje y el arranque con producto | Núcleo técnico del proceso | 520 | 60.000 | 1,80 | 31,20 |
+| Ana María Orozco Reyes | Líder de simulación y mejora | Construye el gemelo digital y valida el estado propuesto antes de intervenir la planta | Núcleo técnico de validación | 470 | 60.000 | 1,80 | 28,20 |
+| Cristian Stiven Hoyos Peralta | Líder financiero y comercial | Compras, contratos, control de costos y gestión del cambio | Gestión y soporte | 500 | 47.000 | 1,41 | 23,50 |
+| **Total** | | | | **3.060** | **62.400 en promedio** | | **190,82** |
+
+La tarifa de cada integrante no sale solo de su salario. Parte de su costo por hora (salario con prestaciones) y lo multiplica por un factor que refleja el tipo de valor que aporta: 1,9 para las especialidades escasas y críticas para el resultado (arquitectura OT/IT y ciberseguridad; SCADA, MES y ERP), 1,8 para el núcleo técnico del proceso y de la validación (instrumentación, recetas y gemelo digital), 1,6 para la dirección del proyecto, que ya parte de un costo mayor, y 1,4 para la gestión y el soporte. El factor incluye la administración, los imprevistos, la utilidad y la prima por especialización. Las horas muestran cuánto aporta cada uno; la tarifa, qué tipo de valor.
+
+El proyecto de 16 semanas tiene 3.060 horas y vale COP 190,8 millones en dos contratos (diseño y procura, 67,6 millones; implementación, puesta en marcha y adopción, 123,2 millones). Ese valor cubre la nómina completa de las 16 semanas (COP 145,9 millones) y deja COP 44,9 millones para administración, imprevistos y utilidad.
 
 ## 5. Modelo de negocio
 
@@ -76,10 +90,10 @@ El valor de la ingeniería se calcula con las horas de la EDT a la tarifa de cad
 | --- | --- |
 | Alcance | Ingeniería, suministro, montaje, programación, puesta en marcha, gestión del cambio y capacitación para la línea de yogur |
 | Resultado para el cliente | De uno a dos lotes diarios, de una a tres referencias y producto no conforme de 5,06 % a 1,5 % o menos |
-| Valor | COP 1.286,7 millones, sin IVA (preparación y bolsas: 1.003,8 millones; línea de vasos: 282,9 millones) |
+| Valor | COP 1.325,8 millones, sin IVA (preparación y bolsas: 1.042,9 millones; línea de vasos: 282,9 millones) |
 | Plazo | 16 semanas, del 18 de enero al 7 de mayo de 2027 |
 | Garantía | 12 meses sobre la integración y 8 semanas de acompañamiento en planta |
-| Indicadores financieros para el cliente | VPN al 15 % de COP 657 millones, TIR de 31,9 % y recuperación en 2,6 años |
+| Indicadores financieros para el cliente | VPN al 15 % de COP 617 millones, TIR de 30,6 % y recuperación en 2,7 años |
 | Etapa posterior opcional | Celda robotizada de encanastado y paletizado, con espacio e interfaz ya diseñados |
 
 El detalle del presupuesto, el flujo de caja y los indicadores financieros está en la propuesta económica de la línea de yogur; el plan de trabajo, en la EDT y el cronograma del proyecto; y los beneficios para los dueños y el plan de gestión del cambio, en el documento Propuesta de valor y gestión del cambio.

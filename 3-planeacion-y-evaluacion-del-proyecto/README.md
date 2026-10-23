@@ -20,10 +20,10 @@ Entregables del proyecto para la línea de yogur.
 |---|---|
 | Duración | 16 semanas (18 de enero a 7 de mayo de 2027), una parada de planta de 5 días |
 | Horas de ingeniería | 3.060 h, 76 % de la capacidad del equipo; nadie por encima del 80 % |
-| Servicios de ingeniería | COP 154,6 millones por horas reales, en dos contratos: diseño y procura (55,3) e implementación (99,3) |
-| Inversión total | COP 1.286,7 millones (preparación y bolsas: 1.003,8; línea de vasos: 282,9); celda robotizada en una etapa posterior |
-| Indicadores para el cliente | VPN al 15 % de COP 657 millones, TIR de 31,9 %, recuperación en 2,6 años |
-| Punto de equilibrio | 81,9 % del volumen del plan |
+| Servicios de ingeniería | COP 190,8 millones por horas reales a la tarifa de cada integrante según el valor que aporta, en dos contratos: diseño y procura (67,6) e implementación (123,2) |
+| Inversión total | COP 1.325,8 millones (preparación y bolsas: 1.042,9; línea de vasos: 282,9); celda robotizada en una etapa posterior |
+| Indicadores para el cliente | VPN al 15 % de COP 617 millones, TIR de 30,6 %, recuperación en 2,7 años |
+| Punto de equilibrio | 83,0 % del volumen del plan |
 
 ## Carpetas
 

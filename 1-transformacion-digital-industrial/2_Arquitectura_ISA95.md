@@ -15,15 +15,40 @@ Hoy la planta no tiene ningún nivel conectado: las mediciones se toman con inst
 
 | Nivel ISA-95 | Función | Elementos de la línea de yogur | Horizonte de tiempo |
 | --- | --- | --- | --- |
-| 4 · Gestión empresarial | Planeación del negocio y logística | ERP en la nube para pymes: pedidos, compras de leche e insumos, inventarios, costos y despacho | Días y semanas |
-| 3 · Gestión de operaciones | Programación y seguimiento de la producción | MES con base de datos SQL: órdenes de producción, recetas maestras y de control, registro de lote, trazabilidad, calidad, paradas e indicadores | Turnos y horas |
-| 2 · Control y supervisión | Control automático, monitoreo y mando del proceso | PLC-01 (CompactLogix 5380) y máquinas con controlador propio (homogeneizador H-301, controladoras de peso CK-401 y CK-402, codificadores CD-401 y CD-402, llenadora LL-402 y empacadora EMP-401; la celda robotizada R-501 se integra en una etapa posterior); SCADA (Ignition) con historiador, HMI-01 en preparación y HMI-02 en envasado | Segundos y minutos |
-| 1 · Medición y actuación | Medición y manipulación del proceso | 23 sensores (temperatura, nivel, pH, caudal, peso, presión y conductividad), 19 actuadores (válvulas, bombas, motores y expulsores), E/S remotas y variadores | Milisegundos |
+| 4 · Gestión empresarial | Planeación del negocio y logística | ERP Odoo en la nube: pedidos, plan de producción, compras de leche e insumos, inventarios por lote, costos y despacho | Días y semanas |
+| 3 · Gestión de operaciones | Programación y seguimiento de la producción | MES con módulos Sepasoft sobre Ignition y base de datos SQL Server: órdenes de producción, recetas maestras y de control, registro de lote, trazabilidad, calidad, paradas e indicadores | Turnos y horas |
+| 2 · Control y supervisión | Control automático, monitoreo y mando del proceso | PLC-01 (CompactLogix 5380), que también controla el homogeneizador H-301, y máquinas con controlador propio (controladoras de peso CK-401 y CK-402, codificadores CD-401 y CD-402, llenadora LL-402 y empacadora EMP-401; la celda robotizada R-501 se integra en una etapa posterior); SCADA en Ignition con historiador, HMI-01 en preparación y HMI-02 en envasado | Segundos y minutos |
+| 1 · Medición y actuación | Medición y manipulación del proceso | 23 sensores (temperatura, nivel, pH, caudal, peso, presión y conductividad), 19 actuadores (válvulas, bombas, motores y expulsores), 55 señales de E/S en dos estaciones remotas y 20 nodos EtherNet/IP | Milisegundos |
 | 0 · Proceso | Proceso físico | Unidades U1 a U8: tanques TK-101, T-301 y T-302, intercambiador E-301, bombas, dosificadores y máquinas de envasado | Continuo |
 
 ISA-95 ubica el control automático en el nivel 2, junto con la supervisión, y deja el nivel 1 para la medición y la actuación. El modelo Purdue dibuja el PLC en el nivel 1 con el nombre de control básico; las dos representaciones describen la misma arquitectura. Este documento y el de equipos siguen la definición de ISA-95.
 
-La planta no tiene hoy ningún sistema de información, así que la arquitectura no supone un ERP corporativo: usa un ERP en la nube para pymes, por suscripción (contabilidad, compras, inventarios y ventas). El MES, el SCADA y el historiador quedan en la planta, en el nivel 3, para que la línea siga trabajando aunque se caiga internet. La integración con el ERP se hace con servicios web y mensajes según ISA-95 parte 2 (B2MML), de modo que cambiar de ERP no obliga a cambiar el MES.
+La planta no tiene hoy ningún sistema de información, así que la arquitectura no supone un ERP corporativo: usa Odoo en la nube, por suscripción (ventas, compras, inventario, fabricación y contabilidad con facturación electrónica). El MES, el SCADA y el historiador quedan en la planta, en el nivel 3, para que la línea siga trabajando aunque se caiga internet. La integración con el ERP se hace con servicios web y mensajes según ISA-95 parte 2 (B2MML), de modo que cambiar de ERP no obliga a cambiar el MES.
+
+### 2.1 Plataformas seleccionadas
+
+Como integradora, Cremia selecciona y justifica cada plataforma. El criterio común es que la planta pueda mantener la solución: pocos proveedores, licencias por servidor y no por usuario, soporte local en Colombia y estándares abiertos (ISA-88, ISA-95, OPC UA y B2MML) en las fronteras entre sistemas.
+
+| Capa | Plataforma seleccionada | Función en la línea | Por qué |
+| --- | --- | --- | --- |
+| Control (nivel 2) | Allen-Bradley CompactLogix 5380, programado en Studio 5000 Logix Designer | Fases ISA-88 con PhaseManager, lazos PID, enclavamientos y alarmas | Fases ISA-88 nativas, EtherNet/IP con anillo DLR, repuestos y soporte local; un solo controlador cubre las 55 señales con reserva |
+| Red de control | Conmutador Stratix 5700, dos estaciones de E/S remotas EtherNet/IP y variadores PowerFlex | Anillo DLR entre PLC, E/S remotas, variadores y máquinas | Mismo fabricante del PLC: diagnóstico de toda la red desde Studio 5000 |
+| Supervisión (nivel 2) | Ignition, de Inductive Automation: Perspective, Tag Historian y Alarm Notification | HMI-01 y HMI-02, tablero web de la gerencia, historiador y alarmas remotas de la incubación nocturna | Licencia por servidor sin límite de etiquetas ni de pantallas; controlador nativo para Logix y OPC UA; las pantallas son páginas web y no requieren licencia por equipo |
+| Gestión de operaciones (nivel 3) | Módulos MES de Sepasoft sobre el mismo servidor Ignition: Settings & Changeover, Track & Trace y OEE Downtime; base de datos Microsoft SQL Server | Recetas maestras y de control y cambios de referencia; registro de lote y genealogía; OEE y paradas por causa | Usa el mismo servidor, las mismas etiquetas y la misma interfaz del SCADA, de modo que la planta mantiene un solo sistema; sus objetos siguen el modelo de ISA-95 |
+| Gestión empresarial (nivel 4) | Odoo en la nube, por suscripción: Ventas, Compras, Inventario, Fabricación y Contabilidad con facturación electrónica | Pedidos, plan de producción y requerimiento de materiales, compras, inventario por lote y vencimiento, costos y despacho | Pago por usuario, a la medida de una pyme; maneja lotes con vencimiento y órdenes de fabricación; API externa para el MES; localización colombiana. Se descartaron Siigo Nube, fuerte en contabilidad pero limitado en fabricación y lotes, y SAP Business One, cuyo licenciamiento e implementación no corresponden al tamaño de la planta |
+| Integración (nivel 3.5) | Pasarela de integración en la zona desmilitarizada, desarrollada por Cremia | Valida los mensajes B2MML del MES y del ERP y los traduce a la API de Odoo | Si el cliente cambia de ERP, solo cambia la traducción de la pasarela; el MES no se toca |
+| Gemelo digital | Siemens Tecnomatix Plant Simulation y FactoryTalk Logix Echo (emulador del CompactLogix), conectados por OPC UA | Capacidad de la línea y puesta en marcha virtual del programa del PLC | El mismo programa que va a la planta se prueba contra el modelo antes de la parada |
+
+### 2.2 La arquitectura en cifras
+
+| Nivel ISA-95 | Hoy | Con la propuesta |
+| --- | --- | --- |
+| 4 · Gestión empresarial | Sin sistema: pedidos y compras en papel | Odoo en la nube con 5 aplicaciones |
+| 3 · Gestión de operaciones | Programación verbal | MES en Ignition con 3 módulos Sepasoft, servidor de planta y SQL Server |
+| 2 · Control y supervisión | Ninguno: válvulas manuales | 1 PLC (PLC-01), 6 máquinas con controlador propio (CK-401, CK-402, CD-401, CD-402, LL-402 y EMP-401), 1 servidor SCADA y 2 HMI |
+| 1 · Medición y actuación | Termómetro, acidómetro y gramera | 23 sensores y 19 actuadores: 14 entradas analógicas, 3 salidas analógicas, 3 entradas de pulsos, 3 puertos IO-Link, 16 entradas y 16 salidas digitales (55 señales; 69 con reserva del 20 %) y 20 nodos EtherNet/IP, de ellos 11 variadores |
+| 0 · Proceso | 9 equipos, un lote diario | 26 equipos en 8 unidades ISA-88; el proyecto compra 25 |
+| Robots | Ninguno | 1 robot de paletizado de cuatro ejes (R-501) que encanasta, encajona y estiba; diseñado en el proyecto y comprado en una etapa posterior. Sus señales ya están reservadas en la lista de E/S |
 
 ## 3. Redes y protocolos
 
@@ -32,8 +57,8 @@ La planta no tiene hoy ningún sistema de información, así que la arquitectura
 | Instrumento a E/S remota | 4–20 mA, IO-Link y señales de 24 V DC | Mediciones y mandos de campo |
 | E/S remota, variadores y máquinas a PLC | EtherNet/IP en anillo DLR con un conmutador administrable de celda (Stratix 5700); el anillo se recupera en menos de 3 ms si se corta un cable | Control en tiempo real |
 | PLC a SCADA | OPC UA cifrado y autenticado con certificados | Variables, alarmas, receta activa y estado de fases |
-| SCADA a MES | OPC UA o MQTT; base de datos SQL para el historiador y el registro de lote | Eventos de lote, consumos, conteos y paradas |
-| MES a ERP | Servicios web (API REST sobre HTTPS) con mensajes según ISA-95 parte 2 (B2MML), a través de la pasarela de la zona desmilitarizada | Órdenes, consumos, producción e inventario |
+| SCADA a MES | El MES corre en el mismo servidor Ignition y lee sus etiquetas; base de datos SQL Server para el historiador y el registro de lote | Eventos de lote, consumos, conteos y paradas |
+| MES a ERP | Mensajes según ISA-95 parte 2 (B2MML) que la pasarela de la zona desmilitarizada valida y traduce a la API de Odoo sobre HTTPS | Órdenes, consumos, producción e inventario |
 
 **Zona desmilitarizada (nivel 3.5).** Entre la red de planta (niveles 0 a 3) y la red administrativa y la nube (nivel 4) hay una zona desmilitarizada industrial entre dos cortafuegos. Ningún sistema de la nube ni de la oficina habla de forma directa con el MES o con el PLC: todo pasa por la zona desmilitarizada, que tiene tres servicios:
 

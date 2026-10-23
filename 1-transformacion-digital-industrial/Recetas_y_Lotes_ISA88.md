@@ -21,10 +21,10 @@ La norma ANSI/ISA-88 separa tres cosas que en la planta actual están mezcladas 
 
 | Concepto ISA-88 | Definición | Aplicación en la línea de yogur |
 | --- | --- | --- |
-| Receta general | Define el producto sin referirse a equipos ni a un sitio | Yogur batido con 1 % de leche en polvo y 12 % de azúcar, fermentado a 42–45 °C hasta pH 4,4–4,6 |
+| Receta general | Define el producto sin referirse a equipos ni a un sitio | Yogur batido con 1 % de leche en polvo y 12 % de azúcar, fermentado a 43 °C (41–45 °C) hasta pH 4,4–4,6 |
 | Receta de sitio | Adapta la receta general a las materias primas, la normativa y el idioma del sitio | Leche de cantinas de la zona de Guasca, insumos homologados y requisitos del INVIMA |
 | Receta maestra | Receta de sitio ligada a los equipos de una célula de proceso; es la plantilla de los lotes | RM-YB-200, RM-YV-150 y RM-YV-300, ligadas a T-301, H-301, E-301 y a la ruta U6 o U7 |
-| Receta de control | Copia de la receta maestra para un lote concreto, con su tamaño real y sus equipos asignados | YV150-20261012-2: 520 L de leche, fórmula escalada, LL-402 asignada |
+| Receta de control | Copia de la receta maestra para un lote concreto, con su tamaño real y sus equipos asignados | YV150-20270510-2: 520 L de leche, fórmula escalada, LL-402 asignada |
 | Fórmula | Lista de entradas, parámetros de proceso y salidas esperadas | Insumos por lote, consignas de fase y unidades esperadas |
 | Requisitos de equipo | Clases o unidades que puede usar la receta | Tanque de proceso con chaqueta, homogeneizador y máquina de la presentación |
 | Procedimiento | Secuencia de procedimientos de unidad, operaciones y fases | PU1 a PU6 del modelo procedimental |
@@ -198,7 +198,7 @@ Los valores de la propuesta siguen la referencia de proceso industrial del yogur
 | Adición de fruta | No aplica | 8 %, dosificada en línea antes de la llenadora | 12 %, dosificada en línea antes de la llenadora |
 | Leche en polvo | 1 % | 1,25 % | 1,25 % |
 | Estabilizante | 0,206 kg | 0,412 kg | 0,412 kg |
-| Agitación tras la incubación | 30–40 rpm (producto bebible) | 15–20 rpm | 15–20 rpm, para conservar los trozos |
+| Agitación tras la incubación | 30–40 rpm (producto bebible) | 15–20 rpm (yogur de cuchara) | 15–20 rpm (yogur de cuchara) |
 | Destino desde el tanque pulmón | Empacadora de bolsas (XV-401) | Llenadora de vasos (XV-402) | Llenadora de vasos (XV-402) |
 | Volumen nominal | 200 ml | 150 ml | 300 ml |
 | Tolerancia de llenado | 195–205 ml | 146–154 ml | 293–307 ml |
@@ -213,12 +213,12 @@ Las velocidades de envasado son valores de diseño de la propuesta. La empacador
 
 | Variable | Límite | Instrumento | Acción automática | Acción del operador |
 | --- | --- | --- | --- | --- |
-| Temperatura de pasteurización | Baja: 84 °C | TT-301 | Reinicia el conteo del sostenimiento; el lote no avanza | Revisar la presión de vapor de CAL-901 |
+| Temperatura de pasteurización | Baja: 85 °C | TT-301 | Reinicia el conteo del sostenimiento; el lote no avanza | Revisar la presión de vapor de CAL-901 |
 | Temperatura de inoculación | Alta: 46 °C | TT-301 | Bloquea la inoculación | Esperar a que el lazo TIC-301 estabilice |
 | Temperatura de incubación | ± 2 °C de la consigna | TT-301 | Alarma de prioridad media | Verificar TV-301 y TV-302 |
 | Tiempo de incubación | 300 min sin llegar a pH 4,6 | AT-301 y temporizador | Alarma de prioridad alta | Confirmar con acidez de laboratorio; evaluar el cultivo |
 | Presión de homogeneización | Menor de 150 bar | PT-302 | Prolonga la recirculación | Revisar H-301 |
-| Salida del enfriador | Alta: 22 °C | TT-302 | Reduce el caudal de P-301 | Revisar el agua helada (TT-901) |
+| Salida del enfriador | Alta: 20 °C | TT-302 | Reduce el caudal de P-301 | Revisar el agua helada (TT-901) |
 | Dosificación de insumos | Desviación mayor de 1 % | WT-201, WT-202, WT-206 | Detiene la fase y pide confirmación | Completar o justificar la dosis |
 | Peso de la unidad | Fuera de tolerancia | WT-401 o WT-402 | Expulsa la unidad (XY-401 o XY-402) | Ajustar la dosis si los rechazos superan el 2 % en 10 min |
 | Cuarto frío | Alta: 6 °C | TT-501 | Alarma de prioridad alta | Retener el producto y revisar el equipo de frío |
@@ -296,15 +296,33 @@ Cada cambio de fórmula o de límites crea una versión nueva (por ejemplo, RM-Y
 5. La receta de control se descarga al PLC-01 a través del SCADA; el PLC ejecuta las fases y devuelve el inicio, el fin, las cantidades reales y las alarmas de cada una.
 6. Al cerrar el lote, la receta de control queda guardada con el registro del lote y no se puede modificar.
 
+### 6.6 Diferencias entre recetas por fase y equipo
+
+Las tres recetas comparten el procedimiento y los equipos de preparación y fermentación (PU1 a PU4 en U1 a U5); cambian las cantidades de la fórmula, la velocidad de ruptura del coágulo, la fruta y la ruta de envasado.
+
+| Procedimiento y fase | Unidad y equipos | YB-200 | YV-150 | YV-300 |
+| --- | --- | --- | --- | --- |
+| PU1 · Recibir y cargar | U1: TK-101, P-101 | 550 L | 550 L | 550 L |
+| PU2 · Estandarizar sólidos | U2: DS-206 | 5,7 kg de leche en polvo | 7,1 kg | 7,1 kg |
+| PU2 · Dosificar azúcar y estabilizante | U2: DS-201, DS-202 | 75,7 kg y 0,206 kg | 63,1 kg y 0,412 kg | 56,7 kg y 0,412 kg |
+| PU2 · Homogeneizar y pasteurizar | U3: H-301, T-301 | 150–200 bar; 85–90 °C, 5–10 min | Igual | Igual |
+| PU3 · Inocular e incubar | U3: BL-205, T-301, AT-301 | 7 g; 43 °C hasta pH 4,4–4,6 | Igual | Igual |
+| PU4 · Romper el coágulo y saborizar | U3: M-301, P-203, P-204 | 30–40 rpm; fresa y 0,110 kg de colorante | 15–20 rpm; mora y 0,090 kg | 15–20 rpm; melocotón y 0,060 kg |
+| PU4 · Enfriar y transferir | U4 y U5: E-301, T-302 | 15–20 °C | Igual | Igual |
+| PU5 · Dosificar fruta | U7: P-403, MX-403 | No aplica | 8 % (57,2 kg) | 12 % (88,8 kg) |
+| PU5 · Envasar | U6: EMP-401 · U7: LL-402 | XV-401 a la empacadora: 200 ml, 30 bolsas/min, 102 min | XV-402 a la llenadora: 150 ml, 45 vasos/min, 97 min | XV-402 a la llenadora: 300 ml, 35 vasos/min, 65 min |
+| PU5 · Pesar y codificar | U6: CK-401, CD-401 · U7: CK-402, CD-402, ZS-403 | Peso del 100 % y código en la película | Peso del 100 %, tapa verificada y código en la tapa | Igual que YV-150 |
+| PU6 · Empacar y almacenar | U8: CV-501, CF-501 | 26 canastas de 120 bolsas | 183 cajas de 24 vasos | 113 cajas de 20 vasos |
+
 ## 7. Lotes de producción
 
 ### 7.1 Definición e identificación del lote
 
 - Un lote es una carga del tanque de proceso T-301: entre 480 y 550 L de leche, según la disponibilidad en la zona.
 - Cada lote corresponde a una sola referencia, porque el saborizante y el colorante se adicionan en el tanque de proceso.
-- Identificación: REF-AAAAMMDD-N, donde REF es la referencia sin guion, AAAAMMDD la fecha de fabricación y N el consecutivo del día. Ejemplo: YV150-20261012-2.
+- Identificación: REF-AAAAMMDD-N, donde REF es la referencia sin guion, AAAAMMDD la fecha de fabricación y N el consecutivo del día. Ejemplo: YV150-20270510-2.
 - El lote de leche se identifica por separado, con el proveedor y las cantinas recibidas, y se asocia al lote de yogur.
-- En cada unidad se imprime el código del lote y la fecha de vencimiento (fecha de fabricación más 21 días), como exige la Resolución 5109 de 2005. Ejemplo de impresión: L YV150-20261012-2 · V 02/11/2026.
+- En cada unidad se imprime el código del lote y la fecha de vencimiento (fecha de fabricación más 21 días), como exige la Resolución 5109 de 2005. Ejemplo de impresión: L YV150-20270510-2 · V 02/11/2026.
 
 ### 7.2 Estados del lote
 
@@ -349,9 +367,9 @@ La ocupación del tanque de proceso en la propuesta es la suma de carga (12 min)
 | 15:05–16:50 | Envasado | Limpieza CIP y carga del tanque de proceso (15:05–16:15) |
 | 16:15–18:15 | — | Pasteurización e inoculación |
 | 18:15–22:15 | — | Incubación sin operario, con control automático y alarmas remotas |
-| 22:15–7:30 | — | Enfriamiento en el tanque hasta la mañana siguiente |
+| 22:15–7:30 | — | Enfriamiento automático con agua fría en la chaqueta (TIC-301 sobre TV-302) hasta 15–20 °C |
 
-El segundo lote es posible porque el enfriamiento deja de depender de la noche: el lote 1 se enfría en el intercambiador de placas y libera el tanque a las 15:05. El lote 2 aprovecha la noche, como hoy, y se envasa a primera hora; si la demanda lo exige, también puede enfriarse en placas al terminar la incubación.
+El segundo lote es posible porque el enfriamiento deja de depender de la noche: el lote 1 se enfría en el intercambiador de placas y libera el tanque a las 15:05. El lote 2 termina la incubación a las 22:15, sin operario: el agua fría de la chaqueta lo baja a 15–20 °C durante la noche y a las 7:30 pasa por el intercambiador hacia el tanque pulmón y se envasa.
 
 ### 7.5 Programa semanal de referencia
 

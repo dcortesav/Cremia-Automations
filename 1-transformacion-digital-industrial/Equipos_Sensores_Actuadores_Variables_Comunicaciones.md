@@ -118,8 +118,8 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 | P-301 bomba de lóbulos | Desplazamiento positivo, 1.500 L/h, rotores que no cizallan el gel, variador de velocidad |
 | LL-402 llenadora-selladora | Lineal de dos carriles, vasos de 150 y 300 ml con el mismo diámetro de boca, dosificador volumétrico de pistón, termosellado de tapa de aluminio, 45 vasos/min |
 | CK-401 / CK-402 controladoras de peso | Celda de carga dinámica, resolución de 0,1 g, expulsor neumático, comunicación EtherNet/IP |
-| CD-401 / CD-402 codificadores | Inyección de tinta continua o transferencia térmica, impresión de lote y vencimiento, comunicación con el MES |
-| R-501 celda robotizada | Robot de seis ejes o de cuatro ejes para paletizado, herramienta de vacío, vallado perimetral, cortinas de luz y zona de estiba |
+| CD-401 / CD-402 codificadores | Transferencia térmica sobre la película de la bolsa (CD-401) e inyección de tinta continua sobre la tapa del vaso (CD-402); imprimen lote y vencimiento y reciben el código del MES |
+| R-501 celda robotizada (etapa posterior) | Un robot de paletizado de cuatro ejes (ABB IRB 460) con herramienta de vacío que encanasta bolsas, encajona vasos y arma la estiba; vallado perimetral, cortinas de luz y zona de estiba |
 | CIP-901 estación de limpieza | Dos tanques (soda y ácido) con calentamiento, bomba de impulsión, retorno con CT-901 y válvulas de ruta XV-901 |
 | CH-901 enfriador | Unidad compacta de unos 15 kW con banco de agua helada a 2 °C y bomba de circulación |
 
@@ -195,7 +195,7 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 
 - Válvulas de control TV-301, TV-302 y TV-303 de globo con posicionador electroneumático; TV-301 cierra al perder el aire o la señal, para que una falla nunca deje vapor entrando a la chaqueta.
 - Válvulas de producto de asiento sanitario con cabezal de control y finales de carrera, para confirmar al PLC la posición real antes de mover producto.
-- La separación entre la ruta de producto y la de CIP se hace con válvulas de doble asiento o con codos de conmutación, de modo que el detergente no pueda llegar al producto.
+- La separación entre la ruta de producto y la de CIP se hace con válvulas de doble asiento, de modo que el detergente no pueda llegar al producto.
 - Variadores de frecuencia en todos los motores que cambian de velocidad con la fase o la receta: bombas, agitador, homogeneizador, dosificadores y bandas.
 
 ## 7. Variables de proceso
@@ -214,7 +214,7 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 | Temperatura de salida del enfriador | 15–20 °C | TT-302 | TIC-302 sobre TV-303 | Detiene la fermentación |
 | Velocidad de agitación | Según la fase y la referencia | ST-301 | Consigna del variador de M-301 | Textura del producto |
 | Nivel del tanque pulmón | Mínimo y máximo | LT-302 | Permite o detiene el envasado y la transferencia | Continuidad del envasado |
-| Proporción de fruta | 8 % o 12 % | Caudal de P-301 y de P-403 | Control de relación | Cumplimiento de la receta |
+| Proporción de fruta | 8 % o 12 % | Velocidad de LL-402 y caudal de P-403 | Control de relación | Cumplimiento de la receta |
 | Peso de la unidad | 195–205, 146–154 o 293–307 ml | WT-401 y WT-402 | Rechazo automático; ajuste de la dosis | Requisito de calidad y de ley |
 | Temperatura del cuarto frío | 4 °C | TT-501 | Alarma por desviación | Cadena de frío |
 
@@ -249,7 +249,7 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 | --- | --- | --- | --- |
 | TIC-301 | Precalentamiento, homogeneización, pasteurización, enfriamiento a inoculación e incubación en T-301 | PID con rango dividido sobre vapor (TV-301) y agua fría (TV-302) | Un solo controlador mueve dos actuadores opuestos sin que se abran al tiempo |
 | TIC-302 | Salida del intercambiador E-301 | PID con prealimentación del caudal de P-301 | El caudal es la perturbación principal y se mide antes de que cambie la temperatura |
-| FFC-403 | Dosificación de fruta | Control de relación sobre el caudal de yogur | La fruta debe seguir al yogur en proporción fija (8 % o 12 %) |
+| FFC-403 | Dosificación de fruta | Control de relación sobre la velocidad de la llenadora | La fruta debe seguir al yogur en proporción fija (8 % o 12 %) |
 | PIC-302 | Presión del homogeneizador | PI sobre el variador de M-302 | Una sola variable con respuesta rápida |
 | WIC-201/202/206 | Dosificación de azúcar, estabilizante y leche en polvo | Dos velocidades con corte anticipado | El material en vuelo se compensa sin modelo dinámico |
 | LIC-302 | Nivel del tanque pulmón | Control por bandas | Basta con mantener el nivel entre un mínimo y un máximo |
@@ -262,7 +262,7 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 | TIC-301 | TT-301 | TV-301 (vapor) y TV-302 (agua fría) | PID con rango dividido: de 0 a 50 % de salida abre el agua y de 50 a 100 % el vapor, con zona muerta en el centro | La consigna cambia por fase: 25, 62, 87 y 43 °C |
 | TIC-302 | TT-302 | TV-303 (agua helada) | PID con prealimentación del caudal de P-301 | Mantiene 15–20 °C aunque cambie el caudal |
 | PIC-302 | PT-302 | Variador de M-302 | PI sobre la velocidad del homogeneizador | Limita la rampa de arranque para proteger la bomba |
-| FFC-403 | Caudal de P-301 | Variador de P-403 | Control de relación: caudal de fruta = 8 % o 12 % del caudal de yogur | Relación tomada de la receta de control |
+| FFC-403 | Velocidad de LL-402 (vasos/min × dosis) | Variador de P-403 | Control de relación: caudal de fruta = 8 % o 12 % del caudal de yogur que entra a la llenadora | Relación tomada de la receta de control |
 | LIC-302 | LT-302 | Variador de P-301 | Control de nivel por bandas: transfiere hasta el nivel alto y habilita el envasado sobre el nivel mínimo | Evita que la llenadora trabaje en vacío |
 | WIC-201/202/206 | WT-201, WT-202 y WT-206 | Variadores de M-201, M-202 y M-206 | Dosificación en dos velocidades (grueso y afine) con corte anticipado por la caída del material en vuelo | Precisión de ± 1 % de la fórmula |
 | SIC-301 | ST-301 | Variador de M-301 | Consigna de velocidad por fase y por referencia | Detenido durante la incubación |
@@ -297,24 +297,25 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 | --- | --- | --- | --- |
 | 0: proceso | Equipos de las unidades U1 a U8 | — | — |
 | 1: instrumentación y accionamientos | Transmisores, válvulas de control, sensores discretos, E/S remotas y variadores | 4–20 mA, IO-Link y señales de 24 V DC hacia las E/S remotas; EtherNet/IP hacia el PLC | Mediciones, estados y mandos |
-| 2: control | PLC-01 (CompactLogix 5380) y las máquinas con controlador propio: homogeneizador, controladoras de peso, codificadores, llenadora y empacadora; el robot se suma en la etapa posterior | EtherNet/IP en anillo DLR, que se recupera en menos de 3 ms si se corta un cable | Consignas, estados de equipo, conteos, pesos y alarmas |
-| 2: supervisión | SCADA (Ignition), HMI-01 en preparación y HMI-02 en envasado | OPC UA cifrado entre el PLC y el SCADA | Variables de proceso, alarmas, tendencias, receta activa y estado del lote |
-| 3: gestión de operaciones | MES | OPC UA o MQTT desde el SCADA; base de datos SQL | Órdenes de producción, recetas de control, registro de lote, paradas e indicadores |
-| 4: gestión empresarial | ERP | Servicios web (API REST) con mensajes B2MML de ISA-95 | Plan de producción, inventarios, consumos y producción terminada |
+| 2: control | PLC-01 (CompactLogix 5380) y las máquinas con controlador propio: controladoras de peso, codificadores, llenadora y empacadora; el robot se suma en la etapa posterior | EtherNet/IP en anillo DLR, que se recupera en menos de 3 ms si se corta un cable | Consignas, estados de equipo, conteos, pesos y alarmas |
+| 2: supervisión | SCADA en Ignition (Perspective y Tag Historian), HMI-01 en preparación y HMI-02 en envasado | OPC UA cifrado entre el PLC y el SCADA | Variables de proceso, alarmas, tendencias, receta activa y estado del lote |
+| 3: gestión de operaciones | MES con módulos Sepasoft sobre el mismo servidor Ignition | Etiquetas del SCADA dentro del mismo servidor; base de datos Microsoft SQL Server | Órdenes de producción, recetas de control, registro de lote, paradas e indicadores |
+| 4: gestión empresarial | ERP Odoo en la nube | Mensajes B2MML de ISA-95 traducidos a la API de Odoo en la pasarela de la zona desmilitarizada | Plan de producción, inventarios, consumos y producción terminada |
 
 ISA-95 ubica el control automático en el nivel 2, junto con la supervisión; el modelo Purdue lo llama control básico y lo dibuja en el nivel 1. Este documento y el de arquitectura siguen la definición de ISA-95: el PLC está en el nivel 2 y el nivel 1 corresponde a la medición y la actuación sobre el proceso. La red de planta se separa de la red administrativa con una zona desmilitarizada entre dos cortafuegos. El detalle de la arquitectura y del flujo de información entre OT e IT está en el documento de arquitectura ISA-95.
 
-### 9.2 Lista preliminar de entradas y salidas
+### 9.2 Lista de entradas y salidas de la ingeniería básica
 
 | Tipo de señal | Cantidad | Elementos |
 | --- | --- | --- |
-| Entradas analógicas de 4–20 mA | 13 | WT-101, FT-101, WT-201, WT-202, WT-206, TT-301, AT-301, PT-302, TT-302, TT-303, TT-501, TT-901 y CT-901 |
+| Entradas analógicas de 4–20 mA | 14 | WT-101, FT-101, WT-201, WT-202, WT-206, TT-301 (dos elementos), AT-301, PT-302, TT-302, TT-303, TT-501, TT-901 y CT-901 |
 | Salidas analógicas de 4–20 mA | 3 | TV-301, TV-302 y TV-303 |
 | Entradas de pulsos rápidos | 3 | FT-101, FQ-203 y FQ-204 |
 | Puertos IO-Link | 3 | LT-301, PT-301 y LT-302 |
-| Entradas digitales | 16 | ZS-401, ZS-402, ZS-403, ZS-501, finales de carrera de XV-301, XV-302, XV-401 y XV-402, puerta de la celda y paros de emergencia |
+| Entradas digitales | 16 | ZS-401, ZS-402, ZS-403 y ZS-501 (4); dos finales de carrera por válvula en XV-301, XV-302, XV-401 y XV-402 (8); puerta de la celda (1); paros de emergencia en preparación, envasado y celda (3) |
 | Salidas digitales | 16 | XV-301, XV-302, XV-401, XV-402, XY-401, XY-402, P-203, P-204 y válvulas de ruta de CIP |
 | Nodos EtherNet/IP | 20 | 11 variadores, CK-401, CK-402, CD-401, CD-402, LL-402, EMP-401, R-501, BL-205 y CIP-901 |
+| **Total** | **55 señales cableadas o IO-Link y 20 nodos de red** | 69 señales con la reserva del 20 % redondeada por tipo |
 
 Se deja una reserva del 20 % en cada tipo de señal para ampliaciones. Con estas cantidades un CompactLogix 5380 con dos estaciones de E/S remotas (preparación y envasado) cubre la línea. La red de control es un anillo DLR de EtherNet/IP con un conmutador administrable de celda (Stratix 5700), de modo que el corte de un cable no detiene el proceso; desde ese conmutador la red de supervisión es en estrella. Un ControlLogix solo se justificaría si el cliente exigiera redundancia de controlador.
 

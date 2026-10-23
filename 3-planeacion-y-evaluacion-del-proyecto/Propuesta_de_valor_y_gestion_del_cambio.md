@@ -45,7 +45,7 @@ Las cifras de producción salen del documento de recetas y lotes (semana de refe
 
 - El análisis de la leche por cantina sigue siendo manual: es una decisión de calidad que se registra en el sistema.
 - La inspección del sellado de la bolsa sigue por muestreo, con registro en HMI-01.
-- La incubación dura 240 min, porque depende del cultivo. Lo que se elimina es la espera del enfriamiento dentro del tanque.
+- La incubación dura 240 min, porque depende del cultivo. Lo que cambia es el enfriamiento: el lote 1 se enfría en placas y libera el tanque a las 15:05, y el lote 2 se enfría en la chaqueta, con control automático, durante la noche.
 - No hay despidos: los cuatro operarios siguen en la línea y se crea un puesto para el segundo lote.
 
 ## 3. Las personas en la nueva línea

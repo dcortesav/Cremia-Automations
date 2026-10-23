@@ -93,9 +93,9 @@ Por referencia, la producción anual de la propuesta se reparte así:
 
 La propuesta usa la semana de referencia del documento de recetas y lotes (5 lotes de YB-200, 3 de YV-150 y 2 de YV-300) repetida 60 veces al año, que equivale a 600 lotes en 300 días de operación.
 
-**Dinámica de los dos lotes diarios.** Con el intercambiador de placas y el control automático, el lote 1 se carga a las 8:40, se incuba hasta las 14:40, se enfría en placas y se envasa de 15:05 a 16:50. Mientras tanto el tanque se limpia y recibe el lote 2, que se incuba en la noche con alarmas remotas, se enfría en el tanque y se envasa a primera hora del día siguiente (7:30 a 9:15). Así se duplica el volumen diario sin comprar un segundo tanque de proceso.
+**Dinámica de los dos lotes diarios.** Con el intercambiador de placas y el control automático, el lote 1 se carga a las 8:40, se incuba hasta las 14:40, se enfría en placas y se envasa de 15:05 a 16:50. Mientras tanto el tanque se limpia y recibe el lote 2, que se incuba en la noche con alarmas remotas, se enfría con agua fría en la chaqueta y se envasa a primera hora del día siguiente (7:30 a 9:15). Así se duplica el volumen diario sin comprar un segundo tanque de proceso.
 
-## 4. Salarios del equipo y justificación (2026)
+## 4. Salarios del equipo: costo interno de Cremia (2026)
 
 El escenario evaluado corresponde a una firma integradora conformada por seis ingenieros mecatrónicos egresados de la Universidad Nacional de Colombia, con un año de experiencia profesional en proyectos industriales.
 
@@ -125,9 +125,9 @@ El escenario evaluado corresponde a una firma integradora conformada por seis in
 
 Con la jornada de 42 horas semanales que rige desde el segundo semestre de 2026 (Ley 2101 de 2021), la base mensual es de 182 horas, de donde salen los costos por hora de la tabla anterior.
 
-## 5. Margen de la empresa integradora
+## 5. Servicios de ingeniería: precio por actividad
 
-La tarifa de venta al cliente se obtiene aplicando un factor de administración, imprevistos y utilidad (AIU) de 1,39 sobre el costo directo de personal:
+Los salarios son el costo interno de Cremia; al cliente no se le cobra nómina, sino servicios de ingeniería por actividad de la EDT. El factor de administración, imprevistos y utilidad (AIU) de 1,39 es el mínimo que debe cubrir cualquier tarifa:
 
 | Componente de la tarifa | Porcentaje | Base de aplicación |
 | --- | --- | --- |
@@ -136,9 +136,9 @@ La tarifa de venta al cliente se obtiene aplicando un factor de administración,
 | Utilidad | 15 % | Costo más administración e imprevistos |
 | Factor multiplicador resultante | 1,39 | Costo directo de personal |
 
-Con ese factor, las tarifas de referencia por cargo son las siguientes; para el proyecto se ajustan según el valor que aporta cada integrante, como se explica a continuación:
+Con ese factor, las tarifas mínimas por cargo son las siguientes; ninguna tarifa del proyecto queda por debajo de ellas, y lo que las supera es la prima por especialización y por el valor que aporta cada integrante:
 
-| Cargo | Costo por hora (COP) | Tarifa de referencia con el factor 1,39 (COP/h) |
+| Cargo | Costo por hora (COP) | Tarifa mínima con el factor 1,39 (COP/h) |
 | --- | --- | --- |
 | Gerente de proyecto | 50.110 | 69.700 (≈ USD 17,4) |
 | Líder de área | 33.407 | 46.500 (≈ USD 11,6) |
@@ -155,7 +155,22 @@ El valor de la ingeniería sale de las horas de la EDT multiplicadas por la tari
 | Cristian Stiven Hoyos Peralta | Líder financiero y comercial | Compras, contratos, control de costos y gestión del cambio | Gestión y soporte | 500 | 47.000 | 1,41 | 23,50 |
 | **Total** | | | | **3.060** | **62.400 en promedio** | | **190,82** |
 
-La tarifa de cada integrante no sale solo de su salario. Parte de su costo por hora (salario con prestaciones) y lo multiplica por un factor que refleja el tipo de valor que aporta: 1,9 para las especialidades escasas y críticas para el resultado (arquitectura OT/IT y ciberseguridad; SCADA, MES y ERP), 1,8 para el núcleo técnico del proceso y de la validación (instrumentación, recetas y gemelo digital), 1,6 para la dirección del proyecto, que ya parte de un costo mayor, y 1,4 para la gestión y el soporte. El factor incluye la administración, los imprevistos, la utilidad y la prima por especialización. Las horas muestran cuánto aporta cada uno; la tarifa, qué tipo de valor.
+La tarifa de cada integrante no sale solo de su salario. Parte de su costo por hora (salario con prestaciones) y lo multiplica por un factor que refleja el tipo de valor que aporta: 1,89 para las especialidades escasas y críticas para el resultado (arquitectura OT/IT y ciberseguridad; SCADA, MES y ERP), 1,80 para el núcleo técnico del proceso y de la validación (instrumentación, recetas y gemelo digital), 1,60 para la dirección del proyecto, que ya parte de un costo mayor, y 1,41 para la gestión y el soporte. El factor incluye la administración, los imprevistos, la utilidad y la prima por especialización. Las horas muestran cuánto aporta cada uno; la tarifa, qué tipo de valor.
+
+El valor de cada actividad sale de sus horas por la tarifa de quien la hace:
+
+| Cuenta de la EDT | Actividad | Horas | Millones de COP |
+| --- | --- | --- | --- |
+| 1.1 | Gestión del proyecto | 230 | 15,43 |
+| 1.2 | Ingeniería básica | 240 | 14,58 |
+| 1.3 | Ingeniería de detalle | 480 | 28,83 |
+| 1.4 | Procura | 170 | 8,77 |
+| 1.5 | Software de control, supervisión y gestión | 700 | 44,19 |
+| 1.6 | Gemelo digital y puesta en marcha virtual | 320 | 21,20 |
+| 1.7 | Montaje e instalación (dirección técnica) | 300 | 18,42 |
+| 1.8 | Pruebas y puesta en marcha | 270 | 18,35 |
+| 1.9 | Gestión del cambio, capacitación y cierre | 350 | 21,05 |
+| | **Total** | **3.060** | **190,82** |
 
 La ingeniería se factura en dos contratos:
 
@@ -164,7 +179,11 @@ La ingeniería se factura en dos contratos:
 | 1. Diseño y procura | Gestión, ingeniería básica y de detalle, procura (1.1 a 1.4) | 1–13 | 1.120 | 67,6 |
 | 2. Implementación, puesta en marcha y adopción | Software, gemelo digital, montaje, pruebas, gestión del cambio y capacitación (1.5 a 1.9) | 4–16 | 1.940 | 123,2 |
 | **Total** | | **1–16** | **3.060** | **190,8** |
+
+Comprobación interna de Cremia (no es un cobro al cliente):
+
 | Concepto | Millones de COP |
+| --- | --- |
 | Nómina completa del equipo durante las 16 semanas (39,52 millones al mes) | 145,9 |
 | Administración, imprevistos y utilidad de Cremia | 44,9 |
 | **Valor de venta de los servicios de ingeniería** | **190,8** |
@@ -182,15 +201,15 @@ El presupuesto detalla los 16 rubros tecnológicos del proyecto. La celda roboti
 | 1 | Dosificación automática de azúcar, estabilizante, colorante y saborizante; pesaje de cultivo | 70,0 |
 | 2 | Instrumentación sanitaria: temperatura PT100, nivel, pH en línea, caudal, peso y presión | 55,0 |
 | 3 | Válvulas de control proporcional, válvulas sanitarias de desvío y neumática | 35,0 |
-| 4 | Intercambiador de placas sanitario y bomba de lóbulos para enfriamiento rápido | 60,0 |
+| 4 | Intercambiador de placas sanitario, bomba de lóbulos P-301 y bomba de recepción P-101 | 60,0 |
 | 5 | Enfriador industrial (chiller) y banco de agua helada | 60,0 |
 | 6 | Llenadora-selladora automática de vasos de 150 y 300 ml (mismo diámetro de boca) | 160,0 |
 | 7 | Dosificación de fruta en trozos y mezclador estático en línea | 30,0 |
 | 8 | Dos controladoras de peso dinámicas con rechazo automático | 80,0 |
 | 9 | Bandas transportadoras modulares sanitarias | 40,0 |
-| 10 | PLC CompactLogix 5380 Allen-Bradley, tableros IP66, variadores y red EtherNet/IP | 80,0 |
-| 11 | SCADA Ignition: servidor, licencias y dos estaciones HMI táctiles de 15" (ISA-101) | 50,0 |
-| 12 | Módulo MES de trazabilidad por lote e integración con el ERP (ISA-88 e ISA-95) | 50,0 |
+| 10 | PLC CompactLogix 5380 Allen-Bradley, dos estaciones de E/S remotas, tableros IP66, variadores PowerFlex, conmutador Stratix 5700 y cortafuegos de la zona desmilitarizada | 80,0 |
+| 11 | SCADA en Ignition (Perspective, Tag Historian y Alarm Notification): servidor, licencias y dos estaciones HMI táctiles de 15" (ISA-101) | 50,0 |
+| 12 | MES sobre Ignition: módulos Sepasoft Settings & Changeover, Track & Trace y OEE Downtime, Microsoft SQL Server y pasarela de integración con el ERP (ISA-88 e ISA-95) | 50,0 |
 | 13 | Estación de limpieza CIP automatizada de dos tanques | 50,0 |
 | 14 | Homogeneizador de alta presión de dos etapas (1.500 L/h, 200 bar) | 95,0 |
 | 15 | Dosificador de leche en polvo por peso | 20,0 |
@@ -238,10 +257,10 @@ Al comparar con la situación actual, la duplicación del volumen y la venta de 
 | **Margen de contribución adicional generado** | **837,6** |
 | Operación y mantenimiento preventivo de equipos nuevos (5 % de equipos) | −48,0 |
 | Costo de un operario adicional para el segundo lote | −33,6 |
-| Suscripción del ERP en la nube para pymes (contabilidad, compras, inventarios y ventas) | −18,0 |
+| Suscripción del ERP Odoo en la nube (ventas, compras, inventario, fabricación y contabilidad) | −18,0 |
 | **Beneficio neto anual a plena producción** | **738,0** |
 
-La planta no tiene hoy ningún sistema de información, así que el proyecto no supone un ERP corporativo con licencia perpetua: usa un ERP en la nube para pymes, por suscripción, al que el MES se conecta con servicios web.
+La planta no tiene hoy ningún sistema de información, así que el proyecto no supone un ERP corporativo con licencia perpetua: usa Odoo en la nube, por suscripción, al que el MES se conecta a través de la pasarela de la zona desmilitarizada.
 
 ### 7.1 Beneficios que no entran en el flujo de caja
 

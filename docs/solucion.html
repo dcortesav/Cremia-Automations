@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral', flowchart: { htmlLabels: true, useMaxWidth: true } });</script>
   </head>
 
   <body>
@@ -44,15 +46,47 @@
           <article><span>YV-300</span><h3>Vaso de 300 ml</h3><p>Melocotón, 12 % de fruta · 2.260 vasos por lote</p></article>
         </div>
 
-        <div class="container physical-model">
+        <div class="container physical-model stacked">
           <div class="model-visual">
             <p class="solution-kicker">Modelo físico y unidades <span>(ISA-88)</span></p>
-            <figure class="model-figure">
-              <img src="images/ISA-88/ISA-88-modelo-fisico.jpg" alt="Modelo físico ISA-88 de la línea de yogur" />
-              <figcaption>Unidades del modelo físico ANSI/ISA-88 de la propuesta.</figcaption>
-            </figure>
+            <div class="diagram-card"><pre class="mermaid">
+flowchart TB
+    subgraph U1["U1 Recepción"]
+        PL101["PL-101 cantinas"] --> TK101["TK-101 tanque de 600 L<br/>WT-101 peso"] --> P101["P-101 bomba de 3 m³/h<br/>FT-101 caudal"]
+    end
+    subgraph U2["U2 Dosificación"]
+        DS["DS-201 azúcar · DS-202 estabilizante<br/>DS-206 leche en polvo<br/>P-203 y P-204 saborizante y colorante<br/>BL-205 cultivo"]
+    end
+    subgraph U3["U3 Tanque de proceso"]
+        T301["T-301 de 600 L con chaqueta<br/>M-301 agitador · TT-301 · AT-301 · LT-301"] <--> H301["H-301 homogeneizador<br/>PT-302 presión"]
+    end
+    subgraph U4["U4 Enfriamiento y transferencia"]
+        P301["P-301 bomba de lóbulos"] --> F301["F-301 filtro"] --> E301["E-301 placas<br/>TT-302"]
+    end
+    subgraph U5["U5 Tanque pulmón"]
+        T302["T-302 de 650 L<br/>LT-302 · TT-303"]
+    end
+    subgraph U6["U6 Envasado de bolsas"]
+        EMP["EMP-401 empacadora<br/>CD-401 · CK-401"]
+    end
+    subgraph U7["U7 Envasado de vasos"]
+        FR["P-403 y MX-403 fruta"] --> LL["LL-402 llenadora<br/>CD-402 · CK-402"]
+    end
+    subgraph U8["U8 Encanastado y almacenamiento"]
+        CV["CV-501 banda · CF-501 cuarto frío a 4 °C<br/>celda R-501 en etapa posterior"]
+    end
+    P101 --> T301
+    DS --> T301
+    T301 --> P301
+    E301 --> T302
+    T302 -->|XV-401| EMP
+    T302 -->|XV-402| FR
+    EMP --> CV
+    LL --> CV
+    SH["Recursos compartidos<br/>CAL-901 vapor · CH-901 agua helada<br/>CIP-901 limpieza · LAB-101 laboratorio"] -.-> T301
+            </pre></div>
           </div>
-          <div class="unit-legend">
+          <div class="unit-legend cols">
             <p class="solution-kicker">Unidades</p>
             <ul>
               <li><strong>U1 Recepción</strong><span>Análisis por cantina y bomba de 3 m³/h.</span></li>
@@ -67,6 +101,38 @@
           </div>
         </div>
 
+        <div class="container">
+          <p class="solution-kicker">Modelo procedimental y rutas por receta <span>(ISA-88)</span></p>
+          <div class="diagram-card"><pre class="mermaid">
+flowchart TD
+    PU1["PU1 Recepción y carga · U1 y U3<br/>análisis por cantina y carga de 550 L"] --> PU2["PU2 Preparación de la base · U2 y U3<br/>precalentar, estandarizar sólidos, dosificar azúcar y estabilizante,<br/>homogeneizar, pasteurizar a 85–90 °C y enfriar a 43 °C"]
+    PU2 --> PU3["PU3 Fermentación · U3<br/>inocular 7 g de cultivo e incubar a 43 °C (41–45 °C) hasta pH 4,4–4,6"]
+    PU3 --> PU4["PU4 Acondicionamiento · U3, U4 y U5<br/>romper el coágulo, saborizar y enfriar a 15–20 °C en placas"]
+    PU4 --> REF{"Referencia del lote"}
+    REF -->|YB-200| B["PU5 Bolsas · U6<br/>EMP-401: 200 ml, 30 bolsas/min"]
+    REF -->|YV-150| V1["PU5 Vasos · U7<br/>fruta al 8 %; LL-402: 150 ml, 45 vasos/min"]
+    REF -->|YV-300| V2["PU5 Vasos · U7<br/>fruta al 12 %; LL-402: 300 ml, 35 vasos/min"]
+    B --> PU6["PU6 Empaque y almacenamiento · U8<br/>canastas de 120 bolsas o cajas de 24 y 20 vasos; cuarto frío a 4 °C"]
+    V1 --> PU6
+    V2 --> PU6
+    CIP["Procedimiento transversal<br/>CIP-901 entre lotes y registro del lote en el MES"] -.-> PU1
+          </pre></div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Fase</th><th>Unidad y equipos</th><th>YB-200</th><th>YV-150</th><th>YV-300</th></tr></thead>
+              <tbody>
+                <tr><td>PU2 · Estandarizar sólidos</td><td>U2: DS-206</td><td>5,7 kg de leche en polvo</td><td>7,1 kg</td><td>7,1 kg</td></tr>
+                <tr><td>PU2 · Azúcar y estabilizante</td><td>U2: DS-201, DS-202</td><td>75,7 kg y 0,206 kg</td><td>63,1 kg y 0,412 kg</td><td>56,7 kg y 0,412 kg</td></tr>
+                <tr><td>PU2 y PU3 · Homogeneizar, pasteurizar e incubar</td><td>U3: H-301, T-301, AT-301</td><td colspan="3">Igual en las tres: 150–200 bar; 85–90 °C por 5–10 min; 7 g de cultivo a 43 °C hasta pH 4,4–4,6</td></tr>
+                <tr><td>PU4 · Romper el coágulo y saborizar</td><td>U3: M-301, P-203, P-204</td><td>30–40 rpm · fresa</td><td>15–20 rpm · mora</td><td>15–20 rpm · melocotón</td></tr>
+                <tr><td>PU5 · Fruta</td><td>U7: P-403, MX-403</td><td>No aplica</td><td>8 % (57,2 kg)</td><td>12 % (88,8 kg)</td></tr>
+                <tr><td>PU5 · Envasar</td><td>U6: EMP-401 · U7: LL-402</td><td>200 ml · 30 bolsas/min</td><td>150 ml · 45 vasos/min</td><td>300 ml · 35 vasos/min</td></tr>
+                <tr><td>PU6 · Empacar</td><td>U8: CV-501, CF-501</td><td>26 canastas de 120</td><td>183 cajas de 24</td><td>113 cajas de 20</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <div class="container technology-pillars">
           <div class="pillar-grid">
             <article><h3>Recetas por lote</h3><p>Cada referencia tiene su receta maestra. Cambiar de producto es cambiar datos, no programas.</p></article>
@@ -74,7 +140,7 @@
             <article><h3>Enfriamiento rápido</h3><p>El intercambiador libera el tanque a las 15:05 y permite el segundo lote diario.</p></article>
             <article><h3>Peso del 100 %</h3><p>Controladoras de peso con rechazo automático en bolsas y vasos.</p></article>
             <article><h3>Trazabilidad</h3><p>Lote y vencimiento impresos en cada unidad y registro electrónico de cada lote.</p></article>
-            <article><h3>Planta conectada</h3><p>SCADA, MES en la planta y ERP en la nube, con 23 sensores y 19 actuadores en el diseño.</p></article>
+            <article><h3>Planta conectada</h3><p>Ignition como SCADA y MES en la planta y Odoo como ERP en la nube, con 23 sensores, 19 actuadores y 55 señales de E/S.</p></article>
           </div>
         </div>
 
@@ -87,7 +153,7 @@
           <ul>
             <li><strong>TIC-301</strong><span>Temperatura del tanque: rango dividido sobre vapor y agua fría.</span></li>
             <li><strong>TIC-302</strong><span>Salida del intercambiador: PID con prealimentación del caudal.</span></li>
-            <li><strong>FFC-403</strong><span>Fruta: control de relación del 8 % o 12 %.</span></li>
+            <li><strong>FFC-403</strong><span>Fruta: control de relación del 8 % o 12 % con la velocidad de la llenadora.</span></li>
             <li><strong>WIC-201/202/206</strong><span>Dosificación por peso en dos velocidades.</span></li>
           </ul>
         </div>
@@ -95,12 +161,29 @@
         <div class="container levels">
           <p class="solution-kicker">Arquitectura ISA-95</p>
           <ol class="level-list">
-            <li><span>Nivel 4</span><strong>ERP en la nube para pymes</strong><p>Plan de producción, compras, inventarios y costos.</p></li>
-            <li class="level-dmz"><span>Nivel 3.5</span><strong>Zona desmilitarizada</strong><p>Pasarela que valida cada mensaje entre el ERP y el MES; acceso remoto por VPN.</p></li>
-            <li><span>Nivel 3</span><strong>MES e historiador, en la planta</strong><p>Órdenes, recetas, registro de lote, trazabilidad e indicadores.</p></li>
-            <li><span>Nivel 2</span><strong>PLC CompactLogix, SCADA Ignition y HMI</strong><p>Control de fases y lazos, alarmas y supervisión.</p></li>
-            <li><span>Nivel 1</span><strong>Sensores, válvulas y variadores</strong><p>4–20 mA, IO-Link y EtherNet/IP en anillo.</p></li>
+            <li><span>Nivel 4</span><strong>ERP Odoo en la nube</strong><p>Ventas, plan de producción, compras, inventario por lote y vencimiento, costos y facturación electrónica.</p></li>
+            <li class="level-dmz"><span>Nivel 3.5</span><strong>Zona desmilitarizada</strong><p>Pasarela de Cremia que valida los mensajes B2MML y los traduce a la API de Odoo; acceso remoto por VPN.</p></li>
+            <li><span>Nivel 3</span><strong>MES con módulos Sepasoft sobre Ignition, en la planta</strong><p>Recetas y cambios de referencia, registro de lote y genealogía, OEE y paradas, sobre SQL Server.</p></li>
+            <li><span>Nivel 2</span><strong>PLC CompactLogix 5380, SCADA en Ignition y 2 HMI</strong><p>Fases ISA-88, lazos PID, alarmas, historiador y 6 máquinas con controlador propio.</p></li>
+            <li><span>Nivel 1</span><strong>23 sensores y 19 actuadores</strong><p>55 señales de E/S (69 con reserva) y 20 nodos EtherNet/IP en anillo DLR.</p></li>
           </ol>
+        </div>
+
+        <div class="container">
+          <p class="solution-kicker" style="margin-top:64px">Plataformas seleccionadas</p>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Capa</th><th>Plataforma</th><th>Por qué la elegimos</th></tr></thead>
+              <tbody>
+                <tr><td>Control</td><td>Allen-Bradley CompactLogix 5380 (Studio 5000), Stratix 5700 y variadores PowerFlex</td><td>Fases ISA-88 nativas, anillo DLR y soporte local; un controlador cubre las 55 señales</td></tr>
+                <tr><td>Supervisión</td><td>Ignition: Perspective, Tag Historian y Alarm Notification</td><td>Licencia por servidor sin límite de etiquetas ni pantallas; alarmas remotas para la incubación nocturna</td></tr>
+                <tr><td>MES</td><td>Módulos Sepasoft sobre Ignition: Settings &amp; Changeover, Track &amp; Trace y OEE Downtime; SQL Server</td><td>Mismo servidor e interfaz que el SCADA: la planta mantiene un solo sistema</td></tr>
+                <tr><td>ERP</td><td>Odoo en la nube, por suscripción</td><td>A la medida de una pyme: lotes con vencimiento, fabricación, facturación electrónica y API para el MES. Se descartaron Siigo Nube y SAP Business One</td></tr>
+                <tr><td>Gemelo digital</td><td>Tecnomatix Plant Simulation y FactoryTalk Logix Echo</td><td>El programa del PLC se prueba contra el modelo antes de la parada</td></tr>
+                <tr><td>Robot</td><td>Un robot de paletizado de cuatro ejes (ABB IRB 460), etapa posterior</td><td>Encanasta, encajona y estiba; el encanastado manual no limita los dos lotes diarios</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
       <div class="next-page"><div class="container"><a href="valor.html">Siguiente: Valor y personas <span aria-hidden="true">→</span></a></div></div>
@@ -110,7 +193,7 @@
       <div class="container footer-wrap">
         <a class="footer-brand" href="index.html">Cremia<span>.</span></a>
         <p>Ingeniería que transforma. Proyecto Integrador APM 2026-2S, Universidad Nacional de Colombia.</p>
-        <span class="footer-mail">info@cremia.automation</span>
+        <div class="footer-links"><a href="https://github.com/dcortesav/Cremia-Automations">Repositorio en GitHub</a><span class="footer-mail">info@cremia.automation</span></div>
       </div>
     </footer>
   </body>

@@ -162,14 +162,14 @@ La capacidad del equipo es de 6 personas × 16 semanas × 42 h = 4.032 h. La EDT
 | 1.6.1 | Gemelo digital de la línea | Gemelo digital con sensores y actuadores virtuales | Ana Orozco | 160 | 1.3.6 |
 | 1.6.2 | Simulación del envasado y el encanastado | Simulación de las líneas de bolsas y vasos y del encanastado | Ana Orozco | 60 | 1.3.4 |
 | 1.6.3 | Puesta en marcha virtual | Informe de validación con lotes y recetas | David Cortés | 100 | 1.5.1–1.5.3, 1.6.1 |
-| 1.7.1 | Montaje mecánico | Equipos instalados | José Andrés Zapata | 100 | 1.4.3 |
-| 1.7.2 | Instalación eléctrica y de instrumentación | Tableros e instrumentos conectados | Jesús Rivera | 100 | 1.3.3, 1.4.3 |
+| 1.7.1 | Montaje mecánico | Bases, tuberías y soportes desde la semana 10; equipos instalados después de la FAT | José Andrés Zapata | 100 | 1.3.6; 1.4.3 para los equipos |
+| 1.7.2 | Instalación eléctrica y de instrumentación | Bandejas y cableado desde la semana 10; tableros e instrumentos conectados después de la FAT | Jesús Rivera | 100 | 1.3.3; 1.4.3 para la conexión |
 | 1.7.3 | Red industrial y servidores | Red y servidores en servicio | Jesús Rivera | 40 | 1.2.3 |
 | 1.7.4 | Línea de vasos | Llenadora, dosificación de fruta, controladora y codificador de vasos instalados | Ana Orozco | 60 | 1.4.3 |
 | 1.8.1 | Pruebas de lazo y de E/S | Protocolos de lazo firmados | José Andrés Zapata | 50 | 1.7.2 |
 | 1.8.2 | Pruebas SAT | Protocolos SAT firmados | David Cortés | 70 | 1.8.1, 1.6.3 |
 | 1.8.3 | Arranque con producto | Lotes conformes de YB-200, YV-150 y YV-300 | José Andrés Zapata (70), David Cortés (30) | 100 | 1.8.2 |
-| 1.8.4 | Validación de calidad e inocuidad | Registros de puntos críticos y lotes liberados | David Cárdenas | 50 | 1.8.3 |
+| 1.8.4 | Validación de calidad e inocuidad | Registros de puntos críticos y primeros lotes liberados por registro de proceso; los análisis de vida útil siguen en el acompañamiento | David Cárdenas | 50 | 1.8.3 |
 | 1.9.1 | Gestión del cambio y comunicación | Plan de gestión del cambio, comunicaciones y medición de adopción | Cristian Hoyos (70), David Cortés (40) | 110 | 1.1.1 |
 | 1.9.2 | Capacitación por rol | Personal capacitado y evaluado por rol | David Cárdenas (40), Ana Orozco (40), Cristian Hoyos (40) | 120 | 1.6.3 |
 | 1.9.3 | Procedimientos, documentación y manuales | Procedimientos operativos, planos finales y manuales | Jesús Rivera (30), David Cárdenas (20), Cristian Hoyos (30) | 80 | 1.8.2 |
@@ -177,7 +177,7 @@ La capacidad del equipo es de 6 personas × 16 semanas × 42 h = 4.032 h. La EDT
 
 ## 7. Contratos y valor de la ingeniería
 
-La ingeniería se factura en dos contratos, con las horas de la EDT a una tarifa propia de cada integrante. La tarifa parte del costo por hora de cada uno y lo multiplica por un factor según el tipo de valor que aporta: 1,9 para las especialidades escasas y críticas (arquitectura OT/IT y ciberseguridad; SCADA, MES y ERP), 1,8 para el núcleo técnico del proceso y de la validación, 1,6 para la dirección del proyecto y 1,4 para la gestión y el soporte.
+La ingeniería se factura en dos contratos, con las horas de la EDT a una tarifa propia de cada integrante. La tarifa parte del costo por hora de cada uno y lo multiplica por un factor según el tipo de valor que aporta: 1,89 para las especialidades escasas y críticas (arquitectura OT/IT y ciberseguridad; SCADA, MES y ERP), 1,80 para el núcleo técnico del proceso y de la validación, 1,60 para la dirección del proyecto y 1,41 para la gestión y el soporte.
 
 | Integrante | Tipo de valor | Horas | Tarifa (COP/h) | Millones de COP |
 | --- | --- | --- | --- | --- |

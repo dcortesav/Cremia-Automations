@@ -7,7 +7,7 @@
 
 ## 1. Alcance
 
-Este documento describe qué información circula entre la operación de la planta (OT: sensores, PLC, SCADA y MES) y la gestión de la empresa (IT: ERP en la nube), quién la produce, quién la usa y para qué decisión. La arquitectura, las redes y la ciberseguridad están en el documento de arquitectura ISA-95; los equipos y las etiquetas, en el inventario de equipos, sensores y actuadores.
+Este documento describe qué información circula entre la operación de la planta (OT: sensores, PLC, SCADA y MES) y la gestión de la empresa (IT: ERP Odoo en la nube), quién la produce, quién la usa y para qué decisión. La arquitectura, las redes y la ciberseguridad están en el documento de arquitectura ISA-95; los equipos y las etiquetas, en el inventario de equipos, sensores y actuadores.
 
 Hoy la información de la línea se programa de forma verbal y se registra en papel. Con la propuesta, cada lote queda registrado de forma electrónica y los datos de la planta llegan al ERP sin transcripción.
 
@@ -17,9 +17,9 @@ Hoy la información de la línea se programa de forma verbal y se registra en pa
 | --- | --- | --- | --- |
 | 1 · Medición y actuación | 23 sensores y 19 actuadores | Mediciones y estados | Mandos del PLC |
 | 2 · Control y supervisión | PLC-01, controladores de máquina, SCADA, HMI-01 y HMI-02 | Fases ejecutadas, alarmas, conteos y pesos | Recetas de control y consignas |
-| 3 · Gestión de operaciones | MES e historiador | Registro de lote, trazabilidad e indicadores | Plan de producción y disponibilidad de materiales |
+| 3 · Gestión de operaciones | MES (módulos Sepasoft sobre Ignition) e historiador | Registro de lote, trazabilidad e indicadores | Plan de producción y disponibilidad de materiales |
 | 3.5 · Zona desmilitarizada | Pasarela de integración | Mensajes validados | Mensajes del MES y del ERP |
-| 4 · Gestión empresarial | ERP en la nube | Plan semanal, compras e inventarios | Producción, consumos y lotes liberados |
+| 4 · Gestión empresarial | ERP Odoo en la nube | Plan semanal, compras e inventarios | Producción, consumos y lotes liberados |
 
 ## 3. Matriz de flujos principales
 
@@ -27,7 +27,7 @@ Hoy la información de la línea se programa de forma verbal y se registra en pa
 | --- | --- | --- | --- | --- | --- | --- |
 | F-01 | Plan de producción semanal por referencia | ERP | MES | API REST, B2MML | Semanal | Programar los lotes |
 | F-02 | Disponibilidad de leche, insumos y envases | ERP | MES | API REST, B2MML | Diaria | Liberar solo órdenes con materiales |
-| F-03 | Orden de producción y receta de control | MES | PLC-01 | OPC UA | Al liberar el lote | Ejecutar las fases con la fórmula escalada |
+| F-03 | Orden de producción y receta de control | MES | PLC-01, a través del SCADA | OPC UA | Al liberar el lote | Ejecutar las fases con la fórmula escalada |
 | F-04 | Código de lote y fecha de vencimiento | MES | CD-401 y CD-402 | EtherNet/IP | Al arrancar el envasado | Imprimir lote y vencimiento en cada unidad |
 | F-05 | Análisis de la leche por cantina | HMI-01 | MES | OPC UA | Por cantina | Aceptar la leche y asociarla al lote |
 | F-06 | Peso y caudal de leche cargada | WT-101 y FT-101 | PLC-01 y MES | 4–20 mA, OPC UA | Por lote | Escalar la fórmula |

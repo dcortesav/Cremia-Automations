@@ -77,7 +77,7 @@ Los siguientes recursos no son unidades de la secuencia principal, pero prestan 
 | CH-901 | Suministro de agua fría para enfriamiento |
 | CIP-901 | Limpieza de tanques y tuberías entre lotes o cambios de sabor |
 | LAB-101 | Análisis de recepción y verificaciones de calidad |
-| PLC-01 / HMI-01 | Ejecución, operación y visualización de la receta de control |
+| PLC-01 / HMI-01 y HMI-02 | Ejecución, operación y visualización de la receta de control |
 | SCADA, MES y ERP | Supervisión, registro del lote, órdenes, recetas, trazabilidad e indicadores |
 
 La recepción y el análisis por cantina se mantienen como actividad manual asistida por registro digital: cada cantina debe aprobarse antes de mezclarla.
@@ -258,9 +258,9 @@ Una desviación de parámetro no se resuelve cambiando silenciosamente el estado
 
 | Nivel | Componentes | Información |
 |---|---|---|
-| 0-1 Proceso y control | Sensores, válvulas, motores, variadores, módulos de E/S | Mediciones, estados y mandos |
-| 1 Control | PLC-01, HMI-01, variadores, controladoras, empacadora, llenadora y robot | Consignas, estados, conteos, pesos y alarmas |
-| 2 Supervisión | SCADA Ignition | Variables, alarmas, tendencias, receta activa y estado del lote |
+| 0-1 Proceso, medición y actuación | Sensores, válvulas, motores, variadores, módulos de E/S | Mediciones, estados y mandos |
+| 2 Control | PLC-01 (CompactLogix 5380) y controladores de máquina: controladoras de peso, empacadora, llenadora y robot | Consignas, estados, conteos, pesos y alarmas |
+| 2 Supervisión | SCADA Ignition, HMI-01 en preparación y HMI-02 en envasado | Variables, alarmas, tendencias, receta activa y estado del lote |
 | 3 Gestión de operaciones | MES, base de datos SQL | Órdenes, recetas de control, registro de lote, paradas e indicadores |
 | 4 Gestión empresarial | ERP | Órdenes, inventario, consumos y resultados mediante servicios web/API |
 

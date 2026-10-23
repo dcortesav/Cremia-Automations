@@ -39,9 +39,9 @@ flowchart TD
     subgraph ESTADO_PROPUESTO["Solución Propuesta Cremia Automations - Ecosistema Integrado OT/IT"]
         ERP_S4["Nivel 4: ERP (SAP S/4HANA)<br/>Planeación, Compras, Finanzas, Logística"]
         MES_IGN["Nivel 3: MES (MES Suite / SQL)<br/>OEE, Recetas ISA-88, Trazabilidad, EBR"]
-        SCADA_IGN["Nivel 2: SCADA (Ignition Industrial Gateway)<br/>Supervisión en Tiempo Real, HMI-01, Alarmas"]
-        PLC_SYS["Nivel 1: Control (PLC-01 Allen-Bradley / Siemens)<br/>Ejecución de Fases ISA-88, Lazos PID, Checkweighers"]
-        FIELD_BUS["Nivel 0: Proceso Físico e Instrumentación<br/>Sensores 4-20 mA/IO-Link, Variadores EtherNet/IP, Robot R-501"]
+        SCADA_IGN["Nivel 2: SCADA (Ignition Industrial Gateway)<br/>Supervisión en Tiempo Real, HMI-01 y HMI-02, Alarmas"]
+        PLC_SYS["Nivel 2: Control (PLC-01 Allen-Bradley CompactLogix 5380)<br/>Ejecución de Fases ISA-88, Lazos PID, Checkweighers"]
+        FIELD_BUS["Niveles 0 y 1: Proceso, Instrumentación y Accionamientos<br/>Sensores 4-20 mA/IO-Link, Variadores EtherNet/IP, Robot R-501"]
         
         ERP_S4 <==>|B2MML REST API (HTTPS / JSON)| MES_IGN
         MES_IGN <==>|OPC UA / MQTT Sparkplug B| SCADA_IGN
@@ -56,9 +56,9 @@ Para revertir las limitaciones productivas y sanitarias, el consorcio **Cremia A
    - Incorporación de la bomba de recepción sanitaria `P-101` de alto caudal, reduciendo el llenado de 28,4 min a 11,5 min.
    - Sustitución del enfriamiento nocturno pasivo por un **intercambiador de placas sanitario `E-301`** con suministro de agua helada en circuito cerrado (banco de hielo `CH-901`), logrando el abatimiento térmico de corte de fermentación (42 °C $\rightarrow$ 18 °C) en **25 a 30 min**. Esto desacopla el tanque de proceso `T-301`, permitiendo ejecutar el ciclo CIP sanitario `CIP-901` y preparar el segundo lote del día en paralelo con el envasado.
 2. **Diversificación de Portafolio (3 Referencias Comerciales):**
-   - **`YB-200`:** Yogur bebible sabor fresa en bolsa de 200 ml (3.052 bolsas/lote, máquina empacadora vertical `EMP-401`, banda `CV-401`).
-   - **`YV-150`:** Yogur cuchareable con preparado de mora al 8 % en vaso rígido de 150 ml (4.330 vasos/lote, llenadora-selladora rotativa `LL-402`, dosificación de fruta en línea `P-403`/`MX-403`, banda `CV-402`).
-   - **`YV-300`:** Yogur con trozos de melocotón al 12 % en vaso rígido de 300 ml (2.240 vasos/lote, llenadora-selladora `LL-402`, banda `CV-402`).
+   - **`YB-200`:** Yogur bebible sabor fresa en bolsa de 200 ml (3.079 bolsas/lote con la leche en polvo, máquina empacadora vertical `EMP-401`, banda `CV-401`).
+   - **`YV-150`:** Yogur cuchareable con preparado de mora al 8 % en vaso rígido de 150 ml (4.369 vasos/lote, llenadora-selladora lineal `LL-402`, dosificación de fruta en línea `P-403`/`MX-403`, banda `CV-402`).
+   - **`YV-300`:** Yogur con trozos de melocotón al 12 % en vaso rígido de 300 ml (2.260 vasos/lote, llenadora-selladora `LL-402`, banda `CV-402`).
 3. **Automatización de Control y Empaque Secundario:**
    - Dosificación automática por peso mediante tolva `DS-201` (azúcar, celda `WT-201`), microdosificador `DS-202` (estabilizante, celda `WT-202`) y balanza digital industrial `WT-205` (cultivo liofilizado DVS).
    - Control de calidad metrológica al 100 % mediante controladoras dinámicas de peso (*checkweighers*) `CK-401` y `CK-402` con expulsión neumática (`XY-401`, `XY-402`), abatiendo el producto no conforme de 5,06 % a $\le 1,5\%$.
@@ -86,7 +86,7 @@ graph TD
 
     subgraph NIVEL2["NIVEL 2: Supervisión de Proceso (SCADA / HMI)"]
         SCADA["Servidor SCADA (Ignition Gateway Redundante)<br/>• Servidor OPC UA Integrado (IEC 62541)<br/>• Gestión Centralizada de Alarmas ISA-18.2<br/>• Mímicos de Proceso ISA-101"]
-        HMI01["Terminal HMI de Planta (HMI-01 PanelView / SIMATIC IPC)"]
+        HMI01["Terminales HMI de Planta (HMI-01 y HMI-02 PanelView 5510)"]
     end
 
     subgraph NIVEL1["NIVEL 1: Red de Control en Tiempo Real (EtherNet/IP Industrial Ring DLR)"]
@@ -122,7 +122,7 @@ graph TD
 
 ## 2. Matriz Maestra de Intercambio de Información OT/IT
 
-La siguiente tabla consolida exhaustivamente todos los flujos de datos e información que interactúan entre el piso de planta y los sistemas gerenciales, cubriendo los 900 tags inventariados y la arquitectura de integración.
+La siguiente tabla consolida exhaustivamente todos los flujos de datos e información que interactúan entre el piso de planta y los sistemas gerenciales, cubriendo los 23 sensores y 19 actuadores del inventario y la arquitectura de integración. Los niveles siguen ANSI/ISA-95: N1 es la medición y la actuación sobre el proceso, N2 el control automático (PLC-01 y controladores de máquina) y la supervisión (SCADA), N3 el MES y N4 el ERP.
 
 | ID Flujo | Variable / Mensaje | Tag P&ID Asociado | Nivel Origen | Nivel Destino | Protocolo | Tipo de Dato | Frecuencia / Trigger | Criticidad | Propósito Operacional |
 |:---|:---|:---|:---:|:---:|:---|:---:|:---|:---:|:---|
@@ -130,38 +130,38 @@ La siguiente tabla consolida exhaustivamente todos los flujos de datos e informa
 | **FL-02** | Lista de Materiales (*BOM*) | — | N4 (ERP) | N3 (MES) | REST API / HTTPS | JSON | Evento (Cambio de versión) | Alta | Proporciones teóricas de leche, azúcar, estabilizante, cultivo, fruta y empaque. |
 | **FL-03** | Estatus de Lotes de Materia Prima Liberados | — | N4 (ERP) | N3 (MES) | REST API / HTTPS | JSON | Periódico (1 h) / Evento | Alta | Disponibilidad de inventario liberado por control de calidad para producción. |
 | **FL-04** | Registro de Calidad de Plataforma de Leche Cruda | LAB-101 | N2 (HMI-01) | N3 (MES) | OPC UA / SQL | JSON / UDT | Por lote recibido (14 cantinas) | Crítica | Aprobación de densidad, acidez (°Th), pH, grasa, sólidos y ausencia de antibióticos. |
-| **FL-05** | Masa Total de Leche Descargada | WT-101 | N0/N1 (PLC) | N2 (SCADA) | 4-20 mA $\rightarrow$ Eth/IP | REAL (kg) | Cíclico (100 ms) | Media | Pesaje del lote de leche cruda ingresada en TK-101 (rango 0-700 kg). |
-| **FL-06** | Caudal y Volumen de Transferencia de Leche | FT-101 | N0/N1 (PLC) | N2 (SCADA) | Pulsos/4-20 mA $\rightarrow$ Eth/IP | REAL (m³/h, L) | Cíclico (100 ms) | Media | Medición de caudal electromagnético hacia T-301; detección de fin de carga. |
-| **FL-07** | Estado y Velocidad de Bomba de Leche | P-101 | N1 (PLC) | N2 (SCADA) | EtherNet/IP | UDT (Bool, Real) | Por excepción / 500 ms | Media | Monitoreo de variador: marcha, falla, velocidad (Hz/rpm), corriente consumida. |
-| **FL-08** | Descarga de Receta de Control (*Control Recipe*) | — | N3 (MES) | N2/N1 (PLC) | OPC UA Method Call | JSON / Struct | Evento (Inicio de Lote) | Crítica | Carga de setpoints de proceso, volúmenes escalados, tiempos y tolerancias a PLC-01. |
-| **FL-09** | Peso Dosificado de Azúcar | WT-201 | N0/N1 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (kg) | Fin de dosificación | Alta | Medición en celdas de tolva DS-201; corte fino/grueso por sinfín M-201. |
-| **FL-10** | Peso Dosificado de Estabilizante | WT-202 | N0/N1 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (g / kg) | Fin de dosificación | Alta | Medición en celda microdosificadora DS-202; accionamiento M-202. |
-| **FL-11** | Volumen Dosificado de Saborizante y Colorante | FQ-203 / FQ-204 | N0/N1 (PLC) | N2/N3 (MES) | Pulsos 24 V DC $\rightarrow$ Eth/IP | DINT (pulsos/ml) | Fin de fase de saborizado | Alta | Conteo volumétrico de pulsos de bombas peristálticas P-203 y P-204 hacia T-301. |
+| **FL-05** | Masa Total de Leche Descargada | WT-101 | N1/N2 (PLC) | N2 (SCADA) | 4-20 mA $\rightarrow$ Eth/IP | REAL (kg) | Cíclico (100 ms) | Media | Pesaje del lote de leche cruda ingresada en TK-101 (rango 0-700 kg). |
+| **FL-06** | Caudal y Volumen de Transferencia de Leche | FT-101 | N1/N2 (PLC) | N2 (SCADA) | Pulsos/4-20 mA $\rightarrow$ Eth/IP | REAL (m³/h, L) | Cíclico (100 ms) | Media | Medición de caudal electromagnético hacia T-301; detección de fin de carga. |
+| **FL-07** | Estado y Velocidad de Bomba de Leche | P-101 | N2 (PLC) | N2 (SCADA) | EtherNet/IP | UDT (Bool, Real) | Por excepción / 500 ms | Media | Monitoreo de variador: marcha, falla, velocidad (Hz/rpm), corriente consumida. |
+| **FL-08** | Descarga de Receta de Control (*Control Recipe*) | — | N3 (MES) | N2/N2 (PLC) | OPC UA Method Call | JSON / Struct | Evento (Inicio de Lote) | Crítica | Carga de setpoints de proceso, volúmenes escalados, tiempos y tolerancias a PLC-01. |
+| **FL-09** | Peso Dosificado de Azúcar | WT-201 | N1/N2 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (kg) | Fin de dosificación | Alta | Medición en celdas de tolva DS-201; corte fino/grueso por sinfín M-201. |
+| **FL-10** | Peso Dosificado de Estabilizante | WT-202 | N1/N2 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (g / kg) | Fin de dosificación | Alta | Medición en celda microdosificadora DS-202; accionamiento M-202. |
+| **FL-11** | Volumen Dosificado de Saborizante y Colorante | FQ-203 / FQ-204 | N1/N2 (PLC) | N2/N3 (MES) | Pulsos 24 V DC $\rightarrow$ Eth/IP | DINT (pulsos/ml) | Fin de fase de saborizado | Alta | Conteo volumétrico de pulsos de bombas peristálticas P-203 y P-204 hacia T-301. |
 | **FL-12** | Peso Verificado de Cultivo Láctico DVS | WT-205 | N1/N2 (BL-205) | N3 (MES) | Ethernet Industrial | REAL (g) | Evento (Antes de inoculación)| Crítica | Registro balanza de precisión de 7,0 g de cultivo liofilizado (validación manual/digital).|
-| **FL-13** | Nivel Hidrostático de Tanque de Proceso | LT-301 | N0/N1 (PLC) | N2 (SCADA) | IO-Link $\rightarrow$ Eth/IP | REAL (L) | Cíclico (500 ms) | Alta | Monitoreo de volumen de llenado en T-301 (0-600 L) y protección contra sobrellenado.|
-| **FL-14** | Temperatura de Proceso en Tanque T-301 | TT-301 | N0/N1 (PLC) | N2/N3 (Hist) | 4-20 mA $\rightarrow$ Eth/IP | REAL (°C) | Cíclico (1 s) / Sparkplug B | Crítica | Registro continuo de curva térmica (PCC Pasteurización: 85 °C / 10 min; Incubación). |
-| **FL-15** | Consigna y Apertura Válvula de Vapor | TIC-301 / TV-301| N1 (PLC) | N2 (SCADA) | 4-20 mA $\rightarrow$ Eth/IP | REAL (%) | Cíclico (500 ms) | Media | Salida de control PID para precalentamiento a 25 °C y pasteurización a 85 °C. |
-| **FL-16** | Consigna y Apertura Válvula de Agua Fría | TIC-301 / TV-302| N1 (PLC) | N2 (SCADA) | 4-20 mA $\rightarrow$ Eth/IP | REAL (%) | Cíclico (500 ms) | Media | Salida PID para enfriamiento inicial de 85 °C a 42-45 °C para inoculación. |
-| **FL-17** | Velocidad de Agitación y Carga Mecánica | ST-301 / M-301 | N1 (PLC) | N2 (SCADA) | EtherNet/IP | REAL (rpm), REAL (A)| Cíclico (1 s) | Media | Control de velocidad: 45 rpm (mezcla/homog), 0 rpm (incubación), 15 rpm (ruptura). |
-| **FL-18** | Monitoreo Cinético de pH en Línea | AT-301 | N0/N1 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (pH) | Cíclico (5 s) / Evento | Crítica | Monitoreo de declive de pH durante incubación; trigger de fin al alcanzar 4,4-4,6 pH. |
-| **FL-19** | Comando de Apertura Válvula de Fondo T-301 | XV-301 | N1 (PLC) | N0 (Actuador) | Salida 24 V DC | BOOL | Evento de procedimiento | Alta | Apertura de válvula sanitaria de fondo para bombeo y vaciado de T-301. |
-| **FL-20** | Estado y Velocidad Bomba de Transferencia | P-301 | N1 (PLC) | N2 (SCADA) | EtherNet/IP | UDT (Bool, Real) | Cíclico (500 ms) | Media | Impulsión de yogur coagulado hacia intercambiador de placas E-301 y T-302. |
-| **FL-21** | Presión en Línea de Impulsión de Yogur | PT-301 | N0/N1 (PLC) | N2 (SCADA) | IO-Link $\rightarrow$ Eth/IP | REAL (bar) | Cíclico (100 ms) | Alta | Interbloqueo de seguridad (alarma a > 4,5 bar para evitar daño de línea o bomba). |
-| **FL-22** | Temperatura de Yogur Enfriado en E-301 | TT-302 | N0/N1 (PLC) | N2/N3 (Hist) | 4-20 mA $\rightarrow$ Eth/IP | REAL (°C) | Cíclico (1 s) | Crítica | Verificación de corte de fermentación (salida a 15-20 °C); lazo TIC-302. |
-| **FL-23** | Modulación Válvula de Agua Helada E-301 | TIC-302 / TV-303| N1 (PLC) | N2 (SCADA) | 4-20 mA $\rightarrow$ Eth/IP | REAL (%) | Cíclico (500 ms) | Media | Regulación de flujo de agua helada desde CH-901 a intercambiador de placas. |
-| **FL-24** | Nivel y Temperatura de Tanque Pulmón | LT-302 / TT-303 | N0/N1 (PLC) | N2 (SCADA) | IO-Link / 4-20 mA | REAL (L), REAL (°C) | Cíclico (1 s) | Alta | Condición de habilitación de envasado (enclavamiento de nivel mínimo/máximo). |
-| **FL-25** | Enrutamiento de Producto (Bolsas vs Vasos) | XV-401 / XV-402 | N1 (PLC) | N0 (Actuador) | Salida 24 V DC | BOOL | Evento de receta | Alta | Selección de ruta según orden activa: XV-401 (a U6) o XV-402 (a U7). |
-| **FL-26** | Caudal y Dosificación de Preparado de Fruta | P-403 / MX-403 | N1 (PLC) | N2 (SCADA) | EtherNet/IP | REAL (kg/h, %) | Cíclico (200 ms) | Alta | Control de relación en línea: 8 % mora (YV-150) o 12 % melocotón (YV-300). |
-| **FL-27** | Señales de Envasado y Sellado de Bolsas | EMP-401 | N1 (EMP) | N1 (PLC) | EtherNet/IP | UDT (Bool, DINT) | Cíclico (100 ms) | Alta | Bolsas formadas, temperatura de mordaza térmica, disparo de fotocelda ZS-401. |
-| **FL-28** | Detección de Integridad y Tapa Foil en Vasos | ZS-402 | N0/N1 (PLC) | N2 (SCADA) | Digital 24 V DC | BOOL | Por unidad envasada | Alta | Verificación de foil de aluminio sellado herméticamente en llenadora LL-402. |
-| **FL-29** | Pesaje Dinámico Unitario en Bolsas | CK-401 (WT-401) | N1 (CK) | N2/N3 (MES) | EtherNet/IP | REAL (g) | Por cada bolsa envasada | Crítica | Masa neta por unidad (tolerancia 195-205 g para YB-200); registro estadístico. |
-| **FL-30** | Comando Expulsión de Bolsa Fuera de Peso | XY-401 | N1 (CK/PLC) | N0 (Actuador) | Salida 24 V DC | BOOL | Por unidad fuera de peso | Alta | Activación de descarte neumático hacia tolva de scrap; señal a contador de rechazo. |
-| **FL-31** | Pesaje Dinámico Unitario en Vasos | CK-402 (WT-402) | N1 (CK) | N2/N3 (MES) | EtherNet/IP | REAL (g) | Por cada vaso envasado | Crítica | Masa neta por unidad (146-154 g para YV-150; 293-307 g para YV-300). |
-| **FL-32** | Comando Expulsión de Vaso Fuera de Tolerancia | XY-402 | N1 (CK/PLC) | N0 (Actuador) | Salida 24 V DC | BOOL | Por defecto detectado | Alta | Descarte por desvío de peso o ausencia de sello metálico (ZS-402). |
-| **FL-33** | Estado y Ciclo de Celda de Paletizado Robot | R-501 | N1 (Robot) | N1/N2 (SCADA) | EtherNet/IP | UDT (State, DINT) | Cíclico (500 ms) | Media | Bolsas por canasta (120), vasos por caja (24/20), conteo de pallets completados. |
-| **FL-34** | Temperatura Ambiental de Cuarto Frío CF-501 | TT-501 | N0/N1 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (°C) | Cíclico (10 s) / Alarma | Crítica | Monitoreo de cadena de frío ($4 \pm 2$ °C); disparador de retención si $T > 6$ °C. |
-| **FL-35** | Conductividad de Retorno CIP y Fase Activa | CT-901 / CIP-901 | N0/N1 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (mS/cm), DINT | Cíclico (2 s) | Alta | Validación de ciclo higiénico (enjuague, sosa, ácido); habilitación de lote. |
-| **FL-36** | Estado de Operación de Máquinas (PackML) | Toda la Celda | N1 (PLC) | N2/N3 (MES) | OPC UA / Sparkplug B | DINT (PackML State) | Por cambio de estado | Alta | Estados PackML (Idle, Running, Complete, Aborted) para cómputo de OEE. |
+| **FL-13** | Nivel Hidrostático de Tanque de Proceso | LT-301 | N1/N2 (PLC) | N2 (SCADA) | IO-Link $\rightarrow$ Eth/IP | REAL (L) | Cíclico (500 ms) | Alta | Monitoreo de volumen de llenado en T-301 (0-600 L) y protección contra sobrellenado.|
+| **FL-14** | Temperatura de Proceso en Tanque T-301 | TT-301 | N1/N2 (PLC) | N2/N3 (Hist) | 4-20 mA $\rightarrow$ Eth/IP | REAL (°C) | Cíclico (1 s) / Sparkplug B | Crítica | Registro continuo de curva térmica (PCC Pasteurización: 85 °C / 10 min; Incubación). |
+| **FL-15** | Consigna y Apertura Válvula de Vapor | TIC-301 / TV-301| N2 (PLC) | N2 (SCADA) | 4-20 mA $\rightarrow$ Eth/IP | REAL (%) | Cíclico (500 ms) | Media | Salida de control PID para precalentamiento a 25 °C y pasteurización a 85 °C. |
+| **FL-16** | Consigna y Apertura Válvula de Agua Fría | TIC-301 / TV-302| N2 (PLC) | N2 (SCADA) | 4-20 mA $\rightarrow$ Eth/IP | REAL (%) | Cíclico (500 ms) | Media | Salida PID para enfriamiento inicial de 85 °C a 42-45 °C para inoculación. |
+| **FL-17** | Velocidad de Agitación y Carga Mecánica | ST-301 / M-301 | N2 (PLC) | N2 (SCADA) | EtherNet/IP | REAL (rpm), REAL (A)| Cíclico (1 s) | Media | Control de velocidad: 45 rpm (mezcla/homog), 0 rpm (incubación), 15 rpm (ruptura). |
+| **FL-18** | Monitoreo Cinético de pH en Línea | AT-301 | N1/N2 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (pH) | Cíclico (5 s) / Evento | Crítica | Monitoreo de declive de pH durante incubación; trigger de fin al alcanzar 4,4-4,6 pH. |
+| **FL-19** | Comando de Apertura Válvula de Fondo T-301 | XV-301 | N2 (PLC) | N1 (Actuador) | Salida 24 V DC | BOOL | Evento de procedimiento | Alta | Apertura de válvula sanitaria de fondo para bombeo y vaciado de T-301. |
+| **FL-20** | Estado y Velocidad Bomba de Transferencia | P-301 | N2 (PLC) | N2 (SCADA) | EtherNet/IP | UDT (Bool, Real) | Cíclico (500 ms) | Media | Impulsión de yogur coagulado hacia intercambiador de placas E-301 y T-302. |
+| **FL-21** | Presión en Línea de Impulsión de Yogur | PT-301 | N1/N2 (PLC) | N2 (SCADA) | IO-Link $\rightarrow$ Eth/IP | REAL (bar) | Cíclico (100 ms) | Alta | Interbloqueo de seguridad (alarma a > 4,5 bar para evitar daño de línea o bomba). |
+| **FL-22** | Temperatura de Yogur Enfriado en E-301 | TT-302 | N1/N2 (PLC) | N2/N3 (Hist) | 4-20 mA $\rightarrow$ Eth/IP | REAL (°C) | Cíclico (1 s) | Crítica | Verificación de corte de fermentación (salida a 15-20 °C); lazo TIC-302. |
+| **FL-23** | Modulación Válvula de Agua Helada E-301 | TIC-302 / TV-303| N2 (PLC) | N2 (SCADA) | 4-20 mA $\rightarrow$ Eth/IP | REAL (%) | Cíclico (500 ms) | Media | Regulación de flujo de agua helada desde CH-901 a intercambiador de placas. |
+| **FL-24** | Nivel y Temperatura de Tanque Pulmón | LT-302 / TT-303 | N1/N2 (PLC) | N2 (SCADA) | IO-Link / 4-20 mA | REAL (L), REAL (°C) | Cíclico (1 s) | Alta | Condición de habilitación de envasado (enclavamiento de nivel mínimo/máximo). |
+| **FL-25** | Enrutamiento de Producto (Bolsas vs Vasos) | XV-401 / XV-402 | N2 (PLC) | N1 (Actuador) | Salida 24 V DC | BOOL | Evento de receta | Alta | Selección de ruta según orden activa: XV-401 (a U6) o XV-402 (a U7). |
+| **FL-26** | Caudal y Dosificación de Preparado de Fruta | P-403 / MX-403 | N2 (PLC) | N2 (SCADA) | EtherNet/IP | REAL (kg/h, %) | Cíclico (200 ms) | Alta | Control de relación en línea: 8 % mora (YV-150) o 12 % melocotón (YV-300). |
+| **FL-27** | Señales de Envasado y Sellado de Bolsas | EMP-401 | N2 (EMP) | N2 (PLC) | EtherNet/IP | UDT (Bool, DINT) | Cíclico (100 ms) | Alta | Bolsas formadas, temperatura de mordaza térmica, disparo de fotocelda ZS-401. |
+| **FL-28** | Detección de Integridad y Tapa Foil en Vasos | ZS-402 | N1/N2 (PLC) | N2 (SCADA) | Digital 24 V DC | BOOL | Por unidad envasada | Alta | Verificación de foil de aluminio sellado herméticamente en llenadora LL-402. |
+| **FL-29** | Pesaje Dinámico Unitario en Bolsas | CK-401 (WT-401) | N2 (CK) | N2/N3 (MES) | EtherNet/IP | REAL (g) | Por cada bolsa envasada | Crítica | Masa neta por unidad (tolerancia 195-205 g para YB-200); registro estadístico. |
+| **FL-30** | Comando Expulsión de Bolsa Fuera de Peso | XY-401 | N2 (CK/PLC) | N1 (Actuador) | Salida 24 V DC | BOOL | Por unidad fuera de peso | Alta | Activación de descarte neumático hacia tolva de scrap; señal a contador de rechazo. |
+| **FL-31** | Pesaje Dinámico Unitario en Vasos | CK-402 (WT-402) | N2 (CK) | N2/N3 (MES) | EtherNet/IP | REAL (g) | Por cada vaso envasado | Crítica | Masa neta por unidad (146-154 g para YV-150; 293-307 g para YV-300). |
+| **FL-32** | Comando Expulsión de Vaso Fuera de Tolerancia | XY-402 | N2 (CK/PLC) | N1 (Actuador) | Salida 24 V DC | BOOL | Por defecto detectado | Alta | Descarte por desvío de peso o ausencia de sello metálico (ZS-402). |
+| **FL-33** | Estado y Ciclo de Celda de Paletizado Robot | R-501 | N2 (Robot) | N2 (SCADA) | EtherNet/IP | UDT (State, DINT) | Cíclico (500 ms) | Media | Bolsas por canasta (120), vasos por caja (24/20), conteo de pallets completados. |
+| **FL-34** | Temperatura Ambiental de Cuarto Frío CF-501 | TT-501 | N1/N2 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (°C) | Cíclico (10 s) / Alarma | Crítica | Monitoreo de cadena de frío ($4 \pm 2$ °C); disparador de retención si $T > 6$ °C. |
+| **FL-35** | Conductividad de Retorno CIP y Fase Activa | CT-901 / CIP-901 | N1/N2 (PLC) | N2/N3 (MES) | 4-20 mA $\rightarrow$ Eth/IP | REAL (mS/cm), DINT | Cíclico (2 s) | Alta | Validación de ciclo higiénico (enjuague, sosa, ácido); habilitación de lote. |
+| **FL-36** | Estado de Operación de Máquinas (PackML) | Toda la Celda | N2 (PLC) | N2/N3 (MES) | OPC UA / Sparkplug B | DINT (PackML State) | Por cambio de estado | Alta | Estados PackML (Idle, Running, Complete, Aborted) para cómputo de OEE. |
 | **FL-37** | Registro Electrónico de Lote (*EBR Summary*) | — | N3 (MES) | N4 (ERP) | REST API / HTTPS | JSON (B2MML) | Evento (Cierre de Lote) | Crítica | Consolidado de curva PCC, pH final, balance de masa, PNC y liberación de lote. |
 | **FL-38** | Declaración de Producción Terminada (Entrada) | — | N3 (MES) | N4 (ERP) | REST API (Mov 101) | JSON | Evento (Liberación Lote)| Alta | Ingreso de unidades conformes, empaques y estibas al inventario vendible en ERP. |
 | **FL-39** | Consumo Real de Materiales (*Backflushing*) | — | N3 (MES) | N4 (ERP) | REST API (Mov 261) | JSON | Evento (Cierre de Lote) | Alta | Descuento exacto de inventario: leche, azúcar, fruta, estabilizante, envases consumidos.|
@@ -272,7 +272,7 @@ $$f_{escala} = \frac{V_{real\_leche}}{550.0\text{ L}}$$
 El PLC-01 ejecuta el procedimiento de lote implementando Add-On Instructions (AOI) bajo la arquitectura ANSI/ISA-88:
 - **`Phase_Charge`:** Gobierna el variador de frecuencia de `P-101` mediante red EtherNet/IP a 60 Hz, monitoreando el caudalímetro `FT-101`. Al acumular los 550 L, aplica rampa de desaceleración y cierra la válvula de entrada.
 - **`Phase_HeatTreat`:** Asigna el setpoint térmico al bloque PID `TIC-301`. Éste calcula la señal de control $u(t)$ y modula la salida analógica de 4-20 mA hacia el posicionador de la válvula de vapor saturado `TV-301`.
-- **`Phase_Incubation`:** Apaga el motor del agitador `M-301` (`ST-301` = 0 rpm) para permitir la floculación y formación del coágulo sin rompimiento estructural micelar. Modula microinyecciones de vapor o agua tibia en chaqueta para sostener la temperatura en $42,0 \pm 0,5$ °C. El lazo monitorea continuamente la entrada analógica del electrodo de pH `AT-301`.
+- **`Phase_Incubation`:** Apaga el motor del agitador `M-301` (`ST-301` = 0 rpm) para permitir la floculación y formación del coágulo sin rompimiento estructural micelar. El lazo TIC-301 con rango dividido abre vapor (TV-301) o agua fría (TV-302) en la chaqueta para sostener la temperatura en $43 \pm 0,5$ °C (rango de 41 a 45 °C). El lazo monitorea continuamente la entrada analógica del electrodo de pH `AT-301`.
 - **`Phase_CoolAndTransfer`:** Al conmutar la condición de fin de incubación (pH $\le 4,50$), el PLC activa el agitador `M-301` a velocidad lenta (15 rpm) para romper el coágulo suavemente durante 140 s; simultáneamente abre la válvula de fondo `XV-301`, enciende la bomba de lóbulos `P-301` e inicializa el control PID `TIC-302` sobre la válvula de agua helada `TV-303` para alimentar el intercambiador `E-301`.
 
 ---
@@ -636,8 +636,8 @@ El *Takt Time* define el ritmo al cual la planta debe producir unidades para sat
 $$Takt\text{ }Time = \frac{\text{Tiempo Disponible Neto de Trabajo por Turno}}{\text{Demanda Requerida por Turno}}$$
 
 - **Situación Actual:** Un solo lote de YB-200 al día (3.052 bolsas en un turno de 480 min brutos, 420 min netos disponibles):
-  $$Takt_{actual} = \frac{420 \times 60\text{ s}}{3.052\text{ unidades}} = \frac{25.200\text{ s}}{3.052} \approx 8,26\text{ s/unidad}$$
-- **Situación Propuesta (2 Lotes Diarios en 2 Turnos / Jornada Optimizada):** Con la meta de 6.104 bolsas/día (o mezcla equivalente con vasos), el tiempo de ciclo de la empacadora automática ajustado a 30 bolsas/min entrega una unidad cada **2,0 segundos**, operando holgadamente por debajo del *Takt Time*, lo que garantiza capacidad de holgura para mantenimiento preventivo y paradas de lavado CIP.
+  $$Takt_{actual} = \frac{480 \times 60\text{ s}}{3.052\text{ unidades}} = \frac{28.800\text{ s}}{3.052} \approx 9,4\text{ s/unidad}$$
+- **Situación Propuesta (2 Lotes Diarios en 2 Turnos / Jornada Optimizada):** Con la meta de 6.158 bolsas/día (dos lotes de YB-200) (o mezcla equivalente con vasos), el tiempo de ciclo de la empacadora automática ajustado a 30 bolsas/min entrega una unidad cada **2,0 segundos**, operando holgadamente por debajo del *Takt Time*, lo que garantiza capacidad de holgura para mantenimiento preventivo y paradas de lavado CIP.
 
 ### 8.3 Throughput (Tasa de Salida Efectiva)
 Calculado en línea como la masa o volumen de producto terminado liberado por unidad de tiempo:
@@ -664,7 +664,7 @@ $$MLT = \sum t_{carga} + \sum t_{dosif} + \sum t_{pasteur} + \sum t_{inoc} + \su
 | **Acondicionamiento y Mezcla** | 33,64 | 15,00 | Agitación mecánica controlada a 15 rpm (`M-301`) e inyección automática de sabor. |
 | **Envasado y Pesaje Dinámico** | 148,93 | 102,00 | Empacadora `EMP-401` operando a 30 un/min estables (vs. 20,5 manual). |
 | **Traslado a Cuarto Frío** | 2,92 | 2,50 | Transferencia continua por transportador `CV-501` y robot `R-501`. |
-| **MLT Activo Total por Lote** | **607,88 min** | **474,00 min (~7,9 h)** | **Reducción de más de 2 horas de tiempo activo y eliminación de la noche.** |
+| **MLT Activo Total por Lote** | **601,3 min** | **≈ 493 min (~8,2 h)** | **Reducción de más de 2 horas de tiempo activo y eliminación de la noche.** |
 
 ### 8.5 Mermas y Rendimiento de Materiales
 1. **Índice de Producto No Conforme (PNC):**

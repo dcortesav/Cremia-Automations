@@ -22,7 +22,7 @@
 
 El presente documento constituye el diseño de ingeniería integral de la **Arquitectura de Automatización y Convergencia OT-IT** para la línea de procesamiento y envasado de yogur en la planta de **Productos Alimenticios La Hacienda**, fundamentado en la norma internacional **ANSI/ISA-95 (IEC 62264)** y en estrecha articulación con el modelo de control por lotes **ANSI/ISA-88 (IEC 61512)**.
 
-La solución técnica diseñada por **Cremia Automations** transforma una operación tradicional de baja tecnificación —caracterizada por un ciclo por lote de 601,3 minutos, cuatro operarios manuales, registros analógicos en papel, muestreo destructivo de peso con un 5,06 % de unidades defectuosas y una capacidad restringida a un único lote diario (550 L de leche cruda)— en una celda de manufactura moderna, flexible y conectada. Mediante la incorporación de instrumentación sanitaria en línea (21 sensores y 16 actuadores catalogados bajo norma ANSI/ISA-5.1), enfriamiento rápido con intercambiador de placas sanitarias E-301 (1.500 L/h), control automático de temperatura en rango dividido (split-range), envasado dual en bolsas (YB-200) y vasos con fruta (YV-150 y YV-300), control de peso dinámico al 100 % (CK-401 y CK-402) y una celda robotizada de encanastado/paletizado (R-501), la planta alcanza una capacidad nominal de **dos lotes diarios (1.100 L/día)**, reduciendo el tiempo estándar por lote a aproximadamente **493 minutos**, mitigando el producto no conforme a menos del **1,5 %** y elevando la Eficiencia Global de los Equipos (OEE) de envasado por encima del **80 %**.
+La solución técnica diseñada por **Cremia Automations** transforma una operación tradicional de baja tecnificación —caracterizada por un ciclo por lote de 601,3 minutos, cuatro operarios manuales, registros analógicos en papel, muestreo destructivo de peso con un 5,06 % de unidades defectuosas y una capacidad restringida a un único lote diario (550 L de leche cruda)— en una celda de manufactura moderna, flexible y conectada. Mediante la incorporación de instrumentación sanitaria en línea (23 sensores y 19 actuadores catalogados bajo norma ANSI/ISA-5.1), enfriamiento rápido con intercambiador de placas sanitarias E-301 (1.500 L/h), control automático de temperatura en rango dividido (split-range), envasado dual en bolsas (YB-200) y vasos con fruta (YV-150 y YV-300), control de peso dinámico al 100 % (CK-401 y CK-402) y una celda robotizada de encanastado/paletizado (R-501), la planta alcanza una capacidad nominal de **dos lotes diarios (1.100 L/día)**, reduciendo el tiempo estándar por lote a aproximadamente **493 minutos**, mitigando el producto no conforme a menos del **1,5 %** y elevando la Eficiencia Global de los Equipos (OEE) de envasado por encima del **80 %**.
 
 La arquitectura digital propuesta estructura rigurosamente los cinco niveles funcionales de la pirámide de automatización industrial e integra una Zona Desmilitarizada Industrial (**IDMZ - Nivel 3.5**) conforme a los estándares de ciberseguridad industrial **IEC 62443** y los lineamientos **CPwE (Converged Plantwide Ethernet)** de Cisco y Rockwell Automation. Esta disposición garantiza la trazabilidad vertical bidireccional desde la orden corporativa en el ERP (SAP S/4HANA) hasta el sensor de campo, habilitando el Registro Electrónico de Lote (**Electronic Batch Record - EBR**) y la liberación paramétrica en el MES (Sepasoft) y SCADA (Ignition 8.1), en estricto apego a los marcos normativos sanitarios de la República de Colombia (Decreto 616 de 2006, NTC 805, Resolución 2310 de 1986 y Resolución 1407 de 2022).
 
@@ -91,7 +91,7 @@ La implementación de la arquitectura integral diseñada por Cremia Automations 
 | **Capacidad de producción diaria** | 1 lote (550 L de leche) | **2 lotes (1.100 L de leche)** | Enfriamiento ultrarrápido con intercambiador E-301 (1.500 L/h) y banco de agua helada a 2 °C CH-901, liberando T-301 en menos de 30 min. |
 | **Tiempo estándar por lote** | 601,3 minutos | **~493 minutos** | Reducción de tiempos en transferencia (P-101 a 3 m³/h), dosificación automática (DS-201/202) y envasado simultáneo/optimizado. |
 | **Tasa de Producto No Conforme** | 5,06 % (154 unidades/lote) | **≤ 1,5 %** | Controladoras de peso dinámicas en línea CK-401 y CK-402 con rechazo neumático automatizado y centrado estadístico de dosificación. |
-| **OEE de la celda de envasado** | ~65 % | **≥ 80 %** | Disponibilidad ≥ 90 % (reducción de paradas no programadas por TPM), Rendimiento ≥ 92 %, Calidad ≥ 97 %. |
+| **OEE de la celda de envasado** | ~65 % | **≥ 80 %** | Disponibilidad ≥ 90 % (reducción de paradas no programadas por TPM), Rendimiento ≥ 92 %, Calidad ≥ 98,5 % (producto no conforme de 1,5 % o menos). |
 | **Trazabilidad y registro de lote** | 100 % papel manual | **100 % digital (EBR)** | Integración SCADA Ignition + MES Sepasoft con genealogía completa (cantina → lote de insumo → parámetros de pasteurización → empaque). |
 | **Rendimiento de materia prima** | 98,1 % | **≥ 98,5 %** | Control gravimétrico automatizado de azúcar e insumos con corte anticipado de vuelo de material (tolerancia ±0,5 %). |
 | **Diversificación de producto** | 1 referencia (bolsa 200 ml) | **3 referencias (bolsa y vasos con fruta)** | Incorporación de llenadora rotativa de vasos LL-402, bomba de fruta P-403 y mezclador estático MX-403 para YV-150 y YV-300. |
@@ -135,8 +135,8 @@ La arquitectura de Cremia Automations estructura la celda productiva siguiendo r
                                     │ OPC-UA TCP (Seguro Basic256Sha256)
 ┌───────────────────────────────────┴────────────────────────────────────┐
 │ NIVEL 2: CONTROL Y SUPERVISIÓN EN TIEMPO REAL (SCADA / HMI)            │
-│ Sistema: Ignition 8.1 LTS / Terminal HMI-01 PanelView 5510             │
-│ Controlador: PLC-01 Allen-Bradley ControlLogix 5580                    │
+│ Sistema: Ignition 8.1 LTS / HMI-01 y HMI-02 PanelView 5510            │
+│ Controlador: PLC-01 Allen-Bradley CompactLogix 5380                    │
 │ Función: Monitoreo ISA-101, Lazos PID, Máquina de Estados SFC, Alarmas │
 │ Horizonte: Segundos a Subsegundos                                      │
 └───────────────────────────────────┬────────────────────────────────────┘
@@ -144,7 +144,7 @@ La arquitectura de Cremia Automations estructura la celda productiva siguiendo r
 ┌───────────────────────────────────┴────────────────────────────────────┐
 │ NIVEL 1: INSTRUMENTACIÓN, E/S DISTRIBUIDAS Y ACCIONAMIENTOS            │
 │ Dispositivos: Point I/O 1734, PowerFlex 525, Pesaje Dinámico CK-401/402│
-│ Instrumentación: 21 Sensores (HART / IO-Link) y 16 Actuadores Sanitarios│
+│ Instrumentación: 23 Sensores (HART / IO-Link) y 19 Actuadores Sanitarios│
 │ Horizonte: Milisegundos (RPI = 5 - 10 ms)                              │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ Señales Físicas (4-20 mA, IO-Link, 24 VDC)
@@ -220,9 +220,9 @@ El Nivel 0 engloba los activos electromecánicos, tanques sanitarios, tuberías 
 
 ### 2.2 Nivel 1: Instrumentación y Control Básico
 
-El Nivel 1 reúne los elementos de sensórica avanzada, acondicionamiento de señal, módulos de entrada/salida distribuida y actuadores mecánicos de potencia. Conforme al inventario técnico oficial elaborado por José Andrés Zapata Piñeros para Cremia Automations, el sistema incorpora **21 sensores instrumentados** y **16 actuadores principales**, codificados bajo la norma internacional **ANSI/ISA-5.1-2009**.
+El Nivel 1 reúne la instrumentación sanitaria, acondicionamiento de señal, módulos de entrada/salida distribuida y actuadores mecánicos de potencia. Conforme al inventario de equipos, sensores, actuadores, variables y comunicaciones de la línea, el sistema incorpora **23 sensores** y **19 actuadores**, codificados bajo la norma internacional **ANSI/ISA-5.1-2009**. En ese inventario los instrumentos que se instalan en pares iguales (por ejemplo WT-401 y WT-402) se cuentan una vez; en las tablas de esta sección cada etiqueta aparece por separado. La versión anterior de este documento listaba 21 sensores y 16 actuadores porque no incluía la estandarización con leche en polvo (WT-206 y M-206) ni el homogeneizador (PT-302, M-302 y XV-302).
 
-#### Inventario Detallado de Sensores (21 Instrumentos de Campo)
+#### Inventario Detallado de Sensores (23 del inventario)
 
 | Tag ISA-5.1 | Variable de Proceso | Principio de Medición / Tecnología | Rango Calibrado | Tipo de Señal / Bus | Ubicación Física (P&ID) | Justificación Técnica de Ingeniería |
 | :--- | :--- | :--- | :---: | :---: | :--- | :--- |
@@ -233,10 +233,12 @@ El Nivel 1 reúne los elementos de sensórica avanzada, acondicionamiento de se�
 | **FQ-203** | Volumen de saborizante | Conteo digital de pulsos por rotación de cabezal peristáltico | 0–2 L | Pulsos 24 VDC (High-Speed) | Bomba P-203 | Dosificación micrométrica de sabor fresa según receta. |
 | **FQ-204** | Volumen de colorante | Conteo digital de pulsos por rotación de cabezal peristáltico | 0–2 L | Pulsos 24 VDC (High-Speed) | Bomba P-204 | Dosificación micrométrica de colorante alimentario sin sobrepigmentación. |
 | **WT-205** | Masa de cultivo láctico DVS | Balanza analítica de laboratorio con puerto Ethernet industrial | 0–500 g | Modbus TCP / EtherNet/IP | Estación de pesaje BL-205 | Verificación metrológica del inóculo antes de la adición al reactor. |
+| **WT-206** | Masa de leche en polvo | Celdas de carga en tolva gravimétrica | 0–30 kg | 4–20 mA | Tolva DS-206 | Estandarización de sólidos: 1 % en bolsa y 1,25 % en vasos. |
 | **TT-301** | Temperatura del reactor T-301 | Sensor RTD Pt100 doble elemento dúplex en termopozo sanitario | 0–100 °C | 4–20 mA HART | Fondo lateral de T-301 | **Punto Crítico de Control (PCC)**: Sostenimiento de pasteurización e incubación. |
 | **LT-301** | Nivel de producto en T-301 | Transmisor de presión hidrostática rasante de membrana cerámica | 0–600 L (0–1,5 m H₂O) | IO-Link (V1.1) | Fondo sanitario de T-301 | Monitoreo continuo de nivel para enclavamientos de agitación y vacío. |
 | **AT-301** | pH de acidificación del yogur | Electrodo de pH higiénico de vidrio resistente a CIP con transmisor | 3,0–8,0 pH | 4–20 mA / IO-Link | Puerto lateral 3-A de T-301 | Determinación analítica exacta del fin de fermentación (pH 4,4–4,6). |
 | **ST-301** | Velocidad del agitador | Realimentación de encoder/frecuencia del variador de frecuencia | 0–60 rpm | EtherNet/IP | Eje motorreductor M-301 | Garantiza régimen laminar o turbulento según fase procedimental ISA-88. |
+| **PT-302** | Presión de homogeneización | Transmisor de presión sanitario de membrana rasante | 0–250 bar | 4–20 mA | Salida del homogeneizador H-301 | Mantiene 150–200 bar a 60–65 °C; enclavamiento por sobrepresión sobre 220 bar. |
 | **TT-302** | Temperatura de salida en E-301 | Termorresistencia Pt100 con cabezal sanitario clamp | 0–60 °C | 4–20 mA | Tubería de salida de E-301 | Control de choque térmico para corte inmediato de fermentación a 15–20 °C. |
 | **PT-301** | Presión de impulsión de yogur | Transmisor de presión relativa sanitario con membrana rasante | 0–6 bar | IO-Link (V1.1) | Descarga de bomba lobular P-301 | Detección de sobrepresión en placas de E-301 y filtro atascado F-301. |
 | **LT-302** | Nivel en tanque pulmón T-302 | Transmisor de presión hidrostática de membrana enrasada | 0–650 L | IO-Link (V1.1) | Fondo cónico de T-302 | Control de llenado y permisivo de arranque de envasadoras EMP-401/LL-402. |
@@ -255,7 +257,7 @@ El Nivel 1 reúne los elementos de sensórica avanzada, acondicionamiento de se�
 
 ---
 
-#### Inventario Detallado de Actuadores (16 Equipos de Control Final)
+#### Inventario Detallado de Actuadores (19 del inventario)
 
 | Tag ISA-5.1 | Actuador / Elemento Final | Tipo de Accionamiento / Potencia | Tipo de Mando / Protocolo | Ubicación en Planta | Función Operativa en la Secuencia |
 | :--- | :--- | :--- | :---: | :--- | :--- |
@@ -264,12 +266,15 @@ El Nivel 1 reúne los elementos de sensórica avanzada, acondicionamiento de se�
 | **M-202** | Tornillo de microdosificación | Servomotor / Motor de pasos industrial | Tren de pulsos / EtherNet/IP | Microdosificador DS-202 | Dosificación precisa de estabilizante en polvo (pectina). |
 | **P-203** | Bomba peristáltica saborizante | Motor paso a paso con cabezal sanitario | 24 VDC / Salida digital PLC | Módulo de dosificación U2 | Inyección de dosis exacta de concentrado de fresa. |
 | **P-204** | Bomba peristáltica colorante | Motor paso a paso con cabezal sanitario | 24 VDC / Salida digital PLC | Módulo de dosificación U2 | Inyección de dosis exacta de colorante hidrosoluble. |
+| **M-206** | Tornillo dosificador de leche en polvo | Motorreductor con VFD PowerFlex 525 | EtherNet/IP | Dosificador DS-206 | Dosificación de leche en polvo en dos velocidades con corte anticipado. |
 | **TV-301** | Válvula modulante de vapor | Válvula de globo con actuador neumático y posicionador | 4–20 mA HART | Línea de vapor a camisa T-301 | Lazo de calentamiento y sostenimiento térmico en pasteurización (85 °C). |
 | **TV-302** | Válvula modulante de agua fría | Válvula de asiento inclinado con posicionador | 4–20 mA HART | Línea de agua fría a camisa T-301 | Lazo de enfriamiento controlado post-pasteurización a inoculación (43 °C). |
 | **M-301** | Motor agitador de reactor | Motorreductor 1,1 kW con VFD PowerFlex 525 | EtherNet/IP | Tapa superior de T-301 | Agitación térmica (50 rpm), reposo (0 rpm) y rotura de cuajada (15–40 rpm). |
 | **XV-301** | Válvula de descarga de tanque | Válvula higiénica de asiento simple con cabezal | 24 VDC Solenoide / IO-Link | Fondo inferior de T-301 | Drenaje aséptico de T-301 hacia la bomba lobular P-301. |
+| **M-302** | Motor del homogeneizador H-301 | Motor de 11 kW con VFD | EtherNet/IP | Homogeneizador H-301 | Impulsa la mezcla a 150–200 bar en recirculación (lazo PIC-302). |
+| **XV-302** | Válvula de tres vías de descarga | Válvula sanitaria con actuador neumático | 24 VDC Solenoide | Descarga de T-301 | Dirige la mezcla al homogeneizador o a la transferencia. |
 | **P-301** | Bomba lobular de yogur | Bomba de desplazamiento positivo, 2,2 kW VFD | EtherNet/IP | Tubería de transferencia U4 | Bombeo suave de yogur ($1.500	ext{ L/h}$) a través del enfriador E-301. |
-| **TV-303** | Válvula modulante de agua helada | Válvula proporcional de control de flujo | 4–20 mA HART | Entrada de agua helada a E-301 | Lazo PID secundario para fijar temperatura de salida de yogur a 15–20 °C. |
+| **TV-303** | Válvula modulante de agua helada | Válvula proporcional de control de flujo | 4–20 mA HART | Entrada de agua helada a E-301 | Lazo TIC-302: PID con prealimentación del caudal de P-301 para fijar la salida del yogur a 15–20 °C. |
 | **XV-401** | Válvula desviadora a bolsas | Válvula sanitaria de 3 vías con actuador neumático | 24 VDC Solenoide | Distribuidor de T-302 | Alinea el flujo de producto hacia la empacadora de bolsas EMP-401. |
 | **XV-402** | Válvula desviadora a vasos | Válvula sanitaria de 3 vías con actuador neumático | 24 VDC Solenoide | Distribuidor de T-302 | Alinea el flujo de producto hacia la llenadora de vasos LL-402. |
 | **P-403** | Bomba de preparado de fruta | Bomba helicoidal de cavidad progresiva, 1,1 kW VFD | EtherNet/IP | Línea de fruta hacia MX-403 | Dosificación proporcional de mora (8 %) o trozos de melocotón (12 %). |
@@ -285,14 +290,16 @@ El Nivel 1 reúne los elementos de sensórica avanzada, acondicionamiento de se�
 
 ### 2.3 Nivel 2: Control, Automatización y Supervisión en Tiempo Real
 
-El Nivel 2 constituye el cerebro de la celda de automatización en tiempo real. Aquí convergen la lógica de enclavamiento determinístico, los algoritmos de control continuo multivariable y la visualización ergonómica de planta.
+El Nivel 2 constituye el cerebro de la celda de automatización en tiempo real. Aquí convergen la lógica de enclavamiento determinístico, el control secuencial por fases ISA-88, los lazos de control regulatorio PID y la visualización ergonómica de planta.
 
 #### 1. Controlador Lógico Programable (PLC-01)
-- **Plataforma de Control:** Allen-Bradley **ControlLogix 5580 (CPU 1756-L81E)** o alternativa modular **CompactLogix 5380 (5069-L320ERM)** con soporte Gigabit nativo. Durante las fases de pruebas de desarrollo, ingeniería y gemelo digital, el sistema se ejecuta de manera idéntica en el entorno virtualizado **Studio 5000 Logix Emulate v33 / FactoryTalk Logix Echo**.
+- **Plataforma de Control:** Allen-Bradley **CompactLogix 5380 (5069-L320ERM)**, con dos puertos Ethernet Gigabit integrados que soportan el anillo DLR. Con unas 50 señales cableadas y 20 nodos EtherNet/IP, más un 20 % de reserva, no se necesita un controlador mayor; un **ControlLogix 5580 (1756-L81E)** solo se justificaría si el cliente exigiera redundancia de controlador. Ambos se programan en Studio 5000. Durante las fases de pruebas de desarrollo, ingeniería y gemelo digital, el sistema se ejecuta de manera idéntica en el entorno virtualizado **Studio 5000 Logix Emulate v33 / FactoryTalk Logix Echo**.
 - **Determinismo y Rendimiento:** Período de actualización de paquetes RPI (*Requested Packet Interval*) de **10 ms** para lazos de control PID y módulos analógicos, y de **5 ms** para módulos de pesaje dinámico y sincronismo de eyectores neumáticos.
 - **Estructura de Software (Modularidad ISA-88):** Implementación de bloques de fase estructurados según la máquina de estados estandarizada (IDLE, RUNNING, HOLDING, HELD, RESTARTING, COMPLETED, ABORTED) programados en diagramas de funciones secuenciales (**SFC - Sequential Function Chart**), complementados con rutinas de enclavamiento y seguridad en lógica de escalera (**Ladder - LD**) y bloques funcionales (**FBD**).
 
-#### 2. Algoritmos de Control Avanzado Implementados en PLC-01
+#### 2. Estrategia de control implementada en PLC-01
+
+El PLC-01 ejecuta dos capas: el control secuencial por fases según ISA-88 y el control regulatorio con PID, con mejoras clásicas (rango dividido, prealimentación, control de relación y dosificación en dos velocidades). La propuesta **no usa control avanzado** (control predictivo por modelo, difuso o adaptativo): cada lazo tiene un actuador dominante, las dinámicas del tanque son lentas y conocidas y el proceso es por lotes, de modo que el PID cumple las tolerancias y el personal de la planta lo puede mantener. La justificación completa está en la sección 8.1 del documento de equipos, sensores, actuadores, variables y comunicaciones.
 
 ```
               ┌─────────────────────────────────────────────────────────┐
@@ -304,7 +311,7 @@ El Nivel 2 constituye el cerebro de la celda de automatización en tiempo real. 
               │                                                         │
               │  * Banda muerta central en 50% para ahorro energético.  │
               │  * Temporizador de sostenimiento de pasteurización:     │
-              │    Exige 85 °C continuos x 15 min. Si T < 84 °C: RESET. │
+              │    Exige 85 °C continuos x 7 min. Si T < 84 °C: RESET.  │
               └─────────────────────────────────────────────────────────┘
 ```
 
@@ -313,10 +320,10 @@ El Nivel 2 constituye el cerebro de la celda de automatización en tiempo real. 
   - De $50	ext{ \% a }100	ext{ \%}$: Modula la válvula de vapor TV-301 (4–20 mA), activando el precalentamiento (25 °C) y la pasteurización (85–90 °C).
   - De $0	ext{ \% a }50	ext{ \%}$: Invierte la acción y modula la válvula de agua de enfriamiento TV-302 (4–20 mA), abatiendo la temperatura desde 85 °C hasta los 42–45 °C requeridos para la inoculación del cultivo láctico.
   - El algoritmo cuenta con *anti-windup* por retrocálculo dinámico y una banda muerta del 2 % en torno al 50 % de salida para evitar el solapamiento o consumo inútil simultáneo de vapor y agua.
-  - **Lógica de Seguridad Sanitaria (PCC Pasteurización):** El PLC inicia el temporizador de 15 minutos solo cuando TT-301 alcanza los 85,0 °C. Si durante este lapso la temperatura desciende por debajo de 84,0 °C (límite crítico del Decreto 616 de 2006), el temporizador se detiene, se genera una alarma de desviación térmica crítica y el ciclo de retención térmica se reinicia desde cero tras recuperar la temperatura.
+  - **Lógica de Seguridad Sanitaria (PCC Pasteurización):** El PLC inicia el temporizador de sostenimiento (consigna de 7 minutos, entre 5 y 10 según la receta) solo cuando TT-301 alcanza los 85,0 °C. Si durante este lapso la temperatura desciende por debajo de 84,0 °C (límite crítico del Decreto 616 de 2006), el temporizador se detiene, se genera una alarma de desviación térmica crítica y el ciclo de retención térmica se reinicia desde cero tras recuperar la temperatura.
 - **Control de Choque Térmico en Intercambiador E-301 (Lazo TIC-302 - PID Feedforward):**
   Regula la temperatura de salida del yogur ($15	ext{ a }20	ext{ }^\circ	ext{C}$) mediante la modulación de la válvula de agua helada TV-303. Para anular las oscilaciones de temperatura debidas a variaciones en la viscosidad o fluctuaciones de caudal en la bomba P-301, el lazo incorpora una acción de prealimentación (*feedforward*) calculada a partir del tacómetro de P-301 y la temperatura de entrada, ajustando proactivamente la posición de TV-303 antes de que el sensor TT-302 detecte un error.
-- **Control Gravimétrico Predictivo con Compensación de Vuelo (DS-201 y DS-202):**
+- **Dosificación gravimétrica en dos velocidades con corte anticipado (DS-201, DS-202 y DS-206):**
   Para la dosificación de sólidos en polvo, el PLC ejecuta un algoritmo de corte anticipado en dos velocidades. El tornillo M-201 opera a máxima velocidad hasta alcanzar el 90 % del peso programado; a partir de allí, conmuta a velocidad de afine fino y calcula continuamente la masa de azúcar en caída libre ("material en vuelo") según la ecuación:
   $$P_{	ext{corte}} = P_{	ext{receta}} - (\dot{m} \cdot \Delta t_{	ext{caída}})$$
   garantizando que el peso final depositado en el tanque coincida con la receta dentro de una tolerancia de $\pm 0,5	ext{ \%}$.
@@ -325,8 +332,8 @@ El Nivel 2 constituye el cerebro de la celda de automatización en tiempo real. 
   $$\dot{V}_{	ext{fruta}} = K_{	ext{referencia}} \cdot \dot{V}_{	ext{yogur}}$$
   donde $K = 0,08$ (8 % m/m para mora en YV-150) o $K = 0,12$ (12 % m/m para trozos de melocotón en YV-300). Cualquier perturbación en la velocidad de la llenadora LL-402 repercute de forma instantánea y proporcional en ambas bombas, impidiendo variaciones organolépticas en los vasos envasados.
 
-#### 3. Interfaz Hombre-Máquina en Planta (HMI-01 bajo ANSI/ISA-101.01-2015)
-- **Terminal Físico:** Panel táctil industrial gráfico **Allen-Bradley PanelView 5510** de 12 pulgadas, instalado en pedestal de acero inoxidable AISI 304 con protección ambiental **NEMA 4X / IP66** para lavado con agua a presión (*washdown*).
+#### 3. Interfaz Hombre-Máquina en Planta (HMI-01 y HMI-02 bajo ANSI/ISA-101.01-2015)
+- **Terminales Físicos:** Dos paneles táctiles industriales **Allen-Bradley PanelView 5510** de 12 pulgadas (HMI-01 en preparación y HMI-02 en envasado), cada uno instalado en pedestal de acero inoxidable AISI 304 con protección ambiental **NEMA 4X / IP66** para lavado con agua a presión (*washdown*).
 - **Filosofía de HMI de Alto Rendimiento (High-Performance HMI):** Diseñada bajo los estrictos principios ergonómicos de la norma ANSI/ISA-101.01-2015 para mitigar la fatiga visual del operario y maximizar la conciencia situacional:
   - Uso predominante de paleta en escala de grises neutros para fondos, tanques y tuberías normales.
   - Eliminación total de gráficos tridimensionales pseudo-realistas, animaciones innecesarias de bombas girando o colores saturados distractores.
@@ -344,7 +351,7 @@ El Nivel 2 constituye el cerebro de la celda de automatización en tiempo real. 
 
 #### 4. Sistema SCADA Central de Planta (Ignition 8.1 LTS)
 - **Plataforma:** **Ignition 8.1 LTS** de Inductive Automation, montada sobre servidor industrial en arquitectura cliente-servidor basada en estándares web abiertos (HTML5 / CSS3).
-- **Conectividad:** Cliente nativo **OPC-UA (IEC 62541)** comunicándose por canal cifrado y autenticado con el servidor OPC-UA del procesador ControlLogix 5580.
+- **Conectividad:** Cliente nativo **OPC-UA (IEC 62541)** comunicándose por canal cifrado y autenticado con el servidor OPC-UA del procesador CompactLogix 5380.
 - **Módulos y Funcionalidades Clave:**
   - **Ignition Perspective:** Permite visualización remota responsiva y segura desde terminales de supervisión en sala de control y tablets industriales de supervisores.
   - **SQL Bridge Module (Transaction Manager):** Gestión de transacciones bidireccionales de alta velocidad entre el PLC y bases de datos relacionales para registrar inicios y fines de fase, eventos de dosificación y consumo de insumos.
@@ -404,7 +411,7 @@ Las funciones implementadas cubren con exactitud las áreas de actividad definid
 - **Mecanismo de Puertas de Calidad (Quality Gates):**
   El sistema establece compuertas lógicas automatizadas que condicionan el avance del lote:
   - *Compuerta 1 (Recepción):* La bomba de transferencia P-101 solo puede arrancar si el analista de calidad ingresa el resultado "NEGATIVO" en la prueba de antibióticos para las cantinas del lote en LAB-101.
-  - *Compuerta 2 (Pasteurización):* La válvula de descarga XV-301 solo se habilita si el registro térmico de TT-301 certifica al menos 15 minutos continuos a $\ge 85	ext{ }^\circ	ext{C}$.
+  - *Compuerta 2 (Pasteurización):* La válvula de descarga XV-301 solo se habilita si el registro térmico de TT-301 certifica el tiempo de sostenimiento de la receta (5 a 10 minutos) continuo a $\ge 85	ext{ }^\circ	ext{C}$.
   - *Compuerta 3 (Fin de Fermentación):* El arranque de la bomba lobular P-301 y la apertura de TV-303 (enfriamiento en E-301) exige que el sensor AT-301 registre un pH $\le 4,6$.
   - *Compuerta 4 (Liberación de Producto Terminado):* Al finalizar el paletizado en U8, si todos los parámetros del EBR cumplen la especificación, el MES ejecuta la **Liberación Paramétrica Automática**, cambia el estado del lote a "LIBERADO" y emite el certificado digital de calidad. Si existió alguna anomalía no justificada, el lote pasa automáticamente a estado "RETENIDO" (*HOLD*), bloqueando su despacho en el sistema de inventarios y notificando al Director de Aseguramiento de Calidad.
 
@@ -542,7 +549,7 @@ flowchart TB
         SCADA_SRV["Servidor SCADA Central Gateway<br/><b>Ignition 8.1 LTS</b><br/>(Tag Historian, Perspective, Alarmas)"]
         WS_OP["Estación de Operación & Supervisión<br/>(Cliente Ignition Perspective)"]
         HMI_01["Terminal HMI-01 de Proceso<br/><b>PanelView 5510 (12 pulg)</b><br/>(Norma ANSI/ISA-101.01-2015)"]
-        PLC_01["Controlador Lógico Programable<br/><b>PLC-01 ControlLogix 5580</b><br/>(CPU 1756-L81E / Emulate v33)"]
+        PLC_01["Controlador Lógico Programable<br/><b>PLC-01 CompactLogix 5380</b><br/>(CPU 5069-L320ERM / Emulate v33)"]
         
         SCADA_SRV <-->|"Ethernet Gigabit"| SW_DIST
         WS_OP <-->|"HTTPS"| SCADA_SRV
@@ -584,13 +591,13 @@ flowchart TB
 
     subgraph L0 ["Nivel 0: Proceso Físico y Equipos de Producción"]
         direction TB
-        subgraph SENSORS ["21 Sensores de Campo (ISA-5.1)"]
+        subgraph SENSORS ["23 Sensores de Campo (ISA-5.1)"]
             S_HART["HART / 4-20 mA:<br/>WT-101, FT-101, WT-201, WT-202,<br/>TT-301 (PCC), TT-302, TT-303, TT-501"]
             S_IOL["IO-Link Digital:<br/>LT-301, AT-301 (pH), PT-301, LT-302"]
             S_DISC["Digitales 24 VDC / Pulsos:<br/>FQ-203, FQ-204, WT-205 (Eth),<br/>ZS-401, ZS-402, ZS-403, ZS-501"]
         end
         
-        subgraph ACTUATORS ["16 Actuadores Finales de Control"]
+        subgraph ACTUATORS ["19 Actuadores Finales de Control"]
             ACT_MOD["Modulantes 4-20 mA HART:<br/>TV-301 (Vapor), TV-302 (Agua Fría),<br/>TV-303 (Agua Helada E-301)"]
             ACT_VFD["Motores con Variador (DLR):<br/>P-101, M-201, M-202, M-301, P-301, P-403,<br/>M-401, M-402, M-501"]
             ACT_PNEU["Neumáticos / Solenoide 24 VDC:<br/>XV-301, XV-401, XV-402, P-203/204,<br/>XY-401 (Eyector Bolsas), XY-402 (Eyector Vasos)"]
@@ -681,7 +688,7 @@ La infraestructura de comunicaciones industriales de Cremia Automations ha sido 
          ▲
          │ Enlace Redundante Gigabit
          ▼
-  NIVEL 2: SUPERVISIÓN Y CONTROL (SCADA IGNITION / PLC CONTROLLOGIX)
+  NIVEL 2: SUPERVISIÓN Y CONTROL (SCADA IGNITION / PLC COMPACTLOGIX)
   Stratix 5400 ──(Troncal Fibra OM3)──> Stratix 5700 (Switch Celda)
   ═════════════════════════════════════════════════════════════════════════════
          ▲
@@ -711,7 +718,7 @@ La instrumentación de piso de planta utiliza tres medios físicos estandarizado
    - **Arquitectura:** Conexión punto a punto mediante cables estándares de 3 hilos no apantallados terminados en conectores industriales roscados M12 con estanqueidad IP69K, enlazados directamente al módulo maestro **Point I/O 1734-4IOL** de Allen-Bradley.
    - **Beneficios Operativos:** 
      - Transmisión digital libre de errores de conversión analógica-digital.
-     - Diagnósticos predictivos avanzados transmitidos en cíclico: el electrodo de pH AT-301 transmite no solo el valor instantáneo de pH, sino la resistencia de la membrana de vidrio y la advertencia preventiva de ensuciamiento o desgaste del electrolito.
+     - Diagnósticos del instrumento transmitidos en cíclico: el electrodo de pH AT-301 transmite no solo el valor instantáneo de pH, sino la resistencia de la membrana de vidrio y la advertencia preventiva de ensuciamiento o desgaste del electrolito.
      - Función de *Parameter Server* / Sustitución Plug-and-Play: si un operador reemplaza un transmisor dañado, el maestro IO-Link reconoce el dispositivo nuevo y le descarga de forma automática la parametrización previa sin requerir computadores de ingeniería en planta.
 
 3. **Señales Discretas de 24 VDC y Mandos Neumáticos:**
@@ -729,7 +736,7 @@ Para interconectar el procesador de control con sus actuadores, accionamientos y
 - En caso de rotura de una canalización, corte de cable o daño mecánico de un conector, el nodo **Ring Supervisor** detecta la interrupción en menos de **3 milisegundos**, conmuta el estado de su puerto alterno de bloqueo a reenvío, y restaura la comunicación bidireccional instantáneamente sin que el PLC pierda la conexión determinística con los variadores de frecuencia ni se genere un paro no programado en la planta.
 
 #### Nodos Integrados en el Anillo DLR
-1. **Supervisor de Anillo (Ring Supervisor):** Tarjeta de comunicaciones de doble puerto Ethernet Gigabit **1756-EN2TR** instalada en el rack del controlador ControlLogix 5580.
+1. **Supervisor de Anillo (Ring Supervisor):** Puertos Ethernet Gigabit duales integrados del controlador **CompactLogix 5380 (5069-L320ERM)**.
 2. **Nodos de Anillo (Ring Nodes):**
    - Módulo adaptador de comunicación Point I/O **1734-AENTR** (entradas/salidas distribuidas de la celda de preparación).
    - 6 Variadores de frecuencia Allen-Bradley **PowerFlex 525** equipados con tarjeta de comunicación embebida de doble puerto RJ45 (P-101, M-201, M-301, P-301, P-403 y motores de tracción).
@@ -751,7 +758,7 @@ Para prevenir tormentas de difusión (*broadcast storms*) y asegurar la priorida
 ### 4.3 Capa de Supervisión y Operación (Nivel 2): Fibra Óptica y Enlaces OPC UA
 
 - **Troncal de Fibra Óptica OM3:** La conexión entre el switch de celda Stratix 5700 (ubicado en el tablero de control de proceso) y el switch central de distribución **Stratix 5400** (ubicado en la sala técnica de servidores) se realiza a través de un enlace de fibra óptica multimodo **OM3 dúplex de 10 Gbps (1000Base-SX, conectores LC)**. Este canal proporciona inmunidad total ante transitorios de tensión, descargas atmosféricas y el fuerte ruido electromagnético inducido por los arranques de la caldera CAL-901 y los compresores del chiller CH-901.
-- **Protocolo de Enlace SCADA – Control:** La comunicación entre el servidor SCADA Ignition 8.1 y el PLC-01 ControlLogix se basa exclusivamente en **OPC UA (IEC 62541)** binario sobre TCP/IP (puerto TCP 4840). Se configura el perfil de seguridad criptográfico más robusto:
+- **Protocolo de Enlace SCADA – Control:** La comunicación entre el servidor SCADA Ignition 8.1 y el PLC-01 CompactLogix se basa exclusivamente en **OPC UA (IEC 62541)** binario sobre TCP/IP (puerto TCP 4840). Se configura el perfil de seguridad criptográfico más robusto:
   - **Perfil de Seguridad:** `Basic256Sha256`.
   - **Modo de Seguridad:** `SignAndEncrypt` (Firma y cifrado simétrico de datos en tránsito con certificados digitales X.509 de 2.048 bits).
 
@@ -824,7 +831,7 @@ Conforme a la norma IEC 62443-3-2, los activos de la celda de yogur se dividen e
                                     │ Conducto C-2 (OPC-UA Cifrado / HTTPS)
 ┌───────────────────────────────────┴────────────────────────────────────┐
 │  ZONA 2: SUPERVISIÓN Y CONTROL (SL-T: 2)                               │
-│  - Activos: SCADA Ignition Gateway, PanelView 5510, PLC ControlLogix.  │
+│  - Activos: SCADA Ignition Gateway, PanelView 5510, PLC CompactLogix.  │
 │  - Vector de Riesgo: Inyección de consignas falsas, spoofing CIP.      │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ Conducto C-1 (EtherNet/IP DLR Nativo)

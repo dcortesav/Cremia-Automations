@@ -28,6 +28,9 @@
           <a href="#inicio">Inicio</a>
           <a href="#equipo">Nuestro Equipo</a>
           <a href="#problema-necesidades">Diagnóstico</a>
+          <a href="#valor">Valor</a>
+          <a href="#personas">Personas</a>
+          <a href="#plan">Plan</a>
           <a class="nav-cta" href="#solucion">Nuestra solución <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
@@ -168,7 +171,7 @@
 
         <div class="container solution-summary">
           <span class="context-label">Resumen ejecutivo</span>
-          <p>Diseñamos una solución de ingeniería que automatiza y digitaliza la producción por lotes de yogur para 3 referencias comerciales. La arquitectura integra control de proceso en tiempo real, envasado flexible, robótica industrial y supervisión SCADA conectada a capas MES/ERP.</p>
+          <p>Diseñamos una solución de ingeniería que automatiza y digitaliza la producción por lotes de yogur para 3 referencias comerciales. La arquitectura integra control de proceso en tiempo real, envasado flexible, robótica industrial y supervisión SCADA conectada a capas MES/ERP. La línea pasa de uno a dos lotes diarios de 550 L de leche con 26 equipos (9 existentes y 17 nuevos), 23 sensores y 19 actuadores, y el proyecto se ejecuta en 24 semanas con una inversión de COP 1.655,6 millones.</p>
         </div>
 
         <div class="container physical-model">
@@ -200,11 +203,11 @@
           </div>
           <div class="pillar-grid">
             <article><span class="pillar-icon" aria-hidden="true">🧬</span><h3>Gestión de Recetas</h3><p>Control por lotes estructurado que automatiza la dosificación de ingredientes, formulaciones, temperaturas y adición de preparados de fruta.</p></article>
-            <article><span class="pillar-icon" aria-hidden="true">🌡️</span><h3>Control de Proceso en Línea</h3><p>Lazos de control cerrado PID para pasteurización e incubación, con monitoreo continuo de pH/acidez que elimina detenciones manuales.</p></article>
+            <article><span class="pillar-icon" aria-hidden="true">🌡️</span><h3>Control de Proceso en Línea</h3><p>Control regulatorio PID en el PLC: rango dividido de vapor y agua en el tanque, prealimentación en el enfriador y control de relación de la fruta, con pH en línea para terminar la incubación. Sin control avanzado: cada lazo tiene un actuador dominante y dinámicas lentas.</p></article>
             <article><span class="pillar-icon" aria-hidden="true">🔀</span><h3>Envasado Flexible y Multilínea</h3><p>Enrutamiento automatizado hacia la línea de bolsas o llenadora de vasos según la receta de control del lote en ejecución.</p></article>
             <article><span class="pillar-icon" aria-hidden="true">⚖️</span><h3>Control Metrológico Dinámico</h3><p>Pesaje en línea dinámico con sistema neumático de rechazo automático para garantizar productos en tolerancia de peso/volumen.</p></article>
             <article><span class="pillar-icon" aria-hidden="true">🤖</span><h3>Celda Robotizada</h3><p>Robot industrial para encanastado, encajonado y paletizado automático, adaptable a la geometría de bolsas y vasos.</p></article>
-            <article><span class="pillar-icon" aria-hidden="true">📊</span><h3>Integración IT/OT y SCADA</h3><p>Supervisión HMI/SCADA, comunicando campo (EtherNet/IP, OPC UA) con sistemas MES y ERP para trazabilidad total.</p></article>
+            <article><span class="pillar-icon" aria-hidden="true">📊</span><h3>Integración IT/OT y SCADA</h3><p>Campo en 4–20 mA, IO-Link y 24 V DC; control en EtherNet/IP con anillo DLR; OPC UA del PLC hacia el SCADA Ignition y el MES; servicios web hacia el ERP. Trazabilidad del lote de la cantina a la estiba.</p></article>
           </div>
         </div>
 
@@ -214,13 +217,113 @@
             <h3>Una operación más<br /><span>predecible y conectada.</span></h3>
           </div>
           <ul>
-            <li>Capacidad real de producción garantizada y repetible.</li>
-            <li>Eliminación de errores de formulación y reducción de tiempos de setup.</li>
-            <li>Trazabilidad digital del lote de principio a fin.</li>
-            <li>Minimización del tiempo de inactividad mediante mantenimiento preventivo por SCADA.</li>
+            <li>Dos lotes diarios en lugar de uno: el intercambiador de placas libera el tanque a las 15:05, sin esperar la noche.</li>
+            <li>Tiempo estándar por lote de 601 a 493 min y cambio de referencia de 5 a 40 min, según el cambio.</li>
+            <li>Producto no conforme de 5,06 % a 1,5 % o menos, con peso del 100 % y pH en línea.</li>
+            <li>Registro electrónico de cada lote, desde la cantina de leche hasta la estiba en el cuarto frío.</li>
           </ul>
         </div>
         <div class="container solution-bottom"><span>Construimos lo que sigue.</span><span class="solution-line"></span><span>Cremia Automations © 2026</span></div>
+      </section>
+
+      <section class="value-section section" id="valor">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> Propuesta de valor</p>
+              <h2>Qué ganan los dueños<br /><span>de La Hacienda.</span></h2>
+            </div>
+            <p>Cada beneficio se mide con datos que hoy no existen y que el MES entrega todos los días.</p>
+          </div>
+          <div class="metric-grid">
+            <article class="metric-card"><span class="metric-label">Productividad</span><strong>+73 %</strong><p>De 763 a 1.321 unidades por operario al día. La producción pasa de 3.052 bolsas a 6.604 unidades diarias en tres referencias.</p></article>
+            <article class="metric-card"><span class="metric-label">Costos</span><strong>−42 %</strong><p>Mano de obra de 147 a 85 COP por unidad, y costo real de leche, insumos y envase por lote.</p></article>
+            <article class="metric-card"><span class="metric-label">Calidad</span><strong>5,06 % → 1,5 %</strong><p>Producto no conforme, con peso del 100 % y puntos críticos con registro continuo. Unos COP 62 millones al año que dejan de perderse.</p></article>
+            <article class="metric-card"><span class="metric-label">Trazabilidad</span><strong>Minutos</strong><p>Para reconstruir la genealogía de un lote. Un retiro de producto se limita a los lotes afectados.</p></article>
+            <article class="metric-card"><span class="metric-label">Información</span><strong>Diaria</strong><p>Tablero con OEE, rendimiento, no conformes, consumos, paradas y alarmas, en lugar de registros en papel.</p></article>
+            <article class="metric-card"><span class="metric-label">Decisiones</span><strong>Con datos</strong><p>Qué referencia producir según su margen, cuánta leche comprar según el plan y cuándo intervenir un equipo según sus horas.</p></article>
+          </div>
+          <div class="finance-strip">
+            <div><span>Inversión</span><strong>COP 1.655,6 M</strong></div>
+            <div><span>Beneficio neto anual</span><strong>COP 747 M</strong></div>
+            <div><span>VPN al 15 %</span><strong>COP 318 M</strong></div>
+            <div><span>TIR</span><strong>21,8 %</strong></div>
+            <div><span>Recuperación</span><strong>3,1 años</strong></div>
+          </div>
+          <div class="control-box">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> Estrategia de control</p>
+              <h3>PID donde basta,<br /><span>sin control avanzado.</span></h3>
+              <p>El PLC ejecuta el control secuencial por fases de ISA-88 y lazos PID con mejoras clásicas. El control avanzado (MPC, difuso o adaptativo) no se justifica: cada lazo tiene un actuador dominante, las dinámicas son lentas y el proceso es por lotes. El personal de la planta puede mantener un PID; un MPC exigiría un modelo identificado y un especialista.</p>
+            </div>
+            <ul>
+              <li><strong>TIC-301</strong><span>Temperatura del tanque: PID con rango dividido sobre vapor y agua fría (25, 62, 87 y 43 °C).</span></li>
+              <li><strong>TIC-302</strong><span>Salida del intercambiador: PID con prealimentación del caudal de yogur (15–20 °C).</span></li>
+              <li><strong>FFC-403</strong><span>Fruta: control de relación del 8 % o 12 % sobre el caudal de yogur.</span></li>
+              <li><strong>PIC-302</strong><span>Homogeneizador: PI de presión entre 150 y 200 bar.</span></li>
+              <li><strong>WIC-201/202/206</strong><span>Dosificación por peso en dos velocidades con corte anticipado (± 1 %).</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="people-section section dark-section" id="personas">
+        <div class="container">
+          <div class="diagnostic-heading">
+            <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Personas y gestión del cambio</p>
+            <h2>La transformación<br /><span>la hacen las personas.</span></h2>
+            <p class="diagnostic-subtitle">El proyecto instala la tecnología en 24 semanas; la mejora continua con los datos sigue después.</p>
+          </div>
+          <div class="context-banner">
+            <span class="context-label">Compromiso con el equipo de la planta</span>
+            <p>No hay despidos. Los cuatro operarios pasan de pesar, abrir válvulas y cargar canastas a operar desde la HMI y atender alarmas, y el segundo lote crea un puesto nuevo. Dos operarios con experiencia son agentes de cambio: validan recetas, alarmas y procedimientos y participan en las pruebas FAT y SAT.</p>
+          </div>
+          <ol class="adkar-steps">
+            <li><span>Semanas 1–3</span><strong>Conciencia</strong><p>Lanzamiento con los dueños y los operarios: por qué cambia la línea.</p></li>
+            <li><span>Semanas 2–14</span><strong>Deseo</strong><p>Agentes de cambio y participación en la validación de recetas y pantallas.</p></li>
+            <li><span>Semanas 15–18</span><strong>Conocimiento</strong><p>Capacitación por rol en aula y en el gemelo digital, sin riesgo para el producto.</p></li>
+            <li><span>Semanas 19–24</span><strong>Habilidad</strong><p>Práctica guiada en el arranque y certificación antes de operar solo.</p></li>
+            <li><span>Después de la entrega</span><strong>Refuerzo</strong><p>Reunión diaria con el tablero, 8 semanas de acompañamiento y revisión trimestral.</p></li>
+          </ol>
+          <div class="roadmap">
+            <article><span>Proyecto</span><h3>1. Conectar</h3><p>Instrumentar la línea, registrar cada lote y poner en marcha el MES.</p></article>
+            <article><span>Meses 1–6</span><h3>2. Estabilizar</h3><p>Cumplir las metas de no conformes y OEE con la reunión diaria y la semanal.</p></article>
+            <article><span>Año 1–2</span><h3>3. Analizar y mejorar</h3><p>Control estadístico del pH y del peso, mantenimiento por condición y costo por referencia.</p></article>
+            <article><span>Año 2–3</span><h3>4. Integrar la cadena</h3><p>Pago de la leche por calidad y planeación con los distribuidores según la demanda real.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="plan-section section" id="plan">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> Plan de implementación</p>
+              <h2>24 semanas,<br /><span>una sola parada de 5 días.</span></h2>
+            </div>
+            <p>Del 18 de enero al 2 de julio de 2027, con 4.760 horas de ingeniería y nadie del equipo por encima del 80 % de su capacidad.</p>
+          </div>
+          <div class="timeline" role="list">
+            <div class="timeline-row" role="listitem"><span>Ingeniería básica y de detalle</span><div class="bar" style="--start:1;--end:8"></div></div>
+            <div class="timeline-row" role="listitem"><span>Fabricación de equipos de la fase 1</span><div class="bar bar-critical" style="--start:4;--end:13"></div></div>
+            <div class="timeline-row" role="listitem"><span>Fabricación de equipos de la fase 2</span><div class="bar" style="--start:7;--end:16"></div></div>
+            <div class="timeline-row" role="listitem"><span>PLC, SCADA, MES y gemelo digital</span><div class="bar" style="--start:6;--end:16"></div></div>
+            <div class="timeline-row" role="listitem"><span>FAT, montaje y parada (semana 18)</span><div class="bar bar-critical" style="--start:14;--end:20"></div></div>
+            <div class="timeline-row" role="listitem"><span>Pruebas, SAT y arranque</span><div class="bar bar-critical" style="--start:19;--end:23"></div></div>
+            <div class="timeline-row" role="listitem"><span>Gestión del cambio y capacitación</span><div class="bar bar-people" style="--start:1;--end:24"></div></div>
+            <div class="timeline-scale" aria-hidden="true"><span>Sem. 1</span><span>6</span><span>12</span><span>18</span><span>24</span></div>
+          </div>
+          <div class="plan-reasons">
+            <h3>Por qué 24 semanas y no 35</h3>
+            <ul>
+              <li>La ingeniería conceptual de la oferta se valida en planta en 3 semanas, en lugar de repetirse en 7.</li>
+              <li>Los equipos de mayor tiempo de entrega se piden en la semana 4, no en la 12: la fabricación (10 semanas) empieza antes.</li>
+              <li>El PLC, el SCADA y el MES se programan y se prueban en el gemelo digital mientras se fabrican los equipos.</li>
+              <li>Tuberías, tableros y bases se preinstalan sin detener la planta; solo la conexión al tanque exige parar 5 días.</li>
+              <li>La línea de vasos y la celda (fase 2) se instalan en paralelo con la fase 1, porque están aguas abajo del tanque pulmón.</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
 

@@ -81,7 +81,7 @@ Cada paquete indica qué incluye, qué **no** incluye, cómo se sabe que está t
 | 1.2.2 | Normalización de sólidos totales | **Incluye:** adición de leche en polvo y ajuste de sólidos no grasos a 12–14 % y sólidos totales a 14–16 %. **No incluye:** dosificación de azúcar y estabilizante. | SNG y sólidos totales dentro de especificación, sin evidencia de separación. | Supervisor de Producción | 1.2.1 |
 | 1.2.3 | Homogeneización | **Incluye:** homogeneización en dos etapas a 150–200 bar y 60–65 °C para reducir los glóbulos de grasa. **No incluye:** pasteurización. | Presión y temperatura registradas; producto sin separación visible de grasa y glóbulos objetivo menores de 1 µm. | Operador de Planta | 1.2.2 |
 | 1.2.4 | Formulación y dosificación de azúcar y estabilizantes | **Incluye:** pesaje y dosificación de azúcar, estabilizante, saborizante, colorante y cultivo según la receta seleccionada. **No incluye:** preparación de fruta de 1.5.1. | Ingredientes pesados y verificados; fórmula YB-200, YV-150 o YV-300 cargada sin desviación mayor al ±1 % en la dosificación automática. | Supervisor de Producción | 1.2.2 |
-| 1.3.1 | Pasteurización | **Incluye:** tratamiento en intercambiador de placas a 85–90 °C con sostenimiento de 5–10 min, sujeto a validación de pruebas. **No incluye:** esterilización UHT. | Curva tiempo-temperatura registrada, tratamiento cumplido y producto habilitado para enfriamiento. | Operador de Planta | 1.2.3, 1.2.4 |
+| 1.3.1 | Pasteurización | **Incluye:** tratamiento en el tanque de proceso con chaqueta de vapor a 85–90 °C con sostenimiento de 5–10 min, después de homogeneizar a 150–200 bar, sujeto a validación de pruebas. **No incluye:** esterilización UHT. | Curva tiempo-temperatura registrada, tratamiento cumplido y producto habilitado para enfriamiento. | Operador de Planta | 1.2.3, 1.2.4 |
 | 1.3.2 | Enfriamiento a temperatura de inoculación | **Incluye:** enfriamiento controlado de la mezcla a 42–45 °C ±0.5 °C mediante agua helada y preparación para inoculación. **No incluye:** adición del cultivo. | Temperatura estable dentro del rango de inoculación y transferencia autorizada a fermentación. | Operador de Planta | 1.3.1 |
 | 1.4.1 | Inoculación con cultivos starter | **Incluye:** dosificación del cultivo DVS de *S. thermophilus* y *L. delbrueckii* subsp. *bulgaricus* según receta, sin propagación previa. **No incluye:** preparación de cultivo madre. | Cultivo dosificado y mezclado uniformemente; lote y cantidad registrados. | Microbiólogo / QA | 1.3.2, 1.1.4 |
 | 1.4.2 | Fermentación controlada | **Incluye:** incubación sin agitación a 40–45 °C durante aproximadamente 240 min, con seguimiento de pH y acidez. **No incluye:** enfriamiento de corte. | pH final 4.4–4.6 y acidez 80–90 °Th alcanzados dentro del procedimiento. | Supervisor de Producción | 1.4.1 |
@@ -109,7 +109,7 @@ Cada paquete indica qué incluye, qué **no** incluye, cómo se sabe que está t
 | Enfriamiento | Temperatura de inoculación | 42–45 °C ± 0.5 °C |
 | Inoculación | Dosis / pH inicial | 0.02–0.05 % (DVS) / ~6.6 |
 | Fermentación | Tiempo / pH final / acidez | 4–6 h / 4.4–4.6 / 0.85–0.95 % |
-| Corte de fermentación | Temperatura | <15 °C rápido, luego 4 °C |
+| Corte de fermentación | Temperatura | 15–20 °C en el intercambiador de placas, luego 4 °C en el cuarto frío |
 | Adición de fruta y envasado | Temperatura ambiente máxima | ≤20 °C |
 | Almacenamiento y distribución | Temperatura / vida útil | 4 °C constante / 21–28 días |
 

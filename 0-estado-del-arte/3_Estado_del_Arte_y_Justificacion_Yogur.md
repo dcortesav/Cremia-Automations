@@ -169,7 +169,7 @@ El yogur es un derivado lácteo obtenido por fermentación ácido-láctica de le
 | Proteína láctea | $2,80\text{ a }3,20\text{ \% m/m}$ (cumple mínimo 2,6 %) |
 | Sólidos no grasos (ESD) | $\ge 11,5\text{ \% m/m}$ |
 | Azúcar añadido (sacarosa) | $8,0\text{ a }10,0\text{ \% m/m}$ |
-| Dulce de fruta (YV-150 / YV-300) | $8\text{ \%}$ (mora/fresa) y $12\text{ \%}$ (melocotón) en base a formulación |
+| Dulce de fruta (YV-150 / YV-300) | $8\text{ \%}$ (mora) y $12\text{ \%}$ (melocotón) en base a formulación |
 | Acidez titulable final | $0,80\text{ a }0,90\text{ \%}$ ácido láctico ($80\text{ a }90\text{ }^\circ\text{Thörner}$ / $72\text{ a }81\text{ }^\circ\text{Dornic}$) |
 | pH final de coagulación | $4,40\text{ a }4,60$ |
 | Viabilidad BAL (*S. thermophilus* + *L. bulgaricus*) | $\ge 10^7\text{ UFC/g}$ durante 28 días a $4\text{ }^\circ\text{C}$ |
@@ -284,7 +284,7 @@ Desglose analítico de ineficiencias de la línea base:
 La modernización tecnológica de esta línea bajo lineamientos de la Industria 4.0 contempla:
 - **Dosificación Gravimétrica Automática:** Sistema de celdas de carga y transportador helicoidal para azúcar y pectina ($\pm 0,5\text{ \%}$ de precisión), reduciendo el alistamiento a 2 min.
 - **Bomba Sanitaria de Alto Caudal:** Impulsión a $3,0\text{ m}^3\text{/h}$, abatiendo la carga a 11–12 min.
-- **Control Térmico Automatizado:** Lazo PID modulante de vapor y agua helada con válvula de desvío (FDV), acotando la pasteurización y enfriamiento.
+- **Control Térmico Automatizado:** Lazo PID con rango dividido sobre las válvulas de vapor (TV-301) y de agua fría (TV-302) de la chaqueta, que acota la pasteurización a 85–90 °C con 5 a 10 min de sostenimiento, más el enfriamiento en el intercambiador de placas.
 - **Detección Automática de Fin de Fermentación:** Sensor de pH sanitario en línea (AT-301), eliminando muestreos destructivos manuales con acidómetro y evitando sobreacidificación.
 - **Enfriador de Placas en Línea:** Enfriamiento forzado hasta $15\text{ a }20\text{ }^\circ\text{C}$ a $1.500\text{ L/h}$ previo al envasado. **Este cambio elimina el enfriamiento nocturno pasivo y libera el tanque de proceso en menos de 30 minutos.**
 - **Envasadora de Alta Cadencia:** Operación a 30 bolsas/min continuas para la referencia YB-200 y llenadora rotativa a 45 vasos/min para YV-150.
@@ -766,7 +766,7 @@ A partir de la evaluación multicriterio sustentada, la consultora **Cremia Auto
 Esta decisión de ingeniería no responde a una simplificación académica, sino al principio de **máxima efectividad en la aplicación de la Transformación Digital Industrial (TDI)**:
 1. **Rigor Cuantitativo Incontrastable:** El proyecto integrador cuenta con un caso de estudio real publicado en revista indexada (*La Hacienda*, Grimaldo et al., 2015). Esto permite construir el VSM del estado actual sobre datos cronometrados en planta real, eliminando el riesgo de basar el Gemelo Digital en supuestos arbitrarios.
 2. **Proceso de Fluidos por Lotes Ideal para ISA-88:** La línea de yogur es el arquetipo perfecto para implementar la norma ANSI/ISA-88 en sus niveles de modelo físico y modelo procedimental. La secuencia de fases (Carga $\rightarrow$ Pasteurización $\rightarrow$ Enfriamiento $\rightarrow$ Inoculación $\rightarrow$ Incubación $\rightarrow$ Rompimiento $\rightarrow$ Envasado) permite programar recetas de control dinámicas descargables desde el MES hacia el PLC.
-3. **Control Analítico Avanzado en Línea:** A diferencia del queso (donde variables como el punto de corte del cuajo o la humedad de la cuajada dependen de la pericia manual del quesero), el yogur permite la automatización total de variables clave de proceso mediante lazos analógicos estándar: temperatura por PT100/PID, pH en línea (AT-301), flujo másico Coriolis y control de peso volumétrico servocontrolado.
+3. **Control analítico en línea:** A diferencia del queso (donde variables como el punto de corte del cuajo o la humedad de la cuajada dependen de la pericia manual del quesero), el yogur permite la automatización total de variables clave de proceso mediante lazos de control regulatorio estándar: temperatura con PT100 y PID, pH en línea (AT-301), caudal electromagnético y control de peso dinámico. No requiere control avanzado.
 
 ### 7.2 Demostración Cuantitativa del Desembotellamiento: Duplicación a 1.100 L/día
 El impacto más contundente de la ingeniería propuesta por Cremia Automations radica en la eliminación del cuello de botella histórico de la planta La Hacienda:
@@ -796,7 +796,7 @@ Capacidad Propuesta:
 ### 7.3 Alineación Estratégica con ISA-88, ISA-95 y el Gemelo Digital
 La línea de yogur permite estructurar una arquitectura de manufactura digital limpia en 5 niveles de integración:
 - **Nivel 0 (Proceso Físico):** Instrumentación analógica y digital (sensores de temperatura PT100 sanitarios, transmisor de pH AT-301, transmisor de nivel radar LT-301, válvulas de mariposa con actuador neumático y cabezal de control inteligente AS-i).
-- **Nivel 1 (Control Directo):** Controladores Lógicos Programables (PLC Siemens S7-1500) ejecutando lazos PID de temperatura y secuenciación procedimental ISA-88.
+- **Niveles 1 y 2 (Medición, actuación y control):** E/S remotas y variadores en el nivel 1; PLC Allen-Bradley CompactLogix 5380 en el nivel 2, ejecutando lazos PID de temperatura y la secuencia procedimental ISA-88.
 - **Nivel 2 (Supervisión y HMI):** SCADA industrial con registro de curvas térmicas, gestión de alarmas ISA-18.2 y pantallas de control de lote.
 - **Nivel 3 (MES):** Gestión de Órdenes de Producción, genealogía de lote, control de recetas maestras (RM-YB-200, RM-YV-150, RM-YV-300), balance de masa y cálculo en tiempo real de OEE.
 - **Gemelo Digital (Tecnomatix Plant Simulation):** Mapeo estocástico de las paradas, tiempos de llenado, tiempos de empaque y logística interna, validando el salto productivo de 1 a 2 lotes diarios.

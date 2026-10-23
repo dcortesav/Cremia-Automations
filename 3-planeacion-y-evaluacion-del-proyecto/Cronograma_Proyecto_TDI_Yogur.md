@@ -69,8 +69,8 @@ El riesgo de pedir equipos antes de cerrar todo el detalle se controla con tres 
 | 1.4.2 | Órdenes de compra y seguimiento de fabricación | 3–12 | 1 feb | 9 abr |
 | 1.4.3 | Pruebas FAT | 13 | 12 abr | 16 abr |
 | 1.5 | Software de control, supervisión y gestión | 4–12 | 8 feb | 9 abr |
-| 1.5.1 | PLC del proceso | 4–9 | 8 feb | 19 mar |
-| 1.5.2 | PLC de envasado y transporte | 5–10 | 15 feb | 26 mar |
+| 1.5.1 | Programa del PLC: fases del proceso | 4–9 | 8 feb | 19 mar |
+| 1.5.2 | Programa del PLC: envasado y transporte | 5–10 | 15 feb | 26 mar |
 | 1.5.3 | SCADA e historiador | 5–10 | 15 feb | 26 mar |
 | 1.5.4 | MES e integración con ERP | 5–11 | 15 feb | 2 abr |
 | 1.5.5 | Recetas maestras, registro de lote y reportes | 10–12 | 22 mar | 9 abr |

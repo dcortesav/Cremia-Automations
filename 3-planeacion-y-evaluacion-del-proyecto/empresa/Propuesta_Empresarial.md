@@ -53,7 +53,7 @@ El valor de la ingeniería no es solo el salario: se calcula con las horas de la
 | Integrante | Rol | Valor que aporta al proyecto | Tipo de valor | Horas | Tarifa (COP/h) | Factor sobre su costo | Millones de COP |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | David Santiago Cortés Ávila | Gerente de proyecto | Dirige el proyecto, programa las fases ISA-88 del PLC y responde por la puesta en marcha virtual y las pruebas SAT | Dirección y control | 530 | 80.000 | 1,60 | 42,40 |
-| Jesús Alberto Rivera Molina | Líder de arquitectura digital | Diseña la red OT/IT, la ciberseguridad según IEC 62443, los tableros y el PLC de envasado | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
+| Jesús Alberto Rivera Molina | Líder de arquitectura digital | Diseña la red OT/IT, la ciberseguridad según IEC 62443, los tableros y el programa de envasado del PLC | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
 | David Felipe Cárdenas Cubides | Líder de gestión de producción | Desarrolla el SCADA, el MES y la integración con el ERP, de donde salen la trazabilidad y los indicadores | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
 | José Andrés Zapata Piñeros | Líder de procesos e instrumentación | Especifica equipos e instrumentos, estructura las recetas y lidera el montaje y el arranque con producto | Núcleo técnico del proceso | 520 | 60.000 | 1,80 | 31,20 |
 | Ana María Orozco Reyes | Líder de simulación y mejora | Construye el gemelo digital y valida el estado propuesto antes de intervenir la planta | Núcleo técnico de validación | 470 | 60.000 | 1,80 | 28,20 |

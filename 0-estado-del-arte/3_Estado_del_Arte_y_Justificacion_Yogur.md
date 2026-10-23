@@ -165,10 +165,10 @@ El yogur es un derivado lácteo obtenido por fermentación ácido-láctica de le
 | Parámetro | Especificación Técnica |
 |---|---|
 | Clasificación (NTC 805) | Leche fermentada, tipo yogur entero batido / frutado |
-| Grasa láctea | $2,80\text{ a }3,10\text{ \% m/m}$ (cumple mínimo 2,5 %) |
-| Proteína láctea | $2,80\text{ a }3,20\text{ \% m/m}$ (cumple mínimo 2,6 %) |
-| Sólidos no grasos (ESD) | $\ge 11,5\text{ \% m/m}$ |
-| Azúcar añadido (sacarosa) | $8,0\text{ a }10,0\text{ \% m/m}$ |
+| Grasa láctea | $2,6\text{ a }3,1\text{ \% m/m}$ según la referencia (cumple mínimo 2,5 %) |
+| Proteína láctea | $\ge 2,7\text{ \% m/m}$ según la referencia (cumple mínimo 2,6 %) |
+| Sólidos no grasos (ESD) | $\ge 9,2\text{ \% m/m}$ sobre la fracción láctea ($\ge 9,4$ % en vasos) |
+| Azúcar añadido (sacarosa) | $7,9\text{ a }11,7\text{ \% m/m}$ según la referencia |
 | Dulce de fruta (YV-150 / YV-300) | $8\text{ \%}$ (mora) y $12\text{ \%}$ (melocotón) en base a formulación |
 | Acidez titulable final | $0,80\text{ a }0,90\text{ \%}$ ácido láctico ($80\text{ a }90\text{ }^\circ\text{Thörner}$ / $72\text{ a }81\text{ }^\circ\text{Dornic}$) |
 | pH final de coagulación | $4,40\text{ a }4,60$ |
@@ -198,31 +198,31 @@ La fermentación del yogur depende de la proto-cooperación mutualista entre dos
 
 ### 2.3 Tratamiento Térmico y Parámetros Operacionales
 A diferencia de la pasteurización de quesería (que busca preservar las enzimas y proteínas intactas), la pasteurización del yogur requiere condiciones térmicas severas:
-- **Rango Operativo:** **$85\text{ a }90\text{ }^\circ\text{C}$ durante $5\text{ a }10\text{ minutos}$** (en continuo) o $85\text{ }^\circ\text{C}$ durante 15 minutos (en tanque discontinuo).
+- **Rango Operativo:** **$85\text{ a }90\text{ }^\circ\text{C}$ durante $5\text{ a }10\text{ minutos}$** (en continuo) o $85\text{ }^\circ\text{C}$ durante 15 minutos en tanque, que es la práctica actual de La Hacienda con válvulas manuales. La propuesta mantiene la pasteurización en el tanque T-301, a 85–90 °C con 5 a 10 minutos de sostenimiento y control automático.
 - **Mecanismo Fisicoquímico:** Desnaturaliza más del 80 % de la **$\beta$-lactoglobulina** del suero. Los grupos tiol ($-SH$) libres de la $\beta$-lactoglobulina reaccionan con los residuos de cisteína de la **$\kappa$-caseína** en la superficie de la micela mediante enlaces disulfuro covalentes. Este complejo $\beta\text{-Lg}/\kappa\text{-caseína}$ retiene masivamente las moléculas de agua libre, incrementando la firmeza del gel y reduciendo la sinéresis en más de un 60 %.
 
 ### 2.4 Balance de Materia y Formulación del Lote de Referencia (550 L)
 El lote industrial estándar documentado en la planta La Hacienda procesa **550 L de leche cruda** por ciclo en un tanque reactor encamisado de 600 L de capacidad útil.
 
 ```
-Entradas (Masa Total: 611,60 kg):
-├── Leche cruda estandarizada (3,0 % grasa, dens. 1,030): 550,0 L (566,50 kg) ── 92,63 %
-├── Azúcar refinado (Sacarosa):                           44,00 kg             ──  7,20 %
-├── Estabilizante (Pectina cítrica LMP / gelatina grado alim.): 1,10 kg         ──  0,18 %
-└── Cultivo DVS liofilizado (S. thermophilus + L. bulgaricus): 0,02 kg         ──  0,003 %
+Entradas del lote base (caso La Hacienda, tabla 6; masa total: 642,69 kg):
+├── Leche cruda (densidad 1,030): 550,0 L (566,50 kg) ── 88,15 %
+├── Azúcar refinado (12 %): 75,67 kg ── 11,77 %
+├── Estabilizante, saborizante y colorante: 0,52 kg ── 0,08 %
+└── Cultivo DVS liofilizado (S. thermophilus + L. bulgaricus): 0,007 kg ── 0,001 %
                          │
                          ▼ [Proceso Térmico, Fermentación e Inoculación]
                          │
-Pérdidas y Mermas de Proceso en Planta Base (5,06 % en envasado/adherencia):
-├── Evaporación en pasteurización (0,2 %):                  -1,20 kg
-├── Retención en paredes de tubería y fondos (0,5 %):      -3,00 kg
-└── Masa neta alimentada a envasado:                        607,40 kg (~589,7 L yogur base)
+Pérdidas de proceso en la planta base (12,15 kg, 1,9 %):
+├── Evaporación en la pasteurización: -4,50 kg
+├── Retención en paredes, tuberías, filtro y llenado: -7,65 kg
+└── Yogur envasado: 630,54 kg (610,4 L), eficiencia de materiales de 98,1 %
                          │
                          ├────────────────────────────────────────┐
                          ▼                                        ▼
              Referencia YB-200 (Natural/Saborizado)     Referencias YV-150 / YV-300
-             ├── Esencia y colorante: 0,30 kg          ├── Dulce de fruta (8-12 %): +48,6 kg
-             └── 3.052 bolsas x 200 ml (~204 g)        └── Vasos termosellados
+             ├── Propuesta: 3.079 bolsas (con leche en polvo)   ├── Fruta: 8 % (57,2 kg) o 12 % (88,8 kg)
+             └── Hoy: 3.052 bolsas de 200 ml                   └── 4.369 vasos de 150 ml o 2.260 de 300 ml
 ```
 
 ```mermaid
@@ -230,17 +230,17 @@ flowchart TD
     subgraph FlowYogur["Balance de Masa y Flujo de Proceso - Línea de Yogur (Lote 550 L)"]
         direction TB
         Y0["Leche Cruda Estandarizada (3,0% Grasa)<br/>550,0 L (566,50 kg) | Densidad 1,030"] --> Y1["Tanque de Proceso Encamisado (600 L)<br/>Carga y Precalentamiento a 25 °C"]
-        Y_INS["Insumos Secos de Formulación:<br/>Sacarosa refinada: 44,00 kg (7,20%)<br/>Pectina/Estabilizante: 1,10 kg (0,18%)"] --> Y1
+        Y_INS["Insumos Secos de Formulación:<br/>Azúcar: 75,7 kg (12 %)<br/>Estabilizante: 0,206 kg<br/>Leche en polvo: 5,7 o 7,1 kg"] --> Y1
         Y1 --> Y2["Tratamiento Térmico de Pasteurización<br/>85–90 °C por 5–10 min (Complejo β-Lg / κ-caseína)"]
         Y2 --> Y3["Enfriamiento a Inoculación Térmica<br/>Descenso a 42–45 °C en Encamisado"]
-        Y_CULT["Cultivo Termófilo DVS (0,02 kg):<br/>S. thermophilus + L. bulgaricus (1:1)"] -->|Inoculación Aséptica| Y3
+        Y_CULT["Cultivo Termófilo DVS (7 g):<br/>S. thermophilus + L. bulgaricus (1:1)"] -->|Inoculación Aséptica| Y3
         Y3 --> Y4["Incubación Termófila en Reposo<br/>42–43 °C por 4–6 h (Cinética Mutualista)"]
         Y4 -->|Punto de Corte: pH 4,4–4,6 / 80–90 °Th| Y5["Rompimiento de Gel y Aromatización<br/>Agitación Lenta a 30–40 rpm (10 min)<br/>Esencia hidrosoluble: 0,30 kg"]
         Y5 --> Y6["Enfriamiento Forzado en Placas (PHE)<br/>Caudal 1.500 L/h hacia 15–20 °C<br/>(Liberación Inmediata de Tanque)"]
         Y6 --> Y7["Tanque Pulmón Intermedio Refrigerado<br/>Almacenamiento Estabilizado ≤ 20 °C"]
         Y7 --> Y8{"Conmutación por Referencia Comercial"}
-        Y8 -->|Referencia YB-200| Y9["Empacadora Vertical de Bolsas<br/>30 bolsas/min (200 ml / ~204 g)<br/>Total: 3.052 bolsas por lote"]
-        Y8 -->|Referencias YV-150 / YV-300| Y10["Inyección en Línea de Fruta (8–12%)<br/>+ Llenadora Rotativa de Vasos (45 bpm)<br/>Total: 150 ml / 300 ml con Tapa Foil"]
+        Y8 -->|Referencia YB-200| Y9["Empacadora Vertical de Bolsas<br/>30 bolsas/min (200 ml / ~204 g)<br/>Total: 3.079 bolsas por lote"]
+        Y8 -->|Referencias YV-150 / YV-300| Y10["Inyección en Línea de Fruta (8–12%)<br/>+ Llenadora lineal de vasos (45 vasos/min)<br/>Total: 150 ml / 300 ml con Tapa Foil"]
         Y9 --> Y11["Inspección Checkweigher 100% en Línea<br/>Control de Peso y Rechazo Automático<br/>Reducción de Merma: 5,06% a < 1,5%"]
         Y10 --> Y11
         Y11 --> Y12["Cámara Frigorífica de Conservación<br/>Almacenamiento a 4 °C (Vida Útil 21–28 días)"]
@@ -287,7 +287,7 @@ La modernización tecnológica de esta línea bajo lineamientos de la Industria 
 - **Control Térmico Automatizado:** Lazo PID con rango dividido sobre las válvulas de vapor (TV-301) y de agua fría (TV-302) de la chaqueta, que acota la pasteurización a 85–90 °C con 5 a 10 min de sostenimiento, más el enfriamiento en el intercambiador de placas.
 - **Detección Automática de Fin de Fermentación:** Sensor de pH sanitario en línea (AT-301), eliminando muestreos destructivos manuales con acidómetro y evitando sobreacidificación.
 - **Enfriador de Placas en Línea:** Enfriamiento forzado hasta $15\text{ a }20\text{ }^\circ\text{C}$ a $1.500\text{ L/h}$ previo al envasado. **Este cambio elimina el enfriamiento nocturno pasivo y libera el tanque de proceso en menos de 30 minutos.**
-- **Envasadora de Alta Cadencia:** Operación a 30 bolsas/min continuas para la referencia YB-200 y llenadora rotativa a 45 vasos/min para YV-150.
+- **Envasadora de Alta Cadencia:** Operación a 30 bolsas/min continuas para la referencia YB-200 y llenadora lineal a 45 vasos/min para YV-150.
 - **Controladora de Peso en Línea (Checkweigher):** Pesaje del 100 % de unidades con rechazo neumático automático, reduciendo el scrap del 5,06 % a $< 1,5\text{ \%}$.
 
 ---
@@ -634,7 +634,7 @@ El coágulo obtenido al alcanzar pH 4,55 es un gel láctico viscoelástico estru
 | **3. Microorganismos Involucrados** | *S. thermophilus* y *L. bulgaricus* (simbiosis termófila) | Enzima quimosina (FPC) + flora mesófila de soporte | *L. lactis* subsp. *lactis*, *cremoris* y biovar *diacetylactis* |
 | **4. Temperatura de Proceso Central** | **$42\text{ a }45\text{ }^\circ\text{C}$** (termófila rápida) | **$32\text{ a }35\text{ }^\circ\text{C}$** (coagulación enzimática) | **$22\text{ a }25\text{ }^\circ\text{C}$** (mesófila lenta) |
 | **5. Tiempo de Retención Fijo** | **$4\text{ a }6\text{ horas}$** de incubación en tanque | **$30\text{ a }45\text{ min}$** coagulación; **$8\text{ a }12\text{ h}$** oreo | **$14\text{ a }18\text{ horas}$** de incubación en tanque |
-| **6. Tratamiento Térmico HTST** | $85\text{ a }90\text{ }^\circ\text{C}$ / 5–10 min (desnaturalización sérica) | $72\text{ a }75\text{ }^\circ\text{C}$ / 15–20 s (sin desnaturalización) | $90\text{ a }95\text{ }^\circ\text{C}$ / 3–5 min (desnaturalización severa) |
+| **6. Tratamiento térmico** | $85\text{ a }90\text{ }^\circ\text{C}$ / 5–10 min (desnaturalización sérica) | $72\text{ a }75\text{ }^\circ\text{C}$ / 15–20 s (sin desnaturalización) | $90\text{ a }95\text{ }^\circ\text{C}$ / 3–5 min (desnaturalización severa) |
 | **7. Metabolito Sensorial Distintivo** | **Acetaldehído** (nota ácida punzante y fresca) | Ácidos grasos libres y proteólisis de cuajada dulce | **Diacetilo (2,3-butanodiona)** (aroma mantecoso dulce) |
 | **8. Agente Estabilizante Legal** | Pectina LMP o gelatina en frutado (según marca) | Ninguno permitido (prohibidos por NTC 750) | **Exclusivamente Pectina LMP** (Almidón prohibido NTC 805) |
 | **9. Generación de Subproductos** | **Cero subproductos**; rendimiento en masa $\sim 100\text{ \%}$ | **Lactosuero dulce masivo:** 4.507 kg/lote ($87\text{ \%}$ de la masa) | **Cero subproductos**; rendimiento en masa $\sim 100\text{ \%}$ |
@@ -660,7 +660,7 @@ flowchart TD
 
     subgraph L1["2. LÍNEA 1: YOGUR BATIDO Y FRUTADO (LÍNEA SELECCIONADA TDI)"]
         direction TB
-        P1["Tratamiento Térmico HTST Continuo<br/>85–90 °C por 5–10 min (Desnaturalización Sérica)"]
+        P1["Pasteurización en el tanque T-301<br/>85–90 °C por 5–10 min (Desnaturalización Sérica)"]
         P1 --> T1["Tanques de Proceso Encamisados (600 L)<br/>Inoculación e Incubación Termófila 43 °C (4–6 h)"]
         T1 --> E1["Enfriamiento Forzado en Placas (PHE)<br/>Descenso a 15–20 °C (Desembotellamiento: 2 Lotes/día)"]
         E1 --> ENV1["Envasado Automático de Alta Cadencia<br/>Bolsa 200 ml (30 bpm) / Vasos Frutados (45 bpm)"]
@@ -747,7 +747,7 @@ Para seleccionar con rigor científico y metodológico la línea base del Proyec
   1. *YB-200:* Yogur entero bebible/batido en bolsa de 200 ml.
   2. *YV-150:* Yogur batido con $8\text{ \%}$ de dulce de mora en vaso de 150 ml.
   3. *YV-300:* Yogur batido con $12\text{ \%}$ de melocotón en trozos en vaso de 300 ml.
-  La transición entre recetas se gestiona por software en el MES, requiriendo únicamente ajustar la inyección de fruta en línea y la envasadora destino, con tiempos de setup mínimos ($10\text{ a }40\text{ min}$).
+  La transición entre recetas se gestiona por software en el MES, requiriendo únicamente ajustar la inyección de fruta en línea y la envasadora destino, con tiempos de setup mínimos ($5\text{ a }40\text{ min}$).
 - **Queso Campesino (4,0 / 5,0):** Admite tres referencias (250 g, 1 kg y 3 kg), pero cada cambio requiere modificaciones mecánicas complejas: cambio de moldes pesados, ajuste de prensas y setup de la porcionadora ultrasónica.
 - **Kumis (3,0 / 5,0):** El mercado colombiano consume kumis primordialmente en su versión tradicional natural o con vainilla. Diversificar a tres referencias se limita a cambiar el tamaño de botella o vaso, con poca variación en la matriz del producto.
 
@@ -789,13 +789,13 @@ Propuesta de Transformación Digital Industrial:
 Capacidad Propuesta:
 ├── 2 Lotes diarios por jornada: Lote 1 (Mañana) + Lote 2 (Tarde/Noche).
 ├── Volumen procesado: 1.100 L de leche por día (100 % de incremento).
-├── Producción diaria: 1.220 a 1.350 L de producto según mezcla de referencias.
+├── Producción diaria: 1.230 a 1.360 L de producto según mezcla de referencias.
 └── Scrap reducido del 5,06 % a menos del 1,5 % mediante Checkweigher en línea.
 ```
 
 ### 7.3 Alineación Estratégica con ISA-88, ISA-95 y el Gemelo Digital
 La línea de yogur permite estructurar una arquitectura de manufactura digital limpia en 5 niveles de integración:
-- **Nivel 0 (Proceso Físico):** Instrumentación analógica y digital (sensores de temperatura PT100 sanitarios, transmisor de pH AT-301, transmisor de nivel radar LT-301, válvulas de mariposa con actuador neumático y cabezal de control inteligente AS-i).
+- **Nivel 0 (Proceso físico):** tanques, intercambiador, bombas y máquinas de las unidades U1 a U8. Los instrumentos (PT100 sanitarias, pH AT-301 y nivel hidrostático LT-301 por IO-Link) y las válvulas de asiento sanitario corresponden al nivel 1.
 - **Niveles 1 y 2 (Medición, actuación y control):** E/S remotas y variadores en el nivel 1; PLC Allen-Bradley CompactLogix 5380 en el nivel 2, ejecutando lazos PID de temperatura y la secuencia procedimental ISA-88.
 - **Nivel 2 (Supervisión y HMI):** SCADA industrial con registro de curvas térmicas, gestión de alarmas ISA-18.2 y pantallas de control de lote.
 - **Nivel 3 (MES):** Gestión de Órdenes de Producción, genealogía de lote, control de recetas maestras (RM-YB-200, RM-YV-150, RM-YV-300), balance de masa y cálculo en tiempo real de OEE.

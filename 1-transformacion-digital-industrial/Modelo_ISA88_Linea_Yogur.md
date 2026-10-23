@@ -65,7 +65,7 @@ Empresa: Productos Alimenticios La Hacienda
 | **U5 Tanque pulmón de envasado** | Almacenar temporalmente y habilitar la alimentación a la ruta de envasado | T-302 tanque pulmón de 650 L; derivaciones hacia bolsas o vasos | LT-302 nivel; TT-303 temperatura; XV-401 ruta a U6; XV-402 ruta a U7 |
 | **U6 Envasado de bolsas** | Formar, llenar, sellar, pesar y rechazar bolsas YB-200 | EMP-401 empacadora; CD-401 codificador; CK-401 controladora de peso; CV-401 banda | WT-401 peso; XY-401 expulsor de rechazo; ZS-401 presencia de producto; M-401 accionamiento |
 | **U7 Envasado de vasos** | Dosificar fruta, llenar, sellar, pesar y rechazar vasos YV-150/YV-300 | P-403 bomba de preparado; MX-403 mezclador o dosificador de fruta; LL-402 llenadora-selladora; CD-402 codificador; CK-402; CV-402 | WT-402 peso; XY-402 expulsor de rechazo; ZS-402 presencia de producto; ZS-403 tapa sellada; M-402 accionamiento |
-| **U8 Encanastado y paletizado** | Agrupar, encajonar o encanastar, paletizar y transportar a frío | Estación de encanastado manual y CV-501 banda hacia CF-501; la celda robotizada R-501 se agrega en una etapa posterior | ZS-501 estado; M-501 accionamiento; TT-501 temperatura del cuarto frío |
+| **U8 Encanastado y paletizado** | Agrupar, encajonar o encanastar, paletizar y transportar a frío | Estación de encanastado manual y CV-501 banda hacia CF-501; la celda robotizada R-501 se agrega en una etapa posterior | ZS-501 estado (con la celda, en la etapa posterior); M-501 accionamiento; TT-501 temperatura del cuarto frío |
 
 ### 2.3 Recursos compartidos
 
@@ -74,7 +74,7 @@ Los siguientes recursos no son unidades de la secuencia principal, pero prestan 
 | Recurso | Función |
 |---|---|
 | CAL-901 | Suministro de vapor y servicios térmicos para el tanque de proceso |
-| CH-901 | Suministro de agua fría para enfriamiento |
+| CH-901 | Suministro de agua helada para el intercambiador de placas E-301 |
 | CIP-901 | Limpieza de tanques y tuberías entre lotes o cambios de sabor |
 | LAB-101 | Análisis de recepción y verificaciones de calidad |
 | PLC-01 / HMI-01 y HMI-02 | Ejecución, operación y visualización de la receta de control |
@@ -86,7 +86,7 @@ La recepción y el análisis por cantina se mantienen como actividad manual asis
 
 ## 3. Modelo procedimental
 
-![Modelo físico](./ISA-88-modelo-procedimental.jpg)
+![Modelo procedimental](./ISA-88-modelo-procedimental.jpg)
 
 ### 3.1 Nivel de procedimiento de lote
 
@@ -127,7 +127,7 @@ El procedimiento de lote común a las tres referencias se organiza en seis proce
 | Operación | Fases | Unidad | Condición de fin |
 |---|---|---|---|
 | **3.1 Inocular** | Adicionar cultivo DVS según la receta; agitar aproximadamente 5 min; detener el agitador | U2/U3 | Cultivo adicionado, lote registrado y mezcla uniforme |
-| **3.2 Fermentar** | Incubar a 40–45 °C sin agitación; vigilar pH y tiempo | U3 | pH 4,4–4,6 y acidez de 80–90 °Th |
+| **3.2 Fermentar** | Incubar a 41–45 °C sin agitación; vigilar pH y tiempo | U3 | pH 4,4–4,6 y acidez de 80–90 °Th |
 | **3.3 Controlar coagulación** | Verificar pH, acidez, firmeza, textura y ausencia de sinéresis excesiva | U3 | Lote conforme o desviación documentada antes del corte |
 | **3.4 Cortar fermentación** | Enfriar rápidamente a 15–20 °C para detener la actividad | U3/U4 | Temperatura de salida alcanzada y fermentación detenida |
 
@@ -197,7 +197,7 @@ Registra como mínimo:
 | Base | Leche estandarizada y normalizada, con homogeneización antes de pasteurizar |
 | Pasteurización | 85–90 °C durante 5–10 min, con validación de tiempo final |
 | Enfriamiento para inoculación | 42–45 °C ±0,5 °C |
-| Incubación | 40–45 °C hasta pH 4,4–4,6 y acidez 80–90 °Th |
+| Incubación | 41–45 °C hasta pH 4,4–4,6 y acidez 80–90 °Th |
 | Corte de fermentación | 15–20 °C para detener la actividad |
 | Envasado y fruta | YB-200 sin preparado de fruta; YV-150 con 8 % de mora; YV-300 con 12 % de melocotón |
 | Refrigeración | 4 °C en CF-501 |

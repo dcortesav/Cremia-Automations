@@ -22,7 +22,7 @@ La transformación digital de la planta no termina con la puesta en marcha. El p
 | Ingresos | Ventas de COP 1.098,7 millones al año, una sola referencia | Ventas de COP 3.074,6 millones al año con tres referencias | Ventas por referencia en el ERP |
 | Costos | Mano de obra de 147 COP por unidad; sin costo real por lote | Mano de obra de 85 COP por unidad (−42 %); costo real de leche, insumos y envase por lote | Costo por lote en el MES y el ERP |
 | Calidad | 5,06 % de producto no conforme; se pesa una de cada cinco bolsas | 1,5 % o menos; se pesa el 100 % y los puntos críticos tienen registro continuo | Producto no conforme por lote y por causa |
-| Eficiencia de la empacadora (OEE) | ≈ 68 % estimado: disponibilidad 90 %, rendimiento 80 % y calidad 95 % | 80 % o más | OEE por turno en el MES |
+| Eficiencia de la empacadora (OEE) | ≈ 68 % estimado: disponibilidad 90 %, rendimiento 80 % y calidad 95 % | 82 %: disponibilidad 92 %, rendimiento 90 % y calidad 98,5 % | OEE por turno en el MES |
 | Trazabilidad | Registros en papel; un retiro de producto afecta varios días de producción | Registro electrónico de cada lote, desde la cantina de leche hasta la estiba | Tiempo para reconstruir la genealogía de un lote: de horas a minutos |
 | Disponibilidad de información | No hay datos: la programación es verbal y los registros son manuales | Tablero diario con OEE, rendimiento, no conformes, consumos, paradas y alarmas | Indicadores disponibles el mismo día |
 | Toma de decisiones | Por experiencia del operario y sin datos | Qué referencia producir según su margen, cuánta leche comprar según el plan semanal y cuándo intervenir un equipo según sus horas de trabajo | Reunión semanal de indicadores con la gerencia |

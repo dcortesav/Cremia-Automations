@@ -17,7 +17,7 @@ La EDT sigue la Guía del PMBOK (7.ª edición) y el Practice Standard for Work 
 
 1. **Regla del 100 %.** La EDT abarca todo el trabajo del contrato y nada más. La suma de las horas de los paquetes de cada cuenta de control es igual a la de la cuenta, y la suma de las nueve cuentas es igual a la del proyecto.
 2. **Descomposición por entregables.** Cada elemento es un producto verificable (planos P&ID, programa del PLC, protocolos SAT firmados), no una actividad. Las actividades están en el cronograma; los entregables son los que se aprueban y se pagan.
-3. **Granularidad.** Los paquetes tienen entre 20 y 210 horas; en el cronograma se dividen en tareas semanales por persona.
+3. **Granularidad.** Los paquetes tienen entre 20 y 200 horas; en el cronograma se dividen en tareas semanales por persona.
 4. **Cuentas de control y valor ganado.** Las nueve cuentas del nivel 2 integran alcance, plazo y costo, de modo que el avance se mide con la técnica de valor ganado en el paquete 1.1.2.
 
 | Criterio | EDT del proceso productivo | EDT del proyecto (este documento) |
@@ -99,8 +99,8 @@ La capacidad del equipo es de 6 personas × 16 semanas × 42 h = 4.032 h. La EDT
 
 **1.5 Software de control, supervisión y gestión**
 
-- 1.5.1 PLC del proceso
-- 1.5.2 PLC de envasado y transporte
+- 1.5.1 Programa del PLC: fases del proceso
+- 1.5.2 Programa del PLC: envasado y transporte
 - 1.5.3 SCADA e historiador
 - 1.5.4 MES e integración con ERP
 - 1.5.5 Recetas maestras, registro de lote y reportes
@@ -154,8 +154,8 @@ La capacidad del equipo es de 6 personas × 16 semanas × 42 h = 4.032 h. La EDT
 | 1.4.1 | Cotizaciones y selección de proveedores | Cuadro comparativo de proveedores | Cristian Hoyos | 50 | 1.2.5 |
 | 1.4.2 | Órdenes de compra y seguimiento de fabricación | Órdenes emitidas y plan de entregas | Cristian Hoyos | 60 | 1.3.1, 1.4.1 |
 | 1.4.3 | Pruebas FAT | Protocolos FAT firmados | José Andrés Zapata (30), Ana Orozco (30) | 60 | 1.4.2 |
-| 1.5.1 | PLC del proceso | Programa de fases, lazos PID y enclavamientos probado | David Cortés (110), Jesús Rivera (90) | 200 | 1.3.2, 1.2.4 |
-| 1.5.2 | PLC de envasado y transporte | Programa de envasado, peso y transporte probado | Jesús Rivera (70), Cristian Hoyos (60) | 130 | 1.3.2 |
+| 1.5.1 | Programa del PLC: fases del proceso | Programa de fases, lazos PID y enclavamientos probado | David Cortés (110), Jesús Rivera (90) | 200 | 1.3.2, 1.2.4 |
+| 1.5.2 | Programa del PLC: envasado y transporte | Programa de envasado, peso y transporte probado | Jesús Rivera (70), Cristian Hoyos (60) | 130 | 1.3.2 |
 | 1.5.3 | SCADA e historiador | Aplicación SCADA con alarmas, tendencias e historiador | David Cárdenas | 140 | 1.3.5 |
 | 1.5.4 | MES e integración con ERP | Órdenes, trazabilidad e indicadores integrados con el ERP | David Cárdenas (130), Cristian Hoyos (40) | 170 | 1.2.3, 1.2.4 |
 | 1.5.5 | Recetas maestras, registro de lote y reportes | Tres recetas maestras cargadas y reporte de lote | José Andrés Zapata | 60 | 1.5.4 |

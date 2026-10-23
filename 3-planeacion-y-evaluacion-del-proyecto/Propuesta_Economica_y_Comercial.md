@@ -148,7 +148,7 @@ El valor de la ingeniería sale de las horas de la EDT multiplicadas por la tari
 | Integrante | Rol | Valor que aporta al proyecto | Tipo de valor | Horas | Tarifa (COP/h) | Factor sobre su costo | Millones de COP |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | David Santiago Cortés Ávila | Gerente de proyecto | Dirige el proyecto, programa las fases ISA-88 del PLC y responde por la puesta en marcha virtual y las pruebas SAT | Dirección y control | 530 | 80.000 | 1,60 | 42,40 |
-| Jesús Alberto Rivera Molina | Líder de arquitectura digital | Diseña la red OT/IT, la ciberseguridad según IEC 62443, los tableros y el PLC de envasado | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
+| Jesús Alberto Rivera Molina | Líder de arquitectura digital | Diseña la red OT/IT, la ciberseguridad según IEC 62443, los tableros y el programa de envasado del PLC | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
 | David Felipe Cárdenas Cubides | Líder de gestión de producción | Desarrolla el SCADA, el MES y la integración con el ERP, de donde salen la trazabilidad y los indicadores | Especialidad escasa y crítica | 520 | 63.000 | 1,89 | 32,76 |
 | José Andrés Zapata Piñeros | Líder de procesos e instrumentación | Especifica equipos e instrumentos, estructura las recetas y lidera el montaje y el arranque con producto | Núcleo técnico del proceso | 520 | 60.000 | 1,80 | 31,20 |
 | Ana María Orozco Reyes | Líder de simulación y mejora | Construye el gemelo digital y valida el estado propuesto antes de intervenir la planta | Núcleo técnico de validación | 470 | 60.000 | 1,80 | 28,20 |
@@ -375,7 +375,7 @@ El flujo después de la deuda es positivo todos los años. El 30 % restante (COP
 | Ingresos y margen | Ventas de COP 1.098,7 millones y margen de 494,4 millones al año | Ventas de COP 3.074,6 millones y margen de 1.332,0 millones al año | +738 millones de beneficio neto anual |
 | Costo de mano de obra por unidad | 147 COP (4 operarios, 915.600 unidades al año) | 85 COP (5 operarios, 1.981.320 unidades al año) | −42 % |
 | Calidad | 5,06 % de producto no conforme; peso de una de cada cinco bolsas | 1,5 % o menos; peso del 100 % y puntos críticos con registro continuo | Unos 61 millones al año en producto que deja de perderse |
-| Eficiencia de la empacadora (OEE) | ≈ 68 % estimado | 80 % o más | Menos paradas y peso en línea |
+| Eficiencia de la empacadora (OEE) | ≈ 68 % estimado | 82 % | Menos paradas y peso en línea |
 | Trazabilidad | Registros en papel; un retiro afecta varios días de producción | Registro electrónico por lote, desde la cantina hasta la estiba | El retiro se limita a los lotes afectados |
 | Información | No existe: la programación es verbal | Tablero diario con OEE, rendimiento, no conformes, consumos y costo real por lote | Datos del mismo día, no del mes siguiente |
 | Decisiones | Por experiencia y sin datos | Qué referencia producir según su margen, cuánta leche comprar según el plan y cuándo intervenir un equipo según sus horas de trabajo | Decisiones medibles y revisables |

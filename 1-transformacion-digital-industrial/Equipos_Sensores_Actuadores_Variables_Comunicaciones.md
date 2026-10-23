@@ -209,7 +209,7 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 | Temperatura de precalentamiento | 25 °C | TT-301 | TIC-301 sobre TV-301 | Disolución del azúcar |
 | Temperatura y tiempo de pasteurización | 85–90 °C durante 5 a 10 min | TT-301, con registro | TIC-301 sobre TV-301; temporizador de sostenimiento | Punto crítico de control |
 | Temperatura de inoculación | 42–45 °C | TT-301 | TIC-301 sobre TV-302 | Viabilidad del cultivo |
-| Temperatura de incubación | 40–45 °C | TT-301 | TIC-301 sobre TV-301 y TV-302 | Velocidad de fermentación |
+| Temperatura de incubación | 41–45 °C (consigna de 43 °C) | TT-301 | TIC-301 sobre TV-301 y TV-302 | Velocidad de fermentación |
 | pH al final de la incubación | pH 4,4–4,6 (acidez de 80–90 °Th) | AT-301 | Termina la fase de incubación e inicia el enfriamiento | Calidad del producto |
 | Temperatura de salida del enfriador | 15–20 °C | TT-302 | TIC-302 sobre TV-303 | Detiene la fermentación |
 | Velocidad de agitación | Según la fase y la referencia | ST-301 | Consigna del variador de M-301 | Textura del producto |
@@ -297,7 +297,7 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 | --- | --- | --- | --- |
 | 0: proceso | Equipos de las unidades U1 a U8 | — | — |
 | 1: instrumentación y accionamientos | Transmisores, válvulas de control, sensores discretos, E/S remotas y variadores | 4–20 mA, IO-Link y señales de 24 V DC hacia las E/S remotas; EtherNet/IP hacia el PLC | Mediciones, estados y mandos |
-| 2: control | PLC-01 (CompactLogix 5380) y las máquinas con controlador propio: homogeneizador, controladoras de peso, codificadores, llenadora, empacadora y robot | EtherNet/IP en anillo DLR, que se recupera en menos de 3 ms si se corta un cable | Consignas, estados de equipo, conteos, pesos y alarmas |
+| 2: control | PLC-01 (CompactLogix 5380) y las máquinas con controlador propio: homogeneizador, controladoras de peso, codificadores, llenadora y empacadora; el robot se suma en la etapa posterior | EtherNet/IP en anillo DLR, que se recupera en menos de 3 ms si se corta un cable | Consignas, estados de equipo, conteos, pesos y alarmas |
 | 2: supervisión | SCADA (Ignition), HMI-01 en preparación y HMI-02 en envasado | OPC UA cifrado entre el PLC y el SCADA | Variables de proceso, alarmas, tendencias, receta activa y estado del lote |
 | 3: gestión de operaciones | MES | OPC UA o MQTT desde el SCADA; base de datos SQL | Órdenes de producción, recetas de control, registro de lote, paradas e indicadores |
 | 4: gestión empresarial | ERP | Servicios web (API REST) con mensajes B2MML de ISA-95 | Plan de producción, inventarios, consumos y producción terminada |

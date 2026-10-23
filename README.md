@@ -30,13 +30,14 @@ El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y
 | Calidad | Producto no conforme de 5,06 % a 1,5 % o menos, con peso del 100 % |
 | Trazabilidad | Registro electrónico de cada lote, desde la cantina hasta la estiba |
 | Información y decisiones | Tablero diario con OEE, rendimiento, consumos y paradas |
-| Resultado financiero | Inversión de COP 1.655,6 millones; VPN al 15 % de COP 318 millones, TIR de 21,8 % y recuperación en 3,1 años |
+| Eficiencia de la empacadora | OEE estimado de 68 % hoy; meta de 82 % |
+| Resultado financiero | Inversión de COP 1.286,7 millones; VPN al 15 % de COP 657 millones, TIR de 31,9 % y recuperación en 2,6 años |
 
 La transformación incluye a las personas: no hay despidos, el segundo lote crea un puesto, la capacitación es por rol en el gemelo digital y la gestión del cambio sigue el modelo ADKAR, con 8 semanas de acompañamiento después de la entrega.
 
 ## Plan del proyecto
 
-24 semanas, del 18 de enero al 2 de julio de 2027, con una sola parada de planta de 5 días y 4.760 horas de ingeniería. La ingeniería conceptual de la oferta se valida en sitio, los equipos de largo plazo se piden en la semana 4 y el software se prueba en el gemelo digital mientras se fabrican los equipos.
+16 semanas, del 18 de enero al 7 de mayo de 2027, con una sola parada de planta de 5 días. La ingeniería conceptual de la oferta se valida en sitio, los equipos de largo plazo se piden en la semana 3 y el software se prueba en el gemelo digital mientras se fabrican los equipos. La ingeniería se cobra por horas reales (3.060 h, COP 154,6 millones) en dos contratos: diseño y procura, e implementación. La celda robotizada de encanastado queda diseñada para una etapa posterior.
 
 ## Estructura del repositorio
 

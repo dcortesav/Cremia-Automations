@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cronograma de 16 semanas, contratos de ingeniería, inversión e indicadores financieros del proyecto." />
+    <title>Plan y finanzas | Cremia Automations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Cremia Automations, ir al inicio">
+          <img src="images/logos-and-banners/logo_horizontal.svg" alt="Cremia Automations" />
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="empresa.html">Empresa</a>
+          <a href="diagnostico.html">Diagnóstico</a>
+          <a href="solucion.html">Solución</a>
+          <a href="valor.html">Valor y personas</a>
+          <a href="plan.html" aria-current="page">Plan y finanzas</a>
+          <a href="aprendizajes.html">Aprendizajes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Plan de implementación</p>
+          <h1 class="page-title">16 semanas,<br /><span>una sola parada de 5 días.</span></h1>
+          <p class="page-lede">Del 18 de enero al 7 de mayo de 2027, con 3.060 horas de ingeniería y nadie del equipo por encima del 80 % de su capacidad.</p>
+        </div>
+      </section>
+
+      <section class="plan-section section">
+        <div class="container">
+          <div class="timeline" role="list">
+            <div class="timeline-row" role="listitem"><span>Ingeniería básica y de detalle</span><div class="bar" style="--start:1;--end:6"></div></div>
+            <div class="timeline-row" role="listitem"><span>Fabricación de equipos</span><div class="bar bar-critical" style="--start:3;--end:12"></div></div>
+            <div class="timeline-row" role="listitem"><span>PLC, SCADA, MES y gemelo digital</span><div class="bar" style="--start:4;--end:12"></div></div>
+            <div class="timeline-row" role="listitem"><span>FAT, montaje y parada (semana 14)</span><div class="bar bar-critical" style="--start:13;--end:14"></div></div>
+            <div class="timeline-row" role="listitem"><span>Pruebas, SAT y arranque</span><div class="bar bar-critical" style="--start:15;--end:16"></div></div>
+            <div class="timeline-row" role="listitem"><span>Gestión del cambio y capacitación</span><div class="bar bar-people" style="--start:1;--end:16"></div></div>
+            <div class="timeline-scale" aria-hidden="true"><span>Sem. 1</span><span>4</span><span>8</span><span>12</span><span>16</span></div>
+          </div>
+          <div class="plan-reasons">
+            <h3>Cómo se llega a 16 semanas</h3>
+            <ul>
+              <li>La ingeniería conceptual de la oferta se valida en planta en 2 semanas, en lugar de repetirse.</li>
+              <li>Los equipos de mayor tiempo de entrega se piden en la semana 3: la fabricación (10 semanas) marca el plazo.</li>
+              <li>El PLC, el SCADA y el MES se programan y se prueban en el gemelo digital mientras se fabrican los equipos.</li>
+              <li>Tuberías, tableros y bases se preinstalan sin detener la planta; solo la conexión al tanque exige parar 5 días.</li>
+              <li>La celda robotizada queda para una etapa posterior: el encanastado manual no limita los dos lotes diarios.</li>
+            </ul>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Concepto</th><th>Millones de COP</th></tr></thead>
+              <tbody>
+                <tr><td>Equipos y software (16 rubros)</td><td>960,0</td></tr>
+                <tr><td>Ingeniería de Cremia: 3.060 h en dos contratos (diseño y procura 55,3; implementación 99,3)</td><td>154,6</td></tr>
+                <tr><td>Montaje por contratistas (8 % de equipos)</td><td>76,8</td></tr>
+                <tr><td>Contingencia (8 %)</td><td>95,3</td></tr>
+                <tr><td><strong>Inversión total</strong></td><td><strong>1.286,7</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="finance-strip">
+            <div><span>Beneficio neto anual</span><strong>COP 738 M</strong></div>
+            <div><span>VPN al 15 %</span><strong>COP 657 M</strong></div>
+            <div><span>TIR</span><strong>31,9 %</strong></div>
+            <div><span>Recuperación</span><strong>2,6 años</strong></div>
+            <div><span>Equilibrio</span><strong>81,9 % del volumen</strong></div>
+          </div>
+          <p class="note">Pagos por hitos: 30 % a la firma, 30 % con las pruebas FAT (semana 13), 30 % con la puesta en marcha (semana 15) y 10 % a la entrega (semana 16). La línea de vasos (COP 282,9 millones) se confirma en la semana 2 con cartas de intención de los distribuidores.</p>
+        </div>
+      </section>
+      <div class="next-page"><div class="container"><a href="aprendizajes.html">Siguiente: Aprendizajes <span aria-hidden="true">→</span></a></div></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <a class="footer-brand" href="index.html">Cremia<span>.</span></a>
+        <p>Ingeniería que transforma. Proyecto Integrador APM 2026-2S, Universidad Nacional de Colombia.</p>
+        <span class="footer-mail">info@cremia.automation</span>
+      </div>
+    </footer>
+  </body>
+</html>

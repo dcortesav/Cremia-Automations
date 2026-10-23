@@ -18,6 +18,6 @@ Entregables de la línea de yogur.
 | Tiempo de entrega con el enfriamiento nocturno | ≈ 27 h |
 | Cuello de botella | Preparación del yogur: 391 min |
 | Producto no conforme | 5,06 % |
-| OEE de la empacadora | ≈ 65 % |
+| OEE de la empacadora (estimado) | ≈ 68 %: disponibilidad 90 %, rendimiento 80 % y calidad 95 %; meta de 82 % |
 
 La investigación de la línea de queso campesino está en [`estado-del-arte/queso`](../0-estado-del-arte/queso).

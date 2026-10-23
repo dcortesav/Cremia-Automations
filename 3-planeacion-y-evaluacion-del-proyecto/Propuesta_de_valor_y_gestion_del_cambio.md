@@ -9,7 +9,7 @@
 
 Este documento responde dos preguntas. La primera es qué ganan los dueños de La Hacienda con la transformación digital de la línea de yogur, en productividad, costos, calidad, trazabilidad, disponibilidad de información y toma de decisiones. La segunda es cómo se prepara a las personas de la planta para que la nueva línea funcione como se diseñó: quién cambia de tareas, qué procedimientos se reescriben, cómo se capacita a cada rol, cómo se maneja la resistencia y cómo sigue la transformación después de la entrega.
 
-La transformación digital de la planta no termina con la puesta en marcha. El proyecto de 24 semanas instala la tecnología y deja a las personas preparadas; la mejora continua con los datos que entrega el sistema es lo que mantiene y amplía los beneficios.
+La transformación digital de la planta no termina con la puesta en marcha. El proyecto de 16 semanas instala la tecnología y deja a las personas preparadas; la mejora continua con los datos que entrega el sistema es lo que mantiene y amplía los beneficios.
 
 ## 2. Propuesta de valor para los dueños
 
@@ -22,10 +22,11 @@ La transformación digital de la planta no termina con la puesta en marcha. El p
 | Ingresos | Ventas de COP 1.098,7 millones al año, una sola referencia | Ventas de COP 3.074,6 millones al año con tres referencias | Ventas por referencia en el ERP |
 | Costos | Mano de obra de 147 COP por unidad; sin costo real por lote | Mano de obra de 85 COP por unidad (−42 %); costo real de leche, insumos y envase por lote | Costo por lote en el MES y el ERP |
 | Calidad | 5,06 % de producto no conforme; se pesa una de cada cinco bolsas | 1,5 % o menos; se pesa el 100 % y los puntos críticos tienen registro continuo | Producto no conforme por lote y por causa |
+| Eficiencia de la empacadora (OEE) | ≈ 68 % estimado: disponibilidad 90 %, rendimiento 80 % y calidad 95 % | 80 % o más | OEE por turno en el MES |
 | Trazabilidad | Registros en papel; un retiro de producto afecta varios días de producción | Registro electrónico de cada lote, desde la cantina de leche hasta la estiba | Tiempo para reconstruir la genealogía de un lote: de horas a minutos |
 | Disponibilidad de información | No hay datos: la programación es verbal y los registros son manuales | Tablero diario con OEE, rendimiento, no conformes, consumos, paradas y alarmas | Indicadores disponibles el mismo día |
 | Toma de decisiones | Por experiencia del operario y sin datos | Qué referencia producir según su margen, cuánta leche comprar según el plan semanal y cuándo intervenir un equipo según sus horas de trabajo | Reunión semanal de indicadores con la gerencia |
-| Resultado financiero | Margen de contribución de COP 494,4 millones al año | Beneficio neto adicional de COP 747 millones al año; VPN al 15 % de COP 318 millones, TIR de 21,8 % y recuperación en 3,1 años | Flujo de caja real frente al proyectado |
+| Resultado financiero | Margen de contribución de COP 494,4 millones al año | Beneficio neto adicional de COP 738 millones al año; VPN al 15 % de COP 657 millones, TIR de 31,9 % y recuperación en 2,6 años | Flujo de caja real frente al proyectado |
 
 Las cifras de producción salen del documento de recetas y lotes (semana de referencia de 10 lotes) y las financieras, de la propuesta económica. El costo de mano de obra por unidad usa un costo de COP 33,6 millones al año por operario: 4 operarios para 915.600 unidades hoy y 5 operarios para 1.981.320 unidades con la propuesta.
 
@@ -53,12 +54,12 @@ Las cifras de producción salen del documento de recetas y lotes (semana de refe
 
 | Grupo | Qué cambia para ellos | Qué necesitan | Nivel de impacto |
 | --- | --- | --- | --- |
-| Dueños y gerencia | Deciden con indicadores diarios; invierten COP 1.655,6 millones | Ver el retorno y entender el tablero | Medio |
+| Dueños y gerencia | Deciden con indicadores diarios; invierten COP 1.286,7 millones | Ver el retorno y entender el tablero | Medio |
 | Jefe de producción | Programa lotes en el MES, sigue el avance en el SCADA y lidera la reunión diaria | Dominio del MES y de los indicadores | Alto |
-| Operarios (hoy 4) | Dejan de pesar, abrir válvulas y cargar canastas; operan desde la HMI y atienden alarmas | Capacitación práctica y seguridad sobre su puesto | Alto |
+| Operarios (hoy 4) | Dejan de pesar insumos y abrir válvulas a mano; operan desde la HMI y atienden alarmas | Capacitación práctica y seguridad sobre su puesto | Alto |
 | Operario nuevo del segundo lote | Se integra con la línea ya automatizada | Inducción completa | Alto |
 | Calidad | Libera lotes en el MES con el registro electrónico y verifica la calibración de los instrumentos críticos | Criterios de liberación y manejo del MES | Medio |
-| Mantenimiento (contratado o interno) | Atiende instrumentos, variadores, PLC y robot | Formación técnica y repuestos | Alto |
+| Mantenimiento (contratado o interno) | Atiende instrumentos, variadores, PLC y máquinas de envasado | Formación técnica y repuestos | Alto |
 | Ventas y distribución | Venden dos referencias nuevas en vaso | Fichas de producto y plan de lanzamiento | Medio |
 | Proveedores de leche | Reciben resultados de laboratorio por cantina registrados en el sistema | Información clara sobre la calidad de su leche | Bajo |
 
@@ -69,7 +70,7 @@ Las cifras de producción salen del documento de recetas y lotes (semana de refe
 | Operador de recepción y laboratorio | Descarga y análisis de cantinas, registro en HMI-01, carga del tanque | 1 | Operario actual |
 | Operador de preparación | Arranque de la receta, dosificación, seguimiento de fases y alarmas en HMI-01, CIP | 1 | Operario actual |
 | Operador de envasado | Empacadora y llenadora, cambios de referencia, codificado, control de peso en HMI-02 | 1 | Operario actual |
-| Operador de empaque y cuarto frío | Supervisión de la celda de encanastado, estibas, cuarto frío y despacho; muestreo del sellado | 1 | Operario actual |
+| Operador de empaque y cuarto frío | Encanastado de bolsas y encajonado de vasos, estibas, cuarto frío y despacho; muestreo del sellado | 1 | Operario actual |
 | Operador del segundo lote | Carga, pasteurización e inoculación del lote 2 (15:05 a 18:15) y verificación de las alarmas de la incubación nocturna | 1 | Contratación nueva |
 | Técnico de mantenimiento de primer nivel | Mantenimiento autónomo, calibraciones de rutina y primer diagnóstico; el soporte de segundo nivel lo da Cremia | 1 de los operarios, con formación adicional | Operario actual |
 
@@ -89,21 +90,21 @@ La incubación del lote 2 ocurre sin operario, con control automático y alarmas
 | Limpieza | Manual, sin registro | CIP con verificación de conductividad y registro | Limpieza CIP |
 | Mantenimiento | Correctivo | Autónomo diario, preventivo por horas y calibración programada | Mantenimiento autónomo y calibración |
 
-Los procedimientos se escriben con los operarios durante las semanas 18 a 23 (paquete 1.9.3 de la EDT), se prueban en el gemelo digital y se ajustan en el arranque.
+Los procedimientos se escriben con los operarios durante las semanas 12 a 16 (paquete 1.9.3 de la EDT), se prueban en el gemelo digital y se ajustan en el arranque.
 
 ## 5. Plan de gestión del cambio
 
 ### 5.1 Modelo
 
-El plan sigue el modelo ADKAR (conciencia, deseo, conocimiento, habilidad y refuerzo), porque mide el avance de cada persona y no solo el del proyecto. Cada etapa tiene actividades dentro del cronograma de 24 semanas y del acompañamiento posterior.
+El plan sigue el modelo ADKAR (conciencia, deseo, conocimiento, habilidad y refuerzo), porque mide el avance de cada persona y no solo el del proyecto. Cada etapa tiene actividades dentro del cronograma de 16 semanas y del acompañamiento posterior.
 
 | Etapa | Objetivo | Actividades | Semanas |
 | --- | --- | --- | --- |
-| Conciencia | Que todos entiendan por qué cambia la línea | Reunión de lanzamiento con dueños y operarios; recorrido por el VSM y por los problemas actuales (noche de enfriamiento, 5,06 % de no conformes) | 1 a 3 |
-| Deseo | Que las personas quieran participar | Compromiso escrito de los dueños de que no hay despidos; agentes de cambio entre los operarios; participación en la validación de recetas y alarmas | 2 a 14 |
-| Conocimiento | Que cada rol sepa qué hacer | Capacitación por rol en aula y en el gemelo digital | 15 a 18 |
-| Habilidad | Que cada persona lo haga bien en la planta | Práctica guiada en la puesta en marcha; certificación interna antes de operar sin acompañamiento | 19 a 24 |
-| Refuerzo | Que la nueva forma de trabajar se mantenga | Reunión diaria con el tablero, reconocimiento de logros, acompañamiento de 8 semanas y revisión trimestral | 24 en adelante |
+| Conciencia | Que todos entiendan por qué cambia la línea | Reunión de lanzamiento con dueños y operarios; recorrido por el VSM y por los problemas actuales (noche de enfriamiento, 5,06 % de no conformes) | 1 y 2 |
+| Deseo | Que las personas quieran participar | Compromiso escrito de los dueños de que no hay despidos; agentes de cambio entre los operarios; participación en la validación de recetas y alarmas | 2 a 10 |
+| Conocimiento | Que cada rol sepa qué hacer | Capacitación por rol en aula y en el gemelo digital | 11 a 13 |
+| Habilidad | Que cada persona lo haga bien en la planta | Práctica guiada en la puesta en marcha; certificación interna antes de operar sin acompañamiento | 14 a 16 |
+| Refuerzo | Que la nueva forma de trabajar se mantenga | Reunión diaria con el tablero, reconocimiento de logros, acompañamiento de 8 semanas y revisión trimestral | 16 en adelante |
 
 ### 5.2 Roles del cambio
 
@@ -116,7 +117,7 @@ El plan sigue el modelo ADKAR (conciencia, deseo, conocimiento, habilidad y refu
 | Rol | Contenido | Horas | Dónde | Evaluación |
 | --- | --- | --- | --- | --- |
 | Operadores (5) | Nueva línea, recetas, HMI según ISA-101, alarmas, CIP, buenas prácticas y registro de lote | 24 por persona: 8 en aula, 8 en el gemelo digital y 8 en planta | Planta y gemelo digital | Práctica en el gemelo y certificación antes de operar solo |
-| Técnico de mantenimiento | Instrumentación, calibración, variadores, diagnóstico básico del PLC, seguridad del robot y mantenimiento autónomo | 32 | Planta y proveedores | Prueba práctica |
+| Técnico de mantenimiento | Instrumentación, calibración, variadores, diagnóstico básico del PLC, seguridad de las máquinas y mantenimiento autónomo | 32 | Planta y proveedores | Prueba práctica |
 | Jefe de producción | MES: órdenes, recetas, registro de lote e indicadores; SCADA | 16 | Gemelo digital y planta | Programación de una semana real |
 | Calidad | Liberación de lotes en el MES, puntos críticos y verificación de instrumentos | 12 | Planta | Liberación supervisada de lotes de prueba |
 | Dueños y gerencia | Lectura del tablero de indicadores y uso de la información para decidir | 4 | Oficina | Reunión de indicadores |
@@ -129,10 +130,10 @@ La capacitación usa el gemelo digital antes del arranque: los operadores practi
 | --- | --- | --- | --- |
 | Por qué y para qué cambia la línea | Todo el personal | Reunión de lanzamiento con el patrocinador | Semana 1 |
 | Avance del proyecto y próximos pasos | Todo el personal | Reunión mensual de 30 min y cartelera en planta | Cada mes |
-| Cómo será cada puesto | Operarios | Reuniones por rol con los agentes de cambio | Semanas 6 a 14 |
-| Demostración de la línea virtual | Operarios, calidad y jefe de producción | Sesión en el gemelo digital | Semana 16 |
-| Parada de planta y arranque | Todo el personal y distribuidores | Reunión y comunicado | Semanas 17 y 19 |
-| Resultados del arranque | Todo el personal | Tablero en planta y reconocimiento al equipo | Semana 24 |
+| Cómo será cada puesto | Operarios | Reuniones por rol con los agentes de cambio | Semanas 4 a 10 |
+| Demostración de la línea virtual | Operarios, calidad y jefe de producción | Sesión en el gemelo digital | Semana 12 |
+| Parada de planta y arranque | Todo el personal y distribuidores | Reunión y comunicado | Semanas 13 y 15 |
+| Resultados del arranque | Todo el personal | Tablero en planta y reconocimiento al equipo | Semana 16 |
 
 ### 5.5 Resistencia al cambio y respuesta
 
@@ -159,9 +160,9 @@ La capacitación usa el gemelo digital antes del arranque: los operadores practi
 
 | Etapa | Cuándo | Qué hace la planta con la información |
 | --- | --- | --- |
-| 1. Conectar | Proyecto (semanas 1 a 24) | Instrumentar la línea, registrar cada lote y poner en marcha el MES |
+| 1. Conectar | Proyecto (semanas 1 a 16) | Instrumentar la línea, registrar cada lote y poner en marcha el MES |
 | 2. Estabilizar | Meses 1 a 6 después de la entrega | Cumplir las metas de no conformes y OEE con la reunión diaria y la semanal |
-| 3. Analizar y mejorar | Año 1 a 2 | Control estadístico de proceso sobre el pH final y el peso, mantenimiento por condición de bombas y homogeneizador, y análisis de costo por lote y por referencia |
+| 3. Analizar y mejorar | Año 1 a 2 | Control estadístico de proceso sobre el pH final y el peso, mantenimiento por condición de bombas y homogeneizador, análisis de costo por lote y por referencia, y compra de la celda robotizada de encanastado si el volumen la justifica |
 | 4. Integrar la cadena | Año 2 a 3 | Pago de la leche por calidad con los resultados por cantina y planeación con los distribuidores según la demanda real |
 
 La revisión trimestral de indicadores, incluida en el contrato de soporte de Cremia, decide qué mejoras se priorizan en cada etapa. La analítica de datos de las etapas 3 y 4 apoya las decisiones de producción, calidad y mantenimiento; el control de la línea sigue siendo el control regulatorio PID definido en el documento de equipos.

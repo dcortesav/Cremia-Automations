@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Solución técnica: modelo ISA-88, tecnologías, estrategia de control PID y arquitectura ISA-95 de la línea de yogur." />
+    <title>Solución | Cremia Automations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Cremia Automations, ir al inicio">
+          <img src="images/logos-and-banners/logo_horizontal.svg" alt="Cremia Automations" />
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="empresa.html">Empresa</a>
+          <a href="diagnostico.html">Diagnóstico</a>
+          <a href="solucion.html" aria-current="page">Solución</a>
+          <a href="valor.html">Valor y personas</a>
+          <a href="plan.html">Plan y finanzas</a>
+          <a href="aprendizajes.html">Aprendizajes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow"><span class="eyebrow-line"></span> La transformación propuesta</p>
+          <h1 class="page-title">Tres productos,<br /><span>una línea conectada.</span></h1>
+          <p class="page-lede">Automatizamos la preparación, enfriamos el yogur en un intercambiador de placas para liberar el tanque, agregamos una línea de vasos y conectamos la planta con un MES y un ERP. Diseño basado en ANSI/ISA-88 e ISA-95.</p>
+        </div>
+      </section>
+
+      <section class="solution section">
+        <div class="container product-grid">
+          <article><span>YB-200</span><h3>Bolsa de 200 ml</h3><p>Fresa · 3.079 bolsas por lote · producto actual</p></article>
+          <article><span>YV-150</span><h3>Vaso de 150 ml</h3><p>Mora, 8 % de fruta · 4.369 vasos por lote</p></article>
+          <article><span>YV-300</span><h3>Vaso de 300 ml</h3><p>Melocotón, 12 % de fruta · 2.260 vasos por lote</p></article>
+        </div>
+
+        <div class="container physical-model">
+          <div class="model-visual">
+            <p class="solution-kicker">Modelo físico y unidades <span>(ISA-88)</span></p>
+            <figure class="model-figure">
+              <img src="images/ISA-88/ISA-88-modelo-fisico.jpg" alt="Modelo físico ISA-88 de la línea de yogur" />
+              <figcaption>Unidades del modelo físico ANSI/ISA-88 de la propuesta.</figcaption>
+            </figure>
+          </div>
+          <div class="unit-legend">
+            <p class="solution-kicker">Unidades</p>
+            <ul>
+              <li><strong>U1 Recepción</strong><span>Análisis por cantina y bomba de 3 m³/h.</span></li>
+              <li><strong>U2 Insumos</strong><span>Dosificación por peso de azúcar, estabilizante, leche en polvo y aditivos.</span></li>
+              <li><strong>U3 Tanque de proceso</strong><span>Homogeneización, pasteurización a 85–90 °C e incubación hasta pH 4,4–4,6.</span></li>
+              <li><strong>U4 Enfriamiento</strong><span>Intercambiador de placas a 15–20 °C en 25 minutos.</span></li>
+              <li><strong>U5 Tanque pulmón</strong><span>Alimenta la línea de bolsas o la de vasos.</span></li>
+              <li><strong>U6 Bolsas</strong><span>Empacadora existente, controladora de peso y codificador.</span></li>
+              <li><strong>U7 Vasos</strong><span>Dosificación de fruta, llenadora, controladora de peso y codificador.</span></li>
+              <li><strong>U8 Encanastado</strong><span>Manual en el proyecto; celda robotizada diseñada para una etapa posterior.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container technology-pillars">
+          <div class="pillar-grid">
+            <article><h3>Recetas por lote</h3><p>Cada referencia tiene su receta maestra. Cambiar de producto es cambiar datos, no programas.</p></article>
+            <article><h3>Control de proceso</h3><p>Control secuencial por fases y lazos PID en el PLC. pH en línea para terminar la incubación.</p></article>
+            <article><h3>Enfriamiento rápido</h3><p>El intercambiador libera el tanque a las 15:05 y permite el segundo lote diario.</p></article>
+            <article><h3>Peso del 100 %</h3><p>Controladoras de peso con rechazo automático en bolsas y vasos.</p></article>
+            <article><h3>Trazabilidad</h3><p>Lote y vencimiento impresos en cada unidad y registro electrónico de cada lote.</p></article>
+            <article><h3>Planta conectada</h3><p>SCADA, MES en la planta y ERP en la nube, con 23 sensores y 19 actuadores en el diseño.</p></article>
+          </div>
+        </div>
+
+        <div class="container control-box on-accent">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Estrategia de control</p>
+            <h3>PID donde basta,<br /><span>sin control avanzado.</span></h3>
+            <p>El PLC ejecuta el control secuencial por fases de ISA-88 y lazos PID con mejoras clásicas. El control avanzado (MPC, difuso o adaptativo) no se justifica: cada lazo tiene un actuador dominante, las dinámicas son lentas y el proceso es por lotes. El personal de la planta puede mantener un PID.</p>
+          </div>
+          <ul>
+            <li><strong>TIC-301</strong><span>Temperatura del tanque: rango dividido sobre vapor y agua fría.</span></li>
+            <li><strong>TIC-302</strong><span>Salida del intercambiador: PID con prealimentación del caudal.</span></li>
+            <li><strong>FFC-403</strong><span>Fruta: control de relación del 8 % o 12 %.</span></li>
+            <li><strong>WIC-201/202/206</strong><span>Dosificación por peso en dos velocidades.</span></li>
+          </ul>
+        </div>
+
+        <div class="container levels">
+          <p class="solution-kicker">Arquitectura ISA-95</p>
+          <ol class="level-list">
+            <li><span>Nivel 4</span><strong>ERP en la nube para pymes</strong><p>Plan de producción, compras, inventarios y costos.</p></li>
+            <li class="level-dmz"><span>Nivel 3.5</span><strong>Zona desmilitarizada</strong><p>Pasarela que valida cada mensaje entre el ERP y el MES; acceso remoto por VPN.</p></li>
+            <li><span>Nivel 3</span><strong>MES e historiador, en la planta</strong><p>Órdenes, recetas, registro de lote, trazabilidad e indicadores.</p></li>
+            <li><span>Nivel 2</span><strong>PLC CompactLogix, SCADA Ignition y HMI</strong><p>Control de fases y lazos, alarmas y supervisión.</p></li>
+            <li><span>Nivel 1</span><strong>Sensores, válvulas y variadores</strong><p>4–20 mA, IO-Link y EtherNet/IP en anillo.</p></li>
+          </ol>
+        </div>
+      </section>
+      <div class="next-page"><div class="container"><a href="valor.html">Siguiente: Valor y personas <span aria-hidden="true">→</span></a></div></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <a class="footer-brand" href="index.html">Cremia<span>.</span></a>
+        <p>Ingeniería que transforma. Proyecto Integrador APM 2026-2S, Universidad Nacional de Colombia.</p>
+        <span class="footer-mail">info@cremia.automation</span>
+      </div>
+    </footer>
+  </body>
+</html>

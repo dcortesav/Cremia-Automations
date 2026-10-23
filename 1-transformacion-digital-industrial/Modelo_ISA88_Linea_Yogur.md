@@ -65,7 +65,7 @@ Empresa: Productos Alimenticios La Hacienda
 | **U5 Tanque pulmón de envasado** | Almacenar temporalmente y habilitar la alimentación a la ruta de envasado | T-302 tanque pulmón de 650 L; derivaciones hacia bolsas o vasos | LT-302 nivel; TT-303 temperatura; XV-401 ruta a U6; XV-402 ruta a U7 |
 | **U6 Envasado de bolsas** | Formar, llenar, sellar, pesar y rechazar bolsas YB-200 | EMP-401 empacadora; CD-401 codificador; CK-401 controladora de peso; CV-401 banda | WT-401 peso; XY-401 expulsor de rechazo; ZS-401 presencia de producto; M-401 accionamiento |
 | **U7 Envasado de vasos** | Dosificar fruta, llenar, sellar, pesar y rechazar vasos YV-150/YV-300 | P-403 bomba de preparado; MX-403 mezclador o dosificador de fruta; LL-402 llenadora-selladora; CD-402 codificador; CK-402; CV-402 | WT-402 peso; XY-402 expulsor de rechazo; ZS-402 presencia de producto; ZS-403 tapa sellada; M-402 accionamiento |
-| **U8 Encanastado y paletizado** | Agrupar, encajonar o encanastar, paletizar y transportar a frío | R-501 celda robotizada; CV-501 banda hacia CF-501 | ZS-501 estado; M-501 accionamiento; TT-501 temperatura del cuarto frío |
+| **U8 Encanastado y paletizado** | Agrupar, encajonar o encanastar, paletizar y transportar a frío | Estación de encanastado manual y CV-501 banda hacia CF-501; la celda robotizada R-501 se agrega en una etapa posterior | ZS-501 estado; M-501 accionamiento; TT-501 temperatura del cuarto frío |
 
 ### 2.3 Recursos compartidos
 
@@ -259,7 +259,7 @@ Una desviación de parámetro no se resuelve cambiando silenciosamente el estado
 | Nivel | Componentes | Información |
 |---|---|---|
 | 0-1 Proceso, medición y actuación | Sensores, válvulas, motores, variadores, módulos de E/S | Mediciones, estados y mandos |
-| 2 Control | PLC-01 (CompactLogix 5380) y controladores de máquina: controladoras de peso, empacadora, llenadora y robot | Consignas, estados, conteos, pesos y alarmas |
+| 2 Control | PLC-01 (CompactLogix 5380) y controladores de máquina: controladoras de peso, empacadora y llenadora (robot en la etapa posterior) | Consignas, estados, conteos, pesos y alarmas |
 | 2 Supervisión | SCADA Ignition, HMI-01 en preparación y HMI-02 en envasado | Variables, alarmas, tendencias, receta activa y estado del lote |
 | 3 Gestión de operaciones | MES, base de datos SQL | Órdenes, recetas de control, registro de lote, paradas e indicadores |
 | 4 Gestión empresarial | ERP | Órdenes, inventario, consumos y resultados mediante servicios web/API |

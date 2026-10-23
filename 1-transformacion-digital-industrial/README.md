@@ -6,11 +6,11 @@ Entregables de la línea de yogur.
 |---|---|
 | Estado del arte de las tres líneas y justificación de la línea de yogur | [Abrir](https://docs.google.com/document/d/15Qr4HVqPt1KvFmihwyoIkslSdZMANpP2/edit) · [`3_Estado_del_Arte_y_Justificacion_Yogur.md`](../0-estado-del-arte/3_Estado_del_Arte_y_Justificacion_Yogur.md) |
 | Parámetros de proceso: temperaturas, tiempos y velocidades | [Abrir](https://docs.google.com/document/d/1mB-EovLcqbgefFnWGZF3BccSLASdBvvIfBUOuBw3cVQ/edit) |
-| Recetas y lotes según ISA-88 | [Abrir](https://docs.google.com/document/d/1X1U0yaOUam14wozc36GzxmGuL5SzhDa4b_BxD9mRF6A/edit) |
+| Recetas y lotes según ISA-88 | [Abrir](https://docs.google.com/document/d/1X1U0yaOUam14wozc36GzxmGuL5SzhDa4b_BxD9mRF6A/edit) · [`Recetas_y_Lotes_ISA88.md`](Recetas_y_Lotes_ISA88.md) |
 | Modelo físico y modelo procedimental ISA-88 | [Abrir](https://docs.google.com/document/d/1ZF-I_JR1iNFCNcEoRBKXjb61100lmu2lH0ex8rSSnnQ/edit) · [`Modelo_ISA88_Linea_Yogur.md`](Modelo_ISA88_Linea_Yogur.md) |
 | Arquitectura de automatización ISA-95 | [Abrir](https://docs.google.com/document/d/1kvNnSGBzCeJxPqM4DeCohGPNIGzel8OJ/edit) · [`2_Arquitectura_ISA95.md`](2_Arquitectura_ISA95.md) |
 | Flujo de información entre OT e IT | [Abrir](https://docs.google.com/document/d/1NjIe9slTbMAhIYK8SDlBFLAXtRPwuCeh/edit) · [`1_Flujo_Informacion_OT_IT.md`](1_Flujo_Informacion_OT_IT.md) |
-| Equipos, sensores, actuadores, variables, estrategia de control y comunicaciones | [Abrir](https://docs.google.com/document/d/1spMO-Vy00_5qNQvk6opeh2CanFKjmcis8-Qxc25g61I/edit) |
+| Equipos, sensores, actuadores, variables, estrategia de control y comunicaciones | [Abrir](https://docs.google.com/document/d/1spMO-Vy00_5qNQvk6opeh2CanFKjmcis8-Qxc25g61I/edit) · [`Equipos_Sensores_Actuadores_Variables_Comunicaciones.md`](Equipos_Sensores_Actuadores_Variables_Comunicaciones.md) |
 
 ## Estrategia de control
 

@@ -255,7 +255,10 @@ Al comparar con la situación actual, la duplicación del volumen y la venta de 
 | Margen de contribución anual con la propuesta (600 lotes al año) | 1.332,0 |
 | Margen de contribución actual de la planta (300 lotes al año) | −494,4 |
 | **Margen de contribución adicional generado** | **837,6** |
-| Operación y mantenimiento preventivo de equipos nuevos (5 % de equipos) | −48,0 |
+| Operación, mantenimiento y soporte de los equipos y el software nuevos (5 % de equipos) | −48,0 |
+| · Mantenimiento preventivo de equipos de proceso y envasado (3 % de COP 780 millones) | (−23,4) |
+| · Soporte y actualización de licencias del fabricante | (−10,2) |
+| · Contrato de soporte y analítica de Cremia (8 % del software y el control) | (−14,4) |
 | Costo de un operario adicional para el segundo lote | −33,6 |
 | Suscripción del ERP Odoo en la nube (ventas, compras, inventario, fabricación y contabilidad) | −18,0 |
 | **Beneficio neto anual a plena producción** | **738,0** |
@@ -272,6 +275,52 @@ La planta no tiene hoy ningún sistema de información, así que el proyecto no 
 
 Estos beneficios no se incluyen en el flujo de caja, de modo que los indicadores de la sección 9 son conservadores.
 
+### 7.2 Costo del ciclo de vida del software y sostenibilidad
+
+El costo del software no termina con la instalación: las licencias necesitan soporte y actualizaciones, y el sistema necesita alguien que lo mantenga. Por eso el flujo de caja incluye desde el año 1 todos los costos recurrentes del software, dentro de los COP 99,6 millones anuales de operación:
+
+| Costo anual del software | Millones de COP por año |
+| --- | --- |
+| Soporte y actualización de licencias del fabricante (Ignition, módulos Sepasoft y SQL Server), cerca del 20 % anual del valor de las licencias | 10,2 |
+| Contrato de soporte y analítica de Cremia (8 % anual de los rubros 10, 11 y 12): soporte de segundo nivel, actualización de programas y recetas, copias de respaldo y revisión trimestral de indicadores | 14,4 |
+| Suscripción del ERP Odoo en la nube | 18,0 |
+| **Total anual** | **42,6** |
+
+En cinco años, el software cuesta COP 357,2 millones: 100,0 de licencias y equipos de supervisión (rubros 11 y 12), 44,2 de ingeniería de software (cuenta 1.5 de la EDT) y 213,0 de costos recurrentes. Los equipos de proceso y envasado tienen aparte su mantenimiento preventivo, del 3 % anual de su valor (COP 23,4 millones, con repuestos y electrodos de pH).
+
+**Por qué no un MES y un ERP desarrollados a la medida.** Un desarrollo propio parece más barato al comienzo, pero deja a la planta dependiendo de quien lo programó para cada cambio, cada falla y cada actualización. Cremia configura plataformas comerciales con soporte del fabricante y una comunidad amplia de integradores (Ignition con Sepasoft y Odoo), de modo que La Hacienda puede seguir con Cremia o con otro integrador.
+
+**Estrategia de sostenibilidad tecnológica.**
+- La planta es dueña del programa del PLC, del proyecto de Ignition, de las recetas y de las bases de datos, que se entregan con su documentación (paquete 1.9.3 de la EDT).
+- Soporte en tres niveles: el técnico de primer nivel de la planta, Cremia en el segundo y el fabricante en el tercero.
+- Una actualización anual planificada de Ignition y de los módulos, probada antes en el gemelo digital y aplicada en una ventana sin producción.
+- Copias de respaldo diarias cifradas en la nube, con una prueba de restauración cada semestre.
+- Repuestos críticos en la planta: un módulo de E/S, una fuente, un variador y electrodos de pH.
+- Renovación del servidor de planta y de las dos HMI hacia el año 6, fuera del horizonte de evaluación; el PLC y la red tienen una vida útil de más de diez años.
+
+### 7.2 Costo del ciclo de vida del software y sostenibilidad
+
+El costo del software no termina con la instalación: las licencias necesitan soporte y actualizaciones, y el sistema necesita alguien que lo mantenga. Por eso el flujo de caja incluye desde el año 1 todos los costos recurrentes del software, dentro de los COP 99,6 millones anuales de operación:
+
+| Costo anual del software | Millones de COP por año |
+| --- | --- |
+| Soporte y actualización de licencias del fabricante (Ignition, módulos Sepasoft y SQL Server), cerca del 20 % anual del valor de las licencias | 10,2 |
+| Contrato de soporte y analítica de Cremia (8 % anual de los rubros 10, 11 y 12): soporte de segundo nivel, actualización de programas y recetas, copias de respaldo y revisión trimestral de indicadores | 14,4 |
+| Suscripción del ERP Odoo en la nube | 18,0 |
+| **Total anual** | **42,6** |
+
+En cinco años, el software cuesta COP 357,2 millones: 100,0 de licencias y equipos de supervisión (rubros 11 y 12), 44,2 de ingeniería de software (cuenta 1.5 de la EDT) y 213,0 de costos recurrentes. Los equipos de proceso y envasado tienen aparte su mantenimiento preventivo, del 3 % anual de su valor (COP 23,4 millones, con repuestos y electrodos de pH).
+
+**Por qué no un MES y un ERP desarrollados a la medida.** Un desarrollo propio parece más barato al comienzo, pero deja a la planta dependiendo de quien lo programó para cada cambio, cada falla y cada actualización. Cremia configura plataformas comerciales con soporte del fabricante y una comunidad amplia de integradores (Ignition con Sepasoft y Odoo), de modo que La Hacienda puede seguir con Cremia o con otro integrador.
+
+**Estrategia de sostenibilidad tecnológica.**
+- La planta es dueña del programa del PLC, del proyecto de Ignition, de las recetas y de las bases de datos, que se entregan con su documentación (paquete 1.9.3 de la EDT).
+- Soporte en tres niveles: el técnico de primer nivel de la planta, Cremia en el segundo y el fabricante en el tercero.
+- Una actualización anual planificada de Ignition y de los módulos, probada antes en el gemelo digital y aplicada en una ventana sin producción.
+- Copias de respaldo diarias cifradas en la nube, con una prueba de restauración cada semestre.
+- Repuestos críticos en la planta: un módulo de E/S, una fuente, un variador y electrodos de pH.
+- Renovación del servidor de planta y de las dos HMI hacia el año 6, fuera del horizonte de evaluación; el PLC y la red tienen una vida útil de más de diez años.
+
 ## 8. Flujo de caja libre proyectado a cinco años
 
 El horizonte es de cinco años. Se modela una rampa de adopción comercial conservadora: 50 % del margen adicional el primer año, 75 % el segundo y 100 % desde el tercero, porque las referencias en vaso necesitan tiempo para entrar al canal y el personal necesita tiempo para dominar la nueva operación. Valores en millones de COP, antes de impuestos:
@@ -280,7 +329,7 @@ El horizonte es de cinco años. Se modela una rampa de adopción comercial conse
 | --- | --- | --- | --- | --- | --- | --- |
 | Inversión y parada por montaje | −1.334,0 | — | — | — | — | — |
 | Margen adicional (rampa de ventas) | — | 418,8 | 628,2 | 837,6 | 837,6 | 837,6 |
-| Operación, mantenimiento, operario y ERP | — | −99,6 | −99,6 | −99,6 | −99,6 | −99,6 |
+| Operación, mantenimiento, soporte del software, operario y ERP | — | −99,6 | −99,6 | −99,6 | −99,6 | −99,6 |
 | **Flujo neto anual** | **−1.334,0** | **319,2** | **528,6** | **738,0** | **738,0** | **738,0** |
 | Flujo de caja acumulado | −1.334,0 | −1.014,8 | −486,2 | 251,8 | 989,8 | 1.727,8 |
 
@@ -382,7 +431,7 @@ El flujo después de la deuda es positivo todos los años. El 30 % restante (COP
 | Riesgo para Cremia | Bajo | Alto: cartera y obsolescencia | Bajo |
 | Relación a largo plazo | Termina con el proyecto | Continua | Continua y colaborativa |
 
-**Modelo recomendado: C (híbrido).** Cremia es una firma de seis ingenieros sin capital para financiar maquinaria de proceso, lo que descarta el arrendamiento. El cliente queda como dueño de los activos y Cremia asegura un ingreso recurrente con el contrato anual de soporte, licencias y analítica, del 8 % anual sobre el valor del software y el control (rubros 10, 11 y 12, COP 180 millones), es decir, unos COP 14,4 millones al año. Ese contrato incluye una revisión trimestral de indicadores con la gerencia de la planta, que da continuidad a la transformación después de la entrega.
+**Modelo recomendado: C (híbrido).** Cremia es una firma de seis ingenieros sin capital para financiar maquinaria de proceso, lo que descarta el arrendamiento. El cliente queda como dueño de los activos y Cremia asegura un ingreso recurrente con el contrato anual de soporte y analítica, del 8 % anual sobre el valor del software y el control (rubros 10, 11 y 12, COP 180 millones), es decir, unos COP 14,4 millones al año, que ya están en los costos de operación del flujo de caja. Ese contrato incluye una revisión trimestral de indicadores con la gerencia de la planta, que da continuidad a la transformación después de la entrega.
 
 ## 13. Propuesta de valor y oferta comercial
 
@@ -420,7 +469,7 @@ La propuesta de valor y el plan de gestión del cambio se desarrollan en el docu
 | Servicios de ingeniería | COP 190,8 millones en dos contratos: diseño y procura (67,6) e implementación (123,2), con tarifa según el valor que aporta cada integrante |
 | Plazo de ejecución | 16 semanas, del 18 de enero al 7 de mayo de 2027 |
 | Forma de pago por hitos | 30 % de anticipo a la firma, 30 % contra pruebas FAT validadas en el gemelo digital, 30 % con la puesta en marcha y las pruebas SAT, y 10 % al cierre |
-| Garantía y soporte | 12 meses de garantía integral sobre la integración, 8 semanas de acompañamiento en planta después de la entrega y contrato opcional de soporte y analítica del 8 % anual |
+| Garantía y soporte | 12 meses de garantía integral sobre la integración, 8 semanas de acompañamiento en planta después de la entrega y contrato anual de soporte y analítica del 8 % sobre el software y el control (COP 14,4 millones), incluido en los costos de operación |
 | Etapa posterior opcional | Celda robotizada de encanastado y paletizado, con espacio e interfaz ya diseñados |
 
 ## 14. Referencias

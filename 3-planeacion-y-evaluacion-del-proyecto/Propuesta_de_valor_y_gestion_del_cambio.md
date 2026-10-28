@@ -11,6 +11,28 @@ Este documento responde dos preguntas. La primera es qué ganan los dueños de L
 
 La transformación digital de la planta no termina con la puesta en marcha. El proyecto de 16 semanas instala la tecnología y deja a las personas preparadas; la mejora continua con los datos que entrega el sistema es lo que mantiene y amplía los beneficios.
 
+### 1.1 Qué entendemos por Transformación Digital Industrial
+
+La Transformación Digital Industrial no es comprar tecnología: es cambiar la forma en que la empresa produce y decide, con cuatro componentes que avanzan juntos. Si solo cambia la tecnología, la planta queda con equipos que nadie usa como se diseñaron.
+
+| Componente | Qué significa | Cómo se aplica en La Hacienda |
+| --- | --- | --- |
+| Estrategia | Para qué se transforma la empresa | Duplicar la producción con el mismo tanque y entrar al mercado de yogur en vaso, de mayor margen |
+| Tecnología | Con qué herramientas | Instrumentación, PLC, SCADA, MES y ERP, integrados según ISA-88 e ISA-95 |
+| Procesos | Cómo cambia el trabajo | Nueve procedimientos reescritos con los operarios: programación, dosificación, liberación de lotes, CIP y mantenimiento (sección 4) |
+| Personas y cultura | Quién lo hace y cómo decide | Nadie sale de la planta: cada tarea automatizada tiene una nueva función para quien la hacía (sección 3.3), capacitación por rol y decisiones con datos en la reunión diaria |
+
+### 1.1 Qué entendemos por Transformación Digital Industrial
+
+La Transformación Digital Industrial no es comprar tecnología: es cambiar la forma en que la empresa produce y decide, con cuatro componentes que avanzan juntos. Si solo cambia la tecnología, la planta queda con equipos que nadie usa como se diseñaron.
+
+| Componente | Qué significa | Cómo se aplica en La Hacienda |
+| --- | --- | --- |
+| Estrategia | Para qué se transforma la empresa | Duplicar la producción con el mismo tanque y entrar al mercado de yogur en vaso, de mayor margen |
+| Tecnología | Con qué herramientas | Instrumentación, PLC, SCADA, MES y ERP, integrados según ISA-88 e ISA-95 |
+| Procesos | Cómo cambia el trabajo | Nueve procedimientos reescritos con los operarios: programación, dosificación, liberación de lotes, CIP y mantenimiento (sección 4) |
+| Personas y cultura | Quién lo hace y cómo decide | Nadie sale de la planta: cada tarea automatizada tiene una nueva función para quien la hacía (sección 3.3), capacitación por rol y decisiones con datos en la reunión diaria |
+
 ## 2. Propuesta de valor para los dueños
 
 ### 2.1 Beneficios medibles
@@ -76,6 +98,38 @@ Las cifras de producción salen del documento de recetas y lotes (semana de refe
 
 La incubación del lote 2 ocurre sin operario, con control automático y alarmas remotas al jefe de producción.
 
+### 3.3 Qué pasa con cada tarea que se automatiza
+
+Ningún puesto se elimina. El tiempo que la automatización libera se dedica a lo que la nueva línea necesita: el segundo lote, la llenadora de vasos, los cambios de referencia, la calidad y el mantenimiento autónomo.
+
+| Tarea que hoy es manual | Qué la reemplaza | Nueva función de quien la hacía | Capacitación |
+| --- | --- | --- | --- |
+| Cálculo y pesaje de insumos en dos cuartos | Dosificación automática por peso desde la receta | Operador de preparación: arranca la receta, vigila las fases y las alarmas en HMI-01 y ejecuta el CIP | 24 h por rol y certificación |
+| Apertura de válvulas de vapor y agua y lectura del termómetro | Control PID de temperatura (TIC-301) | El mismo operador supervisa el lazo y verifica con el técnico la calibración de TT-301 y AT-301 | Incluida en las 24 h |
+| Prueba de acidez para decidir el fin de la incubación | pH en línea (AT-301) | Calidad confirma la acidez una vez por lote y libera el lote en el MES | 12 h para calidad |
+| Pesaje de una de cada cinco bolsas | Controladora de peso con rechazo automático | Operador de envasado: cambios de referencia, ajuste de dosis y operación de la nueva llenadora de vasos | 24 h y certificación |
+| Registros en papel | Registro electrónico en el MES | Todos registran en la HMI; el jefe de producción usa el tablero en la reunión diaria | Incluida en cada rol |
+| Mantenimiento solo correctivo | Mantenimiento autónomo y preventivo por horas | Uno de los operarios se forma como técnico de primer nivel | 32 h |
+| Encanastado manual (etapa posterior) | Celda robotizada R-501, cuando el volumen la justifique | El operador de empaque pasa a operar la celda (cargue de cajas, cambio de patrón de estiba y recuperación de paradas) y a atender el cuarto frío y el despacho, que crecen con el volumen | 16 h con el fabricante del robot, según ISO 10218 |
+
+La compra del robot se justifica por el crecimiento del volumen, no por reducir personal. Las competencias nuevas se reconocen con una certificación interna por rol (operador, operador certificado y técnico de primer nivel), que la planta puede usar como ruta de crecimiento para sus trabajadores.
+
+### 3.3 Qué pasa con cada tarea que se automatiza
+
+Ningún puesto se elimina. El tiempo que la automatización libera se dedica a lo que la nueva línea necesita: el segundo lote, la llenadora de vasos, los cambios de referencia, la calidad y el mantenimiento autónomo.
+
+| Tarea que hoy es manual | Qué la reemplaza | Nueva función de quien la hacía | Capacitación |
+| --- | --- | --- | --- |
+| Cálculo y pesaje de insumos en dos cuartos | Dosificación automática por peso desde la receta | Operador de preparación: arranca la receta, vigila las fases y las alarmas en HMI-01 y ejecuta el CIP | 24 h por rol y certificación |
+| Apertura de válvulas de vapor y agua y lectura del termómetro | Control PID de temperatura (TIC-301) | El mismo operador supervisa el lazo y verifica con el técnico la calibración de TT-301 y AT-301 | Incluida en las 24 h |
+| Prueba de acidez para decidir el fin de la incubación | pH en línea (AT-301) | Calidad confirma la acidez una vez por lote y libera el lote en el MES | 12 h para calidad |
+| Pesaje de una de cada cinco bolsas | Controladora de peso con rechazo automático | Operador de envasado: cambios de referencia, ajuste de dosis y operación de la nueva llenadora de vasos | 24 h y certificación |
+| Registros en papel | Registro electrónico en el MES | Todos registran en la HMI; el jefe de producción usa el tablero en la reunión diaria | Incluida en cada rol |
+| Mantenimiento solo correctivo | Mantenimiento autónomo y preventivo por horas | Uno de los operarios se forma como técnico de primer nivel | 32 h |
+| Encanastado manual (etapa posterior) | Celda robotizada R-501, cuando el volumen la justifique | El operador de empaque pasa a operar la celda (cargue de cajas, cambio de patrón de estiba y recuperación de paradas) y a atender el cuarto frío y el despacho, que crecen con el volumen | 16 h con el fabricante del robot, según ISO 10218 |
+
+La compra del robot se justifica por el crecimiento del volumen, no por reducir personal. Las competencias nuevas se reconocen con una certificación interna por rol (operador, operador certificado y técnico de primer nivel), que la planta puede usar como ruta de crecimiento para sus trabajadores.
+
 ## 4. Adaptación de los procesos
 
 | Proceso | Hoy | Con la propuesta | Procedimiento que se escribe |
@@ -121,6 +175,8 @@ El plan sigue el modelo ADKAR (conciencia, deseo, conocimiento, habilidad y refu
 | Jefe de producción | MES: órdenes, recetas, registro de lote e indicadores; SCADA | 16 | Gemelo digital y planta | Programación de una semana real |
 | Calidad | Liberación de lotes en el MES, puntos críticos y verificación de instrumentos | 12 | Planta | Liberación supervisada de lotes de prueba |
 | Dueños y gerencia | Lectura del tablero de indicadores y uso de la información para decidir | 4 | Oficina | Reunión de indicadores |
+| Operador de la celda robotizada (etapa posterior) | Operación segura según ISO 10218, cambio de patrón de estiba y recuperación de paradas | 16 | Planta, con el fabricante del robot | Certificación antes de operar la celda |
+| Operador de la celda robotizada (etapa posterior) | Operación segura según ISO 10218, cambio de patrón de estiba y recuperación de paradas | 16 | Planta, con el fabricante del robot | Certificación antes de operar la celda |
 
 La capacitación usa el gemelo digital antes del arranque: los operadores practican con la línea virtual sin riesgo para el producto ni para los equipos.
 

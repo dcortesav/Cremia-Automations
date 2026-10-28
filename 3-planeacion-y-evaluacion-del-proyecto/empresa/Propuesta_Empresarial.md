@@ -13,6 +13,23 @@ Cliente del proyecto: La Hacienda Productos Alimenticios, una planta pequeña qu
 
 Propuesta de valor: una sola empresa entrega la solución completa, desde el instrumento hasta el indicador de gestión, con recetas y trazabilidad por lote; la valida en un gemelo digital antes de intervenir la planta y prepara al personal con capacitación por rol y acompañamiento después de la entrega. Para los dueños, la propuesta significa duplicar la producción con la misma planta, pasar de una a tres referencias, bajar el producto no conforme de 5,06 % a 1,5 % o menos y contar con información diaria para decidir.
 
+
+### 1.1 Mercado objetivo
+
+Cremia se dirige a las plantas pequeñas y medianas de derivados lácteos de Colombia (yogur, kumis, quesos frescos y postres lácteos) que cumplen estas condiciones:
+
+| Criterio | Cliente objetivo |
+| --- | --- |
+| Tamaño | Entre unos 500 y 20.000 L de leche por día, con una a cinco líneas de producción |
+| Nivel de automatización | Operación mayormente manual, registros en papel y sin MES ni ERP de manufactura |
+| Necesidad | Crecer sin construir una planta nueva, ampliar el portafolio, bajar pérdidas y demostrar trazabilidad ante cadenas de supermercados y ante el INVIMA |
+| Quién decide | El dueño o gerente de una empresa familiar, que busca recuperar la inversión en menos de tres años y una solución que su personal pueda mantener |
+| Región inicial | Cundinamarca y Boyacá, cerca de Bogotá; después Antioquia y Nariño, las otras cuencas lecheras grandes del país |
+
+**Por qué este segmento.** Las grandes procesadoras ya trabajan con integradores internacionales y sistemas corporativos. Las pymes, en cambio, no tienen un departamento de ingeniería y necesitan un solo proveedor que entregue la solución completa a su escala y prepare a su gente. La Hacienda es un cliente típico del segmento: una línea, cuatro operarios, un lote diario y ningún sistema de información.
+
+**Portafolio para el segmento.** (1) Diagnóstico con VSM y gemelo digital; (2) automatización de una línea con recetas ISA-88, como en La Hacienda; (3) MES, ERP e integración ISA-95; (4) soporte y analítica recurrentes. El cliente puede empezar por el diagnóstico y avanzar por etapas. Los canales comerciales son los gremios del sector lácteo, los proveedores de equipos de proceso y las referencias de clientes.
+
 ## 2. Roles y principal contribución
 
 | Integrante | Rol | Principal contribución |
@@ -86,7 +103,7 @@ El proyecto de 16 semanas tiene 3.060 horas y vale COP 190,8 millones en dos con
 | Riesgo para Cremia | Bajo | Alto: cartera y obsolescencia | Bajo |
 | Relación a largo plazo | Termina con el proyecto | Continua | Continua |
 
-**Modelo recomendado: C.** Cremia no tiene capital para financiar equipos de proceso, lo que descarta el arrendamiento. El cliente queda como dueño de los equipos y Cremia mantiene un ingreso recurrente por soporte, licencias y analítica, que incluye una revisión trimestral de indicadores con la gerencia de la planta.
+**Modelo recomendado: C.** Cremia no tiene capital para financiar equipos de proceso, lo que descarta el arrendamiento. El cliente queda como dueño de los equipos y Cremia mantiene un ingreso recurrente por soporte y analítica (COP 14,4 millones al año, ya incluidos en los costos de operación del cliente), que incluye una revisión trimestral de indicadores con la gerencia de la planta. Las licencias del fabricante se pagan aparte (COP 10,2 millones al año).
 
 | Hito | Semana | Pago |
 | --- | --- | --- |
@@ -94,7 +111,7 @@ El proyecto de 16 semanas tiene 3.060 horas y vale COP 190,8 millones en dos con
 | Pruebas FAT aprobadas | 13 | 30 % |
 | Puesta en marcha y pruebas SAT | 15 | 30 % |
 | Cierre y entrega de la documentación | 16 | 10 % |
-| Contrato de soporte, licencias y analítica | Después de la entrega | 8 % anual sobre el valor del software y el control |
+| Contrato de soporte y analítica | Después de la entrega | 8 % anual sobre el valor del software y el control (COP 14,4 millones) |
 
 ## 6. Oferta para La Hacienda
 

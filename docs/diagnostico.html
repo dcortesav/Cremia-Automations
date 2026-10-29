@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Diagnóstico de la línea de yogur de La Hacienda: tiempos, cuello de botella, OEE estimado y necesidades del cliente." />
+    <title>Diagnóstico | Cremia Automations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Cremia Automations, ir al inicio">
+          <img src="images/logos-and-banners/logo_horizontal.svg" alt="Cremia Automations" />
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="empresa.html">Empresa</a>
+          <a href="diagnostico.html" aria-current="page">Diagnóstico</a>
+          <a href="solucion.html">Solución</a>
+          <a href="valor.html">Valor y personas</a>
+          <a href="plan.html">Plan y finanzas</a>
+          <a href="aprendizajes.html">Aprendizajes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero dark-section">
+        <div class="container">
+          <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Diagnóstico y necesidades del cliente</p>
+          <h1 class="page-title">Un lote al día,<br /><span>todo a mano y en papel.</span></h1>
+          <p class="page-lede">La Hacienda produce 3.052 bolsas de yogur de 200 ml por lote de 550 L de leche, con cuatro operarios. El tanque de proceso pasa la noche enfriando el yogur, y por eso solo sale un lote diario.</p>
+        </div>
+      </section>
+
+      <section class="diagnostic section dark-section">
+        <div class="container">
+          <div class="challenge-grid">
+            <article class="challenge-card"><div><h3>601 minutos por lote</h3><p>Diez horas de proceso más unas 17 horas de enfriamiento natural en el tanque. La preparación se lleva 391 minutos, el 65 % del tiempo.</p></div></article>
+            <article class="challenge-card"><div><h3>Una sola referencia</h3><p>Solo bolsa de 200 ml. Cambiar de producto no es posible con la operación actual.</p></div></article>
+            <article class="challenge-card"><div><h3>5,06 % no conforme</h3><p>Se pesa una de cada cinco bolsas en gramera y el sellado se revisa a mano.</p></div></article>
+            <article class="challenge-card"><div><h3>Sin información</h3><p>Programación verbal y registros en papel. No hay datos de costos, paradas ni rendimiento por lote.</p></div></article>
+          </div>
+          <div class="oee-box">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> Estimación inicial</p>
+              <h3>OEE de la empacadora:<br /><span>cerca de 68 %.</span></h3>
+              <p>El OEE mide qué parte del tiempo planeado se convierte en producto bueno a la velocidad nominal (30 bolsas/min). El caso no reporta las paradas por separado, así que la división entre disponibilidad y rendimiento es una estimación; el resultado total no depende de ella: 3.052 bolsas conformes ÷ (30 × 148,9 min) = 68,3 %.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table light-table">
+                <thead><tr><th>Factor</th><th>Hoy</th><th>Meta</th><th>Qué lo mejora</th></tr></thead>
+                <tbody>
+                  <tr><td>Disponibilidad</td><td>90 %</td><td>92 %</td><td>Registro de paradas y mantenimiento autónomo</td></tr>
+                  <tr><td>Rendimiento</td><td>80 %</td><td>90 %</td><td>Peso en línea en lugar del pesaje manual</td></tr>
+                  <tr><td>Calidad</td><td>95 %</td><td>98,5 %</td><td>Rechazo automático y dosificación por receta</td></tr>
+                  <tr><td><strong>OEE</strong></td><td><strong>68 %</strong></td><td><strong>82 %</strong></td><td>El MES lo calcula por turno</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="context-banner">
+            <span class="context-label">Lectura</span>
+            <p>La mayor pérdida de la empacadora está en el rendimiento: trabaja a 20,5 bolsas/min porque el operario pesa y ajusta a mano. Pero lo que limita la producción diaria no es la empacadora sino el tanque de proceso, ocupado hasta el día siguiente. Por eso la propuesta ataca las dos cosas: peso en línea y enfriamiento rápido.</p>
+          </div>
+          <div class="requirements">
+            <div class="requirements-heading">
+              <p class="eyebrow"><span class="eyebrow-line"></span> Lo que pide el cliente</p>
+              <h3>Requerimientos<br /><span>del proyecto.</span></h3>
+            </div>
+            <ul class="requirements-list">
+              <li><span aria-hidden="true">✓</span><p><strong>Más capacidad:</strong> dos lotes diarios con el mismo tanque de proceso.</p></li>
+              <li><span aria-hidden="true">✓</span><p><strong>Más productos:</strong> bolsa de 200 ml y vasos de 150 y 300 ml con fruta.</p></li>
+              <li><span aria-hidden="true">✓</span><p><strong>Calidad medible:</strong> temperatura y pH controlados y peso del 100 % de las unidades.</p></li>
+              <li><span aria-hidden="true">✓</span><p><strong>Información:</strong> registro de cada lote y datos que lleguen del piso de planta a la gestión.</p></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="next-page"><div class="container"><a href="solucion.html">Siguiente: Solución <span aria-hidden="true">→</span></a></div></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <a class="footer-brand" href="index.html">Cremia<span>.</span></a>
+        <p>Ingeniería que transforma. Proyecto Integrador APM 2026-2S, Universidad Nacional de Colombia.</p>
+        <div class="footer-links"><a href="https://github.com/dcortesav/Cremia-Automations">Repositorio en GitHub</a><span class="footer-mail">info@cremia.automation</span></div>
+      </div>
+    </footer>
+  </body>
+</html>

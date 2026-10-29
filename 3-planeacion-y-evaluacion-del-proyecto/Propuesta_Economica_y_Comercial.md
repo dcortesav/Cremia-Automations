@@ -78,7 +78,7 @@ El precio de fábrica deja entre 31 y 48 % de margen al canal de distribución, 
 | Días de operación al año | 300 días | 300 días |
 | Lotes por año | 300 | 600 |
 | Leche procesada al año | 165.000 L | 330.000 L |
-| Producción semanal de referencia (5 días, 10 lotes) | 15.260 bolsas | 15.395 bolsas, 13.107 vasos de 150 ml y 4.520 vasos de 300 ml |
+| Producción de un ciclo de referencia (10 lotes en 5 días de producción) | 15.260 bolsas | 15.395 bolsas, 13.107 vasos de 150 ml y 4.520 vasos de 300 ml |
 | Ventas anuales (millones de COP) | 1.098,7 | 3.074,6 |
 | Margen de contribución anual (millones de COP) | 494,4 | 1.332,0 |
 
@@ -91,9 +91,33 @@ Por referencia, la producción anual de la propuesta se reparte así:
 | YV-300 | 271.200 | 786,5 | 347,1 |
 | **Total** | **1.981.320** | **3.074,6** | **1.332,0** |
 
-La propuesta usa la semana de referencia del documento de recetas y lotes (5 lotes de YB-200, 3 de YV-150 y 2 de YV-300) repetida 60 veces al año, que equivale a 600 lotes en 300 días de operación.
+La planta produce de lunes a sábado, 50 semanas al año (300 días), con dos lotes por día: 12 lotes por semana y 600 al año. La mezcla sigue el ciclo de 10 lotes del documento de recetas y lotes (5 de YB-200, 3 de YV-150 y 2 de YV-300), que se repite 60 veces al año.
 
-**Dinámica de los dos lotes diarios.** Con el intercambiador de placas y el control automático, el lote 1 se carga a las 8:40, se incuba hasta las 14:40, se enfría en placas y se envasa de 15:05 a 16:50. Mientras tanto el tanque se limpia y recibe el lote 2, que se incuba en la noche con alarmas remotas, se enfría con agua fría en la chaqueta y se envasa a primera hora del día siguiente (7:30 a 9:15). Así se duplica el volumen diario sin comprar un segundo tanque de proceso.
+**Dinámica de los dos lotes diarios.** Con el intercambiador de placas y el control automático, el lote 1 se carga a las 8:40, se incuba hasta las 14:40, se enfría en placas y se envasa de 15:05 a 16:50. Mientras tanto el tanque se limpia y recibe el lote 2, que se incuba en la noche con alarmas remotas, se enfría con agua fría en la chaqueta y se envasa al día siguiente de 10:00 a 11:45. Así se duplica el volumen diario sin comprar un segundo tanque de proceso.
+
+### 3.5 Régimen de operación, turnos y costo de la mano de obra
+
+La planta produce de lunes a sábado, 50 semanas al año (300 días), con dos lotes por día. Hoy trabaja un turno de 8 h; con la propuesta la jornada va de 7:00 a 18:30 en turnos escalonados de 7 h, que cumplen la jornada de 42 h semanales (Ley 2101 de 2021). La incubación del lote 2 y su enfriamiento nocturno son automáticos. Las tareas de cada turno están en la sección 7.4 del documento de recetas y lotes.
+
+| Rol | Turno | Personas |
+| --- | --- | --- |
+| Operador de recepción y laboratorio | Lunes a sábado, 7:00–14:00 | 1 |
+| Operador de preparación | Lunes a sábado, 7:00–14:00 | 1 |
+| Operador de envasado | Lunes a sábado, 10:00–17:00 | 1 |
+| Operador de empaque y cuarto frío | Lunes a sábado, 10:00–17:00 | 1 |
+| Operador del segundo lote (nuevo) | Lunes a sábado, 11:30–18:30 | 1 |
+| Envasado del lote 2 del sábado | Domingo, 7:00–10:00 | 2 por rotación |
+
+| Concepto de mano de obra | Valor |
+| --- | --- |
+| Salario mensual de un operario | COP 1.842.000 |
+| Costo empresa mensual, con el factor prestacional de 1,52 | COP 2.800.000 |
+| Costo anual por operario | COP 33,6 millones |
+| Operarios con la propuesta | 5: los 4 actuales y 1 nuevo para el segundo lote |
+| Costo adicional: operario nuevo | COP 33,6 millones al año |
+| Costo adicional: recargo dominical del turno corto (2 operarios × 3 h × 50 domingos, con recargo del 100 % sobre la hora ordinaria de COP 10.121 y prestaciones) | COP 4,6 millones al año |
+
+El lote 2 del sábado se envasa el domingo porque el tanque no tiene frío para guardar el yogur hasta el lunes. Cada operario cubre el domingo como máximo dos veces al mes, y el recargo se presupuesta con el 100 % que rige desde julio de 2027 (Ley 2466 de 2025).
 
 ## 4. Salarios del equipo: costo interno de Cremia (2026)
 
@@ -246,6 +270,22 @@ Los valores de equipos son estimaciones de orden de magnitud a partir de catálo
 | Cierre y entrega de la documentación | 16 | 10 % | 132,7 |
 | **Total** | | **100 %** | **1.325,8** |
 
+### 6.4 Costo completo del MES y del ERP
+
+El MES y el ERP no cuestan solo sus licencias: necesitan ingeniería para configurarlos, integrarlos y ponerlos en marcha. Esa ingeniería está en la EDT y dentro de los COP 190,8 millones de servicios de ingeniería.
+
+| Componente | Qué incluye | Horas | Millones de COP |
+| --- | --- | --- | --- |
+| SCADA (rubro 11) | Ignition, servidor de planta y dos HMI | — | 50,0 |
+| MES e integración (rubro 12) | Módulos Sepasoft, SQL Server y pasarela de la zona desmilitarizada | — | 50,0 |
+| Interfaz HMI (paquete 1.3.5) | Guía de estilo ISA-101 y pantallas de HMI-01 y HMI-02 | 90 | 5,67 |
+| SCADA e historiador (1.5.3) | Etiquetas, alarmas según ISA-18.2, tendencias e historiador | 140 | 8,82 |
+| MES e integración con el ERP (1.5.4) | Configuración de los módulos Sepasoft; parametrización de Odoo (datos maestros, listas de materiales, compras e inventario); pasarela B2MML probada | 170 | 10,07 |
+| Recetas, registro de lote y reportes (1.5.5) | Tres recetas maestras, registro electrónico de lote y reportes | 60 | 3,60 |
+| **Inversión inicial en gestión de la producción** | | **460** | **128,2** |
+
+El MES se prueba en la puesta en marcha virtual (paquete 1.6.3) y en las pruebas SAT (1.8.2), y el personal se capacita en él dentro del paquete 1.9.2. Desde el año 1, el MES y el ERP cuestan además COP 28,2 millones al año: 10,2 de soporte de licencias y 18,0 de la suscripción de Odoo (sección 7.2).
+
 ## 7. Beneficios y costos anuales de la propuesta
 
 Al comparar con la situación actual, la duplicación del volumen y la venta de vasos de mayor margen generan este beneficio:
@@ -260,8 +300,9 @@ Al comparar con la situación actual, la duplicación del volumen y la venta de 
 | · Soporte y actualización de licencias del fabricante | (−10,2) |
 | · Contrato de soporte y analítica de Cremia (8 % del software y el control) | (−14,4) |
 | Costo de un operario adicional para el segundo lote | −33,6 |
+| Recargo dominical del turno corto de envasado (lote 2 del sábado) | −4,6 |
 | Suscripción del ERP Odoo en la nube (ventas, compras, inventario, fabricación y contabilidad) | −18,0 |
-| **Beneficio neto anual a plena producción** | **738,0** |
+| **Beneficio neto anual a plena producción** | **733,4** |
 
 La planta no tiene hoy ningún sistema de información, así que el proyecto no supone un ERP corporativo con licencia perpetua: usa Odoo en la nube, por suscripción, al que el MES se conecta a través de la pasarela de la zona desmilitarizada.
 
@@ -277,30 +318,7 @@ Estos beneficios no se incluyen en el flujo de caja, de modo que los indicadores
 
 ### 7.2 Costo del ciclo de vida del software y sostenibilidad
 
-El costo del software no termina con la instalación: las licencias necesitan soporte y actualizaciones, y el sistema necesita alguien que lo mantenga. Por eso el flujo de caja incluye desde el año 1 todos los costos recurrentes del software, dentro de los COP 99,6 millones anuales de operación:
-
-| Costo anual del software | Millones de COP por año |
-| --- | --- |
-| Soporte y actualización de licencias del fabricante (Ignition, módulos Sepasoft y SQL Server), cerca del 20 % anual del valor de las licencias | 10,2 |
-| Contrato de soporte y analítica de Cremia (8 % anual de los rubros 10, 11 y 12): soporte de segundo nivel, actualización de programas y recetas, copias de respaldo y revisión trimestral de indicadores | 14,4 |
-| Suscripción del ERP Odoo en la nube | 18,0 |
-| **Total anual** | **42,6** |
-
-En cinco años, el software cuesta COP 357,2 millones: 100,0 de licencias y equipos de supervisión (rubros 11 y 12), 44,2 de ingeniería de software (cuenta 1.5 de la EDT) y 213,0 de costos recurrentes. Los equipos de proceso y envasado tienen aparte su mantenimiento preventivo, del 3 % anual de su valor (COP 23,4 millones, con repuestos y electrodos de pH).
-
-**Por qué no un MES y un ERP desarrollados a la medida.** Un desarrollo propio parece más barato al comienzo, pero deja a la planta dependiendo de quien lo programó para cada cambio, cada falla y cada actualización. Cremia configura plataformas comerciales con soporte del fabricante y una comunidad amplia de integradores (Ignition con Sepasoft y Odoo), de modo que La Hacienda puede seguir con Cremia o con otro integrador.
-
-**Estrategia de sostenibilidad tecnológica.**
-- La planta es dueña del programa del PLC, del proyecto de Ignition, de las recetas y de las bases de datos, que se entregan con su documentación (paquete 1.9.3 de la EDT).
-- Soporte en tres niveles: el técnico de primer nivel de la planta, Cremia en el segundo y el fabricante en el tercero.
-- Una actualización anual planificada de Ignition y de los módulos, probada antes en el gemelo digital y aplicada en una ventana sin producción.
-- Copias de respaldo diarias cifradas en la nube, con una prueba de restauración cada semestre.
-- Repuestos críticos en la planta: un módulo de E/S, una fuente, un variador y electrodos de pH.
-- Renovación del servidor de planta y de las dos HMI hacia el año 6, fuera del horizonte de evaluación; el PLC y la red tienen una vida útil de más de diez años.
-
-### 7.2 Costo del ciclo de vida del software y sostenibilidad
-
-El costo del software no termina con la instalación: las licencias necesitan soporte y actualizaciones, y el sistema necesita alguien que lo mantenga. Por eso el flujo de caja incluye desde el año 1 todos los costos recurrentes del software, dentro de los COP 99,6 millones anuales de operación:
+El costo del software no termina con la instalación: las licencias necesitan soporte y actualizaciones, y el sistema necesita alguien que lo mantenga. Por eso el flujo de caja incluye desde el año 1 todos los costos recurrentes del software, dentro de los COP 104,2 millones anuales de operación:
 
 | Costo anual del software | Millones de COP por año |
 | --- | --- |
@@ -329,33 +347,33 @@ El horizonte es de cinco años. Se modela una rampa de adopción comercial conse
 | --- | --- | --- | --- | --- | --- | --- |
 | Inversión y parada por montaje | −1.334,0 | — | — | — | — | — |
 | Margen adicional (rampa de ventas) | — | 418,8 | 628,2 | 837,6 | 837,6 | 837,6 |
-| Operación, mantenimiento, soporte del software, operario y ERP | — | −99,6 | −99,6 | −99,6 | −99,6 | −99,6 |
-| **Flujo neto anual** | **−1.334,0** | **319,2** | **528,6** | **738,0** | **738,0** | **738,0** |
-| Flujo de caja acumulado | −1.334,0 | −1.014,8 | −486,2 | 251,8 | 989,8 | 1.727,8 |
+| Operación, mantenimiento, soporte del software, mano de obra adicional y ERP | — | −104,2 | −104,2 | −104,2 | −104,2 | −104,2 |
+| **Flujo neto anual** | **−1.334,0** | **314,6** | **524,0** | **733,4** | **733,4** | **733,4** |
+| Flujo de caja acumulado | −1.334,0 | −1.019,4 | −495,4 | 238,0 | 971,4 | 1.704,8 |
 
 ### 8.1 Valor presente de cada año
 
 | Año | Flujo neto (millones de COP) | Factor de descuento al 15 % | Valor presente (millones de COP) |
 | --- | --- | --- | --- |
 | 0 | −1.334,0 | 1,0000 | −1.334,0 |
-| 1 | 319,2 | 0,8696 | 277,6 |
-| 2 | 528,6 | 0,7561 | 399,7 |
-| 3 | 738,0 | 0,6575 | 485,2 |
-| 4 | 738,0 | 0,5718 | 422,0 |
-| 5 | 738,0 | 0,4972 | 366,9 |
-| **Valor presente neto** | | | **617,4 ≈ 617** |
+| 1 | 314,6 | 0,8696 | 273,6 |
+| 2 | 524,0 | 0,7561 | 396,2 |
+| 3 | 733,4 | 0,6575 | 482,2 |
+| 4 | 733,4 | 0,5718 | 419,3 |
+| 5 | 733,4 | 0,4972 | 364,6 |
+| **Valor presente neto** | | | **602,0 ≈ 602** |
 
-El periodo de recuperación sale del flujo acumulado: al final del año 2 faltan 486,2 millones, que se recuperan con el 66 % del flujo del año 3 (486,2 ÷ 738,0). Por eso la recuperación es de 2,7 años.
+El periodo de recuperación sale del flujo acumulado: al final del año 2 faltan 495,4 millones, que se recuperan con el 68 % del flujo del año 3 (495,4 ÷ 733,4). Por eso la recuperación es de 2,7 años.
 
 ## 9. Indicadores financieros
 
 | Indicador financiero | Valor obtenido | Lectura |
 | --- | --- | --- |
-| VPN con tasa del 15 % (tasa de oportunidad del cliente) | COP 617 millones | Positivo: el proyecto crea valor |
-| VPN con tasa del 18 % (con crédito bancario) | COP 469 millones | Positivo también con el costo del crédito |
-| Tasa interna de retorno (TIR) | 30,6 % | Mayor que la tasa de descuento (30,6 % > 15,0 %) |
+| VPN con tasa del 15 % (tasa de oportunidad del cliente) | COP 602 millones | Positivo: el proyecto crea valor |
+| VPN con tasa del 18 % (con crédito bancario) | COP 454 millones | Positivo también con el costo del crédito |
+| Tasa interna de retorno (TIR) | 30,2 % | Mayor que la tasa de descuento (30,2 % > 15,0 %) |
 | Periodo de recuperación | 2,7 años | Dentro del horizonte de cinco años |
-| Relación beneficio-costo (valor presente de los flujos ÷ inversión) | 1,46 | Cada peso invertido devuelve 1,46 pesos en valor presente |
+| Relación beneficio-costo (valor presente de los flujos ÷ inversión) | 1,45 | Cada peso invertido devuelve 1,45 pesos en valor presente |
 
 Frente a la primera versión de la oferta (VPN de 170 millones, TIR de 18,4 % y recuperación en 3,3 años), el proyecto mejora por tres razones: la ingeniería se cobra por horas reales a la tarifa de cada integrante (248,2 millones menos), la celda robotizada sale del alcance (180 millones menos en equipos) y el montaje y la contingencia bajan con la inversión.
 
@@ -367,23 +385,23 @@ El volumen se expresa como porcentaje de la producción de la propuesta que efec
 
 | Escenario | Volumen vendido | VPN al 15 % (COP) | TIR | Recuperación |
 | --- | --- | --- | --- | --- |
-| Base (esperado) | 100 % del plan | 617 millones | 30,6 % | 2,7 años |
-| Moderado | 90 % del plan | 254 millones | 21,7 % | 3,1 años |
-| Conservador | 80 % del plan | −109 millones | 11,9 % | 3,7 años |
-| Pesimista | 60 % del plan | −836 millones | Negativa | Más de 5 años |
+| Base (esperado) | 100 % del plan | 602 millones | 30,2 % | 2,7 años |
+| Moderado | 90 % del plan | 239 millones | 21,3 % | 3,1 años |
+| Conservador | 80 % del plan | −125 millones | 11,5 % | 3,8 años |
+| Pesimista | 60 % del plan | −852 millones | Negativa | Más de 5 años |
 
-El punto de equilibrio está en el 83,0 % del plan: por debajo de ese volumen el VPN al 15 % se vuelve negativo.
+El punto de equilibrio está en el 83,4 % del plan: por debajo de ese volumen el VPN al 15 % se vuelve negativo.
 
 ### 10.2 Sensibilidad a precio, leche e inversión
 
 | Variable | Cambio | VPN al 15 % (COP) | TIR | Recuperación |
 | --- | --- | --- | --- | --- |
-| Precio de venta de las tres referencias | −5 % | 348 millones | 24,1 % | 3,0 años |
-| Precio de venta de las tres referencias | +5 % | 887 millones | 36,7 % | 2,4 años |
-| Precio de la leche cruda | +10 % | 523 millones | 28,4 % | 2,8 años |
-| Precio de la leche cruda | −10 % | 712 millones | 32,8 % | 2,6 años |
-| Inversión (CAPEX) | +10 % | 485 millones | 26,4 % | 2,8 años |
-| Inversión (CAPEX) | −10 % | 750 millones | 35,5 % | 2,5 años |
+| Precio de venta de las tres referencias | −5 % | 332 millones | 23,7 % | 3,0 años |
+| Precio de venta de las tres referencias | +5 % | 872 millones | 36,4 % | 2,4 años |
+| Precio de la leche cruda | +10 % | 507 millones | 28,0 % | 2,8 años |
+| Precio de la leche cruda | −10 % | 696 millones | 32,4 % | 2,6 años |
+| Inversión (CAPEX) | +10 % | 469 millones | 26,0 % | 2,9 años |
+| Inversión (CAPEX) | −10 % | 735 millones | 35,1 % | 2,5 años |
 
 Los cambios de precio y de leche se aplican a la diferencia entre la propuesta y la situación actual, que es lo que mueve el flujo del proyecto. El precio de venta sigue siendo la variable más sensible, pero ningún cambio de la tabla deja el VPN en negativo.
 
@@ -397,15 +415,15 @@ La inversión se organiza en dos frentes dentro de las mismas 16 semanas y una e
 
 ### 10.4 Estructura de financiación
 
-Si el cliente financia el 70 % de la inversión (COP 928,1 millones) con un crédito de modernización industrial a cinco años, al 18 % efectivo anual, la cuota anual es de COP 296,8 millones. El flujo neto del año 1 (COP 319,2 millones) alcanza a cubrirla, de modo que no hace falta un periodo de gracia.
+Si el cliente financia el 70 % de la inversión (COP 928,1 millones) con un crédito de modernización industrial a cinco años, al 18 % efectivo anual, la cuota anual es de COP 296,8 millones. El flujo neto del año 1 (COP 314,6 millones) alcanza a cubrirla, de modo que no hace falta un periodo de gracia.
 
 | Año | Intereses (millones de COP) | Abono a capital | Cuota | Saldo al final del año | Flujo neto del proyecto | Flujo después de la deuda |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 167,1 | 129,7 | 296,8 | 798,4 | 319,2 | 22,4 |
-| 2 | 143,7 | 153,1 | 296,8 | 645,3 | 528,6 | 231,8 |
-| 3 | 116,2 | 180,6 | 296,8 | 464,7 | 738,0 | 441,2 |
-| 4 | 83,6 | 213,1 | 296,8 | 251,5 | 738,0 | 441,2 |
-| 5 | 45,3 | 251,5 | 296,8 | 0,0 | 738,0 | 441,2 |
+| 1 | 167,1 | 129,7 | 296,8 | 798,4 | 314,6 | 17,8 |
+| 2 | 143,7 | 153,1 | 296,8 | 645,3 | 524,0 | 227,2 |
+| 3 | 116,2 | 180,6 | 296,8 | 464,7 | 733,4 | 436,6 |
+| 4 | 83,6 | 213,1 | 296,8 | 251,5 | 733,4 | 436,6 |
+| 5 | 45,3 | 251,5 | 296,8 | 0,0 | 733,4 | 436,6 |
 
 El flujo después de la deuda es positivo todos los años. El 30 % restante (COP 397,7 millones) lo aporta el cliente con recursos propios y coincide con el anticipo a la firma del contrato.
 
@@ -413,9 +431,9 @@ El flujo después de la deuda es positivo todos los años. El 30 % restante (COP
 
 | Riesgo | Efecto | Probabilidad | Mitigación |
 | --- | --- | --- | --- |
-| Las referencias en vaso se venden menos de lo previsto | VPN negativo por debajo del 83,0 % del plan | Media | La línea de vasos se confirma en la semana 2 con cartas de intención |
-| Baja del precio de venta en el canal | Una baja del 5 % reduce el VPN a 348 millones | Media | Contratos de suministro con precio indexado; mezcla de referencias con más vasos |
-| Sobrecosto de equipos importados por tasa de cambio | Un 10 % más de inversión reduce el VPN a 485 millones | Media | Contingencia del 8 %; cotizaciones en pesos con validez de 90 días |
+| Las referencias en vaso se venden menos de lo previsto | VPN negativo por debajo del 83,4 % del plan | Media | La línea de vasos se confirma en la semana 2 con cartas de intención |
+| Baja del precio de venta en el canal | Una baja del 5 % reduce el VPN a 332 millones | Media | Contratos de suministro con precio indexado; mezcla de referencias con más vasos |
+| Sobrecosto de equipos importados por tasa de cambio | Un 10 % más de inversión reduce el VPN a 469 millones | Media | Contingencia del 8 %; cotizaciones en pesos con validez de 90 días |
 | Retraso en la fabricación de los equipos | La entrega se corre más allá de la semana 16 | Media | Pedido en la semana 3 con hojas de datos aprobadas, seguimiento semanal de fabricación y FAT antes del despacho |
 | Retraso del montaje | Más días de parada y margen no percibido | Baja | Preinstalación sin detener la planta y puesta en marcha virtual en el gemelo digital antes de intervenir el tanque |
 | Resistencia del personal al cambio | Rendimiento menor al esperado en el primer año | Media | Plan de gestión del cambio (EDT 1.9.1), capacitación por rol (1.9.2), acompañamiento de 8 semanas y rampa de adopción del 50 % y 75 % |
@@ -440,8 +458,8 @@ El flujo después de la deuda es positivo todos los años. El 30 % restante (COP
 | Dimensión | Hoy | Con la propuesta | Cambio |
 | --- | --- | --- | --- |
 | Productividad | 3.052 bolsas por día; 763 unidades por operario al día | 6.604 unidades por día en promedio; 1.321 por operario al día | +116 % de producción y +73 % por operario |
-| Ingresos y margen | Ventas de COP 1.098,7 millones y margen de 494,4 millones al año | Ventas de COP 3.074,6 millones y margen de 1.332,0 millones al año | +738 millones de beneficio neto anual |
-| Costo de mano de obra por unidad | 147 COP (4 operarios, 915.600 unidades al año) | 85 COP (5 operarios, 1.981.320 unidades al año) | −42 % |
+| Ingresos y margen | Ventas de COP 1.098,7 millones y margen de 494,4 millones al año | Ventas de COP 3.074,6 millones y margen de 1.332,0 millones al año | +733,4 millones de beneficio neto anual |
+| Costo de mano de obra por unidad | 147 COP (4 operarios, 915.600 unidades al año) | 87 COP (5 operarios y recargo dominical, 1.981.320 unidades al año) | −41 % |
 | Calidad | 5,06 % de producto no conforme; peso de una de cada cinco bolsas | 1,5 % o menos; peso del 100 % y puntos críticos con registro continuo | Unos 61 millones al año en producto que deja de perderse |
 | Eficiencia de la empacadora (OEE) | ≈ 68 % estimado | 82 % | Menos paradas y peso en línea |
 | Trazabilidad | Registros en papel; un retiro afecta varios días de producción | Registro electrónico por lote, desde la cantina hasta la estiba | El retiro se limita a los lotes afectados |

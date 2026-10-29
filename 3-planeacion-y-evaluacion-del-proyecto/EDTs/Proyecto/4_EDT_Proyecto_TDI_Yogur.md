@@ -157,7 +157,7 @@ La capacidad del equipo es de 6 personas × 16 semanas × 42 h = 4.032 h. La EDT
 | 1.5.1 | Programa del PLC: fases del proceso | Programa de fases, lazos PID y enclavamientos probado | David Cortés (110), Jesús Rivera (90) | 200 | 1.3.2, 1.2.4 |
 | 1.5.2 | Programa del PLC: envasado y transporte | Programa de envasado, peso y transporte probado | Jesús Rivera (70), Cristian Hoyos (60) | 130 | 1.3.2 |
 | 1.5.3 | SCADA e historiador | Aplicación SCADA con alarmas, tendencias e historiador | David Cárdenas | 140 | 1.3.5 |
-| 1.5.4 | MES e integración con ERP | Órdenes, trazabilidad e indicadores integrados con el ERP | David Cárdenas (130), Cristian Hoyos (40) | 170 | 1.2.3, 1.2.4 |
+| 1.5.4 | MES e integración con ERP | Módulos Sepasoft configurados (recetas, trazabilidad y OEE), Odoo parametrizado (datos maestros, listas de materiales, compras e inventario) y pasarela B2MML probada | David Cárdenas (130), Cristian Hoyos (40) | 170 | 1.2.3, 1.2.4 |
 | 1.5.5 | Recetas maestras, registro de lote y reportes | Tres recetas maestras cargadas y reporte de lote | José Andrés Zapata | 60 | 1.5.4 |
 | 1.6.1 | Gemelo digital de la línea | Gemelo digital con sensores y actuadores virtuales | Ana Orozco | 160 | 1.3.6 |
 | 1.6.2 | Simulación del envasado y el encanastado | Simulación de las líneas de bolsas y vasos y del encanastado | Ana Orozco | 60 | 1.3.4 |
@@ -205,7 +205,7 @@ La ingeniería se factura en dos contratos, con las horas de la EDT a una tarifa
 | Entrega y documentación | 16 | 10 % | 132,7 |
 | **Total** | | **100 %** | **1.325,8** |
 
-Con los equipos (960,0), la ingeniería (190,8), el montaje (76,8) y la contingencia (98,2), la inversión total es de COP 1.325,8 millones. Para el cliente, el VPN al 15 % es de COP 617 millones, la TIR de 30,6 % y la recuperación de 2,7 años, según la propuesta económica.
+Con los equipos (960,0), la ingeniería (190,8), el montaje (76,8) y la contingencia (98,2), la inversión total es de COP 1.325,8 millones. Para el cliente, el VPN al 15 % es de COP 602 millones, la TIR de 30,2 % y la recuperación de 2,7 años, según la propuesta económica.
 
 ## 9. Criterios de la descomposición
 

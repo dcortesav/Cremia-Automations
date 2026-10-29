@@ -22,17 +22,6 @@ La Transformación Digital Industrial no es comprar tecnología: es cambiar la f
 | Procesos | Cómo cambia el trabajo | Nueve procedimientos reescritos con los operarios: programación, dosificación, liberación de lotes, CIP y mantenimiento (sección 4) |
 | Personas y cultura | Quién lo hace y cómo decide | Nadie sale de la planta: cada tarea automatizada tiene una nueva función para quien la hacía (sección 3.3), capacitación por rol y decisiones con datos en la reunión diaria |
 
-### 1.1 Qué entendemos por Transformación Digital Industrial
-
-La Transformación Digital Industrial no es comprar tecnología: es cambiar la forma en que la empresa produce y decide, con cuatro componentes que avanzan juntos. Si solo cambia la tecnología, la planta queda con equipos que nadie usa como se diseñaron.
-
-| Componente | Qué significa | Cómo se aplica en La Hacienda |
-| --- | --- | --- |
-| Estrategia | Para qué se transforma la empresa | Duplicar la producción con el mismo tanque y entrar al mercado de yogur en vaso, de mayor margen |
-| Tecnología | Con qué herramientas | Instrumentación, PLC, SCADA, MES y ERP, integrados según ISA-88 e ISA-95 |
-| Procesos | Cómo cambia el trabajo | Nueve procedimientos reescritos con los operarios: programación, dosificación, liberación de lotes, CIP y mantenimiento (sección 4) |
-| Personas y cultura | Quién lo hace y cómo decide | Nadie sale de la planta: cada tarea automatizada tiene una nueva función para quien la hacía (sección 3.3), capacitación por rol y decisiones con datos en la reunión diaria |
-
 ## 2. Propuesta de valor para los dueños
 
 ### 2.1 Beneficios medibles
@@ -42,15 +31,15 @@ La Transformación Digital Industrial no es comprar tecnología: es cambiar la f
 | Productividad | 3.052 bolsas por día con 4 operarios: 763 unidades por operario al día | 6.604 unidades por día en promedio con 5 operarios: 1.321 por operario al día (+73 %) | Unidades conformes por día y por operario, en el MES |
 | Capacidad | Un lote de 550 L por día; el tanque queda ocupado toda la noche | Dos lotes por día (1.100 L de leche); el tanque queda libre a las 15:05 | Lotes por día y ocupación del tanque T-301 |
 | Ingresos | Ventas de COP 1.098,7 millones al año, una sola referencia | Ventas de COP 3.074,6 millones al año con tres referencias | Ventas por referencia en el ERP |
-| Costos | Mano de obra de 147 COP por unidad; sin costo real por lote | Mano de obra de 85 COP por unidad (−42 %); costo real de leche, insumos y envase por lote | Costo por lote en el MES y el ERP |
+| Costos | Mano de obra de 147 COP por unidad; sin costo real por lote | Mano de obra de 87 COP por unidad (−41 %); costo real de leche, insumos y envase por lote | Costo por lote en el MES y el ERP |
 | Calidad | 5,06 % de producto no conforme; se pesa una de cada cinco bolsas | 1,5 % o menos; se pesa el 100 % y los puntos críticos tienen registro continuo | Producto no conforme por lote y por causa |
 | Eficiencia de la empacadora (OEE) | ≈ 68 % estimado: disponibilidad 90 %, rendimiento 80 % y calidad 95 % | 82 %: disponibilidad 92 %, rendimiento 90 % y calidad 98,5 % | OEE por turno en el MES |
 | Trazabilidad | Registros en papel; un retiro de producto afecta varios días de producción | Registro electrónico de cada lote, desde la cantina de leche hasta la estiba | Tiempo para reconstruir la genealogía de un lote: de horas a minutos |
 | Disponibilidad de información | No hay datos: la programación es verbal y los registros son manuales | Tablero diario con OEE, rendimiento, no conformes, consumos, paradas y alarmas | Indicadores disponibles el mismo día |
 | Toma de decisiones | Por experiencia del operario y sin datos | Qué referencia producir según su margen, cuánta leche comprar según el plan semanal y cuándo intervenir un equipo según sus horas de trabajo | Reunión semanal de indicadores con la gerencia |
-| Resultado financiero | Margen de contribución de COP 494,4 millones al año | Beneficio neto adicional de COP 738 millones al año; VPN al 15 % de COP 617 millones, TIR de 30,6 % y recuperación en 2,7 años | Flujo de caja real frente al proyectado |
+| Resultado financiero | Margen de contribución de COP 494,4 millones al año | Beneficio neto adicional de COP 733,4 millones al año; VPN al 15 % de COP 602 millones, TIR de 30,2 % y recuperación en 2,7 años | Flujo de caja real frente al proyectado |
 
-Las cifras de producción salen del documento de recetas y lotes (semana de referencia de 10 lotes) y las financieras, de la propuesta económica. El costo de mano de obra por unidad usa un costo de COP 33,6 millones al año por operario: 4 operarios para 915.600 unidades hoy y 5 operarios para 1.981.320 unidades con la propuesta.
+Las cifras de producción salen del documento de recetas y lotes (ciclo de referencia de 10 lotes, 600 lotes al año en 300 días) y las financieras, de la propuesta económica. El costo de mano de obra por unidad usa un costo de COP 33,6 millones al año por operario: 4 operarios para 915.600 unidades hoy y 5 operarios y COP 4,6 millones de recargo dominical para 1.981.320 unidades con la propuesta.
 
 ### 2.2 Qué tecnología produce cada beneficio
 
@@ -63,7 +52,21 @@ Las cifras de producción salen del documento de recetas y lotes (semana de refe
 | Trazabilidad | MES con registro electrónico de lote y codificadores de lote y fecha | Cada unidad lleva su lote y cada lote guarda su leche, insumos, parámetros y resultados |
 | Información para decidir | SCADA con historiador, MES e integración con el ERP | Los datos de planta llegan a la gestión sin transcripción |
 
-### 2.3 Qué no cambia
+### 2.3 Del dato a la decisión
+
+Recoger datos no es el objetivo. El valor está en que cada dato llegue a una persona que toma una decisión con él, en un momento fijo:
+
+| Dato que entrega el sistema | Quién lo usa y cuándo | Decisión | Beneficio que se mide |
+| --- | --- | --- | --- |
+| OEE por turno y paradas por causa (Sepasoft OEE Downtime) | Jefe de producción y técnico, en la reunión diaria de 15 min | Atacar la primera causa de parada y programar el mantenimiento | Disponibilidad de 90 % a 92 %; OEE de 68 % a 82 % |
+| Peso de cada unidad y rechazos por lote (CK-401 y CK-402) | Operador de envasado en línea; calidad al cerrar el lote | Ajustar la dosis si los rechazos pasan del 2 % en 10 min | Producto no conforme de 5,06 % a 1,5 % o menos |
+| Curva de pasteurización, pH final y consumos de cada lote (Track & Trace) | Calidad, al cerrar cada lote | Liberar o retener el lote | Lotes liberados a la primera: 98 % o más; un retiro afecta solo los lotes involucrados |
+| Tiempo real de cada fase frente al estándar (historiador) | Jefe de producción, cada semana | Ajustar consignas y atacar la fase que más se demora | Tiempo por lote de 601 a 493 min; dos lotes por día |
+| Horas de trabajo y paradas por equipo | Técnico de mantenimiento, cada mes | Mantenimiento preventivo por horas en lugar de correctivo | Menos paradas no programadas |
+| Consumo real de insumos e inventario por lote y vencimiento (MES y Odoo) | Compras, cada día | Comprar a tiempo y rotar por fecha de vencimiento | Cumplimiento del plan de 95 % o más |
+| Costo real por lote y margen por referencia (MES y Odoo) | Gerencia, cada semana y cada mes | Qué referencia producir, cuánta leche comprar y qué mejora financiar | Beneficio neto adicional de COP 733,4 millones al año |
+
+### 2.4 Qué no cambia
 
 - El análisis de la leche por cantina sigue siendo manual: es una decisión de calidad que se registra en el sistema.
 - La inspección del sellado de la bolsa sigue por muestreo, con registro en HMI-01.
@@ -96,23 +99,7 @@ Las cifras de producción salen del documento de recetas y lotes (semana de refe
 | Operador del segundo lote | Carga, pasteurización e inoculación del lote 2 (15:05 a 18:15) y verificación de las alarmas de la incubación nocturna | 1 | Contratación nueva |
 | Técnico de mantenimiento de primer nivel | Mantenimiento autónomo, calibraciones de rutina y primer diagnóstico; el soporte de segundo nivel lo da Cremia | 1 de los operarios, con formación adicional | Operario actual |
 
-La incubación del lote 2 ocurre sin operario, con control automático y alarmas remotas al jefe de producción.
-
-### 3.3 Qué pasa con cada tarea que se automatiza
-
-Ningún puesto se elimina. El tiempo que la automatización libera se dedica a lo que la nueva línea necesita: el segundo lote, la llenadora de vasos, los cambios de referencia, la calidad y el mantenimiento autónomo.
-
-| Tarea que hoy es manual | Qué la reemplaza | Nueva función de quien la hacía | Capacitación |
-| --- | --- | --- | --- |
-| Cálculo y pesaje de insumos en dos cuartos | Dosificación automática por peso desde la receta | Operador de preparación: arranca la receta, vigila las fases y las alarmas en HMI-01 y ejecuta el CIP | 24 h por rol y certificación |
-| Apertura de válvulas de vapor y agua y lectura del termómetro | Control PID de temperatura (TIC-301) | El mismo operador supervisa el lazo y verifica con el técnico la calibración de TT-301 y AT-301 | Incluida en las 24 h |
-| Prueba de acidez para decidir el fin de la incubación | pH en línea (AT-301) | Calidad confirma la acidez una vez por lote y libera el lote en el MES | 12 h para calidad |
-| Pesaje de una de cada cinco bolsas | Controladora de peso con rechazo automático | Operador de envasado: cambios de referencia, ajuste de dosis y operación de la nueva llenadora de vasos | 24 h y certificación |
-| Registros en papel | Registro electrónico en el MES | Todos registran en la HMI; el jefe de producción usa el tablero en la reunión diaria | Incluida en cada rol |
-| Mantenimiento solo correctivo | Mantenimiento autónomo y preventivo por horas | Uno de los operarios se forma como técnico de primer nivel | 32 h |
-| Encanastado manual (etapa posterior) | Celda robotizada R-501, cuando el volumen la justifique | El operador de empaque pasa a operar la celda (cargue de cajas, cambio de patrón de estiba y recuperación de paradas) y a atender el cuarto frío y el despacho, que crecen con el volumen | 16 h con el fabricante del robot, según ISO 10218 |
-
-La compra del robot se justifica por el crecimiento del volumen, no por reducir personal. Las competencias nuevas se reconocen con una certificación interna por rol (operador, operador certificado y técnico de primer nivel), que la planta puede usar como ruta de crecimiento para sus trabajadores.
+La incubación del lote 2 ocurre sin operario, con control automático y alarmas remotas al jefe de producción. Los cinco operarios trabajan de lunes a sábado en turnos escalonados de 7 h entre las 7:00 y las 18:30; el domingo, dos de ellos por rotación envasan en 3 h el lote 2 del sábado (sección 7.4 del documento de recetas y lotes).
 
 ### 3.3 Qué pasa con cada tarea que se automatiza
 
@@ -175,7 +162,6 @@ El plan sigue el modelo ADKAR (conciencia, deseo, conocimiento, habilidad y refu
 | Jefe de producción | MES: órdenes, recetas, registro de lote e indicadores; SCADA | 16 | Gemelo digital y planta | Programación de una semana real |
 | Calidad | Liberación de lotes en el MES, puntos críticos y verificación de instrumentos | 12 | Planta | Liberación supervisada de lotes de prueba |
 | Dueños y gerencia | Lectura del tablero de indicadores y uso de la información para decidir | 4 | Oficina | Reunión de indicadores |
-| Operador de la celda robotizada (etapa posterior) | Operación segura según ISO 10218, cambio de patrón de estiba y recuperación de paradas | 16 | Planta, con el fabricante del robot | Certificación antes de operar la celda |
 | Operador de la celda robotizada (etapa posterior) | Operación segura según ISO 10218, cambio de patrón de estiba y recuperación de paradas | 16 | Planta, con el fabricante del robot | Certificación antes de operar la celda |
 
 La capacitación usa el gemelo digital antes del arranque: los operadores practican con la línea virtual sin riesgo para el producto ni para los equipos.

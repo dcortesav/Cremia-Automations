@@ -359,9 +359,10 @@ La ocupación del tanque de proceso en la propuesta es la suma de carga (12 min)
 
 | Hora | Lote 1 | Lote 2 |
 | --- | --- | --- |
-| 7:30–9:15 | — | Transferencia y envasado del lote 2 del día anterior |
+| 7:30–7:55 | — | Transferencia del lote 2 del día anterior por el intercambiador al tanque pulmón |
 | 8:00–8:40 | Limpieza CIP del tanque de proceso | — |
 | 8:40–10:40 | Carga, dosificación, homogeneización, pasteurización e inoculación | — |
+| 10:00–11:45 | — | Envasado del lote 2 del día anterior |
 | 10:40–14:40 | Incubación con control automático de pH | — |
 | 14:40–15:05 | Enfriamiento en placas y transferencia al tanque pulmón | — |
 | 15:05–16:50 | Envasado | Limpieza CIP y carga del tanque de proceso (15:05–16:15) |
@@ -369,24 +370,39 @@ La ocupación del tanque de proceso en la propuesta es la suma de carga (12 min)
 | 18:15–22:15 | — | Incubación sin operario, con control automático y alarmas remotas |
 | 22:15–7:30 | — | Enfriamiento automático con agua fría en la chaqueta (TIC-301 sobre TV-302) hasta 15–20 °C |
 
-El segundo lote es posible porque el enfriamiento deja de depender de la noche: el lote 1 se enfría en el intercambiador de placas y libera el tanque a las 15:05. El lote 2 termina la incubación a las 22:15, sin operario: el agua fría de la chaqueta lo baja a 15–20 °C durante la noche y a las 7:30 pasa por el intercambiador hacia el tanque pulmón y se envasa.
+El segundo lote es posible porque el enfriamiento deja de depender de la noche: el lote 1 se enfría en el intercambiador de placas y libera el tanque a las 15:05. El lote 2 termina la incubación a las 22:15, sin operario: el agua fría de la chaqueta lo baja a 15–20 °C durante la noche y a las 7:30 pasa por el intercambiador hacia el tanque pulmón, donde espera a 15–20 °C hasta el envasado de las 10:00.
 
-### 7.5 Programa semanal de referencia
+**Régimen de operación y turnos.** La planta produce de lunes a sábado, 50 semanas al año (300 días), con dos lotes por día: 12 lotes por semana y 600 al año. La jornada va de 7:00 a 18:30 en turnos escalonados de 7 h, que cumplen la jornada de 42 h semanales (Ley 2101 de 2021). La incubación y el enfriamiento del lote 2 son automáticos y no necesitan operario; las alarmas llegan al jefe de producción.
 
-| Día | Lote 1 | Lote 2 |
+| Rol | Turno (lunes a sábado) | Tareas principales |
 | --- | --- | --- |
-| Lunes | YB-200 | YB-200 |
-| Martes | YV-150 | YB-200 |
-| Miércoles | YB-200 | YV-300 |
-| Jueves | YV-150 | YB-200 |
-| Viernes | YV-300 | YV-150 |
-| **Total semanal** | **5 lotes de YB-200, 3 de YV-150 y 2 de YV-300** | **15.395 bolsas, 13.107 vasos de 150 ml y 4.520 vasos de 300 ml** |
+| Operador de recepción y laboratorio | 7:00–14:00 | Recepción y análisis de las cantinas desde las 7:30, carga del lote 1 y registros |
+| Operador de preparación | 7:00–14:00 | Transferencia del lote 2 anterior (7:30), CIP, preparación del lote 1 hasta el inicio de la incubación |
+| Operador de envasado | 10:00–17:00 | Envasado del lote 2 anterior (10:00–11:45), cambio de referencia y envasado del lote 1 (15:05–16:50) |
+| Operador de empaque y cuarto frío | 10:00–17:00 | Encanastado y encajonado de los dos lotes, cuarto frío y despacho |
+| Operador del segundo lote | 11:30–18:30 | Enfriamiento y transferencia del lote 1, CIP y carga del lote 2, pasteurización e inoculación |
+| Turno corto del domingo | 7:00–10:00 | Dos operarios por rotación transfieren y envasan el lote 2 del sábado |
+
+El lote 2 del sábado no puede esperar al lunes, porque el tanque no tiene frío para guardar el yogur dos días. Por eso el domingo hay un turno corto de 3 h: cada operario lo cubre como máximo dos veces al mes y recibe el recargo dominical. Su costo está en la propuesta económica.
+
+### 7.5 Ciclo de programación de 10 lotes
+
+La mezcla de referencias se programa en un ciclo de 10 lotes (5 días de producción) que se repite 60 veces en los 300 días del año. Como la planta trabaja 6 días por semana, el ciclo no coincide con la semana calendario: el plan semanal del ERP toma los 12 lotes siguientes del ciclo.
+
+| Día del ciclo | Lote 1 | Lote 2 |
+| --- | --- | --- |
+| 1 | YB-200 | YB-200 |
+| 2 | YV-150 | YB-200 |
+| 3 | YB-200 | YV-300 |
+| 4 | YV-150 | YB-200 |
+| 5 | YV-300 | YV-150 |
+| **Total del ciclo** | **5 lotes de YB-200, 3 de YV-150 y 2 de YV-300** | **15.395 bolsas, 13.107 vasos de 150 ml y 4.520 vasos de 300 ml** |
 
 La mezcla de referencias es un supuesto de diseño y se ajusta con el plan de ventas del cliente. La secuencia agrupa lotes iguales cuando es posible, para reemplazar el CIP completo por un enjuague.
 
-### 7.6 Requerimiento semanal de insumos
+### 7.6 Requerimiento de insumos por ciclo de 10 lotes
 
-| Insumo | YB-200 (5 lotes) | YV-150 (3 lotes) | YV-300 (2 lotes) | Total semanal |
+| Insumo | YB-200 (5 lotes) | YV-150 (3 lotes) | YV-300 (2 lotes) | Total del ciclo |
 | --- | --- | --- | --- | --- |
 | Leche cruda | 2.750 L | 1.650 L | 1.100 L | 5.500 L |
 | Azúcar | 378,5 kg | 189,3 kg | 113,4 kg | 681,2 kg |
@@ -399,7 +415,7 @@ La mezcla de referencias es un supuesto de diseño y se ajusta con el plan de ve
 | Envases | 15.395 bolsas | 13.107 vasos y tapas | 4.520 vasos y tapas | — |
 | Empaque secundario | 130 canastas | 549 cajas | 226 cajas | — |
 
-El MES calcula este requerimiento a partir del plan semanal y lo envía al ERP para las compras; el ERP devuelve al MES la disponibilidad de insumos antes de liberar cada orden.
+El MES calcula el requerimiento real a partir del plan semanal y lo envía al ERP para las compras; el ERP devuelve al MES la disponibilidad de insumos antes de liberar cada orden.
 
 ### 7.7 Cambios entre lotes
 

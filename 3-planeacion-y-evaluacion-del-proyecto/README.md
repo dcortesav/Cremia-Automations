@@ -22,8 +22,8 @@ Entregables del proyecto para la línea de yogur.
 | Horas de ingeniería | 3.060 h, 76 % de la capacidad del equipo; nadie por encima del 80 % |
 | Servicios de ingeniería | COP 190,8 millones por horas reales a la tarifa de cada integrante según el valor que aporta, en dos contratos: diseño y procura (67,6) e implementación (123,2) |
 | Inversión total | COP 1.325,8 millones (preparación y bolsas: 1.042,9; línea de vasos: 282,9); celda robotizada en una etapa posterior |
-| Indicadores para el cliente | VPN al 15 % de COP 617 millones, TIR de 30,6 %, recuperación en 2,7 años |
-| Punto de equilibrio | 83,0 % del volumen del plan |
+| Indicadores para el cliente | VPN al 15 % de COP 602 millones, TIR de 30,2 %, recuperación en 2,7 años |
+| Punto de equilibrio | 83,4 % del volumen del plan |
 
 ## Carpetas
 

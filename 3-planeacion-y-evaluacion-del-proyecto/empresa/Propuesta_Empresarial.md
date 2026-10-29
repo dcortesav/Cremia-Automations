@@ -122,7 +122,7 @@ El proyecto de 16 semanas tiene 3.060 horas y vale COP 190,8 millones en dos con
 | Valor | COP 1.325,8 millones, sin IVA (preparación y bolsas: 1.042,9 millones; línea de vasos: 282,9 millones) |
 | Plazo | 16 semanas, del 18 de enero al 7 de mayo de 2027 |
 | Garantía | 12 meses sobre la integración y 8 semanas de acompañamiento en planta |
-| Indicadores financieros para el cliente | VPN al 15 % de COP 617 millones, TIR de 30,6 % y recuperación en 2,7 años |
+| Indicadores financieros para el cliente | VPN al 15 % de COP 602 millones, TIR de 30,2 % y recuperación en 2,7 años |
 | Etapa posterior opcional | Celda robotizada de encanastado y paletizado, con espacio e interfaz ya diseñados |
 
 El detalle del presupuesto, el flujo de caja y los indicadores financieros está en la propuesta económica de la línea de yogur; el plan de trabajo, en la EDT y el cronograma del proyecto; y los beneficios para los dueños y el plan de gestión del cambio, en el documento Propuesta de valor y gestión del cambio.

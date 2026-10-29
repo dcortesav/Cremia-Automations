@@ -11,6 +11,7 @@ Página web: https://dcortesav.github.io/Cremia-Automations/
 | | Situación actual | Propuesta |
 |---|---|---|
 | Lotes por día (550 L de leche) | 1 | 2 |
+| Operación | Un turno de 8 h, lunes a sábado | Lunes a sábado de 7:00 a 18:30 en turnos de 7 h; turno corto el domingo para envasar el lote del sábado |
 | Referencias | Bolsa de 200 ml | Bolsa de 200 ml y vasos de 150 y 300 ml |
 | Unidades por lote | 3.052 bolsas | 3.079 bolsas, 4.369 vasos de 150 ml o 2.260 vasos de 300 ml |
 | Tiempo estándar por lote | 601 min | ≈ 493 min |
@@ -27,12 +28,12 @@ El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y
 | Dimensión | Resultado esperado |
 |---|---|
 | Productividad | De 763 a 1.321 unidades por operario al día (+73 %) |
-| Costos | Mano de obra de 147 a 85 COP por unidad (−42 %) y costo real por lote |
+| Costos | Mano de obra de 147 a 87 COP por unidad (−41 %) y costo real por lote |
 | Calidad | Producto no conforme de 5,06 % a 1,5 % o menos, con peso del 100 % |
 | Trazabilidad | Registro electrónico de cada lote, desde la cantina hasta la estiba |
 | Información y decisiones | Tablero diario con OEE, rendimiento, consumos y paradas |
 | Eficiencia de la empacadora | OEE estimado de 68 % hoy; meta de 82 % |
-| Resultado financiero | Inversión de COP 1.325,8 millones; VPN al 15 % de COP 617 millones, TIR de 30,6 % y recuperación en 2,7 años |
+| Resultado financiero | Inversión de COP 1.325,8 millones; VPN al 15 % de COP 602 millones, TIR de 30,2 % y recuperación en 2,7 años |
 
 La transformación incluye a las personas: no hay despidos, el segundo lote crea un puesto, la capacitación es por rol en el gemelo digital y la gestión del cambio sigue el modelo ADKAR, con 8 semanas de acompañamiento después de la entrega.
 

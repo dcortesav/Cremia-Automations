@@ -6,7 +6,7 @@ Proyecto Integrador de Automatización de Procesos de Manufactura (APM) 2026-2S,
 
 Página web: https://dcortesav.github.io/Cremia-Automations/
 
-Versión vigente: noviembre de 2026. El archivo [`analisis-estado-actual-propuesta.pdf`](analisis-estado-actual-propuesta.pdf) corresponde a la versión de octubre de 2026 y está desactualizado; se conserva como registro histórico.
+Versión vigente: noviembre de 2026.
 
 ## El proyecto en cifras
 

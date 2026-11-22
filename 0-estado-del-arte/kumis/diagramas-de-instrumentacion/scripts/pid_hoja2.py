@@ -1,5 +1,5 @@
 from pidlib import *
-def hoja2(path_png,path_svg=None):
+def hoja2(path_out):
     fig,ax=new()
     frame(ax,"2 de 2","P&ID-L3-002 · LÍNEA 3: KUMIS","Fermentación, envasado, fin de línea y maduración fría")
     legend(ax)
@@ -66,7 +66,6 @@ def hoja2(path_png,path_svg=None):
     for xx,f,n in ((44,"AT","901"),(52,"AT","902"),(60,"TT","901"),(68,"FT","901")):
         bub(ax,xx,23.6,f,n,True); P(ax,[(xx,26.3),(xx,30)],"imp")
     ax.text(4,127.7,"Parámetros: inoculación a 22 a 26 °C (cultivo mesófilo) · fermentación 14 a 18 h hasta pH 4,50 a 4,60 · rotura y enfriamiento a 10 a 12 °C · envasado a 8 a 12 °C · maduración a 2 a 4 °C.",fontsize=5.8,color=GY,zorder=6,va="center")
-    fig.savefig(path_png,dpi=200,facecolor="white")
-    if path_svg: fig.savefig(path_svg,facecolor="white")
+    fig.savefig(path_out,dpi=200,facecolor="white")
     plt.close(fig)
-if __name__=="__main__": hoja2("h2_test.png")
+if __name__=="__main__": hoja2("PID_Kumis_Hoja2.svg")

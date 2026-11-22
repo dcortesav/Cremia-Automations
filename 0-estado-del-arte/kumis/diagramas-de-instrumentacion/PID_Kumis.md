@@ -2,22 +2,21 @@
 
 > **Planos:** P&ID-L3-001 (hoja 1) y P&ID-L3-002 (hoja 2) · Rev. A · Norma ANSI/ISA-5.1
 > **Alcance:** recepción y almacenamiento de leche (área 100, compartida), estandarización (área 150, compartida), formulación y tratamiento térmico (área 400), fermentación (área 500), envasado y fin de línea (área 600), maduración fría (área 700) y CIP (área 900). Los equipos de fin de línea son discretos y se muestran como bloques.
-> **Archivos:** `PID_Kumis_Hoja1.png/.svg`, `PID_Kumis_Hoja2.png/.svg`, `PID_Kumis.pdf` (las dos hojas) y `generar_pid.py` (fuente de los planos; se regenera con `python3 generar_pid.py`).
-> **Referencia de proceso:** `mapa_proceso_industrial_kumis.html` (fermentación mesófila, azúcar antes del tratamiento térmico, maduración fría después del envasado).
+> **Archivos:** `imagenes/PID_Kumis_Hoja1.svg` y `imagenes/PID_Kumis_Hoja2.svg` (planos vectoriales) y `scripts/generar_pid.py` (fuente de los planos; se regenera con `python scripts/generar_pid.py`).
 
 **Hoja 1.** Recepción, estandarización, formulación y tratamiento térmico.
 
-![P&ID Línea 3 Kumis, hoja 1](PID_Kumis_Hoja1.png)
+![P&ID Línea 3 Kumis, hoja 1](imagenes/PID_Kumis_Hoja1.svg)
 
 **Hoja 2.** Fermentación, envasado, fin de línea y maduración fría.
 
-![P&ID Línea 3 Kumis, hoja 2](PID_Kumis_Hoja2.png)
+![P&ID Línea 3 Kumis, hoja 2](imagenes/PID_Kumis_Hoja2.svg)
 
 ---
 
-## 1. Cambios frente al P&ID anterior (PDF) y al documento fuente
+## 1. Cambios frente a la versión anterior del P&ID
 
-La primera versión del P&ID usaba un cultivo a 43 °C, una etapa de saborización con jarabe y fruta, y una maduración en tanque antes del envasado. Esta revisión corrige esas diferencias con el documento fuente.
+La primera versión del P&ID usaba un cultivo a 43 °C, una etapa de saborización con jarabe y fruta, y una maduración en tanque antes del envasado. Esta revisión corrige esas diferencias.
 
 | Tema | Versión anterior | Esta revisión (Rev. A) |
 |---|---|---|
@@ -173,4 +172,6 @@ Total: 58 instrumentos y válvulas.
 - **Altitud:** el silo pulmón va a +1,8 m y el skid del pasteurizador trabaja a 1,5–2,0 bar porque el agua hierve a unos 91 °C a 2.600 msnm.
 - **Bacteriófagos:** la sala de fermentación va aislada (PDT-510), se inocula por el puerto con barrera de vapor (VP-501) y las válvulas del CIP son mix-proof.
 - **FM-502 a FM-505:** repiten la instrumentación de FM-501; el P&ID los dibuja una sola vez para no repetir 40 símbolos.
-- **Elementos propuestos por este equipo:** INS-601, TF-701, ENC-601 y los sensores AT-901 y AT-902 del CIP no aparecen en el documento fuente.
+- **Elementos propuestos por este equipo:** INS-601, TF-701, ENC-601 y los sensores AT-901 y AT-902 del CIP no figuran en la propuesta inicial y se incorporan como mejora.
+- **PCC-2 (envasado):** la cabina ISO 5 con UV/H₂O₂ y el sellado (EN-601, SL-601, AT-601) constituyen el segundo punto crítico de control; su registro (presión de cabina, ciclos UV/H₂O₂ y rechazos de sello) se envía al MES (ver `Informacion_MES_ERP_Kumis.md`).
+- **Configuración representada:** el P&ID muestra la línea propuesta con 5 fermentadores (FM-501…505); la «situación inicial» de 3 fermentadores se analiza en `Cuello_de_Botella_Kumis.md`. Los «2 tanques (TF-401 A/B)» de la tabla §1 corresponden a un borrador previo del plano, no a la planta.

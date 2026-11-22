@@ -14,13 +14,15 @@
 >
 > Estos supuestos forman parte de la propuesta inicial y se contrastarán con la visita técnica a Alpina Sopó (27 y 28 de octubre de 2026).
 
+> **Nota de encuadre antes/después.** La «situación inicial» descrita aquí (3 fermentadores, operación manual) es el punto de partida supuesto para el análisis de capacidad. La documentación de diseño (`Proceso_Kumis.md`, `PID_Kumis.md`, `Receta_y_Parametros_Kumis.md`) describe la línea **propuesta**, que ya incorpora 5 fermentadores (FM-501…505), túnel de enfriamiento y automatización.
+
 ---
 
 ## 1. Ocupación de cada recurso por lote (situación inicial)
 
 ### 1.1 Fermentador (la ocupación cambia con la referencia)
 
-La fermentación no ocupa turnos: sigue durante la noche. Pero el llenado y la descarga se hacen dentro de los dos turnos de 8 h, y la ocupación total del fermentador (18 a 21 h) no permite un segundo lote el mismo día. **Cada fermentador completa un lote por día.**
+La fermentación no ocupa turnos: sigue durante la noche. Pero el llenado y la descarga se hacen dentro de los dos turnos de 8 h (900 min de tiempo productivo neto, ya descontados 60 min de solapamiento y limpieza), y la ocupación total del fermentador (18 a 21 h) no permite un segundo lote el mismo día. **Cada fermentador completa un lote por día.**
 
 **KU-1L (botella de 1 L):**
 
@@ -82,7 +84,7 @@ El **envasado del vaso de 200 g** es el segundo recurso más cargado (143 min po
 | kg de kumis por turno | 2.583 |
 | Cumplimiento de la demanda (4 lotes/día) | 63 % |
 
-Con otras pérdidas habituales: los lotes perdidos por bacteriófagos o acidez fuera de rango, y las paradas de la sala de fermentación, reducen la disponibilidad al 88 % (ver `VSM_e_Indicadores_Kumis.md`).
+Con otras pérdidas habituales: los lotes perdidos por bacteriófagos o acidez fuera de rango, y las paradas de la sala de fermentación, reducen la disponibilidad al 88 % (véanse los indicadores en `Informacion_MES_ERP_Kumis.md`).
 
 ---
 
@@ -135,4 +137,4 @@ Monitoreo de la presión de la sala (PDT-510), rotación de cepas DVS gestionada
 
 La producción por día es la de la línea completa con la mezcla de 2 lotes de KU-1L, 1 de KU-200 y 1 de KU-NAT; por eso es igual en las tres columnas.
 
-Estos resultados se verificarán con la simulación de eventos discretos en Siemens Tecnomatix y se reflejarán en el VSM "antes y después".
+Estos resultados se verificarán con la simulación de eventos discretos en Siemens Tecnomatix y se contrastarán con los indicadores de la línea.

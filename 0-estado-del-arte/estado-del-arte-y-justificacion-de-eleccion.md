@@ -10,7 +10,6 @@
 
 ---
 
-> [!NOTE]
 > **Contexto de Operación e Insumos de Ingeniería**  
 > El presente documento consolida la investigación de estado del arte y modelado de procesos para una planta multiproducto de derivados lácteos ubicada en la Sabana de Bogotá (Cundinamarca, Colombia). Se fundamenta en:
 > 1. La línea base empírica medida de la planta real *La Hacienda Productos Alimenticios* (Guasca, Cundinamarca), documentada por Grimaldo, Moreno & Salamanca (2015).
@@ -45,7 +44,7 @@
    - 3.5 Retos Operacionales: Generación de Lactosuero Dulce y Manipulación Discreta
 4. [Caracterización Técnica de la Línea 3: Kumis Industrial Tradicional (Desarrollo Estrella)](#4-caracterización-técnica-de-la-línea-3-kumis-industrial-tradicional-desarrollo-estrella)
    - 4.1 Ficha Técnica Integral del Producto bajo NTC 805 y Resolución 2310
-   - 4.2 Formulación Validada y Balance de Masa Riguroso (Lote 1.000 L / 1.030 kg)
+   - 4.2 Formulación Validada y Balance de Masa Riguroso (Lote 2.000 L / 2.060 kg)
    - 4.3 Inconsistencia Crítica y Rectificación Legal: Prohibición de Almidones y Modelo 'Egg-Box' de Pectina LMP
    - 4.4 Termodinámica e Hidráulica a 2.600 msnm (Sabana de Bogotá, Patm = 74 kPa)
      - 4.4.1 Análisis de Cavitación, NPSH y Compensaciones de Carga Estática
@@ -383,7 +382,7 @@ El kumis tradicional colombiano es una leche fermentada dulce y viscosa, obtenid
 | **Materia Grasa Láctea** | $2,80\text{ a }3,00\text{ \% m/m}$ | Supera el mínimo legal de 2,5 % |
 | **Proteína Láctea Total** | $\ge 2,80\text{ \% m/m}$ (adicionada con LPD) | Supera el mínimo legal de 2,6 % |
 | **Extracto Seco Desengrasado (ESD)** | $\ge 11,50\text{ \% m/m}$ | Supera el mínimo legal de 8,5 % |
-| **Azúcar Añadido (Sacarosa)** | $8,50\text{ \% m/m}$ (87,55 kg/lote) | Aporte de balance dulce y $14,5\text{ }^\circ\text{Bx}$ |
+| **Azúcar Añadido (Sacarosa)** | $8,50\text{ \% m/m}$ (175,1 kg/lote) | Aporte de balance dulce y $14,5\text{ }^\circ\text{Bx}$ |
 | **Agente Estabilizante** | Pectina de Bajo Metoxilo (LMP) pura al $0,15\text{ \%}$ | Cumplimiento Anexo B NTC 805 (Cero almidón) |
 | **Aromatizante** | Esencia natural o idéntica a natural de vainilla/crema ($0,05\text{ \%}$) | Autorizado por Resolución 2310 |
 | **Acidez Titulable de Corte** | $0,75\text{ a }0,80\text{ \%}$ ácido láctico ($75\text{ a }80\text{ }^\circ\text{Dornic}$) | NTC 805 ($0,60\text{ a }1,50\text{ \%}$) |
@@ -393,41 +392,41 @@ El kumis tradicional colombiano es una leche fermentada dulce y viscosa, obtenid
 | **Viabilidad Probiótica / BAL** | $\ge 10^7\text{ UFC/g}$ en punto de consumo | Exigencia obligatoria de leches vivas |
 | **Viscosidad Aparente (10 °C)** | $1.800\text{ a }2.400\text{ cP (mPa}\cdot\text{s)}$ | Reología pseudoplástica estabilizada |
 | **Sinéresis Espontánea** | $0\text{ \%}$ (ausencia de suero visible tras 30 días) | Red coordinada de pectina con $Ca^{2+}$ |
-| **Presentaciones Comerciales** | Botella PEAD 1.000 g, botella 250 g y vaso 200 g con foil | Empaque primario barrera a la luz y gases |
+| **Presentaciones Comerciales** | Botella PEAD de 1 L, vaso de 200 g con foil y bolsa de 1 kg | Empaque primario barrera a la luz y gases |
 | **Vida Útil Comercial** | 25 a 35 días bajo refrigeración a $2\text{ a }4\text{ }^\circ\text{C}$ | Envasado Ultra-Clean y sellado por inducción |
 
-### 4.2 Formulación Validada y Balance de Masa Riguroso (Lote 1.000 L / 1.030 kg)
-El diseño industrial del lote de kumis se proyecta para una escala nominal de **1.000 L de mezcla procesada (1.030,0 kg)**:
+### 4.2 Formulación Validada y Balance de Masa Riguroso (Lote 2.000 L / 2.060 kg)
+El diseño industrial del lote de kumis se proyecta para una escala nominal de **2.000 L de mezcla procesada (2.060,0 kg)**:
 
 | Insumo / Materia Prima | Concentración (% p/p) | Masa Neta (kg) | Función Tecnológica | Momento y Modo de Incorporación |
 |---|:---:|:---:|---|---|
-| **Leche fluida estandarizada** | $88,35\text{ \%}$ | $910,00\text{ kg}$ (~883 L) | Matriz láctea (2,85 % grasa, 3,10 % proteína) | Etapa 1: Almacenamiento en silo pulmón |
-| **Azúcar refinado (Sacarosa)** | $8,50\text{ \%}$ | $87,55\text{ kg}$ | Edulcorante y cuerpo coloidal ($14,8\text{ }^\circ\text{Bx}$) | Etapa 3: Tolva de Triblender a 45 °C |
-| **Leche en polvo descremada (LPD)** | $2,50\text{ \%}$ | $25,75\text{ kg}$ | Fortificación de sólidos ($ESD > 11,5\text{ \%}$, prot. $> 34\text{ \%}$) | Etapa 3: Dispersión forzada en Triblender |
-| **Pectina de Bajo Metoxilo (LMP)** | $0,15\text{ \%}$ | $1,55\text{ kg}$ | Hidrocoloide protector anti-sinéresis | Premezcla seca 1:3 con azúcar en Triblender |
-| **Cultivo Mesófilo DVS** | $0,005\text{ \%}$ | $0,05\text{ kg}$ (1 sachet) | Fermentación láctica y síntesis de diacetilo | Inoculación ciega por puerto aséptico (24 °C) |
-| **Esencia de vainilla/crema** | $0,05\text{ \%}$ | $0,50\text{ kg}$ | Estandarización del bouquet organoléptico | Microdosificación aséptica en frío (10–12 °C) |
-| **TOTAL LOTE FORMULADO** | **$100,00\text{ \%}$** | **$1.030,00\text{ kg}$** | **Densidad final de la mezcla: $1,030\text{ kg/L}$** | **Volumen equivalente: 1.000 L** |
+| **Leche fluida estandarizada** | $88,80\text{ \%}$ | $1.829,2\text{ kg}$ (~1.776 L) | Matriz láctea (2,85 % grasa, 3,10 % proteína) | Etapa 1: Almacenamiento en silo pulmón |
+| **Azúcar refinado (Sacarosa)** | $8,50\text{ \%}$ | $175,1\text{ kg}$ | Edulcorante y cuerpo coloidal ($14,8\text{ }^\circ\text{Bx}$) | Etapa 3: Tolva de Triblender a 45 °C |
+| **Leche en polvo descremada (LPD)** | $2,50\text{ \%}$ | $51,5\text{ kg}$ | Fortificación de sólidos ($ESD > 11,5\text{ \%}$, prot. $> 34\text{ \%}$) | Etapa 3: Dispersión forzada en Triblender |
+| **Pectina de Bajo Metoxilo (LMP)** | $0,15\text{ \%}$ | $3,09\text{ kg}$ | Hidrocoloide protector anti-sinéresis | Premezcla seca 1:3 con azúcar en Triblender |
+| **Cultivo Mesófilo DVS** | $0,005\text{ \%}$ | $0,10\text{ kg}$ (2 sobres) | Fermentación láctica y síntesis de diacetilo | Inoculación ciega por puerto aséptico (24 °C) |
+| **Esencia de vainilla/crema** | $0,05\text{ \%}$ | $1,03\text{ kg}$ | Estandarización del bouquet organoléptico | Microdosificación aséptica en frío (10–12 °C) |
+| **TOTAL LOTE FORMULADO** | **$100,00\text{ \%}$** | **$2.060,00\text{ kg}$** | **Densidad final de la mezcla: $1,030\text{ kg/L}$** | **Volumen equivalente: 2.000 L** |
 
 ```mermaid
 flowchart TD
-    subgraph BalanceKumis["Balance de Masa Detallado - Línea Kumis Industrial (Lote 1.000 L)"]
+    subgraph BalanceKumis["Balance de Masa Detallado - Línea Kumis Industrial (Lote 2.000 L)"]
         direction TB
-        L["Leche Fluida Estandarizada (Dec. 616)<br/>910,0 kg (88,35%) | Grasa 2,85%, Densidad 1,030"] --> TB["Triblender de Alto Cizallamiento (3.000 rpm)<br/>Dispersión Forzada a 45–50 °C (Cero Fisheyes)"]
-        INS_K["Sólidos Secos Formulados (NTC 805):<br/>Sacarosa Refinada: 87,55 kg (8,50%)<br/>Leche en Polvo Descremada: 25,75 kg (2,50%)<br/>Pectina LMP Pura (Sin Almidón): 1,55 kg (0,15%)"] --> TB
+        L["Leche Fluida Estandarizada (Dec. 616)<br/>1.829,2 kg (88,80%) | Grasa 2,85%, Densidad 1,030"] --> TB["Triblender de Alto Cizallamiento (3.000 rpm)<br/>Dispersión Forzada a 45–50 °C (Cero Fisheyes)"]
+        INS_K["Sólidos Secos Formulados (NTC 805):<br/>Sacarosa Refinada: 175,1 kg (8,50%)<br/>Leche en Polvo Descremada: 51,5 kg (2,50%)<br/>Pectina LMP Pura (Sin Almidón): 3,09 kg (0,15%)"] --> TB
         TB --> HOMOG["Homogeneizador Triplex en Dos Etapas<br/>150 bar + 30 bar = 180 bar (60–65 °C)<br/>Glóbulos Grasos Submicrónicos < 1 µm"]
         HOMOG --> HTST["Pasteurización HTST Continua (PCC-1)<br/>90–95 °C por 4 min (Tubo 166 L a 2.500 L/h)<br/>Skid Hermético Presurizado a 1,8 bar"]
         HTST --> COOL["Enfriamiento Regenerativo en Placas<br/>Descenso Térmico Regulado a 22–26 °C"]
         COOL --> FERM["Biorreactor Vertical AISI 316L (2.000 L)<br/>Sala Limpia Presurizada (+25 Pa, HEPA H14)"]
-        CULT_K["Inóculo Mesófilo DVS (0,05 kg):<br/>L. lactis lactis / cremoris / diacetylactis"] -->|Puerto Aséptico Ciego (Vapor 121 °C)| FERM
+        CULT_K["Inóculo Mesófilo DVS (0,10 kg, 2 sobres):<br/>L. lactis lactis / cremoris / diacetylactis"] -->|Puerto Aséptico Ciego (Vapor 121 °C)| FERM
         FERM --> INCUB["Incubación Mesófila a 22–25 °C (14–18 h)<br/>Síntesis de Diacetilo y Coagulación"]
         INCUB -->|Punto de Corte: pH 4,50–4,60 / 75–80 °D| CRYO["Freno Criostático (10–12 °C)<br/>Agitación Áncora Lenta (15 rpm, 10 min)"]
-        ESEN_K["Aromatizante Declarado (Res. 2310):<br/>Esencia Vainilla/Crema: 0,50 kg (0,05%)"] --> CRYO
+        ESEN_K["Aromatizante Declarado (Res. 2310):<br/>Esencia Vainilla/Crema: 1,03 kg (0,05%)"] --> CRYO
         CRYO --> SMOOTH["Suavizado Reológico (Smoothing)<br/>Bomba Lobular Bajas RPM + Tamiz 250 µm<br/>Viscosidad Estandarizada: 1.800–2.400 cP"]
         SMOOTH --> PACK["Envasadora Rotativa Ultra-Clean (PCC-2)<br/>Cabina Flujo Laminar ISO Clase 5 (UV-C/H2O2)"]
         PACK --> SEAL["Sellado Térmico por Inducción Foil Al<br/>180 °C (0,8 s) | Vacío -0,3 bar + Tapa Rosca"]
         SEAL --> MAD["Maduración Fría en Cuarentena (2–4 °C)<br/>24–48 h (Reestructuración Tixotrópica)"]
-        MAD --> PT["KUMIS TERMINADO LIBERADO: 1.030 kg<br/>4.120 botellas x 250 g o 1.030 botellas x 1.000 g<br/>Vida Útil Comercial: 25–35 días a 4 °C"]
+        MAD --> PT["KUMIS TERMINADO LIBERADO: 2.060 kg<br/>10.300 vasos x 200 g, 2.000 botellas x 1 L y 2.060 bolsas x 1 kg<br/>Vida Útil Comercial: 25–35 días a 4 °C"]
     end
 ```
 
@@ -585,7 +584,7 @@ El coágulo obtenido al alcanzar pH 4,55 es un gel láctico viscoelástico estru
   - **Especie 936:** Fagos de cola pequeña no contráctil (*Siphoviridae*), representan más del 70 % de los brotes en la industria lechera.
   - **Especie c2:** Fagos con morfología de cola larga (*Siphoviridae*), reconocen proteínas de membrana ligadas a carbohidratos.
   - **Especie P335:** Fagos altamente diversos con capacidad de integración lisogénica y activación lítica.
-- **Mecanismo de Devastación:** En una sola gota de lactosuero crudo pueden concentrarse más de $10^9\text{ partículas fágicas/mL}$. Si las microgotas suspendidas en el aire (aerosoles generados por el volteo de moldes, desuerado o lavado a presión en la quesería) viajan hacia el biorreactor de kumis e ingresan al medio, infectan a las bacterias lácticas. Con un periodo de latencia de apenas **$45\text{ a }75\text{ minutos}$** y un tamaño de ráfaga (*burst size*) de **50 a 300 fagos por célula lisada**, un cultivo entero de 1.000 L es aniquilado en menos de 3 horas. El proceso sufre una **"tina muerta"**: la fermentación se detiene, el pH queda estancado en 6,0, no hay producción de ácido ni diacetilo, y la leche se corrompe por bacterias ambientales, forzando el descarte total del lote.
+- **Mecanismo de Devastación:** En una sola gota de lactosuero crudo pueden concentrarse más de $10^9\text{ partículas fágicas/mL}$. Si las microgotas suspendidas en el aire (aerosoles generados por el volteo de moldes, desuerado o lavado a presión en la quesería) viajan hacia el biorreactor de kumis e ingresan al medio, infectan a las bacterias lácticas. Con un periodo de latencia de apenas **$45\text{ a }75\text{ minutos}$** y un tamaño de ráfaga (*burst size*) de **50 a 300 fagos por célula lisada**, el lote completo (2.000 L) es aniquilado en menos de 3 horas. El proceso sufre una **"tina muerta"**: la fermentación se detiene, el pH queda estancado en 6,0, no hay producción de ácido ni diacetilo, y la leche se corrompe por bacterias ambientales, forzando el descarte total del lote.
 
 ```
        Aerosol de Quesería ──► Fago (936/c2) se acopla a L. lactis

@@ -3,8 +3,8 @@
 > **Línea:** 3 – Kumis · **Producto:** kumis (leche fermentada mesófila, de textura cremosa y sabor ácido-dulce)
 > **Referencias:** KU-200 (vaso de 200 g), KU-1L (botella PEAD de 1 L) y KU-NAT (bolsa de 1 kg, natural sin azúcar)
 > **Lote base:** 2.000 L (2.060 kg) por fermentador
-> **Base documental:** `Proceso_Kumis.md` y `EDT_Proceso_Kumis.md`
-> **Nota:** los parámetros de proceso provienen del documento de validación de ingeniería del kumis (`mapa_proceso_industrial_kumis.html`) y de la búsqueda y el análisis del sector lácteo. Constituyen la propuesta inicial de ingeniería y se contrastarán con la visita técnica a Alpina Sopó (27 y 28 de octubre de 2026).
+> **Base documental:** `Proceso_Kumis.md` (incluye el EDT de producción en su §8)
+> **Nota:** los parámetros de proceso provienen de la búsqueda y el análisis del sector lácteo. Constituyen la propuesta inicial de ingeniería y se contrastarán con la visita técnica a Alpina Sopó (27 y 28 de octubre de 2026).
 
 ---
 
@@ -21,7 +21,7 @@ Las dos primeras referencias salen de **la misma receta y el mismo fermento** y 
 | Fermentación (22–25 °C) | 16 h | 16 h | 14 h |
 | Vida útil (≤ 4 °C) | 28 días | 30 días | 25 días |
 
-> La vida útil es una propuesta dentro del rango de 25 a 35 días del documento de validación; se confirmará con la visita técnica.
+> La vida útil es una propuesta dentro del rango de 25 a 35 días; se confirmará con la visita técnica.
 
 ---
 
@@ -38,9 +38,9 @@ Porcentajes en peso sobre la masa del lote (1,03 kg por litro de producto). La l
 | Cultivo mesófilo DVS (*L. lactis* subsp. *lactis*, *cremoris* y *diacetylactis*) | Acidificación y diacetilo | Inoculación aséptica a 24 °C | 0,005 % | 0,005 % |
 | Esencia de vainilla o crema (Res. 2310) | Aroma | Post-fermentación a 12 °C | 0,05 % | — |
 
-**Composición objetivo del producto:** grasa 2,8–3,0 % (el documento de validación cita un mínimo legal de 2,5 % para kumis entero), proteína > 2,8 %, sólidos no grasos > 11,5 %, 14,5–15,0 °Bx en la mezcla (receta azucarada), acidez final 0,75–0,80 % de ácido láctico, pH de equilibrio 4,45–4,55, bacterias ácido-lácticas viables ≥ 10⁷ UFC/g y viscosidad de 1.800–2.400 cP a 10 °C.
+**Composición objetivo del producto:** grasa 2,8–3,0 % (mínimo legal de 2,5 % para kumis entero), proteína > 2,8 %, sólidos no grasos > 11,5 %, 14,5–15,0 °Bx en la mezcla (receta azucarada), acidez final 0,75–0,80 % de ácido láctico, pH de equilibrio 4,45–4,55, bacterias ácido-lácticas viables ≥ 10⁷ UFC/g y viscosidad de 1.800–2.400 cP a 10 °C.
 
-> **Ajuste frente al documento fuente.** La tabla del documento de validación suma 99,56 % (base de 1.000 L). El 0,44 % restante se deja en la leche, que queda como complemento a 100 %. Además, el documento prohíbe el almidón en el kumis (Anexo B de la NTC 805); esa restricción se debe verificar contra la norma.
+> **Ajuste de formulación.** La tabla de formulación suma 99,56 %; el 0,44 % restante se deja en la leche, que queda como complemento a 100 %. Además, la NTC 805 (Anexo B) prohíbe el almidón en el kumis; esa restricción se debe verificar contra la norma.
 
 ---
 
@@ -125,8 +125,8 @@ Las etapas 1 a 14 son comunes a las referencias que comparten receta. Cambian la
 | Tubo de retención (HT-401) | Volumen | 166 L | 4 min a 2.500 L/h |
 | Fermentadores (FM-501…505) | Capacidad | 2.000 L | Agitación de 5 min a 15 rpm; después reposo |
 | Rotura de coágulo | Velocidad | 15–20 rpm | 5–10 min |
-| Bomba lobular (P-601) | Caudal | **4.500 L/h (propuesto)** | El documento fuente indica 1.500 L/h; no alcanza para 4.000 botellas/h de 1 L. Confirmar en la visita |
-| Envasadora de botellas (EN-601) | Velocidad | 4.000 bot/h | Rango del documento: 3.000–6.000 bot/h |
+| Bomba lobular (P-601) | Caudal | **4.500 L/h (propuesto)** | La referencia inicial de 1.500 L/h no alcanza para 4.000 botellas/h de 1 L. Confirmar en la visita |
+| Envasadora de botellas (EN-601) | Velocidad | 4.000 bot/h | Rango de referencia: 3.000–6.000 bot/h |
 | Envasadora de vasos | Velocidad | 6.000 vasos/h | Propuesta |
 | Empacadora de bolsas | Velocidad | 2.400 bolsas/h (40/min) | Propuesta |
 | Termoencogedora | Velocidad | 15–20 fardos/min | |
@@ -137,7 +137,6 @@ Las etapas 1 a 14 son comunes a las referencias que comparten receta. Cambian la
 
 ## 6. Referencias
 
-- Documento de validación `mapa_proceso_industrial_kumis.html` (formulación, HTST, fermentación, envasado y CIP).
 - Éxito, *Kumis*: https://www.exito.com/t/kumis
 - Farmatodo, *Kumis Alpina vaso x 200 g*: https://www.farmatodo.com.co/producto/1004417-kumis-alpina-x200g
-- ICONTEC NTC 805; Decreto 616 de 2006; Resolución 2310 de 1986; Resolución 1407 de 2022 (según el documento fuente; verificar el texto vigente).
+- ICONTEC NTC 805; Decreto 616 de 2006; Resolución 2310 de 1986; Resolución 1407 de 2022 (verificar el texto vigente).

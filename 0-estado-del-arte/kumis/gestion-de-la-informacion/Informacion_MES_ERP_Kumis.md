@@ -2,7 +2,7 @@
 
 > **Alcance:** información que la línea de kumis necesita para gestionar la producción (órdenes, lotes, recetas, cantidades, calidad, paradas, trazabilidad e indicadores) y su relación conceptual con los sistemas MES y ERP según ISA-95.
 
-> **Documentos relacionados:** `Modelo_ISA88_Kumis.md` (recetas y lotes), `PID_Kumis.md` (instrumentos) y `VSM_e_Indicadores_Kumis.md` (indicadores).
+> **Documentos relacionados:** `PID_Kumis.md` (instrumentos) y `Proceso_Kumis.md` (proceso, recetas y lotes).
 
 ---
 
@@ -10,9 +10,9 @@
 
 | Nivel | Sistema | Función en la línea de kumis | Horizonte |
 |---|---|---|---|
-| 4 | ERP (SAP S/4HANA como referencia) | Pedidos, plan de producción, compras de leche e insumos, inventarios, costos | Días a semanas |
+| 4 | ERP | Pedidos, plan de producción, compras de leche e insumos, inventarios, costos | Días a semanas |
 | 3 | MES | Órdenes de producción, recetas maestras, programación de fermentadores, trazabilidad, calidad, OEE, paradas | Turnos a horas |
-| 2 | SCADA (Ignition) y PLC | Supervisión, alarmas, tendencias, ejecución de fases ISA-88 | Segundos a minutos |
+| 2 | SCADA y PLC | Supervisión, alarmas, tendencias, ejecución de fases ISA-88 | Segundos a minutos |
 | 1 | Sensores y actuadores | Medición y actuación (58 tags del P&ID) | Milisegundos a segundos |
 | 0 | Proceso físico | Recepción, pasteurización, fermentación, envasado y maduración | — |
 

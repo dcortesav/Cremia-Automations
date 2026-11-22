@@ -4,7 +4,7 @@
 **Responsables línea 3:** Jesús A. Rivera M. · David F. Cárdenas C.
 **Alcance:** elaboración de kumis (leche fermentada mesófila): materia prima e insumos, maquinaria, secuencia de operaciones y flujo del proceso, desde la recepción de la leche hasta el despacho.
 
-> **Nota:** los parámetros de proceso provienen del documento de validación de ingeniería del kumis (`mapa_proceso_industrial_kumis.html`) y de la búsqueda y el análisis del sector lácteo. Constituyen la propuesta inicial de ingeniería y se contrastarán con la visita técnica a Alpina Sopó (27 y 28 de octubre de 2026).
+> **Nota:** los parámetros de proceso provienen de la búsqueda y el análisis del sector lácteo. Constituyen la propuesta inicial de ingeniería y se contrastarán con la visita técnica a Alpina Sopó (27 y 28 de octubre de 2026).
 
 ---
 
@@ -24,7 +24,7 @@
 | Conservación | Refrigerado a 2–4 °C |
 | Vida útil | 25–35 días (en cadena de frío) |
 
-**Marco normativo de referencia (según el documento de validación; verificar los textos vigentes):** NTC 805 (leches fermentadas), Decreto 616 de 2006 (leche), Resolución 2310 de 1986 (derivados lácteos) y Resolución 1407 de 2022.
+**Marco normativo de referencia (verificar los textos vigentes):** NTC 805 (leches fermentadas), Decreto 616 de 2006 (leche), Resolución 2310 de 1986 (derivados lácteos) y Resolución 1407 de 2022.
 
 ### 1.1 Tres presentaciones de kumis
 
@@ -43,6 +43,8 @@ La línea elabora un solo producto base con dos recetas: la entera azucarada (KU
 | Inspección | Visión de sello y peso | Visión de tapa y sello, peso y estanqueidad | Detector de metales, peso y fugas |
 | Maduración | 26 h | 27 h | 26 h |
 | Vida útil | 28 días | 30 días | 25 días |
+
+> **Nota (antes/después):** los tiempos de maduración y la instrumentación de fin de línea de esta tabla corresponden a la propuesta con túnel de enfriamiento rápido; la situación inicial (sin túnel) es de 36 h (ver §4, paso 25).
 
 **Recetas:** entera azucarada (leche 88,8 %, azúcar 8,5 %, LPD 2,5 %, pectina LMP 0,15 %, cultivo DVS y esencia 0,05 %) y natural (leche 96,8 %, LPD 3,0 %, pectina LMP 0,15 % y cultivo DVS).
 
@@ -105,7 +107,7 @@ Leche ≈1.829 kg + azúcar ≈175 kg + LPD ≈52 kg + pectina ≈3 kg + esencia
 
 ## 3. Maquinaria y equipos
 
-El tag es el del P&ID (`PID_Kumis.md`). Los equipos marcados con **(P)** son propuestas de este equipo que el documento fuente no menciona.
+El tag es el del P&ID (`PID_Kumis.md`). Los equipos marcados con **(P)** son propuestas de este equipo que no figuran en la propuesta inicial.
 
 | # | Área | Equipo | Tag | Función | Instrumentación y actuadores principales |
 |---|---|---|---|---|---|
@@ -138,6 +140,8 @@ El tag es el del P&ID (`PID_Kumis.md`). Los equipos marcados con **(P)** son pro
 | E27 | Frío | Túnel de enfriamiento rápido de aire forzado **(P)** | TF-701 | Lleva el núcleo a ≤ 4 °C | Temperatura |
 | E28 | Frío | Cámara frigorífica de 2–4 °C | CF-701 | Maduración de 24 a 48 h | Temperatura y humedad |
 | E29 | Servicios | Central CIP con mix-proof | CIP-901 | Limpieza automática | Conductividad, turbidez, temperatura, caudal |
+
+> **Equipos del P&ID no listados aquí:** el P&ID incluye además las bombas P-102 (alimentación a tratamiento), P-401 (alimentación del Triblender) y P-402 (alimentación del pasteurizador), que se omiten en esta tabla para no duplicar la lista (ver `PID_Kumis.md` §2).
 
 ---
 
@@ -174,7 +178,7 @@ Los tiempos corresponden a un lote de 2.000 L de KU-1L en la situación inicial.
 | 25 | **Enfriamiento y maduración** | 2–4 °C; HR 80–85 % | 36 h | Demora / almacenamiento | E27, E28 |
 | 26 | **Liberación analítica** | Micro y fisicoquímica | En paralelo con el paso 25 | Inspección | Laboratorio |
 | 27 | **Almacenamiento y despacho** | ≤ 4 °C; FEFO | Hasta el despacho | Almacenamiento y transporte | E28 |
-| ⟳ | **Limpieza CIP** de la línea | Enjuague → NaOH 1,5–2 % a 75–85 °C → enjuague → HNO₃ 0,5–1,5 % a 55–65 °C → sanitización | 60 min por fermentador | Batch (servicio) | E29 |
+| ⟳ | **Limpieza CIP** de la línea | Enjuague → NaOH 2 % a 80 °C → enjuague → HNO₃ 1 % a 60 °C → sanitización | 60 min por fermentador | Batch (servicio) | E29 |
 
 **Tiempo del lote en el fermentador (pasos 12 a 16):** ≈ 19,6 h con CIP (1.178 min).
 **MLT aproximado, del silo pulmón a la estiba liberada:** 57,1 h en KU-1L; la maduración (paso 25) es la mayor demora.
@@ -365,7 +369,7 @@ Producción de Kumis (Línea 3)
 - **Exclusivos de la línea de kumis:** sala de fermentación con HEPA y presión positiva, silo pulmón a +1,8 m, tanque de formulación con Triblender, fermentadores de bajas revoluciones, línea de envasado en cabina ISO 5, túnel de enfriamiento y cámara de maduración.
 - **Riesgo fágico:** el lactosuero de la quesería transporta fagos líticos (936, c2 y P335) que atacan los cultivos mesófilos del kumis. Por eso la sala de fermentación está aislada, se inocula sin abrir el tanque y se rotan las cepas.
 - **Altitud (Sabana de Bogotá, 2.600 msnm, 74 kPa):** el silo pulmón va elevado para proteger el NPSH de las bombas y el skid del pasteurizador trabaja a 1,5–2,0 bar, porque el agua hierve a unos 91 °C.
-- **Pasteurizador:** el documento fuente describe un skid HTST de 2.500 L/h para el kumis. El documento de queso menciona un HTST de 10.000 L/h compartido. Se asume aquí el skid dedicado de 2.500 L/h; el equipo debe confirmarlo con los responsables de queso.
+- **Pasteurizador:** se asume un skid HTST dedicado de 2.500 L/h para el kumis. La línea de queso contempla un HTST de 10.000 L/h compartido; la capacidad definitiva debe confirmarse con los responsables de queso.
 - **Simulación (Tecnomatix):** los fermentadores son el candidato a cuello de botella y la maduración es la mayor demora del flujo de valor.
 
 ---
@@ -374,9 +378,11 @@ Producción de Kumis (Línea 3)
 
 Planos P&ID-L3-001 y P&ID-L3-002 (ANSI/ISA-5.1), en dos hojas: recepción, estandarización, formulación y tratamiento térmico (hoja 1); fermentación, envasado, fin de línea y maduración (hoja 2). La lista de equipos, el índice de 58 instrumentos y válvulas y los lazos de control están en [PID_Kumis.md](../diagramas-de-instrumentacion/PID_Kumis.md).
 
-![P&ID Línea 3 Kumis, hoja 1](../diagramas-de-instrumentacion/PID_Kumis_Hoja1.png)
+![P&ID Línea 3 Kumis, hoja 1](../diagramas-de-instrumentacion/imagenes/PID_Kumis_Hoja1.svg)
 
-![P&ID Línea 3 Kumis, hoja 2](../diagramas-de-instrumentacion/PID_Kumis_Hoja2.png)
+![P&ID Línea 3 Kumis, hoja 2](../diagramas-de-instrumentacion/imagenes/PID_Kumis_Hoja2.svg)
+
+La tabla siguiente resume los lazos principales; el listado completo (12 lazos) está en `PID_Kumis.md` §4.
 
 | Lazo | Variable controlada | Variable manipulada | Observación |
 |---|---|---|---|
@@ -390,28 +396,8 @@ Planos P&ID-L3-001 y P&ID-L3-002 (ANSI/ISA-5.1), en dos hojas: recepción, estan
 
 ---
 
-## 11. Observaciones al documento fuente y preguntas para la visita técnica (27 y 28 de octubre)
+## 11. Referencias
 
-**Observaciones al documento de validación del kumis:**
-
-- La tabla de formulación suma 99,56 %, no 100 %. Aquí la leche es el complemento.
-- La bomba lobular se da a 1.500 L/h, pero la envasadora a 4.000 botellas/h; con botellas de 1 L no coinciden.
-- Las restricciones normativas (almidón prohibido, límites de la Res. 1407 de 2022) están sin verificar contra el texto de la norma.
-- La inspección en línea, el túnel de enfriamiento y la encajonadora automática no aparecen en el documento; son propuestas de este equipo.
-
-**Preguntas para la visita:**
-
-- [ ] ¿Qué presentaciones de kumis se fabrican en Sopó y a qué velocidad?
-- [ ] Número y capacidad de los fermentadores, y lotes por día.
-- [ ] ¿La sala de fermentación está aislada de la quesería? ¿Qué plan de rotación de cultivos usan?
-- [ ] Tiempo de maduración antes de liberar el lote y condiciones de la cámara.
-- [ ] ¿El pasteurizador del kumis es dedicado o compartido con yogur y queso?
-
----
-
-## 12. Referencias
-
-- Documento de validación de ingeniería `mapa_proceso_industrial_kumis.html`.
 - ICONTEC NTC 805; Decreto 616 de 2006; Resolución 2310 de 1986; Resolución 1407 de 2022.
 - Alpina, *Kumis Alpina* (vaso): https://www.farmatodo.com.co/producto/1004417-kumis-alpina-x200g
 - Éxito, *Kumis*: https://www.exito.com/t/kumis

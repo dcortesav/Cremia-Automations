@@ -4,7 +4,7 @@ Entregables de la línea de yogur.
 
 | Entregable | Documento |
 |---|---|
-| Estado del arte de las tres líneas y justificación de la línea de yogur | [Abrir](https://docs.google.com/document/d/15Qr4HVqPt1KvFmihwyoIkslSdZMANpP2/edit) · [`3_Estado_del_Arte_y_Justificacion_Yogur.md`](../0-estado-del-arte/3_Estado_del_Arte_y_Justificacion_Yogur.md) |
+| Estado del arte de las tres líneas y justificación de la línea de yogur | [Abrir](https://docs.google.com/document/d/15Qr4HVqPt1KvFmihwyoIkslSdZMANpP2/edit) · [`estado-del-arte-y-justificacion-de-eleccion.md`](../0-estado-del-arte/estado-del-arte-y-justificacion-de-eleccion.md) |
 | Parámetros de proceso: temperaturas, tiempos y velocidades | [Abrir](https://docs.google.com/document/d/1mB-EovLcqbgefFnWGZF3BccSLASdBvvIfBUOuBw3cVQ/edit) |
 | Recetas y lotes según ISA-88 | [Abrir](https://docs.google.com/document/d/1X1U0yaOUam14wozc36GzxmGuL5SzhDa4b_BxD9mRF6A/edit) · [`Recetas_y_Lotes_ISA88.md`](Recetas_y_Lotes_ISA88.md) |
 | Modelo físico y modelo procedimental ISA-88 | [Abrir](https://docs.google.com/document/d/1ZF-I_JR1iNFCNcEoRBKXjb61100lmu2lH0ex8rSSnnQ/edit) · [`Modelo_ISA88_Linea_Yogur.md`](Modelo_ISA88_Linea_Yogur.md) |

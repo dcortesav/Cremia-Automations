@@ -1,5 +1,5 @@
 from pidlib import *
-def hoja1(path_png,path_svg=None):
+def hoja1(path_out):
     fig,ax=new()
     frame(ax,"1 de 2","P&ID-L3-001 · LÍNEA 3: KUMIS","Recepción, estandarización, formulación y tratamiento térmico")
     legend(ax)
@@ -83,7 +83,6 @@ def hoja1(path_png,path_svg=None):
     sig(ax,[(162,27.3),(162,24),(146.7,24),(146.7,27.5),(144.7,27.5)]) if False else None
     offpage(ax,160,YH,"A HOJA 2"); T(ax,165.5,36.5,"22 a 26 °C",fs=5)
     ax.text(4,127.2,"Parámetros: leche cruda ≤ 4 °C · formulación 45 a 50 °C · homogeneización 150+30 bar a 60 a 65 °C · pasteurización 90 a 95 °C, 3 a 5 min (PCC-1) · salida 22 a 26 °C.",fontsize=5.8,color=GY,zorder=6,va="center")
-    fig.savefig(path_png,dpi=200,facecolor="white")
-    if path_svg: fig.savefig(path_svg,facecolor="white")
+    fig.savefig(path_out,dpi=200,facecolor="white")
     plt.close(fig)
-if __name__=="__main__": hoja1("h1_test.png")
+if __name__=="__main__": hoja1("PID_Kumis_Hoja1.svg")

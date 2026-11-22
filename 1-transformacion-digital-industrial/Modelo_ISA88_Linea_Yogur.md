@@ -15,7 +15,7 @@ El modelo cubre la fabricación por lotes de tres referencias que comparten la b
 | YV-150 | Yogur con fruta | Vaso de 150 ml | Preparado de mora al 8 % | U7 - vasos |
 | YV-300 | Yogur con trozos de fruta | Vaso de 300 ml | Trozos de melocotón al 12 % | U7 - vasos |
 
-La capacidad de referencia es un lote de 550 L de leche cruda, que se confirma en el arranque con producto (paquete 1.8.3 de la EDT del proyecto). La receta determina las cantidades de ingredientes, los parámetros de proceso, la ruta de envasado y el empaque secundario.
+La capacidad de referencia es un lote de 550 L de leche cruda, que se confirma en el arranque con producto (paquete 1.9.3 de la EDT del proyecto). La receta determina las cantidades de ingredientes, los parámetros de proceso, la ruta de envasado y el empaque secundario.
 
 ### 1.1 Correspondencia de niveles ISA-88
 
@@ -38,7 +38,10 @@ El lote es la unidad de ejecución y trazabilidad. Una orden de producción sele
 ```mermaid
 flowchart TB
     subgraph U1["U1 Recepción"]
-        PL101["PL-101 cantinas"] --> TK101["TK-101 tanque de 600 L<br/>WT-101 peso"] --> P101["P-101 bomba de 3 m³/h<br/>FT-101 caudal"]
+        PL101["PL-101 cantinas"] --> TK101["TK-101 tanque de 600 L<br/>WT-101 peso · lote 1"]
+        PL101 --> TK102["TK-102 tanque refrigerado de 1.000 L a 4 °C<br/>TT-102 · LT-102 · lote 2"]
+        TK101 -->|XV-101| P101["P-101 bomba de 3 m³/h<br/>FT-101 caudal"]
+        TK102 -->|XV-102| P101
     end
     subgraph U2["U2 Dosificación"]
         DS["DS-201 azúcar · DS-202 estabilizante<br/>DS-206 leche en polvo<br/>P-203 y P-204 saborizante y colorante<br/>BL-205 cultivo"]
@@ -69,7 +72,7 @@ flowchart TB
     T302 -->|XV-402| FR
     EMP --> CV
     LL --> CV
-    SH["Recursos compartidos<br/>CAL-901 vapor · CH-901 agua helada<br/>CIP-901 limpieza · LAB-101 laboratorio"] -.-> T301
+    SH["Recursos compartidos<br/>CAL-901 vapor · CH-901 agua helada a E-301 y a la chaqueta<br/>CIP-901 limpieza · LAB-101 laboratorio"] -.-> T301
 ```
 
 ### 2.1 Jerarquía física de la línea
@@ -93,9 +96,9 @@ Empresa: Productos Alimenticios La Hacienda
 
 | Unidad | Función | Módulos de equipo principales | Módulos de control y señales |
 |---|---|---|---|
-| **U1 Recepción** | Recibir, analizar, pesar y transferir leche aprobada | PL-101 plataforma de recepción; TK-101 tanque de recepción con filtro; P-101 bomba sanitaria | WT-101 peso; FT-101 caudal; motor y variador de P-101; registro manual de laboratorio LAB-101 |
+| **U1 Recepción** | Recibir, analizar, pesar, conservar y transferir leche aprobada | PL-101 plataforma de recepción; TK-101 tanque de recepción con filtro (lote 1); TK-102 tanque refrigerado (lote 2); P-101 bomba sanitaria | WT-101 peso; TT-102 y LT-102; XV-101 y XV-102 selección de tanque; FT-101 caudal; motor y variador de P-101; registro manual de laboratorio LAB-101 |
 | **U2 Dosificación de insumos** | Alistar y dosificar ingredientes de la receta | DS-201 dosificador de azúcar; DS-202 microdosificador de estabilizante; P-203/P-204 bombas de saborizante y colorante; BL-205 estación de pesaje de cultivo; DS-206 dosificador de leche en polvo | WT-201, WT-202, WT-205 y WT-206 peso; FQ-203/FQ-204 dosificación por pulsos; M-201, M-202 y M-206 motores |
-| **U3 Tanque de proceso** | Mezclar, estandarizar, homogeneizar, pasteurizar, inocular, fermentar y acondicionar | T-301 tanque de proceso de 600 L con chaqueta, agitador y descarga; M-301 agitador; H-301 homogeneizador en recirculación | TT-301 temperatura; TIC-301 control de temperatura; TV-301/TV-302 válvulas; LT-301 nivel; AT-301 pH; ST-301 velocidad; PT-302 presión de homogeneización; XV-302 recirculación; XV-301 descarga |
+| **U3 Tanque de proceso** | Mezclar, estandarizar, homogeneizar, pasteurizar, inocular, fermentar, acondicionar y, en el lote 2, enfriar durante la noche | T-301 tanque de proceso de 600 L con chaqueta, agitador y descarga; M-301 agitador; H-301 homogeneizador en recirculación | TT-301 temperatura; TIC-301 control de temperatura; TV-301/TV-302/TV-304 válvulas de vapor, agua de red y agua helada; XV-904 retorno de la chaqueta; LT-301 nivel; AT-301 pH; ST-301 velocidad; PT-302 presión de homogeneización; XV-302 recirculación; XV-301 descarga |
 | **U4 Enfriamiento y transferencia** | Enfriar, filtrar y transferir el yogur al tanque pulmón | E-301 intercambiador de placas; P-301 bomba de lóbulos; F-301 filtro en línea | TT-302 temperatura; TIC-302; TV-303; PT-301 presión; variador de P-301 |
 | **U5 Tanque pulmón de envasado** | Almacenar temporalmente y habilitar la alimentación a la ruta de envasado | T-302 tanque pulmón de 650 L; derivaciones hacia bolsas o vasos | LT-302 nivel; TT-303 temperatura; XV-401 ruta a U6; XV-402 ruta a U7 |
 | **U6 Envasado de bolsas** | Formar, llenar, sellar, pesar y rechazar bolsas YB-200 | EMP-401 empacadora; CD-401 codificador; CK-401 controladora de peso; CV-401 banda | WT-401 peso; XY-401 expulsor de rechazo; ZS-401 presencia de producto; M-401 accionamiento |
@@ -109,11 +112,11 @@ Los siguientes recursos no son unidades de la secuencia principal, pero prestan 
 | Recurso | Función |
 |---|---|
 | CAL-901 | Suministro de vapor y servicios térmicos para el tanque de proceso |
-| CH-901 | Suministro de agua helada para el intercambiador de placas E-301 |
+| CH-901 | Suministro de agua helada para el intercambiador de placas E-301 (lote 1) y para la chaqueta de T-301 durante la noche (lote 2) |
 | CIP-901 | Limpieza de tanques y tuberías entre lotes o cambios de sabor |
 | LAB-101 | Análisis de recepción y verificaciones de calidad |
-| PLC-01 / HMI-01 y HMI-02 | Ejecución, operación y visualización de la receta de control |
-| SCADA, MES y ERP | Supervisión, registro del lote, órdenes, recetas, trazabilidad e indicadores |
+| PLC-01 / nodo de borde / HMI-01 y HMI-02 | Ejecución, operación y visualización de la receta de control; el nodo de borde corre el SCADA en Node-RED |
+| Plataforma Cremia MES/ERP en Huawei Cloud | Órdenes, recetas, registro del lote, trazabilidad, indicadores, inventario, compras y despacho |
 
 La recepción y el análisis por cantina se mantienen como actividad manual asistida por registro digital: cada cantina debe aprobarse antes de mezclarla.
 
@@ -125,7 +128,7 @@ La recepción y el análisis por cantina se mantienen como actividad manual asis
 flowchart TD
     PU1["PU1 Recepción y carga · U1 y U3<br/>análisis por cantina y carga de 550 L"] --> PU2["PU2 Preparación de la base · U2 y U3<br/>precalentar, estandarizar sólidos, dosificar azúcar y estabilizante,<br/>homogeneizar, pasteurizar a 85–90 °C y enfriar a 43 °C"]
     PU2 --> PU3["PU3 Fermentación · U3<br/>inocular 7 g de cultivo e incubar a 43 °C (41–45 °C) hasta pH 4,4–4,6"]
-    PU3 --> PU4["PU4 Acondicionamiento · U3, U4 y U5<br/>romper el coágulo, saborizar y enfriar a 15–20 °C en placas"]
+    PU3 --> PU4["PU4 Acondicionamiento · U3, U4 y U5<br/>romper el coágulo, saborizar y enfriar:<br/>lote 1 en placas a 15–20 °C; lote 2 en la chaqueta con agua helada"]
     PU4 --> REF{"Referencia del lote"}
     REF -->|YB-200| B["PU5 Bolsas · U6<br/>EMP-401: 200 ml, 30 bolsas/min"]
     REF -->|YV-150| V1["PU5 Vasos · U7<br/>fruta al 8 %; LL-402: 150 ml, 45 vasos/min"]
@@ -159,8 +162,8 @@ El procedimiento de lote común a las tres referencias se organiza en seis proce
 | Operación | Fases | Unidad | Condición de fin |
 |---|---|---|---|
 | **1.1 Recibir y aprobar la leche** | Registrar análisis por cantina; verificar temperatura, pH, acidez, densidad, grasa, proteína, sólidos y antibióticos; pesar | U1 | Leche aprobada por calidad, peso registrado y cantinas identificadas |
-| **1.2 Almacenar leche** | Transferir a TK-101; controlar temperatura y rotación FIFO | U1 | Leche disponible dentro de la condición de almacenamiento |
-| **1.3 Cargar el tanque de proceso** | Transferir desde TK-101 a T-301 con P-101 y registrar el volumen de receta | U1/U3 | Volumen del lote cargado en T-301 |
+| **1.2 Almacenar leche** | Transferir la leche del lote 1 a TK-101 y la del lote 2 a TK-102, que la enfría a 4 °C y la conserva hasta su carga a las 15:45 | U1 | Leche del lote 1 disponible en TK-101; leche del lote 2 a 4 °C o menos en TK-102 (TT-102) |
+| **1.3 Cargar el tanque de proceso** | Seleccionar el tanque de origen (XV-101 para el lote 1, XV-102 para el lote 2), transferir a T-301 con P-101 y registrar el volumen de receta | U1/U3 | Volumen del lote cargado en T-301 |
 
 #### PU2 - Preparación de la base
 
@@ -177,9 +180,9 @@ El procedimiento de lote común a las tres referencias se organiza en seis proce
 | Operación | Fases | Unidad | Condición de fin |
 |---|---|---|---|
 | **3.1 Inocular** | Adicionar cultivo DVS según la receta; agitar aproximadamente 5 min; detener el agitador | U2/U3 | Cultivo adicionado, lote registrado y mezcla uniforme |
-| **3.2 Fermentar** | Incubar a 41–45 °C sin agitación; vigilar pH y tiempo | U3 | pH 4,4–4,6 y acidez de 80–90 °Th |
-| **3.3 Controlar coagulación** | Verificar pH, acidez, firmeza, textura y ausencia de sinéresis excesiva | U3 | Lote conforme o desviación documentada antes del corte |
-| **3.4 Terminar la fermentación** | Detener la incubación al llegar a pH 4,4–4,6. En el lote 2 (nocturno), el agua fría de la chaqueta baja el producto a 15–20 °C hasta la mañana | U3 | pH final alcanzado; el enfriamiento del lote 1 ocurre en E-301 durante la operación 4.3 |
+| **3.2 Fermentar** | Incubar a 41–45 °C sin agitación; vigilar pH y tiempo | U3 | pH de corte de la receta: 4,5 en el lote 1 y 4,6 en el lote 2 |
+| **3.3 Controlar coagulación** | Verificar pH, acidez, firmeza, textura y ausencia de sinéresis excesiva. En el lote 2, la acidez se confirma a las 7:00, antes de transferir | U3 | Lote conforme o desviación documentada antes del corte |
+| **3.4 Terminar la fermentación** | Detener la incubación al llegar al pH de corte. En el lote 2 (nocturno), la ruptura y el saborizado son automáticos y el agua helada de la chaqueta (TV-304) baja el producto a 15 °C en unas 3 h y lo mantiene a 12–15 °C hasta las 7:00 | U3 | pH de corte alcanzado; el enfriamiento del lote 1 ocurre en E-301 durante la operación 4.3 |
 
 #### PU4 - Acondicionamiento
 
@@ -187,7 +190,7 @@ El procedimiento de lote común a las tres referencias se organiza en seis proce
 |---|---|---|---|
 | **4.1 Romper el coágulo** | Agitar a la velocidad de la receta hasta obtener textura homogénea | U3 | Coágulo roto sin deterioro no previsto de la textura |
 | **4.2 Saborizar** | Dosificar saborizante y colorante; para YV-150/YV-300 preparar la incorporación de fruta en la ruta de vasos | U2/U3 | Dosis completa y mezcla homogénea |
-| **4.3 Enfriar y transferir** | Bombear con P-301 por E-301; filtrar con F-301; llenar T-302 | U4/U5 | T-301 vacío y producto en T-302 a 15–20 °C, con nivel habilitante para envasar |
+| **4.3 Enfriar y transferir** | Bombear con P-301 por E-301; filtrar con F-301; llenar T-302. El lote 1 se transfiere a las 14:40; el lote 2, ya frío, a las 7:00 del día siguiente | U4/U5 | T-301 vacío y producto en T-302 a 20 °C o menos, con nivel habilitante para envasar |
 
 #### PU5 - Envasado
 
@@ -247,8 +250,8 @@ Registra como mínimo:
 | Base | Leche estandarizada y normalizada, con homogeneización antes de pasteurizar |
 | Pasteurización | 85–90 °C durante 5–10 min, con validación de tiempo final |
 | Enfriamiento para inoculación | 42–45 °C ±0,5 °C |
-| Incubación | 41–45 °C hasta pH 4,4–4,6 y acidez 80–90 °Th |
-| Corte de fermentación | 15–20 °C para detener la actividad |
+| Incubación | 41–45 °C hasta el pH de corte (4,5 en el lote 1 y 4,6 en el lote 2) y acidez 80–90 °Th |
+| Corte de fermentación | Lote 1: 15–20 °C en el intercambiador de placas. Lote 2: 15 °C en la chaqueta con agua helada y mantenimiento a 12–15 °C |
 | Envasado y fruta | YB-200 sin preparado de fruta; YV-150 con 8 % de mora; YV-300 con 12 % de melocotón |
 | Refrigeración | 4 °C en CF-501 |
 
@@ -277,7 +280,8 @@ Una desviación de parámetro no se resuelve cambiando silenciosamente el estado
 
 - PU1 a PU4 se ejecutan en serie sobre T-301 para cada lote.
 - U6 y U7 son rutas alternativas: un lote utiliza U6 para YB-200 o U7 para YV-150/YV-300.
-- Después de transferir el lote, T-301 queda libre. El CIP y la carga del siguiente lote pueden ejecutarse en paralelo con el envasado y empaque del lote anterior.
+- Después de transferir el lote 1, T-301 queda libre a las 15:05. El CIP y la carga del lote 2 se ejecutan en paralelo con el envasado y el empaque del lote 1.
+- El lote 2 ocupa T-301 desde las 15:45 hasta las 7:25 del día siguiente, porque se enfría en el tanque. T-301 queda ocupado las 24 h: es la restricción de la línea y fija la capacidad en dos lotes diarios.
 - Este paralelismo permite los dos lotes diarios del programa de la sección 7.4 del documento de recetas y lotes.
 - La secuencia no permite iniciar una fase si no se cumple la condición de fin de la fase anterior y la unidad requerida está disponible.
 
@@ -290,6 +294,7 @@ Una desviación de parámetro no se resuelve cambiando silenciosamente el estado
 | Variable | Instrumentos principales | Uso ISA-88 |
 |---|---|---|
 | Peso de leche recibida | WT-101 | Aceptación y carga del lote |
+| Temperatura y nivel de la leche del lote 2 | TT-102, LT-102 | Conservación y carga del lote 2 |
 | Caudal de leche | FT-101 | Control de transferencia |
 | Peso de azúcar, estabilizante y leche en polvo | WT-201, WT-202, WT-206 | Dosificación de receta |
 | Peso de cultivo | WT-205 | Verificación de inoculación |
@@ -309,22 +314,22 @@ Una desviación de parámetro no se resuelve cambiando silenciosamente el estado
 | Nivel | Componentes | Información |
 |---|---|---|
 | 0-1 Proceso, medición y actuación | Sensores, válvulas, motores, variadores, módulos de E/S | Mediciones, estados y mandos |
-| 2 Control | PLC-01 (CompactLogix 5380) y controladores de máquina: controladoras de peso, empacadora y llenadora (robot en la etapa posterior) | Consignas, estados, conteos, pesos y alarmas |
-| 2 Supervisión | SCADA en Ignition, HMI-01 en preparación y HMI-02 en envasado | Variables, alarmas, tendencias, receta activa y estado del lote |
-| 3 Gestión de operaciones | MES con módulos Sepasoft sobre Ignition, base de datos SQL Server | Órdenes, recetas de control, registro de lote, paradas e indicadores |
-| 4 Gestión empresarial | ERP Odoo en la nube | Órdenes, inventario, consumos y resultados mediante servicios web/API |
+| 2 Control | PLC-01 (CompactLogix 5380) y controladores de máquina: controladoras de peso, empacadora, llenadora y unidad de frío de TK-102 (robot en la etapa posterior) | Consignas, estados, conteos, pesos y alarmas |
+| 2 Supervisión | SCADA desarrollado por Cremia en Node-RED en el nodo de borde, HMI-01 en preparación y HMI-02 en envasado | Variables, alarmas, tendencias, historiador local, receta activa y estado del lote |
+| 3 Gestión de operaciones | MES de la plataforma Cremia MES/ERP en Huawei Cloud, con base de datos PostgreSQL | Órdenes, recetas de control, registro de lote, paradas e indicadores |
+| 4 Gestión empresarial | ERP ligero de la misma plataforma | Pedidos, inventario, compras, consumos, costos y despacho |
 
-Las señales de campo usan 4–20 mA, IO-Link y 24 VDC según el instrumento. La integración de control se realiza por Ethernet industrial/EtherNet/IP; la supervisión usa OPC UA, y el MES corre en el mismo servidor Ignition que el SCADA, con persistencia en SQL Server.
+Las señales de campo usan 4–20 mA, IO-Link y 24 VDC según el instrumento. La integración de control se realiza por EtherNet/IP; el nodo de borde lee y escribe en el PLC por OPC UA y se comunica con la plataforma en la nube por MQTT sobre TLS, con caché de recetas y cola de mensajes para seguir operando si se cae internet.
 
 ---
 
 ## 6. Reglas de consistencia y aceptación del modelo
 
 1. Cada fase del procedimiento debe estar asignada a una unidad, módulo de equipo y módulos de control disponibles.
-2. No se agregan unidades productivas fuera de U1-U8; el CIP, laboratorio, caldera y enfriador son recursos compartidos.
+2. No se agregan unidades productivas fuera de U1-U8; el CIP, laboratorio, caldera y enfriador son recursos compartidos, y TK-102 es un módulo de equipo de U1.
 3. La referencia del lote determina la formulación y la ruta U6/U7, pero no cambia la secuencia común de preparación y fermentación.
 4. Las condiciones de fin son verificables mediante medición, inspección o registro de estado.
-5. Los valores de receta y los límites críticos se confirman en el arranque con producto (paquete 1.8.3) antes de liberarse como parámetros de producción.
+5. Los valores de receta y los límites críticos se confirman en el arranque con producto (paquete 1.9.3) antes de liberarse como parámetros de producción.
 
 ---
 
@@ -333,5 +338,6 @@ Las señales de campo usan 4–20 mA, IO-Link y 24 VDC según el instrumento. La
 - [EDT de Proceso - Línea de Yogur](../3-planeacion-y-evaluacion-del-proyecto/EDTs/Proceso/EDT_Proceso_Yogur.md), especialmente la sección 3, Árbol de la EDT.
 - *Recetas y lotes - Línea de yogur*, estructura de referencias, formulaciones, parámetros y trazabilidad.
 - *Equipos, sensores, actuadores, variables y comunicaciones - Línea de yogur*, inventario de equipos, instrumentos, control y comunicaciones.
+- *Plataforma Cremia MES/ERP y SCADA en Node-RED*, software de supervisión y gestión de la producción.
 - ANSI/ISA-88, como marco para separar modelo físico, procedimientos, recetas y ejecución por lotes.
 

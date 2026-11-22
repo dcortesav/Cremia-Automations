@@ -6,20 +6,24 @@ Proyecto Integrador de Automatización de Procesos de Manufactura (APM) 2026-2S,
 
 Página web: https://dcortesav.github.io/Cremia-Automations/
 
+Versión vigente: noviembre de 2026. El archivo [`analisis-estado-actual-propuesta.pdf`](analisis-estado-actual-propuesta.pdf) corresponde a la versión de octubre de 2026 y está desactualizado; se conserva como registro histórico.
+
 ## El proyecto en cifras
 
 | | Situación actual | Propuesta |
 |---|---|---|
 | Lotes por día (550 L de leche) | 1 | 2 |
-| Operación | Un turno de 8 h, lunes a sábado | Lunes a sábado de 7:00 a 18:30 en turnos de 7 h; turno corto el domingo para envasar el lote del sábado |
+| Operación | Un turno de 8 h, lunes a sábado | Lunes a sábado de 7:00 a 19:00 en turnos de 7 h; turno corto el domingo para envasar el lote del sábado |
 | Referencias | Bolsa de 200 ml | Bolsa de 200 ml y vasos de 150 y 300 ml |
-| Unidades por lote | 3.052 bolsas | 3.079 bolsas, 4.369 vasos de 150 ml o 2.260 vasos de 300 ml |
-| Tiempo estándar por lote | 601 min | ≈ 493 min |
+| Unidades por lote | 3.052 bolsas llenadas, 2.898 conformes | 3.079 bolsas, 4.369 vasos de 150 ml o 2.260 vasos de 300 ml, con 1,5 % no conforme |
+| Unidades conformes por día | 2.898 | 6.505 en promedio |
+| Tiempo estándar por lote | 601 min | ≈ 563 min; el tanque queda libre a las 15:05 para el segundo lote |
+| Enfriamiento | Natural, toda la noche | Lote 1 en intercambiador de placas; lote 2 con agua helada en la chaqueta, de noche y sin operario |
 | Producto no conforme | 5,06 % | 1,5 % o menos |
-| Instrumentación conectada | Ninguna | 23 sensores, 19 actuadores, 55 señales de E/S y 20 nodos EtherNet/IP |
+| Instrumentación conectada | Ninguna | 25 sensores, 22 actuadores, 68 señales de E/S y 20 nodos EtherNet/IP (diseño completo) |
 | Robots | Ninguno | Uno de paletizado (R-501), diseñado y comprado en una etapa posterior |
 | Control | Válvulas manuales, termómetro y acidómetro | Control secuencial ISA-88 y lazos PID en el PLC, sin control avanzado |
-| Gestión de la información | Registros en papel | PLC CompactLogix 5380, SCADA en Ignition, MES con módulos Sepasoft y ERP Odoo en la nube |
+| Gestión de la información | Registros en papel | PLC CompactLogix 5380, SCADA desarrollado en Node-RED en la planta y plataforma Cremia MES/ERP en Huawei Cloud, sin licencias de terceros |
 
 El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y Salamanca, 2015).
 
@@ -27,31 +31,43 @@ El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y
 
 | Dimensión | Resultado esperado |
 |---|---|
-| Productividad | De 763 a 1.321 unidades por operario al día (+73 %) |
-| Costos | Mano de obra de 147 a 87 COP por unidad (−41 %) y costo real por lote |
+| Productividad | De 724 a 1.301 unidades conformes por operario al día (+80 %) |
+| Costos | Mano de obra de 155 a 95 COP por unidad conforme (−39 %) y costo real por lote |
 | Calidad | Producto no conforme de 5,06 % a 1,5 % o menos, con peso del 100 % |
 | Trazabilidad | Registro electrónico de cada lote, desde la cantina hasta la estiba |
-| Información y decisiones | Tablero diario con OEE, rendimiento, consumos y paradas |
-| Eficiencia de la empacadora | OEE estimado de 68 % hoy; meta de 82 % |
-| Resultado financiero | Inversión de COP 1.325,8 millones; VPN al 15 % de COP 602 millones, TIR de 30,2 % y recuperación en 2,7 años |
+| Información y decisiones | Tablero diario con OEE, rendimiento, consumos y paradas, en la nube, disponible aunque falle la planta |
+| Eficiencia de la empacadora | OEE estimado de 65 % hoy; meta de 82 % |
+| Resultado financiero | Inversión de COP 1.464,5 millones; VPN al 15 % después de impuestos de COP 231,0 millones, TIR de 19,8 % y recuperación en 3,8 años |
 
-La transformación incluye a las personas: no hay despidos, el segundo lote crea un puesto, la capacitación es por rol en el gemelo digital y la gestión del cambio sigue el modelo ADKAR, con 8 semanas de acompañamiento después de la entrega.
+La transformación incluye a las personas: no hay despidos, el segundo lote crea un puesto, la capacitación es por rol en el gemelo digital, la gestión del cambio sigue el modelo ADKAR y el proyecto incluye seis semanas de estabilización con producción.
 
 ## Plan del proyecto
 
-16 semanas, del 18 de enero al 7 de mayo de 2027, con una sola parada de planta de 5 días. La ingeniería conceptual de la oferta se valida en sitio, los equipos de largo plazo se piden en la semana 3 y el software se prueba en el gemelo digital mientras se fabrican los equipos. La ingeniería se cobra por horas reales (3.060 h, COP 190,8 millones) en dos contratos, diseño y procura e implementación, a una tarifa que refleja el valor que aporta cada integrante y no solo su salario. La celda robotizada de encanastado queda diseñada para una etapa posterior.
+26 semanas, del 18 de enero al 16 de julio de 2027, con una sola parada de planta de 5 días. La ingeniería conceptual de la oferta se valida en sitio, los equipos de largo plazo se piden en la semana 4 y llegan, ya nacionalizados, en la semana 18; mientras tanto, Cremia desarrolla el software y lo prueba en el gemelo digital. La ingeniería se cobra por horas reales (4.780 h, COP 333,7 millones) en dos contratos, a una tarifa que refleja el valor que aporta cada integrante y que cubre la nómina completa del proyecto. La celda robotizada de encanastado queda diseñada para una etapa posterior. La oferta se firma con cartas de intención de los distribuidores por al menos el 85 % del volumen de vasos, porque la viabilidad depende de esas referencias.
 
 ## Estructura del repositorio
 
 | Carpeta | Contenido |
 |---|---|
-| [`0-estado-del-arte`](0-estado-del-arte) | Estado del arte de las tres líneas y justificación de la línea de yogur; investigación de la línea de queso campesino y versión inicial del proyecto con tres líneas |
-| [`1-transformacion-digital-industrial`](1-transformacion-digital-industrial) | Parámetros de proceso, recetas y lotes, modelos ISA-88, arquitectura ISA-95, flujo de información OT/IT, equipos e instrumentación |
-| [`2-gestion-y-evaluacion-de-la-produccion`](2-gestion-y-evaluacion-de-la-produccion) | Tiempos y capacidades, VSM e indicadores, necesidades de información con MES y ERP |
+| [`0-estado-del-arte`](0-estado-del-arte) | Estado del arte de las tres líneas y justificación de la línea de yogur (versión inicial); investigación de las líneas de queso campesino y kumis |
+| [`1-transformacion-digital-industrial`](1-transformacion-digital-industrial) | Parámetros de proceso, recetas y lotes, modelos ISA-88, arquitectura ISA-95, flujo de información OT/IT, equipos e instrumentación, y la plataforma Cremia MES/ERP con el SCADA en Node-RED |
+| [`2-gestion-y-evaluacion-de-la-produccion`](2-gestion-y-evaluacion-de-la-produccion) | Tiempos y capacidades, VSM del estado actual y del propuesto, e indicadores; necesidades de información del MES y del ERP |
 | [`3-planeacion-y-evaluacion-del-proyecto`](3-planeacion-y-evaluacion-del-proyecto) | Empresa, EDT del proyecto, [EDT del proceso productivo](3-planeacion-y-evaluacion-del-proyecto/EDTs/Proceso/EDT_Proceso_Yogur.md), cronograma, presupuesto, análisis económico, propuesta de valor y gestión del cambio |
+| [`herramientas`](herramientas) | Fuente única de cifras (`parametros.yaml`), modelo de producción, programa diario y finanzas, generador de tablas y verificador de consistencia |
 | [`docs`](docs) | Página web del proyecto |
 
 Cada carpeta de módulo tiene un `README.md` con el índice de sus entregables.
+
+## Cómo se mantienen consistentes las cifras
+
+Todas las cifras de la propuesta salen de [`herramientas/parametros.yaml`](herramientas/parametros.yaml). Después de cambiar un supuesto:
+
+```powershell
+.venv\Scripts\python.exe -X utf8 herramientas\modelo.py               # recalcula y escribe herramientas\resultados.md
+.venv\Scripts\python.exe -X utf8 herramientas\generar_tablas.py        # actualiza las tablas generadas de los documentos
+.venv\Scripts\python.exe -X utf8 herramientas\verificar_consistencia.py  # busca cifras desactualizadas
+.venv\Scripts\python.exe -m pytest herramientas\tests -q              # pruebas del modelo, del programa y del verificador
+```
 
 ## Equipo
 

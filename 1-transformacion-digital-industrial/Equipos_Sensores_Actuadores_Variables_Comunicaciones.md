@@ -35,15 +35,16 @@ La línea no tiene instrumentación conectada ni registros electrónicos: toda m
 | Estandarización y homogeneización | No se ajustan los sólidos ni se homogeneiza la mezcla | Leche en polvo dosificada por peso y homogeneización a 150–200 bar antes de pasteurizar | DS-206, WT-206, H-301, PT-302, XV-302 |
 | Control de la pasteurización y la incubación | Apertura manual de válvulas de vapor y de agua fría | Control automático de temperatura con registro continuo | TT-301, TIC-301, TV-301, TV-302, LT-301 |
 | Verificación de acidez | Muestra y acidómetro manual | Medición de pH en línea para determinar el fin de la incubación | AT-301 |
-| Enfriamiento | Agua fría en la chaqueta y enfriamiento natural durante la noche: un lote por día y alto consumo de agua | Intercambiador de placas con agua helada en circuito cerrado: enfriamiento en menos de 30 min, menor consumo de agua y segundo lote diario | E-301, P-301, CH-901, TT-302, TV-303 |
+| Enfriamiento | Agua fría en la chaqueta y enfriamiento natural durante la noche: un lote por día y alto consumo de agua | Lote 1: intercambiador de placas con agua helada en circuito cerrado, en 25 min, que libera el tanque para el segundo lote. Lote 2: agua helada del mismo enfriador en la chaqueta durante la noche, de 43 a 15 °C en unas 3 h, y mantenimiento a 12–15 °C hasta la mañana | E-301, P-301, CH-901, TT-302, TV-303, TV-304, XV-904 |
+| Leche del segundo lote | La leche se procesa al recibirla; solo hay leche para un lote | Tanque refrigerado de 1.000 L que conserva a 4 °C la leche del lote 2 desde la recepción de la mañana hasta su carga a las 15:45, como exige el Decreto 616 de 2006 | TK-102, TT-102, LT-102, XV-101, XV-102 |
 | Ruptura del coágulo y homogeneización | Agitación a baja velocidad sin control | Agitador con variador: velocidad según la fase y la referencia, simultánea con el enfriamiento | M-301 con variador, ST-301 |
 | Tres referencias de producto | Solo bolsa de 200 ml | Llenadora-selladora de vasos de 150 y 300 ml y dosificación de fruta | LL-402, P-403, MX-403, XV-401, XV-402 |
 | Control de peso | Una de cada cinco bolsas se pesa en gramera; el empaque con control de calidad toma 149 min por lote | Control de peso del 100 % en línea con rechazo automático | WT-401, WT-402, XY-401, XY-402 |
 | Codificado de lote y fecha | Sin codificado automático | Codificador en cada máquina de envasado, con el lote y la fecha que envía el MES | CD-401, CD-402 |
 | Inspección del sellado de la bolsa | El operario presiona cada bolsa y la clasifica en canastas | Se mantiene manual, por muestreo estadístico; el resultado se registra en el sistema | Estación de registro en HMI-01 |
 | Paradas de la empacadora de bolsas | Paradas frecuentes por desajuste en la medida de corte de la bolsa | Registro automático de paradas y causas; rutinas de mantenimiento autónomo (TPM) | Señales de estado de EMP-401 al PLC |
-| Transporte al cuarto frío | Canastas llevadas a mano | Bandas hacia el encanastado dentro del proyecto; la celda robotizada de encanastado y paletizado queda diseñada para una etapa posterior | CV-401, CV-402, CV-501; R-501 en la etapa posterior |
-| Información de producción | Registros en papel | PLC, SCADA y conexión con MES y ERP | PLC-01 (CompactLogix), HMI-01 y HMI-02, SCADA (Ignition) y red industrial |
+| Transporte al cuarto frío | Canastas llevadas a mano | Bandas hacia el encanastado y una mesa acumuladora para encajonar los vasos a mano dentro del proyecto; la celda robotizada de encanastado y paletizado queda diseñada para una etapa posterior | CV-401, CV-402, CV-501, MA-501; R-501 en la etapa posterior |
+| Información de producción | Registros en papel | PLC, SCADA en Node-RED en la planta y plataforma Cremia MES/ERP en Huawei Cloud | PLC-01 (CompactLogix), nodo de borde con Node-RED, HMI-01 y HMI-02, red industrial y plataforma Cremia MES/ERP |
 
 La recepción y el análisis de la leche por cantina se mantienen manuales: cada cantina debe aprobarse antes de mezclarla. La mejora en esa etapa es registrar los resultados en el sistema.
 
@@ -54,7 +55,8 @@ La recepción y el análisis de la leche por cantina se mantienen manuales: cada
 | Etiqueta | Equipo | Estado | Función | Capacidad de referencia | Fase |
 | --- | --- | --- | --- | --- | --- |
 | PL-101 | Plataforma de recepción de cantinas | Existente | Recibe la leche del proveedor | 14 cantinas de 40 L | — |
-| TK-101 | Tanque de recepción con filtro | Existente | Recibe la leche aprobada | 600 L | — |
+| TK-101 | Tanque de recepción con filtro | Existente | Recibe la leche aprobada del lote 1 | 600 L | — |
+| TK-102 | Tanque refrigerado de leche con unidad de frío propia | Nuevo | Conserva a 4 °C la leche del lote 2 hasta su carga | 1.000 L | 1 |
 | P-101 | Bomba sanitaria de leche | Reemplazo | Envía la leche al tanque de proceso (12 m de tubería) | 3 m³/h (550 L en 11 min) | 1 |
 | LAB-101 | Laboratorio de recepción | Existente | Acidez, pH, densidad y sólidos | — | — |
 | DS-201 | Dosificador de azúcar: tolva y tornillo | Nuevo | Dosifica el azúcar por peso | 100 kg por lote | 1 |
@@ -62,7 +64,7 @@ La recepción y el análisis de la leche por cantina se mantienen manuales: cada
 | P-203 / P-204 | Bombas dosificadoras de saborizante y colorante | Nuevo | Dosifican los aditivos líquidos | 0–2 L/min | 1 |
 | BL-205 | Estación de pesaje del cultivo | Nuevo | Verifica el peso y el lote del cultivo antes de adicionarlo | 0–500 g | 1 |
 | DS-206 | Dosificador de leche en polvo: tolva y tornillo | Nuevo | Dosifica la leche en polvo por peso | 20 kg por lote | 1 |
-| T-301 | Tanque de proceso con chaqueta y agitador | Existente | Precalentamiento, pasteurización, incubación y saborizado | 600 L | — |
+| T-301 | Tanque de proceso con chaqueta y agitador | Existente | Precalentamiento, pasteurización, incubación, saborizado y enfriamiento nocturno del lote 2 | 600 L | — |
 | H-301 | Homogeneizador de alta presión de dos etapas | Nuevo | Homogeneiza la mezcla en recirculación antes de pasteurizar | 1.500 L/h a 200 bar | 1 |
 | E-301 | Intercambiador de calor de placas | Nuevo | Enfría el yogur de 43 °C a 15–20 °C | 1.500 L/h | 1 |
 | P-301 | Bomba de lóbulos | Nuevo | Transfiere el yogur sin romper su estructura | 1.500 L/h | 1 |
@@ -74,13 +76,14 @@ La recepción y el análisis de la leche por cantina se mantienen manuales: cada
 | P-403 / MX-403 | Bomba dosificadora de fruta y mezclador en línea | Nuevo | Incorpora el preparado de fruta antes de la llenadora | 0–150 L/h | 2 |
 | CK-401 / CK-402 | Controladoras de peso dinámicas | Nuevo | Pesan el 100 % de las unidades y rechazan las no conformes | 60 und/min | 1 y 2 |
 | CV-401 / CV-402 / CV-501 | Bandas transportadoras | Nuevo | Llevan el producto a encanastado y al cuarto frío | — | 1 y 2 |
+| MA-501 | Mesa acumuladora de vasos | Nuevo | Acumula los vasos para que un operario los encajone a mano | 2 min de producción | 2 |
 | R-501 | Celda robotizada de encanastado y paletizado (robot ABB) | Nuevo | Arma canastas, cajas y estibas | 10 ciclos/min | Etapa posterior |
 | CF-501 | Cuarto frío | Existente | Almacena el producto terminado a 4 °C | — | — |
 | CAL-901 | Caldera de vapor | Existente | Suministra vapor a la chaqueta del tanque | — | — |
-| CH-901 | Enfriador de agua (chiller) y banco de agua helada | Nuevo | Suministra agua helada al intercambiador de placas | Agua a 2 °C | 1 |
+| CH-901 | Enfriador de agua (chiller) y banco de agua helada | Nuevo | Suministra agua helada al intercambiador de placas de día y a la chaqueta de T-301 de noche | Agua a 2 °C | 1 |
 | CIP-901 | Estación de limpieza CIP de dos tanques | Nuevo | Limpia tanques y tuberías entre lotes | — | 1 |
 
-La fase indica la etapa de inversión: en la fase 1 se automatiza la preparación y la línea de bolsas; en la fase 2 se agrega la línea de vasos. Las dos fases caben en el proyecto de 16 semanas. La celda robotizada R-501 queda diseñada, con su espacio, su interfaz con el PLC y sus seguridades definidas, pero se compra en una etapa posterior, cuando el volumen la justifique; mientras tanto el encanastado es manual.
+La fase indica el frente de inversión: en la fase 1 se automatiza la preparación y la línea de bolsas; en la fase 2 se agrega la línea de vasos. Las dos fases se ejecutan dentro del proyecto de 26 semanas. La celda robotizada R-501 queda diseñada, con su espacio, su interfaz con el PLC y sus seguridades definidas, pero se compra en una etapa posterior, cuando el volumen la justifique; mientras tanto el encanastado es manual.
 
 ### 4.2 Criterios de diseño sanitario
 
@@ -96,18 +99,24 @@ La fase indica la etapa de inversión: en la fase 1 se automatiza la preparació
 | --- | --- | --- | --- |
 | P-101 bomba de leche | Cargar 550 L en 11 a 12 min | 0,55 m³ ÷ 0,19 h | 3 m³/h |
 | P-101 a 2.600 msnm | Evitar cavitación con presión atmosférica de unos 74 kPa | NPSH disponible ≈ (74 − 2,3) kPa ÷ (1.030 kg/m³ × 9,81 m/s²) ≈ 7,1 m, menos pérdidas de succión | Margen amplio frente a los 2–3 m que exige una centrífuga sanitaria de este tamaño |
-| H-301 homogeneizador | Dos pasos de unos 600 L de mezcla dentro del calentamiento | 1.200 L ÷ 1.500 L/h | 48 min |
+| H-301 homogeneizador | Recircular la mezcla a 60–65 °C antes de pasteurizar | 45 min a 1.500 L/h = 1.125 L, unos 1,9 volúmenes del lote | Con mezcla en el tanque, cerca del 85 % del producto pasa al menos una vez por H-301 (1 − e^−1,9); la textura se valida en el arranque y, si no basta, la recirculación se extiende hasta 60 min con 15 min de horas extra del operador del segundo lote |
 | H-301 potencia | Caudal por presión dividido por la eficiencia | 0,000417 m³/s × 200 bar ÷ 0,85 | ≈ 9,8 kW; motor de 11 kW |
-| Calentamiento de T-301 | 600 kg de 20 a 85 °C en unos 45 min | 600 kg × 3,93 kJ/kg·K × 65 K ÷ 2.700 s | ≈ 57 kW, cerca de 100 kg/h de vapor saturado |
+| Calentamiento de T-301 | 600 kg de 25 a 87 °C con unos 57 kW de vapor (≈ 100 kg/h) | 600 kg × 3,93 kJ/kg·K × 62 K ÷ 57 kW | ≈ 43 min de calentamiento: 26 min de 25 a 62 °C y 17 min de 62 a 87 °C |
+| Homogeneización y pasteurización | Calentar, recircular y sostener | 26 + 45 + 17 + 7 min de sostenimiento | **95 min** |
+| Enfriamiento a inoculación | 600 kg de 87 a 43 °C con agua de red en la chaqueta | 600 kg × 3,93 kJ/kg·K × 44 K ÷ 1.500 s | ≈ 69 kW medios; 25 min, cerca de los 26,2 min que se miden hoy |
+| Precalentamiento del lote 2 | 600 kg de 4 a 25 °C, porque la leche sale de TK-102 | 600 kg × 3,93 kJ/kg·K × 21 K ÷ 57 kW | ≈ 15 min de calentamiento; 18 min con la disolución del azúcar |
 | E-301 intercambiador | 1.500 L/h de yogur de 43 a 18 °C | 0,44 kg/s × 3,8 kJ/kg·K × 25 K | ≈ 42 kW |
 | Agua helada de E-301 | Entrada a 2 °C y salida a 8 °C | 42 kW ÷ (4,18 kJ/kg·K × 6 K) | ≈ 6 m³/h |
-| CH-901 enfriador | Energía de enfriamiento por lote | 42 kW × 25 min | ≈ 17 kWh por lote; enfriador de unos 15 kW con banco de agua helada que acumula la carga entre lotes |
-| P-301 bomba de lóbulos | Transferir el lote más grande en menos de 30 min | 679 L ÷ 1.500 L/h | 27 min |
-| T-302 tanque pulmón | Recibir el yogur base de un lote antes de la fruta | YB-200: 616 L; YV-300: 601 L de base (la fruta se agrega en línea) | 650 L es suficiente |
-| LL-402 llenadora | Envasar un lote de vasos dentro de un turno | 4.369 vasos ÷ 45 vasos/min; 2.260 ÷ 35 | 97 y 65 min |
+| CH-901 enfriador, de día | Energía de enfriamiento del lote 1 en E-301 | 42 kW × 25 min | ≈ 17 kWh por lote; enfriador de unos 15 kW con banco de agua helada que acumula la carga entre lotes |
+| CH-901 enfriador, de noche | Enfriar el lote 2 en la chaqueta de 43 a 15 °C | 600 kg × 3,8 kJ/kg·K × 28 K | ≈ 18 kWh en unas 3 h (≈ 6 kW medios); la misma bomba de circulación alimenta la chaqueta porque E-301 no trabaja de noche |
+| TK-102 tanque refrigerado | Enfriar 566 kg de leche de unos 18 a 4 °C en menos de 3 h y conservarla hasta las 15:45 | 566 kg × 3,93 kJ/kg·K × 14 K | ≈ 8,7 kWh; unidad de frío de unos 4 kW, la de un tanque de enfriamiento de leche comercial de 1.000 L |
+| P-301 bomba de lóbulos | Transferir la base de yogur del lote más grande en menos de 30 min | YB-200: 616 L de base (en los vasos la fruta se agrega después de T-302) ÷ 1.500 L/h | 25 min |
+| T-302 tanque pulmón | Recibir el yogur base de un lote antes de la fruta | YB-200: 616 L; YV-300: 601 L de base | 650 L es suficiente |
+| EMP-401 y LL-402, tiempo de envasado | Envasar un lote con la meta de OEE (disponibilidad 92 % y rendimiento 90 %) | 3.079 bolsas ÷ (30 × 0,828); 4.369 vasos ÷ (45 × 0,828); 2.260 vasos ÷ (35 × 0,828) | 124, 117 y 78 min |
+| MA-501 mesa acumuladora | Encajonar a mano los vasos | 37,3 vasos/min efectivos ÷ 24 por caja | 1,55 cajas/min (una caja cada 39 s) con las cajas armadas antes del turno; se valida en la simulación del encajonado (paquete 1.7.2) |
 | R-501 celda robotizada | Cadencia frente al flujo de unidades | 45 vasos/min ÷ 24 por caja ≈ 1,9 cajas/min; 30 bolsas/min ÷ 120 ≈ 0,25 canastas/min | 10 ciclos/min dan margen para agrupar y paletizar |
 
-La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de estudio, de modo que la ingeniería de detalle verifica que entregue al menos 100 kg/h de vapor en la pasteurización.
+La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de estudio, de modo que la ingeniería básica verifica que entregue al menos 100 kg/h de vapor en la pasteurización (paquete 1.2.1).
 
 ### 4.4 Especificación de los equipos nuevos principales
 
@@ -121,7 +130,9 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 | CD-401 / CD-402 codificadores | Transferencia térmica sobre la película de la bolsa (CD-401) e inyección de tinta continua sobre la tapa del vaso (CD-402); imprimen lote y vencimiento y reciben el código del MES |
 | R-501 celda robotizada (etapa posterior) | Un robot de paletizado de cuatro ejes (ABB IRB 460) con herramienta de vacío que encanasta bolsas, encajona vasos y arma la estiba; vallado perimetral, cortinas de luz y zona de estiba |
 | CIP-901 estación de limpieza | Dos tanques (soda y ácido) con calentamiento, bomba de impulsión, retorno con CT-901 y válvulas de ruta XV-901 |
-| CH-901 enfriador | Unidad compacta de unos 15 kW con banco de agua helada a 2 °C y bomba de circulación |
+| CH-901 enfriador | Unidad compacta de unos 15 kW con banco de agua helada a 2 °C y bomba de circulación de 6 m³/h; de día alimenta E-301 y de noche la chaqueta de T-301 a través de TV-304, con retorno por XV-904 |
+| TK-102 tanque refrigerado | Tanque de enfriamiento de leche de 1.000 L en acero inoxidable 316L, con agitador, unidad de frío de unos 4 kW y controlador propio; entrega al PLC la temperatura (TT-102), el nivel (LT-102) y el estado de la unidad de frío |
+| Nodo de borde | PC industrial sin ventilador (procesador de 4 núcleos, 16 GB de RAM, disco de estado sólido de 512 GB), con Node-RED e InfluxDB; un segundo PC idéntico queda de repuesto con la misma imagen del sistema. Paneles táctiles de 15" IP65 como HMI-01 y HMI-02 |
 
 ## 5. Sensores
 
@@ -130,6 +141,8 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 | Etiqueta | Variable | Tipo de sensor | Rango | Ubicación | Señal |
 | --- | --- | --- | --- | --- | --- |
 | WT-101 | Peso de leche recibida | Celdas de carga | 0–700 kg | Tanque de recepción TK-101 | 4–20 mA |
+| TT-102 | Temperatura de la leche del lote 2 | PT100 sanitaria | −5 a 40 °C | Tanque refrigerado TK-102 | 4–20 mA |
+| LT-102 | Nivel del tanque refrigerado | Transmisor de presión hidrostática | 0–1.000 L | Tanque refrigerado TK-102 | IO-Link |
 | FT-101 | Caudal de leche | Caudalímetro electromagnético sanitario | 0–5 m³/h | Tubería hacia T-301 | 4–20 mA y pulsos |
 | WT-201 | Peso de azúcar | Celdas de carga | 0–150 kg | Tolva DS-201 | 4–20 mA |
 | WT-202 | Peso de estabilizante | Celda de carga de precisión | 0–2 kg | Microdosificador DS-202 | 4–20 mA |
@@ -172,12 +185,15 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 | Etiqueta | Actuador | Ubicación | Función | Mando |
 | --- | --- | --- | --- | --- |
 | P-101 | Motor de bomba centrífuga con variador | Recepción | Transfiere la leche a T-301 | EtherNet/IP |
+| XV-101 / XV-102 | Válvulas sanitarias de selección con finales de carrera | Succión de P-101 | Toman la leche de TK-101 (lote 1) o de TK-102 (lote 2) | Neumático, 24 V DC |
 | M-201 | Motor del tornillo dosificador con variador | DS-201 | Dosifica azúcar: grueso y afine | EtherNet/IP |
 | M-202 | Motor del microdosificador | DS-202 | Dosifica estabilizante | EtherNet/IP |
 | P-203 / P-204 | Bombas peristálticas | Dosificación | Dosifican saborizante y colorante | Pulsos, 24 V DC |
 | M-206 | Motor del tornillo dosificador | DS-206 | Dosifica la leche en polvo | EtherNet/IP |
 | TV-301 | Válvula de control de vapor | Chaqueta de T-301 | Calienta en precalentamiento y pasteurización | 4–20 mA |
-| TV-302 | Válvula de control de agua fría | Chaqueta de T-301 | Enfría hasta la temperatura de inoculación | 4–20 mA |
+| TV-302 | Válvula de control de agua fría | Chaqueta de T-301 | Enfría hasta la temperatura de inoculación; respaldo del enfriamiento nocturno si falla el enfriador | 4–20 mA |
+| TV-304 | Válvula de control de agua helada | Chaqueta de T-301 | Enfría el lote 2 durante la noche y lo mantiene a 12–15 °C | 4–20 mA |
+| XV-904 | Válvula de tres vías del retorno de la chaqueta, con finales de carrera | Salida de la chaqueta de T-301 | Devuelve el agua al banco de agua helada o la envía a drenaje | Neumático, 24 V DC |
 | M-301 | Motor del agitador con variador | T-301 | Mezcla, mantiene homogénea la temperatura y rompe el coágulo | EtherNet/IP |
 | XV-301 | Válvula de fondo de asiento sanitario | T-301 | Descarga el tanque de proceso | Neumático, 24 V DC |
 | M-302 | Motor del homogeneizador con variador | H-301 | Impulsa la mezcla a alta presión | EtherNet/IP |
@@ -193,7 +209,7 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 
 ### 6.2 Criterios de selección
 
-- Válvulas de control TV-301, TV-302 y TV-303 de globo con posicionador electroneumático; TV-301 cierra al perder el aire o la señal, para que una falla nunca deje vapor entrando a la chaqueta.
+- Válvulas de control TV-301, TV-302, TV-303 y TV-304 de globo con posicionador electroneumático; TV-301 cierra al perder el aire o la señal, para que una falla nunca deje vapor entrando a la chaqueta.
 - Válvulas de producto de asiento sanitario con cabezal de control y finales de carrera, para confirmar al PLC la posición real antes de mover producto.
 - La separación entre la ruta de producto y la de CIP se hace con válvulas de doble asiento, de modo que el detergente no pueda llegar al producto.
 - Variadores de frecuencia en todos los motores que cambian de velocidad con la fase o la receta: bombas, agitador, homogeneizador, dosificadores y bandas.
@@ -204,14 +220,16 @@ La caldera CAL-901 se conserva. Su capacidad nominal no aparece en el caso de es
 | --- | --- | --- | --- | --- |
 | Calidad de la leche cruda | Acidez, pH, densidad y sólidos en especificación | Laboratorio, por cantina | Aceptar o rechazar la cantina | Inocuidad y aptitud para fermentar |
 | Cantidad de leche del lote | 480–550 L | WT-101 y FT-101 | Escala la fórmula de la receta | Base de la dosificación |
+| Temperatura de la leche del lote 2 | 4 °C (máximo 6 °C) | TT-102 | Control de la unidad de frío de TK-102; alarma alta | Conservación de la leche cruda (Decreto 616 de 2006) |
 | Cantidad de cada insumo | Fórmula de la receta, ± 1 % | WT-201, WT-202, FQ-203, FQ-204, WT-205, WT-206 | Dosificación automática con corte por peso | Uniformidad entre lotes |
 | Presión de homogeneización | 150–200 bar a 60–65 °C | PT-302 y TT-301 | Consigna del variador de M-302; alarma por baja presión | Estabilidad y textura del producto |
 | Temperatura de precalentamiento | 25 °C | TT-301 | TIC-301 sobre TV-301 | Disolución del azúcar |
 | Temperatura y tiempo de pasteurización | 85–90 °C durante 5 a 10 min | TT-301, con registro | TIC-301 sobre TV-301; temporizador de sostenimiento | Punto crítico de control |
 | Temperatura de inoculación | 42–45 °C | TT-301 | TIC-301 sobre TV-302 | Viabilidad del cultivo |
 | Temperatura de incubación | 41–45 °C (consigna de 43 °C) | TT-301 | TIC-301 sobre TV-301 y TV-302 | Velocidad de fermentación |
-| pH al final de la incubación | pH 4,4–4,6 (acidez de 80–90 °Th) | AT-301 | Termina la fase de incubación e inicia el enfriamiento | Calidad del producto |
+| pH al final de la incubación | Consigna de corte de 4,5 en el lote 1 y de 4,6 en el lote 2, que sigue acidificando unas 3 h mientras se enfría en la chaqueta (rango del producto: 4,4–4,6 y 80–90 °Th) | AT-301 | Termina la fase de incubación e inicia la ruptura y el enfriamiento | Calidad del producto |
 | Temperatura de salida del enfriador | 15–20 °C | TT-302 | TIC-302 sobre TV-303 | Detiene la fermentación |
+| Temperatura del lote 2 durante la noche | De 43 a 15 °C en unas 3 h; mantener 12–15 °C hasta las 7:00 | TT-301 | TIC-301 sobre TV-304 (agua helada), con agitación lenta intermitente | Detiene la fermentación del lote 2 |
 | Velocidad de agitación | Según la fase y la referencia | ST-301 | Consigna del variador de M-301 | Textura del producto |
 | Nivel del tanque pulmón | Mínimo y máximo | LT-302 | Permite o detiene el envasado y la transferencia | Continuidad del envasado |
 | Proporción de fruta | 8 % o 12 % | Velocidad de LL-402 y caudal de P-403 | Control de relación | Cumplimiento de la receta |
@@ -247,7 +265,7 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 
 | Lazo | Proceso | Estrategia | Por qué esa estrategia |
 | --- | --- | --- | --- |
-| TIC-301 | Precalentamiento, homogeneización, pasteurización, enfriamiento a inoculación e incubación en T-301 | PID con rango dividido sobre vapor (TV-301) y agua fría (TV-302) | Un solo controlador mueve dos actuadores opuestos sin que se abran al tiempo |
+| TIC-301 | Precalentamiento, homogeneización, pasteurización, enfriamiento a inoculación, incubación y enfriamiento nocturno del lote 2 en T-301 | PID con rango dividido sobre vapor (TV-301) y agua (TV-302 de red o TV-304 helada, según la fase) | Un solo controlador mueve actuadores opuestos sin que se abran al tiempo |
 | TIC-302 | Salida del intercambiador E-301 | PID con prealimentación del caudal de P-301 | El caudal es la perturbación principal y se mide antes de que cambie la temperatura |
 | FFC-403 | Dosificación de fruta | Control de relación sobre la velocidad de la llenadora | La fruta debe seguir al yogur en proporción fija (8 % o 12 %) |
 | PIC-302 | Presión del homogeneizador | PI sobre el variador de M-302 | Una sola variable con respuesta rápida |
@@ -259,13 +277,13 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 
 | Lazo | Variable medida | Elemento final | Estrategia | Observación |
 | --- | --- | --- | --- | --- |
-| TIC-301 | TT-301 | TV-301 (vapor) y TV-302 (agua fría) | PID con rango dividido: de 0 a 50 % de salida abre el agua y de 50 a 100 % el vapor, con zona muerta en el centro | La consigna cambia por fase: 25, 62, 87 y 43 °C |
+| TIC-301 | TT-301 | TV-301 (vapor), TV-302 (agua de red) y TV-304 (agua helada) | PID con rango dividido: de 0 a 50 % de salida abre el agua y de 50 a 100 % el vapor, con zona muerta en el centro. La fase define qué válvula de agua usa: TV-302 para bajar a 43 °C y TV-304 en el enfriamiento nocturno | La consigna cambia por fase: 25, 62, 87, 43 y 13 °C |
 | TIC-302 | TT-302 | TV-303 (agua helada) | PID con prealimentación del caudal de P-301 | Mantiene 15–20 °C aunque cambie el caudal |
 | PIC-302 | PT-302 | Variador de M-302 | PI sobre la velocidad del homogeneizador | Limita la rampa de arranque para proteger la bomba |
 | FFC-403 | Velocidad de LL-402 (vasos/min × dosis) | Variador de P-403 | Control de relación: caudal de fruta = 8 % o 12 % del caudal de yogur que entra a la llenadora | Relación tomada de la receta de control |
 | LIC-302 | LT-302 | Variador de P-301 | Control de nivel por bandas: transfiere hasta el nivel alto y habilita el envasado sobre el nivel mínimo | Evita que la llenadora trabaje en vacío |
 | WIC-201/202/206 | WT-201, WT-202 y WT-206 | Variadores de M-201, M-202 y M-206 | Dosificación en dos velocidades (grueso y afine) con corte anticipado por la caída del material en vuelo | Precisión de ± 1 % de la fórmula |
-| SIC-301 | ST-301 | Variador de M-301 | Consigna de velocidad por fase y por referencia | Detenido durante la incubación |
+| SIC-301 | ST-301 | Variador de M-301 | Consigna de velocidad por fase y por referencia | Detenido durante la incubación; en el enfriamiento nocturno, 10 rpm durante 2 min cada 15 min para mejorar la transferencia de calor sin dañar el gel |
 
 ### 8.3 Enclavamientos
 
@@ -279,6 +297,11 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 | Tanque pulmón lleno | LT-302 en nivel alto | Detiene P-301 |
 | Sobrepresión del homogeneizador | PT-302 mayor de 220 bar | Detiene M-302; la válvula de alivio protege el equipo |
 | Agua helada caliente | TT-901 mayor de 5 °C | No permite iniciar la transferencia por E-301 |
+| Paso de vapor a agua helada | Cambio de la chaqueta de calentamiento a enfriamiento nocturno | TV-304 abre solo con TV-301 cerrada y la chaqueta purgada; XV-904 manda el retorno al banco de agua helada solo si el agua sale a menos de 20 °C, y si no, a drenaje |
+| Falla del enfriador durante el lote 2 | TT-901 mayor de 5 °C o TT-301 que no baja de 30 °C en 90 min | Abre TV-302 (agua de red) como respaldo y envía una alarma de prioridad alta por SMS al jefe de producción |
+| Leche del lote 2 caliente | TT-102 mayor de 6 °C | Alarma de prioridad alta; el MES no libera la carga del lote 2 sin decisión de calidad |
+| Ruta de leche incorrecta | XV-101 y XV-102 abiertas a la vez | Cierra las dos y detiene P-101 |
+| Pérdida de comunicación con el nodo de borde o con la nube | Sin respuesta durante 60 s | No detiene la fase en curso; el lote queda en espera segura antes de la siguiente fase que necesite un operario |
 | Celda robotizada abierta | Puerta del vallado abierta o cortina de luz interrumpida | Parada segura del robot R-501 |
 | Paro de emergencia | Cualquier pulsador de emergencia | Detiene motores y cierra vapor; el lote queda en pausa |
 
@@ -297,33 +320,34 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 | --- | --- | --- | --- |
 | 0: proceso | Equipos de las unidades U1 a U8 | — | — |
 | 1: instrumentación y accionamientos | Transmisores, válvulas de control, sensores discretos, E/S remotas y variadores | 4–20 mA, IO-Link y señales de 24 V DC hacia las E/S remotas; EtherNet/IP hacia el PLC | Mediciones, estados y mandos |
-| 2: control | PLC-01 (CompactLogix 5380) y las máquinas con controlador propio: controladoras de peso, codificadores, llenadora y empacadora; el robot se suma en la etapa posterior | EtherNet/IP en anillo DLR, que se recupera en menos de 3 ms si se corta un cable | Consignas, estados de equipo, conteos, pesos y alarmas |
-| 2: supervisión | SCADA en Ignition (Perspective y Tag Historian), HMI-01 en preparación y HMI-02 en envasado | OPC UA cifrado entre el PLC y el SCADA | Variables de proceso, alarmas, tendencias, receta activa y estado del lote |
-| 3: gestión de operaciones | MES con módulos Sepasoft sobre el mismo servidor Ignition | Etiquetas del SCADA dentro del mismo servidor; base de datos Microsoft SQL Server | Órdenes de producción, recetas de control, registro de lote, paradas e indicadores |
-| 4: gestión empresarial | ERP Odoo en la nube | Mensajes B2MML de ISA-95 traducidos a la API de Odoo en la pasarela de la zona desmilitarizada | Plan de producción, inventarios, consumos y producción terminada |
+| 2: control | PLC-01 (CompactLogix 5380) y las máquinas con controlador propio: controladoras de peso, codificadores, llenadora, empacadora y la unidad de frío de TK-102; el robot se suma en la etapa posterior | EtherNet/IP en anillo DLR, que se recupera en menos de 3 ms si se corta un cable | Consignas, estados de equipo, conteos, pesos y alarmas |
+| 2: supervisión | SCADA desarrollado por Cremia en Node-RED en el nodo de borde (PC industrial con un PC de repuesto), HMI-01 en preparación y HMI-02 en envasado | OPC UA cifrado entre el PLC y el nodo de borde | Variables de proceso, alarmas, tendencias, historiador local, receta activa y estado del lote |
+| 3: gestión de operaciones | MES de la plataforma Cremia MES/ERP en Huawei Cloud, con caché de recetas y cola de mensajes en el nodo de borde | MQTT sobre TLS, conexión saliente desde la planta; base de datos PostgreSQL | Órdenes de producción, recetas de control, registro de lote, paradas e indicadores |
+| 4: gestión empresarial | ERP ligero de la misma plataforma, en la misma base de datos | HTTPS para los usuarios; exportación de pedidos al facturador electrónico de la planta | Plan de producción, inventarios, compras, consumos, costos y producción terminada |
 
-ISA-95 ubica el control automático en el nivel 2, junto con la supervisión; el modelo Purdue lo llama control básico y lo dibuja en el nivel 1. Este documento y el de arquitectura siguen la definición de ISA-95: el PLC está en el nivel 2 y el nivel 1 corresponde a la medición y la actuación sobre el proceso. La red de planta se separa de la red administrativa con una zona desmilitarizada entre dos cortafuegos. El detalle de la arquitectura y del flujo de información entre OT e IT está en el documento de arquitectura ISA-95.
+ISA-95 ubica el control automático en el nivel 2, junto con la supervisión; el modelo Purdue lo llama control básico y lo dibuja en el nivel 1. Este documento y el de arquitectura siguen la definición de ISA-95: el PLC está en el nivel 2 y el nivel 1 corresponde a la medición y la actuación sobre el proceso. La red de control se separa de internet con una zona desmilitarizada y un cortafuegos industrial que solo permite conexiones salientes. El detalle de la arquitectura y del flujo de información entre OT e IT está en el documento de arquitectura ISA-95, y el del software, en el documento de la plataforma Cremia MES/ERP y el SCADA en Node-RED.
 
 ### 9.2 Lista de entradas y salidas de la ingeniería básica
 
 | Tipo de señal | Cantidad | Elementos |
 | --- | --- | --- |
-| Entradas analógicas de 4–20 mA | 14 | WT-101, FT-101, WT-201, WT-202, WT-206, TT-301 (dos elementos), AT-301, PT-302, TT-302, TT-303, TT-501, TT-901 y CT-901 |
-| Salidas analógicas de 4–20 mA | 3 | TV-301, TV-302 y TV-303 |
+| Entradas analógicas de 4–20 mA | 15 | WT-101, TT-102, FT-101, WT-201, WT-202, WT-206, TT-301 (dos elementos), AT-301, PT-302, TT-302, TT-303, TT-501, TT-901 y CT-901 |
+| Salidas analógicas de 4–20 mA | 4 | TV-301, TV-302, TV-303 y TV-304 |
 | Entradas de pulsos rápidos | 3 | FT-101, FQ-203 y FQ-204 |
-| Puertos IO-Link | 3 | LT-301, PT-301 y LT-302 |
-| Entradas digitales | 16 | ZS-401, ZS-402, ZS-403 y ZS-501 (4); dos finales de carrera por válvula en XV-301, XV-302, XV-401 y XV-402 (8); puerta de la celda (1); paros de emergencia en preparación, envasado y celda (3) |
-| Salidas digitales | 16 | XV-301, XV-302, XV-401, XV-402, XY-401, XY-402, P-203, P-204 y válvulas de ruta de CIP |
+| Puertos IO-Link | 4 | LT-102, LT-301, PT-301 y LT-302 |
+| Entradas digitales | 23 | ZS-401, ZS-402, ZS-403 y ZS-501 (4); dos finales de carrera por válvula en XV-101, XV-102, XV-301, XV-302, XV-401, XV-402 y XV-904 (14); estado de la unidad de frío de TK-102 (1); puerta de la celda (1); paros de emergencia en preparación, envasado y celda (3) |
+| Salidas digitales | 19 | XV-101, XV-102, XV-301, XV-302, XV-401, XV-402, XV-904, XY-401, XY-402, P-203, P-204 y válvulas de ruta de CIP (8) |
 | Nodos EtherNet/IP | 20 | 11 variadores, CK-401, CK-402, CD-401, CD-402, LL-402, EMP-401, R-501, BL-205 y CIP-901 |
-| **Total** | **55 señales cableadas o IO-Link y 20 nodos de red** | 69 señales con la reserva del 20 % redondeada por tipo |
+| **Total** | **68 señales cableadas o IO-Link y 20 nodos de red** | 83 señales con la reserva del 20 % redondeada por tipo |
 
-Se deja una reserva del 20 % en cada tipo de señal para ampliaciones. Con estas cantidades un CompactLogix 5380 con dos estaciones de E/S remotas (preparación y envasado) cubre la línea. La red de control es un anillo DLR de EtherNet/IP con un conmutador administrable de celda (Stratix 5700), de modo que el corte de un cable no detiene el proceso; desde ese conmutador la red de supervisión es en estrella. Un ControlLogix solo se justificaría si el cliente exigiera redundancia de controlador.
+Se deja una reserva del 20 % en cada tipo de señal para ampliaciones. ZS-501, la puerta de la celda, el paro de emergencia de la celda y el nodo de R-501 son señales reservadas para la etapa posterior: el proyecto cablea 65 señales y conecta 19 nodos. Con estas cantidades un CompactLogix 5380 con dos estaciones de E/S remotas (preparación y envasado) cubre la línea. La red de control es un anillo DLR de EtherNet/IP con un conmutador administrable de celda (Stratix 5700), de modo que el corte de un cable no detiene el proceso; desde ese conmutador la red de supervisión es en estrella. Un ControlLogix solo se justificaría si el cliente exigiera redundancia de controlador.
 
 ## 10. Calibración y mantenimiento de la instrumentación
 
 | Instrumento | Frecuencia de verificación | Método |
 | --- | --- | --- |
 | TT-301 (punto crítico) | Mensual, y comparación continua de sus dos elementos | Termómetro patrón a 85 °C |
+| TT-102 | Trimestral | Termómetro patrón a 4 °C |
 | AT-301 | Diaria antes del primer lote; calibración semanal | Soluciones tampón de pH 4 y pH 7 |
 | Celdas de carga de dosificación | Mensual | Pesas patrón |
 | Controladoras de peso CK-401 y CK-402 | Al arranque de cada turno | Unidades patrón dentro y fuera de tolerancia |
@@ -332,17 +356,17 @@ Se deja una reserva del 20 % en cada tipo de señal para ampliaciones. Con estas
 | CT-901 | Mensual | Solución de conductividad conocida |
 | Juntas de E-301 y sellos de bombas | Según horas de trabajo del fabricante | Inspección y cambio programado |
 
-Las verificaciones quedan registradas en el MES, y el lote no se libera si un instrumento de punto crítico tiene la calibración vencida.
+Las verificaciones quedan registradas en la plataforma Cremia MES/ERP, y el lote no se libera si un instrumento de punto crítico tiene la calibración vencida.
 
 ## 11. Resumen
 
-| Concepto | Existente | Nuevo | Total |
-| --- | --- | --- | --- |
-| Equipos principales | 9 | 17 | 26 |
-| Sensores | 0 | 23 | 23 |
-| Actuadores | 1 | 18 | 19 |
+| Concepto | Existente | Nuevo | Total | Compra el proyecto |
+| --- | --- | --- | --- | --- |
+| Equipos principales | 9 | 19 | 28 | 18 |
+| Sensores | 0 | 25 | 25 | 24 |
+| Actuadores | 1 | 21 | 22 | 20 |
 
-La línea actual no tiene instrumentación conectada: las mediciones se hacen con instrumentos manuales (termómetro, acidómetro y gramera). El único actuador que se conserva es el agitador del tanque de proceso; la bomba de leche se reemplaza por una de mayor caudal. En la columna de nuevos se cuentan los reemplazos. Las cifras corresponden al diseño completo: el proyecto de 16 semanas compra 25 de los 26 equipos, porque la celda R-501, con su sensor ZS-501 y su robot, queda para una etapa posterior; la lista de E/S ya reserva sus señales. Los equipos e instrumentos que se instalan en pares iguales, uno por máquina de envasado o por bomba de aditivo (por ejemplo, WT-401 y WT-402), se cuentan como una sola entrada del inventario.
+La línea actual no tiene instrumentación conectada: las mediciones se hacen con instrumentos manuales (termómetro, acidómetro y gramera). El único actuador que se conserva es el agitador del tanque de proceso, que recibe un variador; la bomba de leche se reemplaza por una de mayor caudal. En la columna de nuevos se cuentan los reemplazos. Las cifras corresponden al diseño completo: la celda R-501, con su sensor ZS-501 y su robot, queda para una etapa posterior, y la lista de E/S ya reserva sus señales. Los equipos e instrumentos que se instalan en pares iguales, uno por máquina de envasado o por bomba de aditivo (por ejemplo, WT-401 y WT-402), se cuentan como una sola entrada del inventario.
 
 ## Referencias
 

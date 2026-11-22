@@ -1,122 +1,84 @@
-# **CREMIA AUTOMATIONS Necesidades de información para la gestión de la producción** 
+# Necesidades de información para la gestión de la producción
 
-**Proyecto:** Transformación Digital Industrial de la planta La Hacienda **Módulo:** Módulo 2 · Gestión y Evaluación de la Producción **Fecha:** 11 de octubre de 2026 
+**Línea de yogur de la planta La Hacienda**
 
-## **1. Alcance** 
+**Proyecto:** Transformación Digital Industrial de la planta La Hacienda  
+**Módulo:** Módulo 2 · Gestión y Evaluación de la Producción
 
-El presente apartado tiene como propósito estructurar la estrategia de gestión de la información para la línea de yogur de la planta La Hacienda. Si bien el rediseño físico y la automatización de los equipos permiten incrementar la capacidad productiva a dos lotes diarios, esta transformación operativa exige un ecosistema digital capaz de planificar, ejecutar y monitorear la producción sin depender de registros manuales. 
+## 1. Alcance
 
-actualmente la mayoría de las empresas pequeñas y medianas mantienen un orden jerárquico bastante rígido para la recolección de la información de las plantas de producción dando informes de la planta cada x intervalos de tiempo siendo estos una tarea bastante manual ya que suele depender de que una persona realice las respectivas inspecciones de forma manual para saber cosas como la cantidad de materia prima disponibles, el control de acidez o de otras características medidas durante el proceso. esto limita en gran medida la información en un nivel más gerencial dificultando algunos cálculos que requieren de información precisa directamente de la planta pero que se hacen en niveles superiores de la pirámide de automatización creando una falta de trazabilidad en tiempo real del funcionamiento de la planta por todo esto y como parte de la propuesta de automatización y transformación digital se planteó un sistema integrado de gestión empresarial (el ERP Odoo en la nube, por suscripción: ventas, compras, inventario, fabricación y contabilidad) y de manufactura (un MES con módulos Sepasoft sobre la plataforma Ignition, instalado en la planta junto con el SCADA)  que busque responder: 
+Este documento define qué información necesita la planta para planear, ejecutar y controlar los dos lotes diarios de yogur, y qué funciones de MES y de ERP la producen. Es la especificación funcional de la plataforma Cremia MES/ERP; su diseño, despliegue en Huawei Cloud y costo están en el documento de la plataforma en el módulo 1.
 
-   - ¿Cuánto se produjo y se vendió por referencia? 
+Hoy la planta no tiene sistema de información: la programación es verbal, los registros son en papel y los datos de existencias, acidez o rendimiento dependen de que alguien los anote y los lleve a la gerencia. Con dos lotes por día, tres referencias y un lote que incuba de noche sin operario, esa forma de trabajar no alcanza.
 
-   - ¿Cuál es el costo por unidad? 
+## 2. Preguntas que el sistema debe responder
 
-   - ¿Qué lotes se programan hoy? 
+| Pregunta | Quién la hace | Cuándo | Módulo que responde |
+| --- | --- | --- | --- |
+| ¿Cuánto se produjo y se vendió por referencia? | Gerencia | Diario y mensual | ERP |
+| ¿Cuál es el costo real por unidad y el margen por referencia? | Gerencia | Por lote y mensual | ERP |
+| ¿Qué lotes se programan hoy y en qué orden? | Jefe de producción | Diario | MES |
+| ¿Hay leche, insumos y envases para esos lotes? | Jefe de producción y compras | Antes de liberar cada orden | MES y ERP |
+| ¿Se cumplió el plan? | Jefe de producción y gerencia | Diario y semanal | MES |
+| ¿El lote cumplió la pasteurización, el pH y el enfriamiento? | Calidad | Al cerrar el lote | MES |
+| ¿Qué leche e insumos lleva el lote? ¿Se puede liberar? | Calidad | Al cerrar el lote | MES |
+| ¿En qué fase está el lote, incluido el lote 2 de noche? | Jefe de producción | En cualquier momento, desde el teléfono | MES |
+| ¿Qué equipo se detuvo, cuánto tiempo y por qué? | Jefe de producción y mantenimiento | Diario | MES |
+| ¿Cuánta leche, azúcar, fruta y envase se consumió y cuánto queda? | Compras | Diario | ERP |
 
-   - ¿Hay leche, insumos y envases? 
+## 3. Funciones del ERP
 
-   - ¿Se cumplió el plan? 
+El ERP es el nivel 4 de ISA-95: planeación del negocio y logística. Sus funciones son:
 
-   - ¿El lote cumplió la pasteurización y el pH? 
+- Registro de pedidos por cliente y referencia, y despacho de lotes liberados.
+- Plan de producción semanal y requerimiento de materiales a partir de los pedidos y de las listas de materiales de las recetas.
+- Compras de leche, azúcar, cultivo, fruta, saborizantes y material de envase.
+- Inventario de insumos y de producto terminado por lote y fecha de vencimiento.
+- Costo real por lote con los consumos que reporta el MES, margen por referencia e indicadores para la gerencia.
+- Exportación de los pedidos despachados al facturador electrónico que la planta ya usa. La contabilidad y la facturación electrónica siguen en ese sistema.
 
-   - ¿Qué leche e insumos lleva? ¿Se puede liberar? 
+## 4. Funciones del MES
 
-   - ¿En qué fase está el lote? 
+El MES es el nivel 3 de ISA-95: ejecución de la producción en la planta. Sus funciones son:
 
-   - ¿Qué equipo se detuvo, cuánto tiempo y por qué? 
+- Secuencia de los dos lotes diarios por referencia, con los cambios de sabor y de formato.
+- Gestión de recetas maestras con versiones y aprobación; liberación de la orden y envío de la receta de control al nodo de borde, que la descarga al PLC.
+- Registro electrónico de lote con mediciones, consumos, eventos y alarmas.
+- Genealogía: relación entre el lote de leche, el tanque de origen (TK-101 o TK-102), los lotes de insumos y el lote de yogur.
+- Verificación de la pasteurización, del pH, del enfriamiento y del peso; liberación o retención del lote.
+- OEE, rendimiento, producto no conforme, tiempos por fase y cumplimiento del plan.
+- Registro de paradas y de horas de operación para el mantenimiento preventivo.
 
-   - ¿Cuánta leche, azúcar, fruta y envase se consumió y cuánto queda? 
+## 5. Intercambio entre el MES y el ERP
 
-- garantizando respuestas rápidas y actualizaciones frecuentes de las distintas variables que se encuentran en la planta 
+El MES y el ERP son dos módulos de la misma plataforma y comparten una base de datos, de modo que no necesitan una interfaz de mensajes entre ellos: una orden, su lote, sus consumos y su costo son registros relacionados. Los intercambios se definen por el dato que pasa de una función a otra y por el momento en que debe estar disponible.
 
-para esto se espera crear dos apartados principales diferentes uno para el MES y otro para el ERP 
+| Dato | Sentido | Contenido | Momento |
+| --- | --- | --- | --- |
+| Plan de producción | ERP → MES | Referencias, cantidades y fechas | Semanal |
+| Disponibilidad de materiales | ERP → MES | Existencias de insumos y envase | Diaria y al liberar cada orden |
+| Definición de producto | ERP → MES | Lista de materiales por referencia, ligada a la versión de la receta maestra | Cuando cambia la formulación |
+| Recepción de leche | MES → ERP | Proveedor, cantidad, tanque de destino y calidad por cantina | Por recepción |
+| Estado de la orden | MES → ERP | Programada, en proceso, terminada, liberada o retenida | En cada cambio de estado |
+| Consumo de materiales | MES → ERP | Cantidades reales por insumo y lote | Al cerrar el lote |
+| Reporte de producción | MES → ERP | Unidades conformes y rechazadas por lote y referencia | Al cerrar el lote |
 
-## **Funciones del Sistema ERP** 
+Entre la planta y la plataforma sí hay mensajes: el nodo de borde envía por MQTT los eventos, consumos y curvas del lote y recibe las recetas de control. Los flujos están en el documento de flujo de información entre OT e IT.
 
-para este apartado se tiene el nivel más alto en la pirámide de automatización del ISA 95 correspondiente a el Nivel Estratégico y de Negocio , donde sus principales funciones serán: 
+## 6. Indicadores de gestión
 
-- Registro de ventas y pedidos por cliente y referencia. 
+| Indicador | Fórmula | Valor actual | Meta | Fuente del dato |
+| --- | --- | --- | --- | --- |
+| OEE de envasado | Disponibilidad × rendimiento × calidad | ≈ 65 % | 82 % | PLC y controladoras de peso |
+| Producto no conforme | Unidades rechazadas ÷ unidades llenadas | 5,06 % | 1,5 % o menos | CK-401 y CK-402 |
+| Rendimiento de materiales | Masa de producto ÷ masa de insumos | 98,1 % | 98,5 % o más | Dosificación y conteo de unidades |
+| Lotes por día | Lotes terminados ÷ días de operación | 1 | 2 | MES |
+| Tiempo estándar por lote | Suma de tiempos de fase | 601 min | ≈ 563 min | PLC y MES |
+| Cumplimiento del plan | Unidades conformes producidas ÷ unidades programadas | No se mide | 95 % o más | MES y ERP |
+| Lotes liberados a la primera | Lotes sin retención ÷ lotes producidos | No se mide | 98 % o más | MES |
+| Unidades conformes por operario al día | Unidades conformes ÷ operarios | 724 | 1.301 | MES |
 
-- Ayudar con el plan de producción semanal y plan de requerimiento de materiales. 
+## Referencias
 
-- Compras de leche, azúcar, cultivo, fruta, saborizantes y material de envase. 
-
-- Manejo de Inventarios de insumos y de producto terminado, con fecha de vencimiento. 
-
-- Costos de producción, margen por referencia y visualización de indicadores de la planta. 
-
-- Brindar información sobre facturación y despacho. 
-
-## **Funciones del Sistema MES** 
-
-- pasando a la parte del nivel de ejecución de planta se espera poder visualizar desde el sistema: ● Secuencia de los dos lotes diarios por referencia, con los cambios de sabor y de formato 
-
-   - Liberación de la orden y descarga de la receta de control al PLC 
-
-   - Registro electrónico de lote con mediciones, consumos y eventos 
-
-   - Relación entre el lote de leche, los lotes de insumos y el lote de yogur 
-
-   - Verificación de la pasteurización, del pH y del peso; liberación o retención del lote 
-
-   - OEE, rendimiento, producto no conforme, tiempos por fase y cumplimiento del plan 
-
-- Registro de paradas y horas de operación para el mantenimiento preventivo 
-
-- todo esto obtenido de la información de distintos sensores y registros en la planta 
-
-## **Intercambio entre MES y ERP** 
-
-La interoperabilidad entre el nivel estratégico y la planta de producción se rige por un intercambio bidireccional de datos. Esta arquitectura garantiza que las órdenes de fabricación se ejecuten con los materiales correctos y que el inventario se descuente según el consumo real en tiempo real. 
-
-### **Flujo Descendente: Nivel de Planificación a Nivel de Ejecución (ERP MES)** 
-
-El sistema ERP actúa como el planificador maestro, enviando a la planta los parámetros de negocio necesarios para operar. Los mensajes críticos en este sentido incluyen: 
-
-- **Plan de producción:** Se envía con una frecuencia semanal e indica las referencias específicas a fabricar, las cantidades requeridas y las fechas de ejecución. 
-
-- **Disponibilidad de materiales:** Se actualiza de manera diaria para informar al piso de planta sobre las existencias reales de insumos y materiales de envase disponibles. 
-
-- **Definición de producto:** Transfiere la lista de materiales exacta por cada referencia de yogur, la cual se actualiza y envía únicamente cuando existe un cambio en la formulación. 
-
-### **Flujo Ascendente: Nivel de Ejecución a Nivel de Planificación (MES ERP)** 
-
-El sistema MES actúa como el recolector de datos en tiempo real, retroalimentando al ERP para el cierre contable, logístico y de calidad. Sus comunicaciones principales son: 
-
-- **Recepción de leche:** Se transmite por cada recepción, detallando los datos del proveedor, la cantidad descargada y los parámetros de calidad evaluados. 
-
-- ● **Estado de la orden:** Notifica en cada cambio de estado si una orden de fabricación se encuentra programada, en proceso, terminada o retenida. 
-
-- **Consumo de materiales:** Se emite al cerrar el lote, reportando las cantidades reales de cada insumo gastado por lote. 
-
-- **Reporte de producción:** Se envía al cerrar el lote, consolidando el número exacto de unidades conformes generadas por lote y referencia. 
-
-obteniendo: 
-
-|**Mensaje**|**Sentido**|**Contenido**|**Momento**|
-|---|---|---|---|
-|Plan de producción|ERP<br>MES<br>→|Referencias,<br>cantidades y fechas|Semanal|
-|Disponibilidad de<br>materiales|ERP<br>MES<br>→|Existencias de<br>insumos y envase|Diaria|
-|Definición de<br>producto|ERP<br>MES<br>→|Lista de materiales<br>por referencia|Cuando cambia|
-|Recepción de leche|MES<br>ERP<br>→|Proveedor, cantidad<br>y calidad|Por recepción|
-|Reporte de<br>producción|MES<br>ERP<br>→|Unidades conformes<br>por lote y referencia|Al cerrar el lote|
-|Consumo de<br>materiales|MES<br>ERP<br>→|Cantidades reales<br>por insumo y lote|Al cerrar el lote|
-|Estado de la orden|MES<br>ERP<br>→|Programada, en<br>proceso, terminada<br>o retenida|En cada cambio de<br>estado|
-
-
-
-## **Indicadores de gestión** 
-
-|**Indicador**|**Fórmula**|**Valor actual**|**Meta**|**Fuente del dato**|
-|---|---|---|---|---|
-|OEE de<br>envasado|Disponibilidad ×<br>rendimiento ×<br>calidad|68 %<br>≈|82 %|PLC y<br>controladoras de<br>peso|
-|Producto no<br>conforme|Unidades<br>rechazadas /<br>unidades<br>llenadas|5,06 %|1,5 % o<br>menos|CK-401 y<br>CK-402|
-|Rendimiento de<br>materiales|Masa de<br>producto / masa<br>de insumos|98,1 %|98,5 % o más|Dosificación y<br>conteo de<br>unidades|
-|Lotes por día|Lotes<br>terminados /<br>días de<br>operación|1|2|MES|
-|Tiempo<br>estándar por<br>lote|Suma de<br>tiempos de fase|601 min|493 min<br>≈|PLC y MES|
-|Cumplimiento<br>del plan|Unidades<br>producidas /<br>unidades<br>programadas|No se mide|95 % o más|MES y ERP|
-|Lotes liberados<br>a la primera|Lotes sin<br>retención / lotes<br>producidos|No se mide|98 % o más|MES|
-
-
-
+- ANSI/ISA-95.00.01-2010 y ANSI/ISA-95.00.03-2013. Enterprise-Control System Integration, partes 1 y 3.
+- Grimaldo, G., Moreno, D. y Salamanca, M. (2015). Medición del trabajo de una línea de producción de yogurt – Empresa La Hacienda. Revista I3+, 2(2), 62–81.

@@ -7,6 +7,8 @@
 **Autor principal:** Jesús Alberto Rivera Molina, líder de arquitectura digital  
 **Alcance:** Caracterización técnica rigurosa de tres líneas agroindustriales (Yogur Batido/Frutado, Queso Campesino y Kumis Tradicional), análisis termodinámico y biotecnológico para la Sabana de Bogotá (2.600 msnm), formulación legal, matriz multicriterio ponderada y justificación ingenieril de la línea de yogur seleccionada.
 
+> **Nota de versión (noviembre de 2026).** Este documento es la versión inicial del análisis (octubre de 2026) y se conserva como estado del arte y justificación de la línea elegida. La propuesta vigente está en los módulos 1, 2 y 3. Donde este documento difiere de ellos, rigen los módulos: el lote 2 se enfría de noche con agua helada en la chaqueta y su leche espera en el tanque refrigerado TK-102; el tiempo estándar propuesto es de unos 563 min por lote; las 3.052 bolsas por lote son las llenadas, de las que unas 154 son no conformes; el SCADA se desarrolla en Node-RED y el MES y el ERP son una sola plataforma de Cremia en Huawei Cloud; el gemelo digital usa Tecnomatix Plant Simulation y FactoryTalk Logix Echo, y los servicios auxiliares se dimensionan solo para la línea de yogur.
+
 ---
 
 > **Contexto de Operación e Insumos de Ingeniería**  
@@ -274,7 +276,7 @@ Desglose analítico de ineficiencias de la línea base:
 3. **Pasteurización Discontinua Ineficiente:** 77,4 min de calentamiento por camisa con vapor manual sin lazo de control PID.
 4. **Dependencia Crítica del Enfriamiento Nocturno:** Tras las 4 horas de incubación, el reactor se deja enfriar pasivamente durante la noche para romper el coágulo en frío a la mañana siguiente. Esta práctica bloquea el tanque durante más de 12 horas inactivas, impidiendo procesar más de un lote al día.
 5. **Envasado Manualmente Asistido:** La empacadora vertical sella 3.052 bolsas en 148,9 min (ritmo efectivo de $20,5\text{ bolsas/min}$ frente a una velocidad de placa de 30 bolsas/min), debido a paradas constantes por calibración y control de peso manual en báscula de una de cada cinco unidades.
-6. **Mermas y Producto No Conforme:** La planta registra un **$5,06\text{ \%}$ de producto defectuoso** (155 bolsas por lote), causado principalmente por fugas en el termosellado y variaciones de volumen fuera de tolerancia.
+6. **Mermas y Producto No Conforme:** La planta registra un **$5,06\text{ \%}$ de producto defectuoso** (unas 154 de las 3.052 bolsas llenadas por lote), causado principalmente por fugas en el termosellado y variaciones de volumen fuera de tolerancia.
 
 ### 2.6 Oportunidades de Mejora y Potencial de Transformación Digital Industrial (TDI)
 La modernización tecnológica de esta línea bajo lineamientos de la Industria 4.0 contempla:
@@ -282,7 +284,7 @@ La modernización tecnológica de esta línea bajo lineamientos de la Industria 
 - **Bomba Sanitaria de Alto Caudal:** Impulsión a $3,0\text{ m}^3\text{/h}$, abatiendo la carga a 11–12 min.
 - **Control Térmico Automatizado:** Lazo PID con rango dividido sobre las válvulas de vapor (TV-301) y de agua fría (TV-302) de la chaqueta, que acota la pasteurización a 85–90 °C con 5 a 10 min de sostenimiento, más el enfriamiento en el intercambiador de placas.
 - **Detección Automática de Fin de Fermentación:** Sensor de pH sanitario en línea (AT-301), eliminando muestreos destructivos manuales con acidómetro y evitando sobreacidificación.
-- **Enfriador de Placas en Línea:** Enfriamiento forzado hasta $15\text{ a }20\text{ }^\circ\text{C}$ a $1.500\text{ L/h}$ previo al envasado. **Este cambio libera el tanque de proceso en menos de 30 minutos después de la incubación y permite un segundo lote diario; el lote 2, que termina de noche, se enfría en la chaqueta con control automático.**
+- **Enfriador de Placas en Línea:** Enfriamiento forzado hasta $15\text{ a }20\text{ }^\circ\text{C}$ a $1.500\text{ L/h}$ previo al envasado. **Este cambio libera el tanque de proceso en menos de 30 minutos después de la incubación y permite un segundo lote diario; el lote 2, que termina de noche, se enfría en la chaqueta con agua helada y control automático.**
 - **Envasadora de Alta Cadencia:** Operación a 30 bolsas/min continuas para la referencia YB-200 y llenadora lineal a 45 vasos/min para YV-150.
 - **Controladora de Peso en Línea (Checkweigher):** Pesaje del 100 % de unidades con rechazo neumático automático, reduciendo el scrap del 5,06 % a $< 1,5\text{ \%}$.
 
@@ -790,14 +792,14 @@ Capacidad Propuesta:
 La línea de yogur permite estructurar una arquitectura de manufactura digital limpia en 5 niveles de integración:
 - **Nivel 0 (Proceso físico):** tanques, intercambiador, bombas y máquinas de las unidades U1 a U8. Los instrumentos (PT100 sanitarias, pH AT-301 y nivel hidrostático LT-301 por IO-Link) y las válvulas de asiento sanitario corresponden al nivel 1.
 - **Niveles 1 y 2 (Medición, actuación y control):** E/S remotas y variadores en el nivel 1; PLC Allen-Bradley CompactLogix 5380 en el nivel 2, ejecutando lazos PID de temperatura y la secuencia procedimental ISA-88.
-- **Nivel 2 (Supervisión y HMI):** SCADA industrial con registro de curvas térmicas, gestión de alarmas ISA-18.2 y pantallas de control de lote.
-- **Nivel 3 (MES):** Gestión de Órdenes de Producción, genealogía de lote, control de recetas maestras (RM-YB-200, RM-YV-150, RM-YV-300), balance de masa y cálculo en tiempo real de OEE.
-- **Gemelo Digital (Siemens NX MCD y Tecnomatix Plant Simulation):** Mapeo estocástico de las paradas, tiempos de llenado, tiempos de empaque y logística interna, validando el salto productivo de 1 a 2 lotes diarios. Gemelo digital para validación de la solución e identificación de posibles oportunidades de mejora.
+- **Nivel 2 (Supervisión y HMI):** SCADA desarrollado en Node-RED con registro de curvas térmicas, gestión de alarmas ISA-18.2 y pantallas de control de lote.
+- **Niveles 3 y 4 (plataforma Cremia MES/ERP en Huawei Cloud):** Gestión de Órdenes de Producción, genealogía de lote, control de recetas maestras (RM-YB-200, RM-YV-150, RM-YV-300), balance de masa y cálculo en tiempo real de OEE.
+- **Gemelo Digital (Tecnomatix Plant Simulation y FactoryTalk Logix Echo):** Mapeo estocástico de las paradas, tiempos de llenado, tiempos de empaque y logística interna, validando el salto productivo de 1 a 2 lotes diarios. Gemelo digital para validación de la solución e identificación de posibles oportunidades de mejora.
 
 ### 7.4 Escalabilidad hacia una Arquitectura Multiproducto Modular
 La selección del yogur como línea principal del proyecto integrador no anula la validez del estado del arte de las otras dos líneas; por el contrario, **las integra en una visión modular escalable**:
-- Los sistemas de recepción de leche cruda (TK-101, filtro y bomba P-101), los servicios industriales auxiliares (generación de vapor, planta de agua helada a 2 °C, compresor de aire grado alimentario y central CIP automatizada) se diseñan con capacidad holgada para abastecer concurrentemente a las tres líneas.
-- La arquitectura de automatización queda concebida para que la empresa pueda incorporar las fases de la quesería y del kumis en expansiones futuras sin reconfigurar la infraestructura base.
+- Los sistemas de recepción de leche cruda (TK-101, TK-102, filtro y bomba P-101) y los servicios industriales auxiliares (generación de vapor, planta de agua helada a 2 °C, compresor de aire grado alimentario y central CIP automatizada) se dimensionan para la línea de yogur; una expansión a queso o kumis exigiría revisar su capacidad.
+- La arquitectura de automatización (PLC con fases ISA-88, SCADA en Node-RED y plataforma Cremia MES/ERP con recetas maestras) permite agregar las fases de la quesería y del kumis en expansiones futuras como nuevas unidades y recetas.
 
 ---
 

@@ -1,0 +1,192 @@
+# Fuente única de cifras de la propuesta de la línea de yogur (versión de noviembre de 2026).
+# Todos los documentos del repositorio toman sus cifras de aquí o de herramientas/resultados.md,
+# que genera herramientas/modelo.py a partir de este archivo.
+# Unidades: millones de COP de 2026, sin IVA, salvo que se indique otra cosa.
+
+general:
+  dias_operacion: 300          # lunes a sábado, 50 semanas
+  domingos: 50
+  tasa_cambio_cop_usd: 4100
+
+estado_actual:
+  lotes_dia: 1
+  operarios: 4
+  bolsas_llenadas_lote: 3052   # dato del caso; incluye las no conformes
+  no_conforme: 0.0506
+  costo_variable_bolsa: 660    # COP, sin leche en polvo
+  precio_bolsa: 1200           # COP
+  tiempo_estandar_min: 601.32
+  tiempo_envasado_min: 148.93
+  paradas_envasado_min: 15.0   # supuesto del VSM
+  velocidad_nominal_empacadora: 30
+
+propuesta:
+  lotes_dia: 2
+  operarios: 5
+  no_conforme: 0.015
+  oee_meta: {disponibilidad: 0.92, rendimiento: 0.90, calidad: 0.985}
+  ciclo_lotes: {YB-200: 5, YV-150: 3, YV-300: 2}   # ciclo de 10 lotes en 5 días
+  referencias:
+    YB-200: {unidades_lote: 3079, precio: 1200, costo_variable: 700, leche_cop: 375, velocidad: 30}
+    YV-150: {unidades_lote: 4369, precio: 1500, costo_variable: 835, leche_cop: 264, velocidad: 45}
+    YV-300: {unidades_lote: 2260, precio: 2900, costo_variable: 1620, leche_cop: 511, velocidad: 35}
+  leche_cop_bolsa_actual: 375
+
+tiempos_min:                 # tiempos de diseño por fase (lote de 550 L)
+  recepcion_14_cantinas: 19.6
+  carga: 12
+  precalentamiento_lote1: 12   # leche fresca; la dosificación ocurre en paralelo
+  precalentamiento_lote2: 18   # leche de TK-102 a 4 °C
+  calentar_a_62: 26
+  homogeneizar: 45
+  calentar_a_87: 17
+  sostener: 7
+  enfriar_a_inoculacion: 25
+  inocular: 5
+  incubar: 240
+  incubar_maximo: 300
+  ruptura_saborizado: 5
+  transferencia: 25
+  cip_completo: 40
+  enjuague: 15
+  muestra_acidez: 5
+
+personal:
+  salario_operario: 1842000          # COP/mes
+  factor_prestacional: 1.52
+  horas_mes: 182
+  operario_anual: 33.6               # millones: 2,8 M/mes × 12
+  domingo: {operarios: 2, horas: 3.5, factor_hora_extra_dominical: 2.25}
+  horas_extra_y_disponibilidad: 5.0  # millones/año
+
+equipo_cremia:
+  semanas_proyecto: 26
+  horas_semana: 42
+  # festivos de 2027 por semana del proyecto: 22 mar (San José), 25 y 26 mar (Semana Santa),
+  # 10 may (Ascensión), 31 may (Corpus Christi), 7 jun (Sagrado Corazón), 5 jul (San Pedro y San Pablo)
+  festivos_por_semana: {10: 3, 17: 1, 20: 1, 22: 1, 25: 1}
+  ocupacion_maxima: 0.80
+  factor_aiu_minimo: 1.39
+  nomina_mensual: 39.52              # millones
+  integrantes:
+    DC: {nombre: "David Santiago Cortés Ávila", rol: "Gerente de proyecto", costo_hora: 50110, tarifa: 90000, tipo: "Dirección y control"}
+    AO: {nombre: "Ana María Orozco Reyes", rol: "Líder de simulación y mejora", costo_hora: 33407, tarifa: 67000, tipo: "Núcleo técnico de validación"}
+    JR: {nombre: "Jesús Alberto Rivera Molina", rol: "Líder de arquitectura digital", costo_hora: 33407, tarifa: 71000, tipo: "Especialidad escasa y crítica"}
+    DF: {nombre: "David Felipe Cárdenas Cubides", rol: "Líder de gestión de producción", costo_hora: 33407, tarifa: 71000, tipo: "Especialidad escasa y crítica"}
+    JZ: {nombre: "José Andrés Zapata Piñeros", rol: "Líder de procesos e instrumentación", costo_hora: 33407, tarifa: 67000, tipo: "Núcleo técnico del proceso"}
+    CH: {nombre: "Cristian Stiven Hoyos Peralta", rol: "Líder financiero y comercial", costo_hora: 33407, tarifa: 53000, tipo: "Gestión y soporte"}
+
+# EDT del proyecto: paquete -> {nombre, semanas, horas por integrante}
+edt:
+  "1.1":  {nombre: "Gestión del proyecto"}
+  "1.1.1": {nombre: "Plan del proyecto y línea base", semanas: "1", h: {DC: 30}}
+  "1.1.2": {nombre: "Seguimiento y control de alcance, plazo y costo", semanas: "2–25", h: {DC: 110, CH: 90}}
+  "1.1.3": {nombre: "Compras, contratos e importación", semanas: "1–18", h: {CH: 60}}
+  "1.1.4": {nombre: "Cierre administrativo", semanas: "26", h: {DC: 20}}
+  "1.2":  {nombre: "Ingeniería conceptual y básica"}
+  "1.2.1": {nombre: "Validación en sitio de datos, parámetros y capacidad del cuarto frío", semanas: "1", h: {JZ: 40}}
+  "1.2.2": {nombre: "VSM y simulación del estado propuesto", semanas: "1–3", h: {AO: 60}}
+  "1.2.3": {nombre: "Arquitectura ISA-95, red OT/IT y nube", semanas: "1–3", h: {JR: 60}}
+  "1.2.4": {nombre: "Modelos ISA-88 y recetas", semanas: "2–3", h: {DC: 40}}
+  "1.2.5": {nombre: "P&ID e índice de instrumentos", semanas: "2–3", h: {JZ: 30, JR: 30}}
+  "1.3":  {nombre: "Ingeniería de detalle"}
+  "1.3.1": {nombre: "Especificación de equipos", semanas: "2–6", h: {JZ: 100}}
+  "1.3.2": {nombre: "Lista de E/S y arquitectura de control", semanas: "4–5", h: {JR: 60}}
+  "1.3.3": {nombre: "Diseño eléctrico y de tableros", semanas: "4–10", h: {JR: 20, JZ: 110}}
+  "1.3.4": {nombre: "Estación de encanastado y análisis de riesgos", semanas: "3–9", h: {AO: 60}}
+  "1.3.5": {nombre: "Distribución en planta", semanas: "3–8", h: {AO: 45, DF: 5}}
+  "1.4":  {nombre: "Procura"}
+  "1.4.1": {nombre: "Cotizaciones y selección de proveedores", semanas: "1–3", h: {CH: 50}}
+  "1.4.2": {nombre: "Órdenes de compra, seguimiento de fabricación e importación", semanas: "4–18", h: {CH: 70}}
+  "1.4.3": {nombre: "Pruebas FAT", semanas: "13–14", h: {JZ: 15, AO: 45}}
+  "1.5":  {nombre: "Software de control y supervisión"}
+  "1.5.1": {nombre: "Programa del PLC: fases del proceso y lote nocturno", semanas: "5–13", h: {DC: 140, JR: 60}}
+  "1.5.2": {nombre: "Programa del PLC: envasado y transporte", semanas: "6–14", h: {JR: 90, DC: 60}}
+  "1.5.3": {nombre: "SCADA Node-RED: guía de estilo ISA-101 y pantallas", semanas: "3–6", h: {DF: 30, AO: 10, DC: 50}}
+  "1.5.4": {nombre: "SCADA Node-RED: alarmas ISA-18.2 e historiador", semanas: "8–15", h: {DF: 140}}
+  "1.5.5": {nombre: "Nodo de borde: usuarios, recetas locales y operación sin conexión", semanas: "13–18", h: {JR: 75, DF: 25}}
+  "1.6":  {nombre: "Plataforma Cremia MES/ERP"}
+  "1.6.1": {nombre: "Infraestructura en Huawei Cloud, seguridad, respaldos y despliegue", semanas: "6–12", h: {JR: 100, DF: 20}}
+  "1.6.2": {nombre: "Núcleo: datos maestros, usuarios y roles, auditoría y API", semanas: "2–7", h: {DF: 175, JR: 5}}
+  "1.6.3": {nombre: "Recetas ISA-88 y órdenes de producción", semanas: "7–13", h: {DC: 35, JZ: 145, DF: 20}}
+  "1.6.4": {nombre: "Registro electrónico de lote y genealogía", semanas: "8–16", h: {DF: 95, DC: 45}}
+  "1.6.5": {nombre: "Calidad y liberación de lotes", semanas: "11–17", h: {JZ: 75, AO: 20, DF: 5}}
+  "1.6.6": {nombre: "OEE, paradas y horas de equipo", semanas: "21–25", h: {AO: 60, JR: 60}}
+  "1.6.7": {nombre: "Integración borde–nube: MQTT, almacenamiento y reenvío", semanas: "9–17", h: {JR: 30, CH: 50, DF: 20}}
+  "1.6.8": {nombre: "ERP ligero I: inventario por lote y vencimiento, pedidos y despacho", semanas: "6–17", h: {CH: 160}}
+  "1.6.9": {nombre: "ERP ligero II: compras, requerimiento de materiales, costo por lote y exportación al facturador", semanas: "20–25", h: {CH: 140}}
+  "1.6.10": {nombre: "Tablero gerencial y reportes", semanas: "23–26", h: {AO: 50, JR: 30}}
+  "1.6.11": {nombre: "Pruebas y documentación del software", semanas: "10–25", h: {AO: 120, JR: 25, CH: 15}}
+  "1.7":  {nombre: "Gemelo digital y puesta en marcha virtual"}
+  "1.7.1": {nombre: "Gemelo digital de la línea", semanas: "4–12", h: {AO: 160}}
+  "1.7.2": {nombre: "Simulación del envasado y el encanastado", semanas: "9–16", h: {AO: 60}}
+  "1.7.3": {nombre: "Puesta en marcha virtual: PLC, SCADA y MES/ERP", semanas: "16–19", h: {DC: 115, DF: 5}}
+  "1.8":  {nombre: "Montaje e instalación"}
+  "1.8.1": {nombre: "Montaje mecánico", semanas: "14–19", h: {JZ: 110}}
+  "1.8.2": {nombre: "Instalación eléctrica y de instrumentación", semanas: "14–19", h: {JR: 75, JZ: 25}}
+  "1.8.3": {nombre: "Red industrial, nodo de borde y nube de producción", semanas: "16–18", h: {JR: 20, DF: 30}}
+  "1.8.4": {nombre: "Línea de vasos", semanas: "18–19", h: {AO: 40, JZ: 20}}
+  "1.9":  {nombre: "Pruebas y puesta en marcha"}
+  "1.9.1": {nombre: "Pruebas de lazo y de E/S", semanas: "19–20", h: {JR: 40, AO: 5, JZ: 5}}
+  "1.9.2": {nombre: "Pruebas SAT", semanas: "20–21", h: {DC: 55, JR: 20, DF: 5}}
+  "1.9.3": {nombre: "Arranque con producto", semanas: "20–22", h: {JZ: 65, AO: 35}}
+  "1.9.4": {nombre: "Validación de calidad e inocuidad", semanas: "21–23", h: {JZ: 5, DF: 45}}
+  "1.10": {nombre: "Gestión del cambio, capacitación, estabilización y cierre"}
+  "1.10.1": {nombre: "Gestión del cambio y comunicación", semanas: "1–26", h: {CH: 130}}
+  "1.10.2": {nombre: "Capacitación por rol", semanas: "17–20", h: {DF: 75, AO: 35, JZ: 10, CH: 10}}
+  "1.10.3": {nombre: "Procedimientos, documentación y manuales", semanas: "19–25", h: {DF: 95, JR: 5}}
+  "1.10.4": {nombre: "Estabilización y entrega", semanas: "22–26", h: {DC: 75, JZ: 45, DF: 25, AO: 5}}
+
+contratos:
+  "1. Diseño, procura y gestión de compras": {paquetes: ["1.1.1", "1.1.3", "1.2", "1.3", "1.4"], semanas: "1–18"}
+  "2. Implementación, software, puesta en marcha y adopción": {paquetes: ["1.1.2", "1.1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10"], semanas: "2–26"}
+
+# Paquetes cuyo valor es desarrollo de software (se amortiza a 5 años)
+paquetes_software: ["1.5.3", "1.5.4", "1.5.5", "1.6"]
+
+capex:
+  rubros:
+    1:  {nombre: "Dosificación automática de azúcar, estabilizante, colorante y saborizante; pesaje de cultivo", valor: 70.0, grupo: proceso}
+    2:  {nombre: "Instrumentación sanitaria: temperatura PT100, nivel, pH en línea, caudal, peso y presión", valor: 57.0, grupo: instrumentacion}
+    3:  {nombre: "Válvulas de control proporcional, válvulas sanitarias de desvío y neumática", valor: 35.0, grupo: proceso}
+    4:  {nombre: "Intercambiador de placas sanitario, bomba de lóbulos P-301 y bomba de recepción P-101", valor: 60.0, grupo: proceso}
+    5:  {nombre: "Enfriador industrial (chiller) y banco de agua helada", valor: 60.0, grupo: proceso}
+    6:  {nombre: "Llenadora-selladora automática de vasos de 150 y 300 ml (mismo diámetro de boca)", valor: 160.0, grupo: envasado, vasos: 1.0}
+    7:  {nombre: "Dosificación de fruta en trozos y mezclador estático en línea", valor: 30.0, grupo: proceso, vasos: 1.0}
+    8:  {nombre: "Dos controladoras de peso dinámicas con rechazo automático", valor: 80.0, grupo: envasado, vasos: 0.5}
+    9:  {nombre: "Bandas transportadoras modulares sanitarias", valor: 40.0, grupo: envasado}
+    10: {nombre: "PLC CompactLogix 5380 Allen-Bradley, dos estaciones de E/S remotas, tableros IP66, variadores PowerFlex, conmutador Stratix 5700 y cortafuegos de la zona desmilitarizada", valor: 83.0, grupo: control}
+    11: {nombre: "Nodo de borde y supervisión: PC industrial principal y de repuesto con Node-RED, dos paneles táctiles de 15\" IP65 (HMI-01 y HMI-02), UPS, router industrial con 4G y equipo de salto", valor: 30.0, grupo: control, software: true}
+    12: {nombre: "Entornos de la plataforma Cremia MES/ERP en Huawei Cloud durante el proyecto (desarrollo, pruebas y producción)", valor: 6.0, grupo: control, software: true, nube: true}
+    13: {nombre: "Estación de limpieza CIP automatizada de dos tanques", valor: 50.0, grupo: proceso}
+    14: {nombre: "Homogeneizador de alta presión de dos etapas (1.500 L/h, 200 bar)", valor: 95.0, grupo: proceso}
+    15: {nombre: "Dosificador de leche en polvo por peso", valor: 20.0, grupo: proceso}
+    16: {nombre: "Dos codificadores de lote y fecha de vencimiento", valor: 25.0, grupo: envasado, vasos: 0.5}
+    17: {nombre: "Circuito de agua helada a la chaqueta de T-301: TV-304, XV-904 y tubería aislada", valor: 10.0, grupo: proceso}
+    18: {nombre: "Tanque refrigerado de leche TK-102 de 1.000 L con válvulas de selección XV-101 y XV-102", valor: 30.0, grupo: proceso}
+    19: {nombre: "Mesa acumuladora para el encajonado de vasos", valor: 6.0, grupo: envasado, vasos: 1.0}
+  montaje_pct: 0.08           # sobre equipos físicos (todos menos la nube)
+  contingencia_pct: 0.08      # sobre equipos, ingeniería y montaje
+  dias_parada: 5
+  rubros_sin_mantenimiento: [10, 11, 12]
+
+operacion:
+  mantenimiento_pct: 0.03     # sobre equipos de proceso y envasado
+  plan_servicio_cremia: {nube_huawei: 15.0, soporte_y_evolucion: 21.0}
+  conectividad: 4.0           # fibra y respaldo 4G
+  laboratorio_externo: {analisis: 120, costo_cop: 100000}
+
+finanzas:
+  tasa_descuento: 0.15
+  impuesto_renta: 0.35
+  vida_equipos: 10
+  vida_software: 5
+  horizonte: 5
+  rampa: [0.50, 0.75, 1.00, 1.00, 1.00]
+  capital_trabajo: {cartera_dias: 30, inventario_dias: 15, proveedores_dias: 30, base_dias: 360}
+  credito: {porcentaje: 0.70, tasa: 0.18, anos: 5, gracia_anos: 1}
+  pagos_hitos: [[Firma del contrato (anticipo), 1, 0.30], [Pruebas FAT aprobadas, 14, 0.30], [Pruebas SAT y puesta en marcha, 21, 0.30], [Cierre y entrega, 26, 0.10]]
+
+software:
+  costo_hora_promedio_interno: 36200   # COP/h, ponderado del equipo
+  nube_usd_mes: 300

@@ -174,9 +174,9 @@ h2 { margin-bottom: 0; font-size: clamp(2.5rem, 5vw, 4.6rem); font-weight: 600; 
 .timeline { display: grid; gap: 10px; margin-bottom: 56px; padding: 30px 32px; border: 1px solid var(--line); background: white; }
 .timeline-row { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: center; }
 .timeline-row > span { color: var(--ink); font-size: .84rem; font-weight: 600; }
-.timeline-row .bar { position: relative; height: 16px; background: linear-gradient(90deg, transparent calc((var(--start) - 1) / 24 * 100%), var(--accent) calc((var(--start) - 1) / 24 * 100%), var(--accent) calc(var(--end) / 24 * 100%), transparent calc(var(--end) / 24 * 100%)); }
-.timeline-row .bar-critical { background: linear-gradient(90deg, transparent calc((var(--start) - 1) / 24 * 100%), var(--blue) calc((var(--start) - 1) / 24 * 100%), var(--blue) calc(var(--end) / 24 * 100%), transparent calc(var(--end) / 24 * 100%)); }
-.timeline-row .bar-people { background: linear-gradient(90deg, transparent calc((var(--start) - 1) / 24 * 100%), #8fc9b0 calc((var(--start) - 1) / 24 * 100%), #8fc9b0 calc(var(--end) / 24 * 100%), transparent calc(var(--end) / 24 * 100%)); }
+.timeline-row .bar { position: relative; height: 16px; background: linear-gradient(90deg, transparent calc((var(--start) - 1) / 26 * 100%), var(--accent) calc((var(--start) - 1) / 26 * 100%), var(--accent) calc(var(--end) / 26 * 100%), transparent calc(var(--end) / 26 * 100%)); }
+.timeline-row .bar-critical { background: linear-gradient(90deg, transparent calc((var(--start) - 1) / 26 * 100%), var(--blue) calc((var(--start) - 1) / 26 * 100%), var(--blue) calc(var(--end) / 26 * 100%), transparent calc(var(--end) / 26 * 100%)); }
+.timeline-row .bar-people { background: linear-gradient(90deg, transparent calc((var(--start) - 1) / 26 * 100%), #8fc9b0 calc((var(--start) - 1) / 26 * 100%), #8fc9b0 calc(var(--end) / 26 * 100%), transparent calc(var(--end) / 26 * 100%)); }
 .timeline-scale { display: flex; justify-content: space-between; margin-left: 280px; padding-top: 6px; border-top: 1px solid var(--line); color: var(--muted); font-size: .7rem; }
 .plan-reasons { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; padding: 40px 45px; color: white; background: var(--blue); }
 .plan-reasons h3 { margin: 0; font-family: "Space Grotesk"; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: .98; letter-spacing: -.05em; }

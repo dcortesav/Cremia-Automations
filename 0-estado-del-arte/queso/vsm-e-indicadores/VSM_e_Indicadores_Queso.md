@@ -2,7 +2,7 @@
 
 > **Alcance:** mapa de flujo de valor (VSM) actual y propuesto de la línea de queso campesino, con los indicadores de producción antes y después de la propuesta de automatización.
 
-> **Base documental:** `Receta_y_Parametros_Queso.md` y `Cuello_de_Botella_Queso.md` (tiempos por estación). Las fórmulas son las del módulo *Gestión de Producción Automatizada* del curso.
+> **Base documental:** `Receta_y_Parametros_Queso.md` y `Cuello_de_Botella_Queso.md` (tiempos por estación). Las fórmulas son las del módulo *Gestión de Producción Automatizada* del curso de APM.
 
 > **Nota:** la demanda, las disponibilidades y las tasas de calidad son supuestos de la propuesta inicial. Se ajustarán con la simulación en Siemens Tecnomatix y con la visita técnica a Alpina Sopó (27 y 28 de octubre de 2026).
 

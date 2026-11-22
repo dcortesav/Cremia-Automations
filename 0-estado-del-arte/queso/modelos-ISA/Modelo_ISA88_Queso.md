@@ -65,6 +65,8 @@ graph TD
 | U-501 | Encajonadora y robot paletizador | 10 cajas/min | Discreta (compartida) |
 | U-502 | Cámara de producto terminado | 2–6 °C | Almacenamiento (compartida) |
 
+> **Nota (actual vs. propuesto):** las capacidades de este modelo físico (p. ej., U-204 con 800 kg por ciclo y U-203 con moldeadora automática) corresponden a la línea **propuesta**; la situación inicial (2 prensas y moldeo manual) se analiza en `Cuello_de_Botella_Queso.md`.
+
 ### 1.2 Módulos de equipo y de control de la unidad U-201 (tina quesera)
 
 | Módulo de equipo | Función | Módulos de control |

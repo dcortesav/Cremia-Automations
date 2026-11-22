@@ -2,8 +2,7 @@
 
 **Proyecto Integrador APM 2026-2S** · Automatización de Procesos de Manufactura  
 **Facultad de Ingeniería · Universidad Nacional de Colombia (Sede Bogotá)**  
-**Empresa Consultora:** Cremia Automations  
-**Módulo:** Módulo 1 – Transformación Digital Industrial (TDI) & Modelado de Procesos  
+**Empresa Consultora:** Cremia Automations
 **Fecha de Emisión:** Octubre de 2026  
 **Autor principal:** Jesús Alberto Rivera Molina, líder de arquitectura digital  
 **Alcance:** Caracterización técnica rigurosa de tres líneas agroindustriales (Yogur Batido/Frutado, Queso Campesino y Kumis Tradicional), análisis termodinámico y biotecnológico para la Sabana de Bogotá (2.600 msnm), formulación legal, matriz multicriterio ponderada y justificación ingenieril de la línea de yogur seleccionada.
@@ -99,7 +98,6 @@ Parámetros obligatorios de aceptación de leche cruda en plataforma:
 - **Residuos de antibióticos y adulterantes:** Ausencia estricta (negativo).
 - **Punto crioscópico:** $-0,530\text{ }^\circ\text{C}$ a $-0,510\text{ }^\circ\text{C}$.
 
-> [!IMPORTANT]
 > **Prohibición Taxativa de Adición de Lactosueros (Decreto 616 de 2006)**  
 > El artículo 14 prohíbe taxativamente la adición de lactosueros a la leche en todas las etapas de la cadena productiva. La presencia de caseinomacropéptido (CMP) en concentraciones anómalas constituye fraude por adulteración. En una planta multiproducto que procesa queso, el lactosuero debe confinarse en circuitos completamente segregados para evitar cualquier cruce inadvertido hacia las líneas de leche líquida, yogur o kumis.
 
@@ -142,7 +140,6 @@ La **NTC 805 (Cuarta actualización)** establece los requisitos fisicoquímicos 
   - Kumis: $0,60\text{ a }1,50\text{ \%}$ expresada como ácido láctico ($60\text{ a }150\text{ }^\circ\text{Dornic}$), usualmente en el rango de $0,75\text{ a }0,85\text{ \%}$.
 - **Viabilidad del cultivo:** Mínimo **$10^7\text{ UFC/g}$** de bacterias lácticas específicas vivas hasta el final de la vida útil comercial.
 
-> [!CAUTION]
 > **Restricción Normativa del Anexo B de la NTC 805 (Almidones Prohibidos)**  
 > El Anexo B (Normativo) de la NTC 805 especifica taxativamente los aditivos autorizados. Los **almidones modificados y la gelatina están PROHIBIDOS en leches fermentadas tradicionales con microorganismos vivos**. Su uso se restringe de forma exclusiva a leches que han sido sometidas a tratamiento térmico *posterior* a la fermentación (leches fermentadas termizadas o de larga vida, donde las bacterias lácteas están inactivadas). En el Kumis y Yogur tradicionales vivos, la estabilización contra la sinéresis debe lograrse mediante incremento de proteína láctea (LPD) y el uso exclusivo de **Pectina de Bajo Metoxilo (LMP)**.
 
@@ -418,7 +415,7 @@ flowchart TD
         HOMOG --> HTST["Pasteurización HTST Continua (PCC-1)<br/>90–95 °C por 4 min (Tubo 166 L a 2.500 L/h)<br/>Skid Hermético Presurizado a 1,8 bar"]
         HTST --> COOL["Enfriamiento Regenerativo en Placas<br/>Descenso Térmico Regulado a 22–26 °C"]
         COOL --> FERM["Biorreactor Vertical AISI 316L (2.000 L)<br/>Sala Limpia Presurizada (+25 Pa, HEPA H14)"]
-        CULT_K["Inóculo Mesófilo DVS (0,10 kg, 2 sobres):<br/>L. lactis lactis / cremoris / diacetylactis"] -->|Puerto Aséptico Ciego (Vapor 121 °C)| FERM
+        CULT_K["Inóculo Mesófilo DVS (0,10 kg, 2 sobres):<br/>L. lactis lactis / cremoris / diacetylactis"] -->|"Puerto Aséptico Ciego (Vapor 121 °C)"| FERM
         FERM --> INCUB["Incubación Mesófila a 22–25 °C (14–18 h)<br/>Síntesis de Diacetilo y Coagulación"]
         INCUB -->|Punto de Corte: pH 4,50–4,60 / 75–80 °D| CRYO["Freno Criostático (10–12 °C)<br/>Agitación Áncora Lenta (15 rpm, 10 min)"]
         ESEN_K["Aromatizante Declarado (Res. 2310):<br/>Esencia Vainilla/Crema: 1,03 kg (0,05%)"] --> CRYO
@@ -432,7 +429,6 @@ flowchart TD
 
 ### 4.3 Inconsistencia Crítica y Rectificación Legal: Prohibición de Almidones y Modelo 'Egg-Box' de Pectina LMP
 
-> [!CAUTION]
 > **Dictamen Técnico y Jurídico sobre Formulación de Kumis**  
 > Múltiples formulaciones artesanales o borradores preliminares de ingeniería proponen estabilizar el kumis mediante el uso de mezclas de *"almidón modificado de yuca o maíz + pectina"*. Esta práctica incurre en una **violación regulatoria flagrante bajo la legislación colombiana**.
 
@@ -511,7 +507,6 @@ El sistema de generación de agua caliente adjunto al pasteurizador HTST debe co
 
 ### 4.5 Rediseño Hidráulico del Tratamiento Térmico HTST Continuo
 
-> [!NOTE]
 > **Enmienda de Ingeniería: Rectificación del Tubo de Retención HTST**  
 > Ciertos documentos descriptivos proponen erróneamente un sostenimiento térmico de *"15 minutos en flujo continuo"*. Esta configuración es inviable en la práctica de fluidos industriales.
 
@@ -576,7 +571,6 @@ El coágulo obtenido al alcanzar pH 4,55 es un gel láctico viscoelástico estru
 
 ### 4.8 Vector Crítico de Bioseguridad: Contención Epidemiológica contra Bacteriófagos de Quesería (936, c2, P335)
 
-> [!WARNING]
 > **La Mayor Amenaza Biológica de una Planta Multiproducto Láctea**  
 > En una instalación donde conviven la quesería y la fermentación de kumis, el **lactosuero crudo** de la línea de queso constituye el mayor reservorio mundial de **bacteriófagos líticos** virulentos específicos contra *Lactococcus lactis*.
 
@@ -798,12 +792,12 @@ La línea de yogur permite estructurar una arquitectura de manufactura digital l
 - **Niveles 1 y 2 (Medición, actuación y control):** E/S remotas y variadores en el nivel 1; PLC Allen-Bradley CompactLogix 5380 en el nivel 2, ejecutando lazos PID de temperatura y la secuencia procedimental ISA-88.
 - **Nivel 2 (Supervisión y HMI):** SCADA industrial con registro de curvas térmicas, gestión de alarmas ISA-18.2 y pantallas de control de lote.
 - **Nivel 3 (MES):** Gestión de Órdenes de Producción, genealogía de lote, control de recetas maestras (RM-YB-200, RM-YV-150, RM-YV-300), balance de masa y cálculo en tiempo real de OEE.
-- **Gemelo Digital (Tecnomatix Plant Simulation):** Mapeo estocástico de las paradas, tiempos de llenado, tiempos de empaque y logística interna, validando el salto productivo de 1 a 2 lotes diarios.
+- **Gemelo Digital (Siemens NX MCD y Tecnomatix Plant Simulation):** Mapeo estocástico de las paradas, tiempos de llenado, tiempos de empaque y logística interna, validando el salto productivo de 1 a 2 lotes diarios. Gemelo digital para validación de la solución e identificación de posibles oportunidades de mejora.
 
 ### 7.4 Escalabilidad hacia una Arquitectura Multiproducto Modular
 La selección del yogur como línea principal del proyecto integrador no anula la validez del estado del arte de las otras dos líneas; por el contrario, **las integra en una visión modular escalable**:
 - Los sistemas de recepción de leche cruda (TK-101, filtro y bomba P-101), los servicios industriales auxiliares (generación de vapor, planta de agua helada a 2 °C, compresor de aire grado alimentario y central CIP automatizada) se diseñan con capacidad holgada para abastecer concurrentemente a las tres líneas.
-- La arquitectura de automatización (buses de campo, redes industriales OT/IT bajo estándar ISA-95 y protocolo OPC-UA) queda concebida para que la empresa pueda incorporar las fases de la quesería y del kumis en expansiones futuras sin reconfigurar la infraestructura base.
+- La arquitectura de automatización queda concebida para que la empresa pueda incorporar las fases de la quesería y del kumis en expansiones futuras sin reconfigurar la infraestructura base.
 
 ---
 
@@ -814,16 +808,15 @@ La selección del yogur como línea principal del proyecto integrador no anula l
 3. **ANSI/ISA-95.00.01-2010.** *Enterprise-Control System Integration Part 1: Common Object Models and Attributes.* International Society of Automation (ISA).
 4. **Codex Alimentarius.** (2003, Rev. 2018). *Norma del Codex para leches fermentadas (CXS 243-2003).* Comisión del Codex Alimentarius, FAO/OMS. https://www.fao.org/input/download/standards/400/CXS_243s.pdf
 5. **Decreto 616 de 2006.** *Reglamento técnico sobre los requisitos que debe cumplir la leche para el consumo humano.* Ministerio de la Protección Social, República de Colombia. Diario Oficial No. 46.196. https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=21980
-6. **Grimaldo, G., Moreno, D., & Salamanca, M.** (2015). Medición del trabajo de una línea de producción de yogurt – Empresa La Hacienda Productos Alimenticios. *Revista I3+*, 2(2), 62–81. https://doi.org/10.24267/23462329.116
+6. **Grimaldo, G., Moreno, D., & Salamanca, M.** (2015). Medición del trabajo de una línea de producción de yogurt – Empresa La Hacienda Productos Alimenticios. *Revista I3+*, 2(2), 62–81. [Enlace](https://www.researchgate.net/publication/317572058_Medicion_del_trabajo_de_una_linea_de_produccion_de_yogurt_-_empresa_La_Hacienda_Productos_Alimenticios)
 7. **ICONTEC.** (2004). *Norma Técnica Colombiana NTC 750: Productos lácteos. Queso.* Instituto Colombiano de Normas Técnicas y Certificación. Bogotá, Colombia.
 8. **ICONTEC.** (2017). *Norma Técnica Colombiana NTC 805 (Cuarta actualización): Productos lácteos. Leches fermentadas.* Instituto Colombiano de Normas Técnicas y Certificación. Bogotá, Colombia.
 9. **Mahony, J., McDonnell, B., & van Sinderen, D.** (2016). Bacteriophages in the dairy environment: From enemies to allies. *Antibiotics*, 5(2), 17. https://doi.org/10.3390/antibiotics5020017
-10. **Marcó, M. B., Moineau, S., & Quiberoni, A.** (2012). Bacteriophages and dairy fermentations. *Bacteriophage*, 2(3), 149–158. https://doi.org/10.4161/bact.21860
-11. **Project Management Institute (PMI).** (2021). *A Guide to the Project Management Body of Knowledge (PMBOK Guide)* (7ma ed.). Newtown Square, PA: Project Management Institute.
-12. **Resolución 1407 de 2022.** *Por la cual se establecen los criterios microbiológicos que deben cumplir los alimentos y bebidas para consumo humano.* Ministerio de Salud y Protección Social, República de Colombia. https://www.minsalud.gov.co/Normatividad_Nuevo/Resoluci%C3%B3n%20No.%201407%20de%202022.pdf
-13. **Resolución 2310 de 1986.** *Por la cual se reglamenta parcialmente el Título V de la Ley 09 de 1979, en lo referente a procesamiento, composición, requisitos, transporte y comercialización de los derivados lácteos.* Ministerio de Salud, República de Colombia.
-14. **Resolución 2674 de 2013.** *Por la cual se reglamenta el artículo 126 del Decreto Ley 019 de 2012 y se dictan otras disposiciones sobre Buenas Prácticas de Manufactura en alimentos.* Ministerio de Salud y Protección Social, República de Colombia.
-15. **Rousseau, G. M., & Moineau, S.** (2009). Evolution of Lactococcus lactis phages: An updated view. *Virology*, 388(1), 4–10. https://doi.org/10.1016/j.virol.2009.03.018
-16. **Tetra Pak Processing Systems.** (2015). *Dairy Processing Handbook* (2da ed., Caps. 11 "Fermented Milk Products" y 14 "Cheese"). Tetra Pak Processing Systems AB, Lund, Suecia. https://dairyprocessinghandbook.tetrapak.com
-17. **Tromp, R. H., de Kruif, C. G., van Eijk, M., & Rolin, C.** (2004). On the mechanism of stabilisation of acidified skim milk drinks by pectin. *Food Hydrocolloids*, 18(4), 565–572. https://doi.org/10.1016/j.foodhyd.2003.09.005
-18. **Walstra, P., Wouters, J. T., & Geurts, T. J.** (2006). *Dairy Science and Technology* (2da ed.). CRC Press, Taylor & Francis Group, Boca Raton, FL.
+10. **Project Management Institute (PMI).** (2021). *A Guide to the Project Management Body of Knowledge (PMBOK Guide)* (7ma ed.). Newtown Square, PA: Project Management Institute.
+11. **Resolución 1407 de 2022.** *Por la cual se establecen los criterios microbiológicos que deben cumplir los alimentos y bebidas para consumo humano.* Ministerio de Salud y Protección Social, República de Colombia. https://www.minsalud.gov.co/Normatividad_Nuevo/Resoluci%C3%B3n%20No.%201407%20de%202022.pdf
+12. **Resolución 2310 de 1986.** *Por la cual se reglamenta parcialmente el Título V de la Ley 09 de 1979, en lo referente a procesamiento, composición, requisitos, transporte y comercialización de los derivados lácteos.* Ministerio de Salud, República de Colombia.
+13. **Resolución 2674 de 2013.** *Por la cual se reglamenta el artículo 126 del Decreto Ley 019 de 2012 y se dictan otras disposiciones sobre Buenas Prácticas de Manufactura en alimentos.* Ministerio de Salud y Protección Social, República de Colombia.
+14. **Rousseau, G. M., & Moineau, S.** (2009). Evolution of Lactococcus lactis phages: An updated view. *Virology*, 388(1), 4–10. https://pubmed.ncbi.nlm.nih.gov/19542338/
+15. **Tetra Pak Processing Systems.** (2015). *Dairy Processing Handbook* (2da ed., Caps. 11 "Fermented Milk Products" y 14 "Cheese"). Tetra Pak Processing Systems AB, Lund, Suecia. https://dairyprocessinghandbook.tetrapak.com
+16. **Tromp, R. H., de Kruif, C. G., van Eijk, M., & Rolin, C.** (2004). On the mechanism of stabilisation of acidified skim milk drinks by pectin. *Food Hydrocolloids*, 18(4), 565–572. https://doi.org/10.1016/j.foodhyd.2003.09.005
+17. **Walstra, P., Wouters, J. T., & Geurts, T. J.** (2006). *Dairy Science and Technology* (2da ed.). CRC Press, Taylor & Francis Group, Boca Raton, FL.

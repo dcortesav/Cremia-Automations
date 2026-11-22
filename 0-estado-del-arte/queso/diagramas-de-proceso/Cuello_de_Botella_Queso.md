@@ -110,7 +110,7 @@ Un túnel de aire forzado a 0–2 °C reduce el oreo de 8–12 h a 2–3 h. Junt
 
 ### 3.4 Programación del pasteurizador compartido
 
-Los lotes de queso se agrupan en campañas para minimizar los cambios de temperatura entre queso (72–75 °C) y yogur o kumis (85–95 °C). El tanque pulmón T-102 desacopla el pasteurizador de las tinas.
+Los lotes de queso se agrupan en campañas para minimizar los cambios de temperatura entre queso (72–75 °C) y yogur (≈ 85–95 °C) o kumis (≈ 90–95 °C). El tanque pulmón T-102 desacopla el pasteurizador de las tinas.
 
 ---
 

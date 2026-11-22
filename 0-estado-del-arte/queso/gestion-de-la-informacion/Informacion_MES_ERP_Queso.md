@@ -10,9 +10,9 @@
 
 | Nivel | Sistema | Función en la línea de quesos | Horizonte |
 |---|---|---|---|
-| 4 | ERP (SAP S/4HANA como referencia) | Pedidos, plan de producción, compras de leche e insumos, inventarios, costos | Días a semanas |
+| 4 | ERP | Pedidos, plan de producción, compras de leche e insumos, inventarios, costos | Días a semanas |
 | 3 | MES | Órdenes de producción, recetas maestras, programación de tinas, trazabilidad, calidad, OEE, paradas | Turnos a horas |
-| 2 | SCADA (Ignition) y PLC | Supervisión, alarmas, tendencias, ejecución de fases ISA-88 | Segundos a minutos |
+| 2 | SCADA y PLC | Supervisión, alarmas, tendencias, ejecución de fases ISA-88 | Segundos a minutos |
 | 1 | Sensores y actuadores | Medición y actuación (34 tags del P&ID) | Milisegundos a segundos |
 | 0 | Proceso físico | Recepción, pasteurización, coagulación, prensado, empaque | — |
 

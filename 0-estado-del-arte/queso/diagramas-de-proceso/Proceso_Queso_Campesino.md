@@ -360,16 +360,16 @@ Producción de Queso Fresco (Línea 2)
 
 - **Compartidos:** recepción de leche, silos de leche cruda, clarificadora, estandarizadora, **pasteurizador** (se programa por turnos o campañas entre yogur, kumis y queso), servicios industriales, CIP, cámara de frío, celda de paletizado y despacho.
 - **Exclusivos de la línea de quesos:** tinas queseras, moldeadora, prensas, cuarto de oreo, empacadora al vacío y manejo de suero.
-- **Cambio de producto en el pasteurizador:** el yogur y el kumis se pasteurizan a ≈ 85–95 °C durante 5–10 min. El queso usa 72–75 °C durante 15–20 s para no desnaturalizar las proteínas del suero y conservar el rendimiento. Cada cambio entre líneas implica ajustar la receta y, a menudo, un enjuague o CIP, que se incluye como tiempo de setup en el VSM y en la simulación.
+- **Cambio de producto en el pasteurizador:** el yogur se pasteuriza a ≈ 85–95 °C durante 5–10 min y el kumis a ≈ 90–95 °C durante 3–5 min. El queso usa 72–75 °C durante 15–20 s para no desnaturalizar las proteínas del suero y conservar el rendimiento. Cada cambio entre líneas implica ajustar la receta y, a menudo, un enjuague o CIP, que se incluye como tiempo de setup en el VSM y en la simulación.
 - **Simulación (Tecnomatix):** el pasteurizador compartido y las prensas son candidatos a cuello de botella. El oreo es la mayor demora del flujo de valor.
 
 ---
 
 ## 10.1 P&ID de la línea
 
-Plano P&ID-L2-001 (ANSI/ISA-5.1): recepción y almacenamiento de leche, tratamiento térmico compartido, quesería y suero. La lista de equipos, el índice de 34 instrumentos y válvulas y los lazos de control están en [PID_Queso.md](../../../1-transformacion-digital-industrial/diagramas-de-instrumentacion/queso/PID_Queso.md).
+Plano P&ID-L2-001 (ANSI/ISA-5.1): recepción y almacenamiento de leche, tratamiento térmico compartido, quesería y suero. La lista de equipos, el índice de 34 instrumentos y válvulas y los lazos de control están en [PID_Queso.md](../diagramas-de-instrumentacion/PID_Queso.md).
 
-![P&ID Línea 2 Queso campesino](../../../1-transformacion-digital-industrial/diagramas-de-instrumentacion/queso/PID_Queso.svg)
+![P&ID Línea 2 Queso campesino](../diagramas-de-instrumentacion/PID_Queso.svg)
 
 | Lazo | Variable controlada | Variable manipulada | Observación |
 |---|---|---|---|

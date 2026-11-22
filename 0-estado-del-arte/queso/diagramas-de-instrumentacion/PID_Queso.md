@@ -34,6 +34,8 @@
 | ML-201 | Moldeadora por peso | 200 | Multicabezal con celdas de carga; moldes de 1 kg (QC-1K) o 3 kg (QC-250, QC-3K) |
 | PR-201…204 | Prensas neumáticas con volteo automático | 200 | 200 kg por ciclo cada una; 1,5–3 bar |
 
+> **Nota (actual vs. propuesto):** la lista de equipos de la quesería corresponde a la línea **propuesta** — 4 prensas PR-201…204 con volteo automático y moldeadora multicabezal ML-201; el oreo, el empaque y el paletizado son operaciones discretas descritas en el diagrama de flujo del proceso. La **situación inicial** (2 prensas, moldeo manual y cuarto de oreo) se describe en `Cuello_de_Botella_Queso.md` y `VSM_e_Indicadores_Queso.md`.
+
 ---
 
 ## 2. Índice de instrumentos
@@ -73,6 +75,8 @@
 | TT-301 | Temperatura del tanque de suero | Temperatura | 0–20 °C | Campo | Conservación del suero |
 | WT-201 | Celda de carga de la moldeadora | Peso | 0–5 kg por cabezal; SP 1,0 o 3,0 kg | Campo | Llenado por peso según la presentación |
 | PIC-201 | Control de presión de prensado | Presión | 0–6 bar; SP 1,5–3 bar | PLC | Presión y tiempo por presentación (75 / 60 / 90 min) |
+
+Total: 34 instrumentos y válvulas.
 
 ---
 

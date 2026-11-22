@@ -30,5 +30,3 @@ Entregables del proyecto para la línea de yogur.
 - `EDTs`: estructuras de desglose del trabajo.
 - `empresa/logo`: logo de Cremia Automations.
 - `actas-de-reunion`: actas de reunión.
-
-La versión inicial del proyecto, con tres líneas, está en [`0-estado-del-arte/version-tres-lineas`](../0-estado-del-arte/version-tres-lineas).

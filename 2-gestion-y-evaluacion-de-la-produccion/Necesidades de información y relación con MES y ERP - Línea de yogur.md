@@ -71,7 +71,7 @@ Entre la planta y la plataforma sí hay mensajes: el nodo de borde envía por MQ
 | --- | --- | --- | --- | --- |
 | OEE de envasado | Disponibilidad × rendimiento × calidad | ≈ 65 % | 82 % | PLC y controladoras de peso |
 | Producto no conforme | Unidades rechazadas ÷ unidades llenadas | 5,06 % | 1,5 % o menos | CK-401 y CK-402 |
-| Rendimiento de materiales | Masa de producto ÷ masa de insumos | 98,1 % | 98,5 % o más | Dosificación y conteo de unidades |
+| Rendimiento de materiales | Masa de producto ÷ masa de insumos | 98,1 % (bolsas) | Bolsas ≥ 98 %; vasos ≥ 97 % (la fruta retiene producto) | Dosificación y conteo de unidades |
 | Lotes por día | Lotes terminados ÷ días de operación | 1 | 2 | MES |
 | Tiempo estándar por lote | Suma de tiempos de fase | 601 min | ≈ 563 min | PLC y MES |
 | Cumplimiento del plan | Unidades conformes producidas ÷ unidades programadas | No se mide | 95 % o más | MES y ERP |

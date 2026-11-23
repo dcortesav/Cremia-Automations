@@ -110,7 +110,7 @@ El porcentaje de azúcar se expresa sobre la masa de yogur base. El de fruta, so
 
 ### 4.2 Balance de materia
 
-El balance compara la masa de insumos con la masa envasada, calculada con las unidades por lote y una densidad de 1,05 kg/L para el yogur batido.
+El balance compara la masa de insumos con la masa envasada, calculada con las unidades por lote y una densidad de 1,033 kg/L para el yogur batido (la misma del balance del estado actual).
 
 | Concepto | YB-200 | YV-150 | YV-300 |
 | --- | --- | --- | --- |
@@ -121,8 +121,8 @@ El balance compara la masa de insumos con la masa envasada, calculada con las un
 | Preparado de fruta | — | 57,20 kg | 88,80 kg |
 | **Total de entradas** | **648,4 kg** | **694,6 kg** | **719,8 kg** |
 | Volumen envasado | 615,8 L | 655,4 L | 678,0 L |
-| Masa envasada (1,05 kg/L) | 646,6 kg | 688,2 kg | 711,9 kg |
-| Pérdidas de proceso | 1,8 kg (0,3 %) | 6,4 kg (0,9 %) | 7,9 kg (1,1 %) |
+| Masa envasada (1,033 kg/L) | 636,1 kg | 677,0 kg | 700,4 kg |
+| Pérdidas de proceso | 12,3 kg (1,9 %) | 17,6 kg (2,5 %) | 19,4 kg (2,7 %) |
 | Rendimiento | 1,12 L de yogur por L de leche | 1,19 L por L | 1,23 L por L |
 
 Las pérdidas corresponden a evaporación durante la pasteurización, producto retenido en paredes, tuberías, filtro e intercambiador, y llenado inicial de la máquina. Son mayores en los vasos porque el preparado de fruta pasa por la bomba P-403 y el mezclador MX-403, que retienen producto al final del lote. El producto rechazado por peso no se cuenta aquí: se registra aparte como producto no conforme (sección 8.4).

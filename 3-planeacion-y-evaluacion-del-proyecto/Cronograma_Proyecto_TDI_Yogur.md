@@ -109,7 +109,7 @@ El riesgo de pedir equipos antes de cerrar todo el detalle se controla con tres 
 | — | Parada de planta para la conexión al tanque de proceso | 19 | 24 may | 28 may |
 <!-- /tabla:cronograma -->
 
-Los festivos de 2027 que caen en el proyecto reducen las horas hábiles de cinco semanas: la semana 10 tiene solo dos días hábiles por San José (22 de marzo) y la Semana Santa (25 y 26 de marzo); las semanas 17, 20, 22 y 25 pierden un día por la Ascensión (10 de mayo), el Corpus Christi (31 de mayo), el Sagrado Corazón (7 de junio) y San Pedro y San Pablo (5 de julio). La carga de cada integrante respeta esas horas. Por el festivo del 31 de mayo, las pruebas SAT y el arranque usan también la semana 21.
+Los festivos de 2027 que caen en el proyecto reducen las horas hábiles de cinco semanas: la semana 10 tiene solo dos días hábiles por San José (22 de marzo) y la Semana Santa (25 y 26 de marzo); las semanas 17, 20, 21 y 25 pierden un día por la Ascensión (10 de mayo), el Corpus Christi (31 de mayo), el Sagrado Corazón (7 de junio) y San Pedro y San Pablo (5 de julio). La carga de cada integrante respeta esas horas. Por el festivo del 31 de mayo, las pruebas SAT y el arranque usan también la semana 21.
 
 ## 4. Hitos
 

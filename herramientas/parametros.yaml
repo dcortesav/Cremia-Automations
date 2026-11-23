@@ -64,7 +64,7 @@ equipo_cremia:
   horas_semana: 42
   # festivos de 2027 por semana del proyecto: 22 mar (San José), 25 y 26 mar (Semana Santa),
   # 10 may (Ascensión), 31 may (Corpus Christi), 7 jun (Sagrado Corazón), 5 jul (San Pedro y San Pablo)
-  festivos_por_semana: {10: 3, 17: 1, 20: 1, 22: 1, 25: 1}
+  festivos_por_semana: {10: 3, 17: 1, 20: 1, 21: 1, 25: 1}
   ocupacion_maxima: 0.80
   factor_aiu_minimo: 1.39
   nomina_mensual: 39.52              # millones

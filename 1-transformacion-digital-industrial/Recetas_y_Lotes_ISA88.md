@@ -314,8 +314,8 @@ Las tres recetas comparten el procedimiento y los equipos de preparación y ferm
 | PU2 · Estandarizar sólidos | U2: DS-206 | 5,7 kg de leche en polvo | 7,1 kg | 7,1 kg |
 | PU2 · Dosificar azúcar y estabilizante | U2: DS-201, DS-202 | 75,7 kg y 0,206 kg | 63,1 kg y 0,412 kg | 56,7 kg y 0,412 kg |
 | PU2 · Homogeneizar y pasteurizar | U3: H-301, T-301 | 150–200 bar; 85–90 °C, 5–10 min | Igual | Igual |
-| PU3 · Inocular e incubar | U3: BL-205, T-301, AT-301 | 7 g; 43 °C hasta pH 4,5 (lote 1) o 4,6 (lote 2) | Igual | Igual |
-| PU4 · Romper el coágulo y saborizar | U3: M-301, P-203, P-204 | 30–40 rpm; fresa y 0,110 kg de colorante | 15–20 rpm; mora y 0,090 kg | 15–20 rpm; melocotón y 0,060 kg |
+| PU3 · Inocular e incubar | U2–U3: BL-205, T-301, AT-301 | 7 g; 43 °C hasta pH 4,5 (lote 1) o 4,6 (lote 2) | Igual | Igual |
+| PU4 · Romper el coágulo y saborizar | U2–U3: M-301, P-203, P-204 | 30–40 rpm; fresa y 0,110 kg de colorante | 15–20 rpm; mora y 0,090 kg | 15–20 rpm; melocotón y 0,060 kg |
 | PU4 · Enfriar y transferir | U3, U4 y U5: E-301 o chaqueta con TV-304, T-302 | Lote 1: 15–20 °C en placas; lote 2: 12–15 °C en la chaqueta | Igual | Igual |
 | PU5 · Dosificar fruta | U7: P-403, MX-403 | No aplica | 8 % (57,2 kg) | 12 % (88,8 kg) |
 | PU5 · Envasar | U6: EMP-401 · U7: LL-402 | XV-401 a la empacadora: 200 ml, 30 bolsas/min nominales, 124 min | XV-402 a la llenadora: 150 ml, 45 vasos/min nominales, 117 min | XV-402 a la llenadora: 300 ml, 35 vasos/min nominales, 78 min |
@@ -359,7 +359,7 @@ Una desviación de parámetro no cambia el estado en silencio: genera una alarma
 | Unidades conformes por día | 2.898 bolsas | 6.505 unidades en promedio |
 | Referencias | 1 (bolsa de 200 ml) | 3 |
 | Tiempo estándar por lote | 601 min | ≈ 563 min (YB-200) |
-| Ocupación del tanque de proceso | Desde la carga hasta la mañana siguiente | Lote 1: 419 min de proceso y 40 de CIP (7:25 a 15:05). Lote 2: de las 15:05 a las 7:25 del día siguiente, porque se enfría en el tanque |
+| Ocupación del tanque de proceso | Desde la carga hasta la mañana siguiente | Lote 1: 419 min de proceso y 40 de CIP (7:25 a 15:05). Lote 2: de las 15:05 (CIP) y carga a las 15:45, hasta las 7:25 del día siguiente, porque se enfría en el tanque |
 | Producto no conforme | 5,06 % | Meta: 1,5 % o menos |
 
 La ocupación del lote 1 es la suma de carga (12 min), precalentamiento y dosificación (12), homogeneización y pasteurización (95), enfriamiento a inoculación (25), inoculación (5), incubación (240), ruptura y saborizado (5) y transferencia por el intercambiador (25). El lote 2 ocupa el tanque toda la noche, de modo que T-301 queda ocupado las 24 h: es la restricción de la línea y fija la capacidad en dos lotes diarios. El envasado no limita: con la meta de OEE, la empacadora termina un lote de bolsas en 124 min y la llenadora un lote de vasos en 78 a 117 min.

@@ -23,7 +23,7 @@ Versión vigente: noviembre de 2026.
 | Instrumentación conectada | Ninguna | 25 sensores, 22 actuadores, 68 señales de E/S y 20 nodos EtherNet/IP (diseño completo) |
 | Robots | Ninguno | Uno de paletizado (R-501), diseñado y comprado en una etapa posterior |
 | Control | Válvulas manuales, termómetro y acidómetro | Control secuencial ISA-88 y lazos PID en el PLC, sin control avanzado |
-| Gestión de la información | Registros en papel | PLC CompactLogix 5380, SCADA desarrollado en Node-RED en la planta y plataforma Cremia MES/ERP en Huawei Cloud, sin licencias de terceros |
+| Gestión de la información | Registros en papel | PLC CompactLogix 5380, SCADA desarrollado en Node-RED en la planta y plataforma Cremia MES/ERP en Huawei Cloud, sin licencias de terceros en el runtime (supervisión y gestión) |
 
 El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y Salamanca, 2015).
 

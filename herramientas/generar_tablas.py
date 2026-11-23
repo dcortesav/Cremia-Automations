@@ -70,7 +70,7 @@ ENTREGABLES = {
     "1.10.1": ("Plan de gestión del cambio, comunicaciones y medición de adopción", "1.1.1"),
     "1.10.2": ("Personal capacitado y evaluado por rol, en el gemelo digital y en la plataforma", "1.7.3"),
     "1.10.3": ("Procedimientos operativos, planos finales, manuales y depósito del código fuente", "1.9.2"),
-    "1.10.4": ("Seis semanas de acompañamiento con producción, acta de entrega y metas de adopción medidas", "1.9.4, 1.10.2, 1.10.3"),
+    "1.10.4": ("Acompañamiento con producción en las semanas 22–26, dentro de la estabilización de seis semanas (21–26), acta de entrega y metas de adopción medidas", "1.9.4, 1.10.2, 1.10.3"),
 }
 
 

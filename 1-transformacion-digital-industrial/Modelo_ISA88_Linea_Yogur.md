@@ -249,7 +249,7 @@ Registra como mínimo:
 | Tamaño nominal | 550 L de leche cruda por lote |
 | Base | Leche estandarizada y normalizada, con homogeneización antes de pasteurizar |
 | Pasteurización | 85–90 °C durante 5–10 min, con validación de tiempo final |
-| Enfriamiento para inoculación | 42–45 °C ±0,5 °C |
+| Enfriamiento para inoculación | consigna 43 °C ±0,5 °C (ventana 42–45 °C) |
 | Incubación | 41–45 °C hasta el pH de corte (4,5 en el lote 1 y 4,6 en el lote 2) y acidez 80–90 °Th |
 | Corte de fermentación | Lote 1: 15–20 °C en el intercambiador de placas. Lote 2: 15 °C en la chaqueta con agua helada y mantenimiento a 12–15 °C |
 | Envasado y fruta | YB-200 sin preparado de fruta; YV-150 con 8 % de mora; YV-300 con 12 % de melocotón |

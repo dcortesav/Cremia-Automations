@@ -641,6 +641,8 @@ El coágulo obtenido al alcanzar pH 4,55 es un gel láctico viscoelástico estru
 
 ### 5.2 Análisis de Operaciones Unitarias y Fronteras de Integración (Recursos Compartidos vs. Dedicados)
 
+> **Nota de alcance.** Este diagrama corresponde a la comparación de las tres líneas usada para seleccionar la línea del proyecto; la propuesta vigente dimensiona los servicios auxiliares solo para la línea de yogur (ver §7.4).
+
 ```mermaid
 flowchart TD
     subgraph COMPARTIDO["1. ÁREA CENTRAL COMPARTIDA (Recepción y Servicios Comunes)"]
@@ -792,7 +794,7 @@ Capacidad Propuesta:
 La línea de yogur permite estructurar una arquitectura de manufactura digital limpia en 5 niveles de integración:
 - **Nivel 0 (Proceso físico):** tanques, intercambiador, bombas y máquinas de las unidades U1 a U8. Los instrumentos (PT100 sanitarias, pH AT-301 y nivel hidrostático LT-301 por IO-Link) y las válvulas de asiento sanitario corresponden al nivel 1.
 - **Niveles 1 y 2 (Medición, actuación y control):** E/S remotas y variadores en el nivel 1; PLC Allen-Bradley CompactLogix 5380 en el nivel 2, ejecutando lazos PID de temperatura y la secuencia procedimental ISA-88.
-- **Nivel 2 (Supervisión y HMI):** SCADA desarrollado en Node-RED con registro de curvas térmicas, gestión de alarmas ISA-18.2 y pantallas de control de lote.
+- **Nivel 2 — supervisión (HMI/SCADA):** SCADA desarrollado en Node-RED con registro de curvas térmicas, gestión de alarmas ISA-18.2 y pantallas de control de lote.
 - **Niveles 3 y 4 (plataforma Cremia MES/ERP en Huawei Cloud):** Gestión de Órdenes de Producción, genealogía de lote, control de recetas maestras (RM-YB-200, RM-YV-150, RM-YV-300), balance de masa y cálculo en tiempo real de OEE.
 - **Gemelo Digital (Tecnomatix Plant Simulation y FactoryTalk Logix Echo):** Mapeo estocástico de las paradas, tiempos de llenado, tiempos de empaque y logística interna, validando el salto productivo de 1 a 2 lotes diarios. Gemelo digital para validación de la solución e identificación de posibles oportunidades de mejora.
 

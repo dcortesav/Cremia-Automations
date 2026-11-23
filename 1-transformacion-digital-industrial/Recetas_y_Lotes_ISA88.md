@@ -29,7 +29,7 @@ La norma ANSI/ISA-88 separa tres cosas que en la planta actual están mezcladas 
 | Requisitos de equipo | Clases o unidades que puede usar la receta | Tanque de proceso con chaqueta, homogeneizador y máquina de la presentación |
 | Procedimiento | Secuencia de procedimientos de unidad, operaciones y fases | PU1 a PU6 del modelo procedimental |
 
-La parte 2 de la norma (ANSI/ISA-88.00.02) define las estructuras de datos para guardar recetas y registros de lote; la plataforma Cremia MES/ERP de la propuesta usa esas estructuras para que las recetas se puedan versionar, aprobar y ligar al inventario y a las compras sin reescribir el programa del PLC. En este documento, MES y ERP se refieren a los dos módulos de esa plataforma, que corre en Huawei Cloud; la receta de control llega al PLC a través del nodo de borde con el SCADA en Node-RED.
+La parte 2 de la norma (ANSI/ISA-88.00.02) define las estructuras de datos de las recetas y la parte 4 (ANSI/ISA-88.00.04) las de los registros de producción de lote; la plataforma Cremia MES/ERP de la propuesta usa esas estructuras para que las recetas se puedan versionar, aprobar y ligar al inventario y a las compras sin reescribir el programa del PLC. En este documento, MES y ERP se refieren a los dos módulos de esa plataforma, que corre en Huawei Cloud; la receta de control llega al PLC a través del nodo de borde con el SCADA en Node-RED.
 
 ### 2.2 Requisitos sanitarios y de identidad del producto
 
@@ -75,7 +75,7 @@ Los dos vasos tienen el mismo diámetro de boca y cambian en altura, de modo que
 | Azúcar añadido sobre el producto | 11,7 % | 9,1 % | 7,9 % | Dosificación registrada por WT-201 |
 | pH al final de la incubación | 4,4–4,6 | 4,4–4,6 | 4,4–4,6 | AT-301, en línea |
 | Acidez titulable | 80–90 °Th | 80–90 °Th | 80–90 °Th | Laboratorio, confirmación por lote |
-| Temperatura de envasado | 15–20 °C | 15–20 °C | 15–20 °C | TT-302 y TT-303 |
+| Temperatura de envasado | 20 °C o menos: 15–20 °C en el lote 1 y 12–15 °C en el lote 2 | 20 °C o menos | 20 °C o menos | TT-302 y TT-303 |
 | Contenido por unidad | 195–205 ml | 146–154 ml | 293–307 ml | WT-401 o WT-402, el 100 % |
 | Temperatura de almacenamiento | 2–6 °C | 2–6 °C | 2–6 °C | TT-501 |
 
@@ -142,7 +142,7 @@ Las pérdidas corresponden a evaporación durante la pasteurización, producto r
 
 ### 4.4 Escalado de la fórmula
 
-Cuando la leche disponible es menor de 550 L, el MES escala cada insumo en proporción a la leche cargada, medida por WT-101 y FT-101:
+Cuando la leche disponible es menor de 550 L, el MES escala cada insumo en proporción a la leche cargada, medida por WT-101 y FT-101 en el lote 1 (desde TK-101) y por LT-102 y FT-101 en el lote 2 (desde TK-102):
 
 cantidad del insumo = cantidad de la fórmula × (litros reales ÷ 550)
 
@@ -191,7 +191,7 @@ El tiempo estándar baja solo 6 %, de 601 a 563 min, porque la incubación (240 
 | Codificado | Sin codificado automático | Lote y fecha de vencimiento impresos en cada unidad, con los datos que envía el MES |
 | Registro | Papel | Registro electrónico de lote en el MES |
 
-Los valores de la propuesta siguen la referencia de proceso industrial del yogur: tratamiento térmico de 85–95 °C durante 5 a 10 minutos, que desnaturaliza la mayor parte de la β-lactoglobulina y da un gel más firme y con menos separación de suero; inoculación a 42–45 °C; pH final de 4,4 a 4,6, punto en el que la caseína coagula; y enfriamiento rápido para detener la fermentación. El lote 2 se enfría más despacio que el lote 1 y sigue acidificando mientras baja de 43 a unos 30 °C; por eso su pH de corte es 4,6, el límite superior del rango, y la acidez se confirma a las 7:00 antes de transferirlo. El enfriamiento en el tanque con agitación lenta es la práctica habitual en plantas pequeñas sin intercambiador; su efecto en la textura se valida en el arranque con producto (paquete 1.9.3 de la EDT).
+Los valores de la propuesta siguen la referencia de proceso industrial del yogur: tratamiento térmico de 85–90 °C durante 5 a 10 minutos, que desnaturaliza la mayor parte de la β-lactoglobulina y da un gel más firme y con menos separación de suero; inoculación a 42–45 °C; pH final de 4,4 a 4,6, punto en el que la caseína coagula; y enfriamiento rápido para detener la fermentación. El lote 2 se enfría más despacio que el lote 1 y sigue acidificando mientras baja de 43 a unos 30 °C; por eso su pH de corte es 4,6, el límite superior del rango, y la acidez se confirma a las 7:00 antes de transferirlo. El enfriamiento en el tanque con agitación lenta es la práctica habitual en plantas pequeñas sin intercambiador; su efecto en la textura se valida en el arranque con producto (paquete 1.9.3 de la EDT).
 
 ### 5.3 Parámetros que cambian con la referencia
 
@@ -220,7 +220,7 @@ Las velocidades de envasado son valores nominales de diseño. Con la meta de OEE
 | Temperatura de inoculación | Alta: 46 °C | TT-301 | Bloquea la inoculación | Esperar a que el lazo TIC-301 estabilice |
 | Temperatura de incubación | ± 2 °C de la consigna | TT-301 | Alarma de prioridad media | Verificar TV-301 y TV-302 |
 | Tiempo de incubación | 300 min sin llegar al pH de corte | AT-301 y temporizador | Alarma de prioridad alta; en el lote 2 llega por SMS al jefe de producción | Confirmar con acidez de laboratorio; evaluar el cultivo |
-| Enfriamiento nocturno del lote 2 | TT-301 mayor de 30 °C a los 90 min del fin de la incubación | TT-301 y TT-901 | Abre TV-302 (agua de red) como respaldo; alarma de prioridad alta por SMS | El jefe de producción verifica el enfriador CH-901 |
+| Enfriamiento nocturno del lote 2 | TT-901 mayor de 5 °C, o TT-301 mayor de 30 °C a los 90 min del fin de la incubación | TT-301 y TT-901 | Cierra TV-304, pasa el retorno de XV-904 a drenaje y abre TV-302 (agua de red) como respaldo; alarma de prioridad alta por SMS | El jefe de producción verifica el enfriador CH-901 |
 | Señal de vida del nodo de borde | Sin señal durante 5 min | Vigilancia en la nube | SMS y correo al jefe de producción | Revisar la planta; el PLC sigue controlando el lote |
 | Presión de homogeneización | Menor de 150 bar | PT-302 | Prolonga la recirculación | Revisar H-301 |
 | Salida del enfriador | Alta: 20 °C | TT-302 | Reduce el caudal de P-301 | Revisar el agua helada (TT-901) |
@@ -299,7 +299,7 @@ Cada cambio de fórmula o de límites crea una versión nueva (por ejemplo, RM-Y
 
 1. El ERP genera el plan semanal con las cantidades por referencia a partir de los pedidos.
 2. El MES crea la orden de producción y la asocia a la versión liberada de la receta maestra.
-3. Al recibir la leche, WT-101 y FT-101 informan el volumen real; el MES escala la fórmula (sección 4.4) y asigna los equipos: el tanque de origen (TK-101 o TK-102) y la ruta U6 o U7 según la referencia.
+3. Al liberar la orden, hasta con 48 h de anticipación, la receta de control sale con las cantidades planificadas para 550 L. Al cargar el lote, WT-101 y FT-101 (lote 1, desde TK-101) o LT-102 y FT-101 (lote 2, desde TK-102) informan la cantidad real; el MES escala la fórmula (sección 4.4; sin internet, el nodo de borde hace el mismo escalado con la receta en caché) y asigna los equipos: el tanque de origen (TK-101 o TK-102) y la ruta U6 o U7 según la referencia.
 4. El MES genera el código de lote y la fecha de vencimiento y los envía al codificador de la máquina asignada.
 5. La receta de control llega al nodo de borde, que la guarda en caché y la descarga al PLC-01 cuando el operador arranca el lote; el PLC ejecuta las fases y devuelve el inicio, el fin, las cantidades reales y las alarmas de cada una.
 6. Al cerrar el lote, la receta de control queda guardada con el registro del lote y no se puede modificar.
@@ -462,7 +462,7 @@ El programa diario reserva 40 min para cada CIP, de modo que funciona con cualqu
 | Curva de enfriamiento del lote 2 | Continua | 15 °C o menos a las 4 h; 12–15 °C hasta las 7:00 | TT-301 e historiador |
 | Acidez de confirmación | Una vez por lote; en el lote 2, a las 7:00 | 80–90 °Th | Laboratorio en HMI-01 |
 | Peso de cada unidad | 100 % | Tolerancia de la referencia | CK-401 o CK-402 |
-| Hermeticidad del sellado | Muestreo cada 15 min | Sin fugas | Estación de registro en HMI-01 |
+| Hermeticidad del sellado | Muestreo cada 15 min | Sin fugas | Estación de registro en HMI-02 |
 | Presencia de tapa | 100 % | Tapa presente y sellada | ZS-403 |
 | Código impreso | Arranque y cada cambio de rollo o de lote | Lote y vencimiento legibles | Operario en HMI-02 |
 
@@ -535,6 +535,7 @@ La trazabilidad va en las dos direcciones. Hacia atrás, desde una unidad en el 
 
 - ANSI/ISA-88.00.01-2010. Batch Control Part 1: Models and Terminology. International Society of Automation.
 - ANSI/ISA-88.00.02-2001. Batch Control Part 2: Data Structures and Guidelines for Languages. International Society of Automation.
+- ANSI/ISA-88.00.04-2006. Batch Control Part 4: Batch Production Records. International Society of Automation.
 - ANSI/ISA-18.2-2016. Management of Alarm Systems for the Process Industries. International Society of Automation.
 - Decreto 616 de 2006. Reglamento técnico sobre los requisitos que debe cumplir la leche para el consumo humano. Ministerio de la Protección Social.
 - Grimaldo, G., Moreno, D. y Salamanca, M. (2015). Medición del trabajo de una línea de producción de yogurt – Empresa La Hacienda. Revista I3+, 2(2), 62–81.

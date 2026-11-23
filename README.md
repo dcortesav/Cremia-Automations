@@ -23,7 +23,7 @@ Versión vigente: noviembre de 2026.
 | Instrumentación conectada | Ninguna | 25 sensores, 22 actuadores, 68 señales de E/S y 20 nodos EtherNet/IP (diseño completo) |
 | Robots | Ninguno | Uno de paletizado (R-501), diseñado y comprado en una etapa posterior |
 | Control | Válvulas manuales, termómetro y acidómetro | Control secuencial ISA-88 y lazos PID en el PLC, sin control avanzado |
-| Gestión de la información | Registros en papel | PLC CompactLogix 5380, SCADA desarrollado en Node-RED en la planta y plataforma Cremia MES/ERP en Huawei Cloud, sin licencias de terceros en el runtime (supervisión y gestión) |
+| Gestión de la información | Registros en papel | PLC CompactLogix 5380, SCADA desarrollado en Node-RED en la planta y plataforma Cremia MES/ERP en Huawei Cloud, sin licencias de terceros en la supervisión y la gestión; la planta recibe su propia licencia de Studio 5000 para el programa del PLC |
 
 El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y Salamanca, 2015).
 
@@ -37,13 +37,13 @@ El estado actual se toma del estudio de tiempos de la planta (Grimaldo, Moreno y
 | Trazabilidad | Registro electrónico de cada lote, desde la cantina hasta la estiba |
 | Información y decisiones | Tablero diario con OEE, rendimiento, consumos y paradas, en la nube, disponible aunque falle la planta |
 | Eficiencia de la empacadora | OEE estimado de 65 % hoy; meta de 82 % |
-| Resultado financiero | Inversión de COP 1.464,5 millones; VPN al 15 % después de impuestos de COP 231,0 millones, TIR de 19,8 % y recuperación en 3,8 años |
+| Resultado financiero | Inversión de COP 1.495,5 millones; VPN al 15 % después de impuestos de COP 189,4 millones, TIR de 18,9 % y recuperación en 3,9 años |
 
 La transformación incluye a las personas: no hay despidos, el segundo lote crea un puesto, la capacitación es por rol en el gemelo digital, la gestión del cambio sigue el modelo ADKAR y el proyecto incluye seis semanas de estabilización con producción.
 
 ## Plan del proyecto
 
-26 semanas, del 18 de enero al 16 de julio de 2027, con una sola parada de planta de 5 días. La ingeniería conceptual de la oferta se valida en sitio, los equipos de largo plazo se piden en la semana 4 y llegan, ya nacionalizados, en la semana 18; mientras tanto, Cremia desarrolla el software y lo prueba en el gemelo digital. La ingeniería se cobra por horas reales (4.780 h, COP 333,7 millones) en dos contratos, a una tarifa que refleja el valor que aporta cada integrante y que cubre la nómina completa del proyecto. La celda robotizada de encanastado queda diseñada para una etapa posterior. La oferta se firma con cartas de intención de los distribuidores por al menos el 85 % del volumen de vasos, porque la viabilidad depende de esas referencias.
+26 semanas, del 18 de enero al 16 de julio de 2027, con una sola parada de planta de 5 días. La ingeniería conceptual de la oferta se valida en sitio, los equipos de largo plazo se piden en la semana 4 y llegan, ya nacionalizados, en la semana 18; mientras tanto, Cremia desarrolla el software y lo prueba en el gemelo digital. La ingeniería se cobra por horas reales (4.780 h, COP 333,7 millones) en dos contratos, a una tarifa que refleja el valor que aporta cada integrante y que cubre la nómina completa del proyecto. La celda robotizada de encanastado queda diseñada para una etapa posterior. La inversión incluye una licencia perpetua de Studio 5000 a nombre de la planta, para que La Hacienda pueda abrir, diagnosticar y respaldar el programa del PLC sin depender de Cremia. La oferta se firma con cartas de intención de los distribuidores por al menos el 90 % del volumen de vasos, porque la viabilidad depende de esas referencias.
 
 ## Estructura del repositorio
 

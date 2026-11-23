@@ -1,7 +1,9 @@
-"""Reparte las horas de cada paquete de la EDT entre los integrantes que pueden hacerlo,
-para que nadie pase de 38 h en ninguna semana ni del 80 % de su capacidad en el proyecto.
+"""Reparte las horas de cada paquete de la EDT entre los integrantes que pueden hacerlo.
+La penalidad castiga con fuerza que alguien pase de su capacidad semanal (42 h menos los
+festivos) y, con menos peso, que pase de 36 h por semana (proporcional a los días hábiles) o de
+860 h en el proyecto. El límite del 80 % de ocupación lo comprueba tests/test_modelo.py.
 
-Búsqueda local: mueve bloques de 10 h entre integrantes elegibles mientras baje la penalidad.
+Búsqueda local: mueve bloques de 5 h entre integrantes elegibles mientras baje la penalidad.
 Uso: .venv\\Scripts\\python.exe -X utf8 herramientas\\balancear_carga.py  (imprime la asignación)
 """
 from __future__ import annotations
@@ -16,7 +18,7 @@ ELEGIBLES = {
     "1.5.4": "DF JR", "1.5.5": "JR DF", "1.6.2": "DF JR", "1.3.1": "JZ AO", "1.6.1": "JR DF", "1.8.3": "JR DF", "1.8.1": "JZ AO", "1.6.3": "DC JZ DF", "1.6.4": "DF DC",
     "1.6.5": "JZ AO DF", "1.6.6": "AO JR DF", "1.6.7": "JR CH DF", "1.6.8": "CH DF", "1.6.10": "CH AO JR",
     "1.6.11": "AO DF CH JR", "1.7.3": "DC DF AO", "1.8.2": "JR JZ", "1.8.4": "AO JZ", "1.9.1": "JZ AO JR",
-    "1.9.2": "DC JR DF", "1.9.3": "JZ DC AO", "1.9.4": "JZ DF", "1.10.1": "CH DC", "1.10.2": "DF AO CH JZ",
+    "1.9.2": "DC JR DF JZ", "1.9.3": "JZ DC AO JR", "1.9.4": "JZ DF", "1.10.1": "CH DC", "1.10.2": "DF AO CH JZ",
     "1.10.3": "DF CH JR", "1.10.4": "DC JZ DF AO",
 }
 TOPE_SEMANA = 36.0

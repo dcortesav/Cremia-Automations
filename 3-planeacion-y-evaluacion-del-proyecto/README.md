@@ -1,6 +1,6 @@
 # Módulo 3 · Planeación y Evaluación de Proyectos
 
-Entregables del proyecto para la línea de yogur. Los documentos de este repositorio son la versión vigente (noviembre de 2026); los enlaces a Google Docs corresponden a la versión de octubre de 2026.
+Entregables del proyecto para la línea de yogur. Los documentos de este repositorio son la versión vigente (noviembre de 2026).
 
 | Entregable | Documento |
 | --- | --- |
@@ -22,11 +22,12 @@ Entregables del proyecto para la línea de yogur. Los documentos de este reposit
 | Horas de ingeniería | 4.780 h, 77 % de la capacidad del equipo descontados los festivos; nadie pasa de 42 h en ninguna semana |
 | Servicios de ingeniería | COP 333,7 millones, 1,41 veces la nómina de las 26 semanas, en dos contratos: diseño, procura y gestión de compras (62,1) e implementación, software, puesta en marcha y adopción (271,6) |
 | Software propio | SCADA en Node-RED y plataforma Cremia MES/ERP en Huawei Cloud: 1.830 h de desarrollo (COP 123,9 millones), sin licencias de terceros |
-| Inversión total | COP 1.464,5 millones; celda robotizada en una etapa posterior |
-| Indicadores para el cliente (después de impuestos) | VPN al 15 % de COP 231,0 millones, TIR de 19,8 %, recuperación en 3,8 años |
-| Indicadores antes de impuestos | VPN al 15 % de COP 697,9 millones, TIR de 28,9 %, recuperación en 3,1 años |
-| Volumen de equilibrio | 89,6 % del plan; los vasos, con las bolsas al 100 %, en el 84,1 % |
-| Condición para firmar | Cartas de intención de los distribuidores por al menos el 85 % del volumen de vasos |
+| Licencia del PLC para la planta | Studio 5000 Logix Designer, edición Professional, perpetua y a nombre de La Hacienda: COP 28,7 millones (rubro 20) y COP 8,2 millones al año de mantenimiento |
+| Inversión total | COP 1.495,5 millones; celda robotizada en una etapa posterior |
+| Indicadores para el cliente (después de impuestos) | VPN al 15 % de COP 189,4 millones, TIR de 18,9 %, recuperación en 3,9 años |
+| Indicadores antes de impuestos | VPN al 15 % de COP 639,4 millones, TIR de 27,5 %, recuperación en 3,2 años |
+| Volumen de equilibrio | 91,5 % del plan; los vasos, con las bolsas al 100 %, en el 87,0 % |
+| Condición para firmar | Cartas de intención de los distribuidores por al menos el 90 % del volumen de vasos, 3 puntos por encima de su equilibrio |
 
 ## Decisiones de la versión de noviembre de 2026
 
@@ -41,6 +42,7 @@ Las actas registran las decisiones hasta el 11 de octubre de 2026. Después de l
 | D11 | El proyecto se extiende a 26 semanas; la ingeniería cubre la nómina completa con el factor mínimo de 1,39. |
 | D12 | El indicador financiero principal es el VPN después de impuestos, con capital de trabajo y valor residual. |
 | D13 | Cremia conserva la propiedad de la plataforma; La Hacienda recibe una licencia perpetua para su sitio, con el código fuente en depósito. |
+| D14 | La licencia de Studio 5000 que queda en la planta se cobra de forma explícita al cliente (rubro 20 y mantenimiento anual), para que La Hacienda pueda abrir, diagnosticar y respaldar el programa del PLC sin depender de Cremia. Las licencias de las herramientas de ingeniería de Cremia siguen dentro de su administración. Con este costo, las cartas de intención pasan del 85 % al 90 % del volumen de vasos. |
 
 ## Carpetas
 

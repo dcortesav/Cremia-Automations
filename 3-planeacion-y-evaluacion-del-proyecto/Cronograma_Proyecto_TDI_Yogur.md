@@ -21,13 +21,13 @@
 | --- | --- | --- |
 | Validar la ingeniería conceptual de la oferta en lugar de repetirla | La ingeniería básica toma 3 semanas | El diagnóstico, el VSM, los modelos ISA-88, la arquitectura ISA-95 y el dimensionamiento de equipos ya están hechos y entregados con la oferta |
 | Pedir en la semana 4 los equipos de mayor tiempo de entrega | La fabricación (10 semanas) termina en la semana 13 | Homogeneizador, intercambiador, chiller, llenadora y controladoras de peso tienen hojas de datos cerradas con el dimensionamiento de la oferta |
-| Prever 4 semanas de transporte y nacionalización después de la FAT | Los equipos importados llegan en la semana 18 | Los equipos europeos viajan por vía marítima a Cartagena (unos 18 a 22 días) y se nacionalizan en 5 a 7 días hábiles |
+| Prever 4 semanas de transporte y nacionalización después de la FAT | Los equipos importados llegan en la semana 18 | Los equipos europeos viajan por vía marítima a Cartagena (unos 18 a 22 días) y se nacionalizan en 5 a 7 días hábiles. La FAT se ejecuta de forma remota: el fabricante corre los protocolos en su planta por videoconferencia y Cremia y los dos agentes de cambio los siguen y los aprueban desde Colombia, sin viajes |
 | Desarrollar el software propio mientras se fabrican los equipos | El software no alarga el plazo | 2.180 h de PLC, SCADA y plataforma: la versión 1 entre las semanas 2 y 18 y la versión 2 entre las semanas 20 y 26, probadas en el gemelo digital antes de la parada |
 | Preinstalar tuberías, tableros, bases y TK-102 sin detener la planta | La parada se limita a 5 días | Solo la conexión al tanque de proceso T-301 exige detener la producción |
-| Estabilizar con producción dentro del proyecto | Seis semanas de acompañamiento (21 a 26) | La entrega se hace con las metas de adopción medidas, no al terminar las pruebas |
+| Estabilizar con producción dentro del proyecto | Seis semanas de acompañamiento (21 a 26; la semana 21 coincide con el arranque) | La entrega se hace con las metas de adopción medidas, no al terminar las pruebas |
 | Dejar la celda robotizada para una etapa posterior | Sin instalación ni pruebas de la celda | El encajonado manual con mesa acumuladora no limita los dos lotes diarios |
 
-El riesgo de pedir equipos antes de cerrar todo el detalle se controla con tres medidas: las hojas de datos de largo plazo se aprueban con el cliente en la semana 3, la contingencia del 8 % cubre cambios menores y los contratos de compra fijan las interfaces (conexiones sanitarias, señales y protocolo) desde el pedido.
+El riesgo de pedir equipos antes de cerrar todo el detalle se controla con tres medidas: las hojas de datos de largo plazo se aprueban con el cliente en la semana 3, la contingencia del 8 %, que queda del lado de Cremia porque el valor de la oferta es un precio fijo, cubre cambios menores, y los contratos de compra fijan las interfaces (conexiones sanitarias, señales y protocolo) desde el pedido.
 
 | Indicador | Versión de octubre de 2026 | Versión vigente |
 | --- | --- | --- |
@@ -97,7 +97,7 @@ El riesgo de pedir equipos antes de cerrar todo el detalle se controla con tres 
 | 1.9 | **Pruebas y puesta en marcha** | 19–23 | 24 may | 25 jun |
 | 1.9.1 | Pruebas de lazo y de E/S | 19–20 | 24 may | 4 jun |
 | 1.9.2 | Pruebas SAT | 20–21 | 31 may | 11 jun |
-| 1.9.3 | Arranque con producto | 20–22 | 31 may | 18 jun |
+| 1.9.3 | Arranque con producto | 21–22 | 7 jun | 18 jun |
 | 1.9.4 | Validación de calidad e inocuidad | 21–23 | 7 jun | 25 jun |
 | 1.10 | **Gestión del cambio, capacitación, estabilización y cierre** | 1–26 | 18 ene | 16 jul |
 | 1.10.1 | Gestión del cambio y comunicación | 1–26 | 18 ene | 16 jul |
@@ -109,7 +109,7 @@ El riesgo de pedir equipos antes de cerrar todo el detalle se controla con tres 
 | — | Parada de planta para la conexión al tanque de proceso | 19 | 24 may | 28 may |
 <!-- /tabla:cronograma -->
 
-Los festivos de 2027 que caen en el proyecto reducen las horas hábiles de cinco semanas: la semana 10 tiene solo dos días hábiles por San José (22 de marzo) y la Semana Santa (25 y 26 de marzo); las semanas 17, 20, 21 y 25 pierden un día por la Ascensión (10 de mayo), el Corpus Christi (31 de mayo), el Sagrado Corazón (7 de junio) y San Pedro y San Pablo (5 de julio). La carga de cada integrante respeta esas horas. Por el festivo del 31 de mayo, las pruebas SAT y el arranque usan también la semana 21.
+Los festivos de 2027 que caen en el proyecto reducen las horas hábiles de cinco semanas: la semana 10 tiene solo dos días hábiles por San José (22 de marzo) y la Semana Santa (25 y 26 de marzo); las semanas 17, 20, 21 y 25 pierden un día por la Ascensión (10 de mayo), el Corpus Christi (31 de mayo), el Sagrado Corazón (7 de junio) y San Pedro y San Pablo (5 de julio). La carga de cada integrante respeta esas horas. Por el festivo del 31 de mayo, las pruebas SAT usan también la semana 21. El arranque con producto empieza en la semana 21 a medida que concluyen las pruebas SAT de los equipos de preparación y envasado, y termina en la 22; el acta de la SAT y de la puesta en marcha (11 de junio) se firma con los primeros lotes del arranque.
 
 ## 4. Hitos
 
@@ -118,7 +118,7 @@ Los festivos de 2027 que caen en el proyecto reducen las horas hábiles de cinco
 | Firma del contrato e inicio, con las cartas de intención de los distribuidores | 1 | 18 de enero de 2027 | 30 % |
 | Ingeniería básica y hojas de datos de largo plazo aprobadas | 3 | 5 de febrero de 2027 | — |
 | Pedido de los equipos de largo plazo | 4 | 8 de febrero de 2027 | — |
-| Ingeniería de detalle aprobada | 10 | 26 de marzo de 2027 | — |
+| Ingeniería de detalle aprobada | 10 | 24 de marzo de 2027, último día hábil de la semana | — |
 | Pruebas FAT aprobadas | 14 | 23 de abril de 2027 | 30 % |
 | Puesta en marcha virtual aprobada | 19 | 28 de mayo de 2027 | — |
 | Parada de planta | 19 | 24 a 28 de mayo de 2027 | — |
@@ -128,9 +128,11 @@ Los festivos de 2027 que caen en el proyecto reducen las horas hábiles de cinco
 
 ## 5. Ruta crítica
 
-Validación de la ingeniería básica (semanas 1 a 3) → pedido de equipos de largo plazo (semana 4) → fabricación (semanas 4 a 13) → FAT (semanas 13 y 14) → transporte y nacionalización (semanas 15 a 18) → montaje con preinstalación desde la semana 14 y parada en la semana 19 → pruebas de lazo y SAT (semanas 19 a 21) → arranque y validación (semanas 20 a 23) → estabilización (semanas 21 a 26) → entrega (semana 26).
+Validación de la ingeniería básica (semanas 1 a 3) → pedido de equipos de largo plazo (semana 4) → fabricación (semanas 4 a 13) → FAT (semanas 13 y 14) → transporte y nacionalización (semanas 15 a 18) → montaje con preinstalación desde la semana 14 y parada en la semana 19 → pruebas de lazo y SAT (semanas 19 a 21) → arranque y validación (semanas 21 a 23) → estabilización (semanas 21 a 26) → entrega (semana 26).
 
-El plazo lo fijan la fabricación y la importación de los equipos (14 semanas desde el pedido). El software tiene una holgura de una semana: la versión 1 de la plataforma, el SCADA y el programa del PLC deben estar listos para la puesta en marcha virtual de las semanas 16 a 19. Si el desarrollo se atrasa, se mueven funciones a la versión 2. La verificación microbiológica de los primeros lotes, por muestreo en un laboratorio externo, se completa durante la estabilización.
+Una segunda cadena llega también a la semana 26 sin holgura: arranque con producto (semanas 21 y 22) → OEE, paradas y horas de equipo con los datos del arranque (semanas 21 a 25) → tablero gerencial y reportes (semanas 23 a 26). Es la versión 2 de la plataforma, de la que depende el pago del 10 % de la entrega, así que se sigue con la misma prioridad que la ruta de los equipos.
+
+El plazo lo fijan la fabricación y la importación de los equipos (15 semanas desde el pedido: 10 de fabricación, 1 de FAT y 4 de transporte y nacionalización). La versión 1 del software tiene una holgura de una semana frente a las pruebas de lazo (semana 20): sus paquetes terminan entre las semanas 16 y 18 y se integran a medida que llegan a la puesta en marcha virtual de las semanas 16 a 19. Si la versión 1 se atrasa, se pasan a la versión 2 funciones que no se necesitan para producir; como la versión 2 no tiene holgura, ese traslado se compensa con horas del equipo en las semanas 23 a 26 y no con un plazo mayor. La verificación microbiológica de los primeros lotes, por muestreo en un laboratorio externo, se completa durante la estabilización.
 
 ## 6. Carga de trabajo
 

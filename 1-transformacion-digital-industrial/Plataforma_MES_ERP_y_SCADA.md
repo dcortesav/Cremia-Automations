@@ -13,7 +13,7 @@ La plataforma atiende las necesidades básicas de una planta pequeña: recetas, 
 
 ## 2. Por qué software propio
 
-La Hacienda procesa 1.100 L de leche por día en una sola línea. Para una planta de ese tamaño, una plataforma comercial de MES con su ERP cuesta más de lo que la planta necesita: solo los tres módulos MES que se habían seleccionado en la versión de octubre de 2026 (Sepasoft OEE Downtime, Track & Trace y Settings & Changeover) cuestan USD 54.500 en la lista de precios publicada por el fabricante, unos COP 223 millones, sin el servidor SCADA ni la suscripción del ERP. Esa alternativa fue descartada.
+Con la propuesta, La Hacienda procesa 1.100 L de leche por día en una sola línea. Para una planta de ese tamaño, una plataforma comercial de MES con su ERP cuesta más de lo que la planta necesita: solo los tres módulos MES que se habían seleccionado en la versión de octubre de 2026 (Sepasoft OEE Downtime, Track & Trace y Settings & Changeover) cuestan USD 54.500 en la lista de precios publicada por el fabricante, unos COP 223 millones, sin el servidor SCADA ni la suscripción del ERP. Esa alternativa fue descartada.
 
 | Alternativa | Inversión inicial (millones de COP) | Costo anual (millones de COP) | Ajuste a la planta | Decisión |
 | --- | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ El desarrollo propio también es un producto para Cremia: la plataforma se reuti
 - **Licencia perpetua y depósito del código.** Cremia conserva la propiedad intelectual de la plataforma, pero La Hacienda recibe una licencia de uso perpetua para su sitio. El código fuente, los scripts de despliegue y la documentación se depositan con un tercero (depósito de código fuente, *escrow*) y se entregan al cliente si Cremia deja de prestar el servicio.
 - **Tecnologías abiertas y comunes.** Python con Django, PostgreSQL, MQTT, OPC UA y Node-RED, todas de código abierto con licencias permisivas y con una comunidad amplia de desarrolladores en Colombia.
 - **Datos del cliente.** La base de datos es de La Hacienda: puede exportarse completa en cualquier momento (SQL y CSV), y el modelo de datos sigue los objetos de ISA-95 parte 2 (material, equipo, personal, segmento de proceso y respuesta de producción), de modo que otro integrador puede entenderlo.
-- **Programas de control.** El programa del PLC y los flujos de Node-RED son del cliente y se entregan con su documentación.
+- **Programas de control.** El programa del PLC y los flujos de Node-RED son del cliente y se entregan con su documentación. Para que la planta pueda abrir y diagnosticar el programa del PLC, la inversión incluye una licencia perpetua de Studio 5000 Logix Designer a su nombre (rubro 20 de la propuesta económica); los flujos de Node-RED se abren con cualquier navegador, sin licencia.
 
 ## 3. Arquitectura
 
@@ -99,7 +99,7 @@ Metas de servicio de la plataforma: disponibilidad mensual de 99,5 %, punto de r
 
 ## 6. Funciones y entregas
 
-La plataforma se entrega en dos versiones. La versión 1 sale con el arranque (semana 20) y cubre todo lo que el piso de planta necesita para producir, liberar y despachar lotes. La versión 2 sale durante la estabilización (semanas 20 a 26) y completa la gestión: OEE, compras, costos y tablero. Desde el arranque, el SCADA ya guarda los estados y las paradas de las máquinas en su historiador, de modo que el módulo de OEE de la versión 2 procesa también los datos de las primeras semanas. Si el desarrollo se demora, se corren funciones de la versión 2, no el arranque.
+La plataforma se entrega en dos versiones. La versión 1 sale con la SAT y el arranque (semanas 20 a 22) y cubre todo lo que el piso de planta necesita para producir, liberar y despachar lotes. La versión 2 sale durante la estabilización (semanas 20 a 26) y completa la gestión: OEE, compras, costos y tablero. Desde el arranque, el SCADA ya guarda los estados y las paradas de las máquinas en su historiador, de modo que el módulo de OEE de la versión 2 procesa también los datos de las primeras semanas. Si el desarrollo se demora, se corren funciones de la versión 2, no el arranque.
 
 | Paquete de la EDT | Funciones | Versión | Horas |
 | --- | --- | --- | --- |
@@ -140,7 +140,7 @@ El equipo de Cremia es junior (un año de experiencia). Por eso la estimación u
 | Nube durante el proyecto (rubro 12): entornos de desarrollo y pruebas desde la semana 6 y de producción desde la semana 16 | COP 6,0 millones |
 | **Inversión del cliente en supervisión y gestión de la producción** | **COP 159,9 millones** |
 
-Con un sobrecosto de 30 % en las horas de software, el VPN del proyecto después de impuestos baja de COP 231,0 a 200,2 millones (sección 10 de la propuesta económica).
+Con un sobrecosto de 30 % en las horas de software, el VPN del proyecto después de impuestos baja de COP 189,4 a 158,7 millones (sección 10 de la propuesta económica).
 
 ### 7.2 Operación
 
@@ -150,9 +150,11 @@ Con un sobrecosto de 30 % en las horas de software, el VPN del proyecto después
 | Soporte y evolución: soporte de segundo nivel del PLC, el SCADA y la plataforma, actualizaciones de seguridad, ajustes de recetas y reportes, y revisión trimestral de indicadores (unas 0,2 personas de tiempo completo) | 21,0 |
 | **Plan de servicio Cremia** | **36,0** |
 | Conectividad doble de la planta: fibra y respaldo 4G | 4,0 |
-| **Total anual del software** | **40,0** |
+| **Total anual del software de supervisión y gestión** | **40,0** |
 
 Los precios de la nube son estimaciones de orden de magnitud con una tasa de USD 1 = COP 4.100 y se confirman con la calculadora oficial de Huawei Cloud en la ingeniería básica.
+
+El software de control no está en estas cifras: la licencia de Studio 5000 de la planta (COP 28,7 millones) y su mantenimiento anual (COP 8,2 millones) se presentan en las secciones 6.1 y 7 de la propuesta económica.
 
 ## 8. Requisitos no funcionales
 

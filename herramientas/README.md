@@ -4,7 +4,7 @@ Esta carpeta mantiene consistentes las cifras de la propuesta entre todos los do
 
 | Archivo | Qué hace |
 | --- | --- |
-| `parametros.yaml` | Supuestos de entrada: producción, precios, tiempos de proceso, personal, horas y tarifas de la EDT, rubros de inversión, costos de operación y finanzas. Es el único lugar donde se cambia un supuesto. |
+| `parametros.yaml` | Supuestos de entrada: producción, precios, tiempos de proceso, personal, horas y tarifas de la EDT, rubros de inversión, costos de operación y finanzas. Es el único lugar donde se cambia un supuesto. Un rubro puede darse en dólares (`valor_usd`, como la licencia de Studio 5000 de la planta); `modelo.cargar()` lo convierte con `general.tasa_cambio_cop_usd`. |
 | `modelo.py` | Calcula producción y unidades conformes, OEE, tiempos por lote, horas y valor de la ingeniería, carga semanal del equipo, inversión, costos de operación, flujo de caja antes y después de impuestos, VPN, TIR, recuperación, sensibilidades y crédito. Escribe `resultados.md`. |
 | `programa.py` | Arma el programa diario de los dos lotes y verifica que ningún equipo tenga dos usos a la vez y que cada tarea caiga en el turno de su responsable. |
 | `balancear_carga.py` | Reparte las horas de los paquetes de la EDT entre los integrantes para que nadie pase de 42 h en ninguna semana (descontando festivos) ni del 80 % de su capacidad. Con `--escribir` actualiza `parametros.yaml`. |

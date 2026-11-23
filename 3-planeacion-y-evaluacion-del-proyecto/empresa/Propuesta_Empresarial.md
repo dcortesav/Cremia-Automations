@@ -11,7 +11,7 @@ Cremia Automations es una empresa integradora de soluciones de Transformación D
 
 Cliente del proyecto: La Hacienda Productos Alimenticios, una planta pequeña que produce un lote diario de yogur de 550 L de leche (3.052 bolsas de 200 ml llenadas, 2.898 conformes) con cuatro operarios y bajo nivel de automatización.
 
-Propuesta de valor: una sola empresa entrega la solución completa, desde el instrumento hasta el indicador de gestión, con recetas y trazabilidad por lote y con software hecho a la escala de la planta, sin licencias de terceros; la valida en un gemelo digital antes de intervenir la planta y prepara al personal con capacitación por rol y seis semanas de estabilización con producción. Para los dueños, la propuesta significa duplicar la producción con la misma planta, pasar de una a tres referencias, bajar el producto no conforme de 5,06 % a 1,5 % o menos y contar con información diaria para decidir, disponible aunque falle la planta.
+Propuesta de valor: una sola empresa entrega la solución completa, desde el instrumento hasta el indicador de gestión, con recetas y trazabilidad por lote y con software de supervisión y gestión hecho a la escala de la planta, sin licencias de terceros, y con una licencia propia de Studio 5000 para que la planta pueda abrir y diagnosticar el programa del PLC; la valida en un gemelo digital antes de intervenir la planta y prepara al personal con capacitación por rol y seis semanas de estabilización con producción. Para los dueños, la propuesta significa duplicar la producción con la misma planta, pasar de una a tres referencias, bajar el producto no conforme de 5,06 % a 1,5 % o menos y contar con información diaria para decidir, disponible aunque falle la planta.
 
 ### 1.1 Mercado objetivo
 
@@ -68,7 +68,7 @@ Factor prestacional de 1,52 (seguridad social, parafiscales, cesantías, prima y
 
 | Componente | Porcentaje | Se aplica sobre |
 | --- | --- | --- |
-| Administración (oficina, licencias de herramientas de ingeniería, equipos de cómputo y pólizas) | 15 % | Costo directo de personal |
+| Administración (oficina, licencias de las herramientas de ingeniería de Cremia, equipos de cómputo y pólizas) | 15 % | Costo directo de personal |
 | Imprevistos | 5 % | Costo directo más administración |
 | Utilidad | 15 % | Costo más administración e imprevistos |
 | Factor multiplicador | 1,39 | Costo directo de personal |
@@ -105,18 +105,18 @@ El proyecto de 26 semanas tiene 4.780 horas y vale COP 333,7 millones en dos con
 
 ## 5. Modelo de negocio
 
-| Criterio | A. Llave en mano con pago por hitos | B. Arrendamiento de equipos | C. Llave en mano con plan de servicio |
+| Criterio | A. Llave en mano clásico | B. Arrendamiento de equipos | C. Llave en mano con plan de servicio |
 | --- | --- | --- | --- |
 | Qué paga el cliente | La inversión, por hitos | Una cuota mensual | La inversión por hitos y un plan de servicio anual |
 | Propiedad de los equipos | Cliente | Cremia | Cliente |
 | Software de gestión | Licencias de terceros | Incluido en la cuota | Plataforma Cremia MES/ERP con licencia perpetua por sitio |
 | Capital que necesita Cremia | Bajo | Muy alto | Bajo |
 | Riesgo para Cremia | Bajo | Alto: cartera y obsolescencia | Bajo |
-| Relación a largo plazo | Termina con el proyecto | Continua | Continua |
+| Relación a largo plazo | Termina con el proyecto | Continua | Continua y colaborativa |
 
 **Modelo recomendado: C.** Cremia no tiene capital para financiar equipos de proceso, lo que descarta el arrendamiento. El cliente queda como dueño de los equipos y recibe una licencia perpetua de la plataforma para su sitio. Cremia conserva la propiedad intelectual de la plataforma, que reutiliza en las siguientes plantas del segmento, y mantiene un ingreso recurrente con el plan de servicio (COP 36,0 millones al año, ya incluidos en los costos de operación del cliente): la nube Huawei (15,0) y el soporte y la evolución del PLC, el SCADA y la plataforma (21,0), con una revisión trimestral de indicadores con la gerencia de la planta.
 
-**Protección del cliente frente a la dependencia.** El código fuente de la plataforma se deposita con un tercero y se entrega a La Hacienda si Cremia deja de prestar el servicio; la planta puede exportar sus datos completos en cualquier momento; el programa del PLC, los flujos de Node-RED y las recetas son del cliente.
+**Protección del cliente frente a la dependencia.** El código fuente de la plataforma se deposita con un tercero y se entrega a La Hacienda si Cremia deja de prestar el servicio; la planta puede exportar sus datos completos en cualquier momento; el programa del PLC, los flujos de Node-RED y las recetas son del cliente, y la planta recibe su propia licencia perpetua de Studio 5000 (COP 28,7 millones en la inversión y COP 8,2 millones al año de mantenimiento) para abrir, diagnosticar y respaldar el programa del PLC sin depender de Cremia.
 
 | Hito | Semana | Pago |
 | --- | --- | --- |
@@ -130,12 +130,12 @@ El proyecto de 26 semanas tiene 4.780 horas y vale COP 333,7 millones en dos con
 
 | Elemento | Oferta |
 | --- | --- |
-| Alcance | Ingeniería, suministro, montaje, programación, SCADA en Node-RED, plataforma Cremia MES/ERP en Huawei Cloud, puesta en marcha, gestión del cambio, capacitación y estabilización para la línea de yogur |
+| Alcance | Ingeniería, suministro, montaje, programación, licencia de Studio 5000 para la planta, SCADA en Node-RED, plataforma Cremia MES/ERP en Huawei Cloud, puesta en marcha, gestión del cambio, capacitación y estabilización para la línea de yogur |
 | Resultado para el cliente | De uno a dos lotes diarios, de una a tres referencias y producto no conforme de 5,06 % a 1,5 % o menos |
-| Valor | COP 1.464,5 millones, sin IVA |
+| Valor | COP 1.495,5 millones, sin IVA, a precio fijo (incluye la contingencia del 8 %, a riesgo de Cremia) |
 | Plazo | 26 semanas, del 18 de enero al 16 de julio de 2027 |
 | Garantía | 12 meses sobre la integración y seis semanas de estabilización con producción dentro del proyecto |
-| Indicadores financieros para el cliente | VPN al 15 % después de impuestos de COP 231,0 millones, TIR de 19,8 % y recuperación en 3,8 años |
+| Indicadores financieros para el cliente | VPN al 15 % después de impuestos de COP 189,4 millones, TIR de 18,9 % y recuperación en 3,9 años |
 | Etapa posterior opcional | Celda robotizada de encanastado y paletizado, con espacio e interfaz ya diseñados |
 
 El detalle del presupuesto, el flujo de caja y los indicadores financieros está en la propuesta económica de la línea de yogur; el plan de trabajo, en la EDT y el cronograma del proyecto; el software, en el documento de la plataforma Cremia MES/ERP y el SCADA en Node-RED; y los beneficios para los dueños y el plan de gestión del cambio, en el documento Propuesta de valor y gestión del cambio.

@@ -79,7 +79,7 @@ def programa(p: dict | None = None, incubacion: float | None = None,
     x = add("Homogeneización y pasteurización", "L1", x.fin, past, ["T-301", "CAL-901"], "P")
     x = add("Enfriamiento a 43 °C con agua de red en la chaqueta", "L1", x.fin, t["enfriar_a_inoculacion"], ["T-301"], "P")
     x = add("Inoculación", "L1", x.fin, t["inocular"], ["T-301"], "P", True)
-    x = add("Incubación hasta pH 4,4–4,5", "L1", x.fin, inc, ["T-301"], "A")
+    x = add("Incubación hasta pH 4,5", "L1", x.fin, inc, ["T-301"], "A")
     x = add("Ruptura del coágulo y saborizado", "L1", x.fin, t["ruptura_saborizado"], ["T-301"], "S")
     add("Confirmación de acidez del lote 1", "L1", x.inicio, t["muestra_acidez"], ["LAB-101"], "S", True)
     x = add("Enfriamiento en placas y transferencia a T-302", "L1", x.fin, t["transferencia"], ["T-301", "T-302", "E-301"], "S", True)

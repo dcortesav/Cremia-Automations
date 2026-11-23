@@ -109,8 +109,8 @@ Archivo generado por `herramientas/modelo.py` a partir de `herramientas/parametr
 | 1.8.3 | Red industrial, nodo de borde y nube de producción | 16–18 | 50 | JR (20), DF (30) |
 | 1.8.4 | Línea de vasos | 18–19 | 60 | AO (40), JZ (20) |
 | 1.9.1 | Pruebas de lazo y de E/S | 19–20 | 50 | JR (40), AO (5), JZ (5) |
-| 1.9.2 | Pruebas SAT | 20–21 | 80 | DC (55), JR (20), DF (5) |
-| 1.9.3 | Arranque con producto | 20–22 | 100 | JZ (65), AO (35) |
+| 1.9.2 | Pruebas SAT | 20–21 | 80 | DC (55), JR (10), JZ (10), DF (5) |
+| 1.9.3 | Arranque con producto | 21–22 | 100 | JZ (55), AO (35), JR (10) |
 | 1.9.4 | Validación de calidad e inocuidad | 21–23 | 50 | JZ (5), DF (45) |
 | 1.10.1 | Gestión del cambio y comunicación | 1–26 | 130 | CH (130) |
 | 1.10.2 | Capacitación por rol | 17–20 | 130 | DF (75), AO (35), JZ (10), CH (10) |
@@ -161,7 +161,7 @@ Archivo generado por `herramientas/modelo.py` a partir de `herramientas/parametr
 | 1.8.4 | 18–19 | 17 may | 28 may |
 | 1.9.1 | 19–20 | 24 may | 4 jun |
 | 1.9.2 | 20–21 | 31 may | 11 jun |
-| 1.9.3 | 20–22 | 31 may | 18 jun |
+| 1.9.3 | 21–22 | 7 jun | 18 jun |
 | 1.9.4 | 21–23 | 7 jun | 25 jun |
 | 1.10.1 | 1–26 | 18 ene | 16 jul |
 | 1.10.2 | 17–20 | 10 may | 4 jun |
@@ -191,52 +191,54 @@ Archivo generado por `herramientas/modelo.py` a partir de `herramientas/parametr
 | 17 | Circuito de agua helada a la chaqueta de T-301: TV-304, XV-904 y tubería aislada | 10,0 |
 | 18 | Tanque refrigerado de leche TK-102 de 1.000 L con válvulas de selección XV-101 y XV-102 | 30,0 |
 | 19 | Mesa acumuladora para el encajonado de vasos | 6,0 |
-| | Subtotal de equipos y software | 947,0 |
+| 20 | Licencia perpetua de Studio 5000 Logix Designer, edición Professional, para la planta (un puesto) | 28,7 |
+| | Subtotal de equipos y software | 975,7 |
 | | Ingeniería de Cremia | 333,7 |
-| | Montaje (8 % de equipos físicos) | 75,3 |
-| | Subtotal | 1.356,0 |
-| | Contingencia (8 %) | 108,5 |
-| | **Inversión total** | **1.464,5** |
+| | Montaje (8 % de equipos físicos, sin la nube ni la licencia) | 75,3 |
+| | Subtotal | 1.384,7 |
+| | Contingencia (8 %) | 110,8 |
+| | **Inversión total** | **1.495,5** |
 | | Margen no percibido por 5 días de parada | 7,3 |
-| | **Desembolso del año 0** | **1.471,8** |
+| | **Desembolso del año 0** | **1.502,8** |
 
-- Línea de vasos: 289,9; preparación y bolsas: 1.174,6.
-- Clase de depreciación de equipos (10 años): 1.291,8; software y hardware de borde (5 años): 172,7.
-- Grupos: proceso 460,0; instrumentacion 57,0; envasado 311,0; control 119,0.
+- Línea de vasos: 289,9; preparación y bolsas: 1.205,6.
+- Clase de depreciación de equipos (10 años): 1.291,8; software, hardware de borde y licencia del PLC (5 años): 203,7.
+- Grupos: proceso 460,0; instrumentacion 57,0; envasado 311,0; control 147,7.
 - Base de mantenimiento: 828,0.
 
 ## Costos anuales de operación
 
 | Partida | Millones de COP por año |
 | --- | --- |
-| Mantenimiento preventivo de equipos de proceso y envasado | 24,8 |
+| Mantenimiento preventivo de equipos de proceso, instrumentación y envasado | 24,8 |
 | Plan de servicio Cremia: nube Huawei | 15,0 |
 | Plan de servicio Cremia: soporte y evolución del software y del control | 21,0 |
+| Mantenimiento anual de la licencia de Studio 5000 de la planta | 8,2 |
 | Conectividad doble (fibra y 4G) | 4,0 |
 | Operario adicional para el segundo lote | 33,6 |
 | Turno del domingo (horas extra dominicales) | 12,1 |
 | Horas extra por incubaciones largas y disponibilidad nocturna | 5,0 |
 | Laboratorio externo: microbiología por muestreo | 12,0 |
-| **Total** | **127,6** |
+| **Total** | **135,8** |
 
 - Hora ordinaria del operario: 10.121 COP.
-- Beneficio operativo anual a plena producción (antes de impuestos): 719,3.
+- Beneficio operativo anual a plena producción (antes de impuestos): 711,1.
 - Capital de trabajo a plena producción: 118,0.
 
 ## Flujo de caja
 
 | Concepto | Año 0 | Año 1 | Año 2 | Año 3 | Año 4 | Año 5 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Inversión y parada | −1.471,8 | — | — | — | — | — |
+| Inversión y parada | −1.502,8 | — | — | — | — | — |
 | Margen adicional (rampa) | — | 423,4 | 635,1 | 846,9 | 846,9 | 846,9 |
-| Costos de operación | — | −127,6 | −127,6 | −127,6 | −127,6 | −127,6 |
-| Resultado operativo (EBITDA) | — | 295,9 | 507,6 | 719,3 | 719,3 | 719,3 |
-| Depreciación (no es salida de caja) | — | 163,7 | 163,7 | 163,7 | 163,7 | 163,7 |
-| Impuesto de renta (35 %) | — | −46,3 | −120,4 | −194,5 | −194,5 | −194,5 |
+| Costos de operación | — | −135,8 | −135,8 | −135,8 | −135,8 | −135,8 |
+| Resultado operativo (EBITDA) | — | 287,7 | 499,4 | 711,1 | 711,1 | 711,1 |
+| Depreciación (no es salida de caja) | — | 169,9 | 169,9 | 169,9 | 169,9 | 169,9 |
+| Impuesto de renta (35 %) | — | −41,2 | −115,3 | −189,4 | −189,4 | −189,4 |
 | Variación del capital de trabajo | — | −59,0 | −29,5 | −29,5 | 0,0 | 0,0 |
 | Recuperación del capital de trabajo y valor residual | — | 0,0 | 0,0 | 0,0 | 0,0 | 763,9 |
-| **Flujo antes de impuestos** | −1.471,8 | 236,9 | 478,1 | 689,8 | 719,3 | 1.483,2 |
-| **Flujo después de impuestos** | −1.471,8 | 190,6 | 357,7 | 495,3 | 524,8 | 1.288,7 |
+| **Flujo antes de impuestos** | −1.502,8 | 228,7 | 469,9 | 681,6 | 711,1 | 1.475,0 |
+| **Flujo después de impuestos** | −1.502,8 | 187,5 | 354,6 | 492,2 | 521,7 | 1.285,6 |
 
 - Valor residual en libros en el año 5: 645,9.
 
@@ -244,53 +246,54 @@ Archivo generado por `herramientas/modelo.py` a partir de `herramientas/parametr
 
 | Indicador | Después de impuestos (principal) | Antes de impuestos |
 | --- | --- | --- |
-| VPN al 15 % | 231,0 | 697,9 |
-| TIR | 19,8 % | 28,9 % |
-| Recuperación | 3,8 años | 3,1 años |
-| Relación beneficio-costo | 1,16 | — |
-| Volumen de equilibrio | 89,6 % del plan | — |
-| Vasos de equilibrio (bolsas al 100 %) | 84,1 % del plan | — |
+| VPN al 15 % | 189,4 | 639,4 |
+| TIR | 18,9 % | 27,5 % |
+| Recuperación | 3,9 años | 3,2 años |
+| Relación beneficio-costo | 1,13 | — |
+| Volumen de equilibrio | 91,5 % del plan | — |
+| Vasos de equilibrio (bolsas al 100 %) | 87,0 % del plan | — |
 
 ## Sensibilidad (después de impuestos)
 
 | Escenario | VPN al 15 % | TIR | Recuperación |
 | --- | --- | --- | --- |
-| Base | 231,0 | 19,8 % | 3,8 años |
-| Volumen vendido al 90 % | 8,2 | 15,2 % | 4,1 años |
-| Volumen vendido al 80 % | −214,6 | 10,3 % | 4,4 años |
-| Vasos vendidos al 80 % (bolsas al 100 %) | −60,4 | 13,7 % | 4,2 años |
-| Precio de venta −5 % | 58,2 | 16,2 % | 4,1 años |
-| Precio de venta +5 % | 403,7 | 23,3 % | 3,5 años |
-| Leche cruda +10 % | 170,0 | 18,6 % | 4,0 años |
-| Leche cruda −10 % | 291,9 | 21,1 % | 3,7 años |
-| Inversión +10 % | 135,8 | 17,6 % | 4,0 años |
-| Inversión −10 % | 326,1 | 22,5 % | 3,6 años |
-| Horas de software +30 % | 200,2 | 19,1 % | 3,9 años |
-| Sin valor residual | −90,2 | 12,8 % | 3,8 años |
-| Solo preparación y bolsas (600 lotes de YB-200, sin línea de vasos) | −264,0 | 7,7 % | 4,5 años |
+| Base | 189,4 | 18,9 % | 3,9 años |
+| Volumen vendido al 90 % | −33,4 | 14,3 % | 4,2 años |
+| Volumen vendido al 80 % | −259,5 | 9,4 % | 4,4 años |
+| Vasos vendidos al 90 %, umbral de las cartas de intención (bolsas al 100 %) | 43,7 | 15,9 % | 4,1 años |
+| Vasos vendidos al 80 % (bolsas al 100 %) | −102,0 | 12,8 % | 4,2 años |
+| Precio de venta −5 % | 16,6 | 15,3 % | 4,1 años |
+| Precio de venta +5 % | 362,1 | 22,4 % | 3,6 años |
+| Leche cruda +10 % | 128,4 | 17,7 % | 4,0 años |
+| Leche cruda −10 % | 250,3 | 20,1 % | 3,8 años |
+| Inversión +10 % | 91,9 | 16,8 % | 4,1 años |
+| Inversión −10 % | 286,9 | 21,5 % | 3,7 años |
+| Horas de software +30 % | 158,7 | 18,2 % | 4,0 años |
+| Sin valor residual | −131,7 | 11,8 % | 3,9 años |
+| Solo preparación y bolsas (600 lotes de YB-200, sin línea de vasos) | −310,0 | 6,6 % | 4,6 años |
 
-- Inversión del escenario solo bolsas: 1.174,6; margen adicional 451,5.
+- Inversión del escenario solo bolsas: 1.205,6; margen adicional 451,5.
 
 ## Crédito
 
-70 % de la inversión (1.025,1) a 18 % efectivo anual, 5 años, 1 año de gracia con pago de intereses.
+70 % de la inversión (1.046,8) a 18 % efectivo anual, 5 años, 1 año de gracia con pago de intereses.
 
 | Año | Intereses | Abono a capital | Cuota | Saldo | Flujo del proyecto después de impuestos | Ahorro tributario de intereses | Flujo después de la deuda |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 184,5 | 0,0 | 184,5 | 1.025,1 | 190,6 | 64,6 | 70,7 |
-| 2 | 184,5 | 196,6 | 381,1 | 828,6 | 357,7 | 64,6 | 41,2 |
-| 3 | 149,1 | 231,9 | 381,1 | 596,6 | 495,3 | 52,2 | 166,5 |
-| 4 | 107,4 | 273,7 | 381,1 | 323,0 | 524,8 | 37,6 | 181,4 |
-| 5 | 58,1 | 323,0 | 381,1 | 0,0 | 524,8 | 20,3 | 164,1 |
+| 1 | 188,4 | 0,0 | 188,4 | 1.046,8 | 187,5 | 66,0 | 65,0 |
+| 2 | 188,4 | 200,7 | 389,1 | 846,1 | 354,6 | 66,0 | 31,4 |
+| 3 | 152,3 | 236,8 | 389,1 | 609,3 | 492,2 | 53,3 | 156,3 |
+| 4 | 109,7 | 279,5 | 389,1 | 329,8 | 521,7 | 38,4 | 170,9 |
+| 5 | 59,4 | 329,8 | 389,1 | 0,0 | 521,7 | 20,8 | 153,3 |
 
 ## Pagos por hitos
 
 | Hito | Semana | Porcentaje | Valor |
 | --- | --- | --- | --- |
-| Firma del contrato (anticipo) | 1 | 30 % | 439,3 |
-| Pruebas FAT aprobadas | 14 | 30 % | 439,3 |
-| Pruebas SAT y puesta en marcha | 21 | 30 % | 439,3 |
-| Cierre y entrega | 26 | 10 % | 146,4 |
+| Firma del contrato (anticipo) | 1 | 30 % | 448,6 |
+| Pruebas FAT aprobadas | 14 | 30 % | 448,6 |
+| Pruebas SAT y puesta en marcha | 21 | 30 % | 448,6 |
+| Cierre y entrega | 26 | 10 % | 149,5 |
 
 ## Programa diario (lote 1 y lote 2 de YB-200)
 
@@ -311,7 +314,7 @@ Horas exactas del modelo. Los documentos las redondean a 5 min.
 | 10:29–10:34 | L1 | Inoculación | Operador de preparación |
 | 10:30–12:34 | L2 anterior | Envasado del lote 2 anterior (YB-200) | Operador de envasado |
 | 10:30–12:34 | L2 anterior | Encanastado o encajonado del lote 2 anterior | Operador de empaque y cuarto frío |
-| 10:34–14:34 | L1 | Incubación hasta pH 4,4–4,5 | Automático (PLC), sin operario |
+| 10:34–14:34 | L1 | Incubación hasta pH 4,5 | Automático (PLC), sin operario |
 | 12:34–13:14 | L2 anterior | CIP de T-302 y de la línea de envasado | Operador de envasado |
 | 14:34–14:39 | L1 | Ruptura del coágulo y saborizado | Operador del segundo lote |
 | 14:34–14:39 | L1 | Confirmación de acidez del lote 1 | Operador del segundo lote |

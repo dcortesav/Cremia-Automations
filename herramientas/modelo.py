@@ -21,7 +21,12 @@ PARAMETROS = RAIZ / "parametros.yaml"
 
 def cargar(ruta: Path = PARAMETROS) -> dict:
     with open(ruta, encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        p = yaml.safe_load(f)
+    tasa = p["general"]["tasa_cambio_cop_usd"]
+    for r in p["capex"]["rubros"].values():
+        if "valor" not in r and "valor_usd" in r:
+            r["valor"] = r["valor_usd"] * tasa / 1e6
+    return p
 
 
 # --------------------------------------------------------------------------- formato
@@ -203,9 +208,12 @@ def ingenieria(p: dict, factor_horas_software: float = 1.0) -> dict:
         for k, h in horas.items():
             por_persona[k] += h
         c = cuenta_de(cod)
-        acc = por_cuenta.setdefault(c, {"nombre": p["edt"][c]["nombre"], "horas": 0.0, "valor": 0.0, "paquetes": 0})
+        acc = por_cuenta.setdefault(c, {"nombre": p["edt"][c]["nombre"], "horas": 0.0, "valor": 0.0, "paquetes": 0,
+                                        "_cop": 0.0})
         acc["horas"] += sum(horas.values())
-        acc["valor"] += valor
+        # se acumula en pesos y se divide al final, para que el redondeo no dependa del orden de la suma
+        acc["_cop"] += sum(h * tarifas[k] for k, h in horas.items())
+        acc["valor"] = acc["_cop"] / 1e6
         acc["paquetes"] += 1
     capacidad = sum(capacidad_semanal(p))
     total_h = sum(por_persona.values())
@@ -238,10 +246,10 @@ def capex(p: dict, factor_capex: float = 1.0, factor_horas_software: float = 1.0
     rub = c["rubros"]
     peso = {k: (1 - r.get("vasos", 0.0)) if not incluir_vasos else 1.0 for k, r in rub.items()}
     equipos = sum(r["valor"] * peso[k] for k, r in rub.items())
-    nube = sum(r["valor"] * peso[k] for k, r in rub.items() if r.get("nube"))
+    sin_montaje = sum(r["valor"] * peso[k] for k, r in rub.items() if r.get("nube") or r.get("licencia"))
     ing = ingenieria(p, factor_horas_software)
     ingenieria_v = ing["valor"]
-    montaje = c["montaje_pct"] * (equipos - nube)
+    montaje = c["montaje_pct"] * (equipos - sin_montaje)
     subtotal = equipos + ingenieria_v + montaje
     contingencia = c["contingencia_pct"] * subtotal
     total = (subtotal + contingencia) * factor_capex
@@ -268,10 +276,12 @@ def opex(p: dict, cap: dict) -> dict:
     domingo = (d["operarios"] * d["horas"] * p["general"]["domingos"] * hora
                * d["factor_hora_extra_dominical"] * per["factor_prestacional"]) / 1e6
     lab = o["laboratorio_externo"]["analisis"] * o["laboratorio_externo"]["costo_cop"] / 1e6
+    licencia = o["licencia_studio5000_anual_usd"] * p["general"]["tasa_cambio_cop_usd"] / 1e6
     partidas = {
-        "Mantenimiento preventivo de equipos de proceso y envasado": o["mantenimiento_pct"] * cap["base_mantenimiento"],
+        "Mantenimiento preventivo de equipos de proceso, instrumentación y envasado": o["mantenimiento_pct"] * cap["base_mantenimiento"],
         "Plan de servicio Cremia: nube Huawei": o["plan_servicio_cremia"]["nube_huawei"],
         "Plan de servicio Cremia: soporte y evolución del software y del control": o["plan_servicio_cremia"]["soporte_y_evolucion"],
+        "Mantenimiento anual de la licencia de Studio 5000 de la planta": licencia,
         "Conectividad doble (fibra y 4G)": o["conectividad"],
         "Operario adicional para el segundo lote": per["operario_anual"],
         "Turno del domingo (horas extra dominicales)": domingo,
@@ -279,7 +289,7 @@ def opex(p: dict, cap: dict) -> dict:
         "Laboratorio externo: microbiología por muestreo": lab,
     }
     return {"partidas": partidas, "total": sum(partidas.values()), "hora_ordinaria": hora,
-            "domingo": domingo}
+            "domingo": domingo, "licencia": licencia}
 
 
 # --------------------------------------------------------------------------- flujo de caja
@@ -394,10 +404,12 @@ def credito(p: dict, f: dict) -> list[dict]:
 def resultados(p: dict | None = None) -> dict:
     p = p or cargar()
     base = flujo(p)
+    umbral = p["finanzas"]["cartas_intencion_vasos"]
     sens = {
         "Base": base,
         "Volumen vendido al 90 %": flujo(p, factor_vol=0.9),
         "Volumen vendido al 80 %": flujo(p, factor_vol=0.8),
+        f"Vasos vendidos al {pct(umbral, 0)}, umbral de las cartas de intención (bolsas al 100 %)": flujo(p, factor_vasos=umbral),
         "Vasos vendidos al 80 % (bolsas al 100 %)": flujo(p, factor_vasos=0.8),
         "Precio de venta −5 %": flujo(p, factor_precio=0.95),
         "Precio de venta +5 %": flujo(p, factor_precio=1.05),
@@ -410,6 +422,7 @@ def resultados(p: dict | None = None) -> dict:
     }
     solo_bolsas = flujo(p, mezcla={"YB-200": 10}, incluir_vasos=False)
     return {"p": p, "base": base, "sens": sens, "solo_bolsas": solo_bolsas,
+            "umbral_cartas": umbral, "vpn_umbral_cartas": sens[next(k for k in sens if "umbral" in k)]["vpn"],
             "eq_vol": equilibrio(p, "factor_vol"), "eq_vasos": equilibrio(p, "factor_vasos"),
             "credito": credito(p, base), "oee": oee(p), "envasado": tiempos_envasado(p),
             "te": tiempo_estandar(p)}
@@ -457,7 +470,7 @@ def reporte(r: dict) -> str:
           f"- OEE de la empacadora hoy: disponibilidad {pct(o['actual']['disponibilidad'],0)}, rendimiento {pct(o['actual']['rendimiento'],0)}, calidad {pct(o['actual']['calidad'],1)}: **{pct(o['actual']['oee'],0)}**.",
           f"- OEE meta: disponibilidad {pct(o['meta']['disponibilidad'],0)}, rendimiento {pct(o['meta']['rendimiento'],0)}, calidad {pct(o['meta']['calidad'],1)}: **{pct(o['meta']['oee'],0)}**.",
           "- Tiempo de envasado por lote con la meta de OEE: " + ", ".join(f"{k} {m(v,0)} min" for k, v in r["envasado"].items()) + ".",
-          f"- Tiempo estándar por lote de YB-200: **{m(r['te']['total'],0)} min** frente a 601 min ({pct(r['te']['total']/601.32-1,0)}); "
+          f"- Tiempo estándar por lote de YB-200: **{m(r['te']['total'],0)} min** frente a {m(p['estado_actual']['tiempo_estandar_min'],0)} min ({pct(r['te']['total']/p['estado_actual']['tiempo_estandar_min']-1,0)}); "
           f"homogeneización y pasteurización {m(r['te']['pasteurizacion'],0)} min; ocupación de T-301 {m(r['te']['ocupacion_t301'],0)} min, {m(r['te']['ocupacion_con_cip'],0)} con el CIP.", ""]
     L += ["## Ingeniería de Cremia", "",
           f"- Horas: **{m(ing['horas'],0)}**; capacidad {m(ing['capacidad_total'],0)} h; ocupación {pct(ing['ocupacion'],0)}.",
@@ -489,14 +502,14 @@ def reporte(r: dict) -> str:
         L.append(f"| {k} | {x['nombre']} | {m(x['valor'])} |")
     L += [f"| | Subtotal de equipos y software | {m(cap['equipos'])} |",
           f"| | Ingeniería de Cremia | {m(cap['ingenieria'])} |",
-          f"| | Montaje ({pct(p['capex']['montaje_pct'],0)} de equipos físicos) | {m(cap['montaje'])} |",
+          f"| | Montaje ({pct(p['capex']['montaje_pct'],0)} de equipos físicos, sin la nube ni la licencia) | {m(cap['montaje'])} |",
           f"| | Subtotal | {m(cap['subtotal'])} |",
           f"| | Contingencia ({pct(p['capex']['contingencia_pct'],0)}) | {m(cap['contingencia'])} |",
           f"| | **Inversión total** | **{m(cap['total'])}** |",
           f"| | Margen no percibido por {p['capex']['dias_parada']} días de parada | {m(b['parada'])} |",
           f"| | **Desembolso del año 0** | **{m(cap['total']+b['parada'])}** |", "",
           f"- Línea de vasos: {m(cap['vasos'])}; preparación y bolsas: {m(cap['fase1'])}.",
-          f"- Clase de depreciación de equipos (10 años): {m(cap['clase_equipos'])}; software y hardware de borde (5 años): {m(cap['clase_software'])}.",
+          f"- Clase de depreciación de equipos (10 años): {m(cap['clase_equipos'])}; software, hardware de borde y licencia del PLC (5 años): {m(cap['clase_software'])}.",
           "- Grupos: " + "; ".join(f"{g} {m(v)}" for g, v in cap["grupos"].items()) + ".",
           f"- Base de mantenimiento: {m(cap['base_mantenimiento'])}.", "",
           "## Costos anuales de operación", "", "| Partida | Millones de COP por año |", "| --- | --- |"]

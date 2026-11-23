@@ -14,6 +14,7 @@ El análisis considera exclusivamente la línea de yogur. Todas las cifras está
 **Versión de noviembre de 2026.** Frente a la versión de octubre de 2026, esta versión:
 
 - reemplaza las licencias de SCADA, MES y ERP por software propio de Cremia: un SCADA en Node-RED y la plataforma Cremia MES/ERP en Huawei Cloud;
+- incluye, como costo explícito del cliente, una licencia perpetua de Studio 5000 Logix Designer para la planta (rubro 20) y su mantenimiento anual, para que La Hacienda pueda abrir, diagnosticar y respaldar el programa del PLC, que es suyo;
 - agrega lo que necesita el segundo lote: el tanque refrigerado TK-102, el agua helada en la chaqueta para el enfriamiento nocturno y la mesa acumuladora de vasos;
 - extiende el proyecto a 26 semanas por el desarrollo del software y la importación de equipos, y cobra la ingeniería para que cubra la nómina completa con el factor mínimo de 1,39;
 - vende solo las unidades conformes, en la situación actual y en la propuesta;
@@ -80,7 +81,7 @@ El precio de fábrica deja entre 31 y 48 % de margen al canal de distribución, 
 
 ### 3.4 Producción y ventas anuales
 
-La planta produce de lunes a sábado, 50 semanas al año (300 días), con dos lotes por día: 12 lotes por semana y 600 al año. La mezcla sigue el ciclo de 10 lotes del documento de recetas y lotes (5 de YB-200, 3 de YV-150 y 2 de YV-300), que se repite 60 veces al año. Tabla generada:
+La planta produce de lunes a sábado, 50 semanas al año (300 días), con dos lotes por día: 12 lotes por semana y 600 al año. La mezcla sigue el ciclo de 10 lotes del documento de recetas y lotes (5 de YB-200, 3 de YV-150 y 2 de YV-300), que se repite 60 veces al año. La propuesta supone que los ganaderos de la zona entregan la leche cruda de los dos lotes diarios: 28 cantinas y 1.100 L por día, el doble de hoy. Tabla generada:
 
 <!-- tabla:produccion_refs -->
 | Referencia | Unidades llenadas al año | Unidades conformes al año | Ventas (millones de COP) | Margen de contribución (millones de COP) |
@@ -127,6 +128,8 @@ Hoy la planta trabaja un turno de 8 h; con la propuesta la jornada va de 7:00 a 
 
 El jefe de producción y la persona de calidad son personal que la planta ya tiene; el proyecto cambia sus herramientas, no su número.
 
+La planta contrata al operador del segundo lote hacia la semana 17 del proyecto, para que reciba la capacitación por rol (semanas 17 a 20) y participe en el arranque. Su salario de esas diez semanas, unos COP 6,5 millones, es un gasto de operación de la planta y no del proyecto de Cremia: no entra en la oferta ni en el desembolso del año 0, y el flujo de caja cuenta su costo anual desde el año 1.
+
 ## 4. Salarios del equipo: costo interno de Cremia (2026)
 
 El escenario evaluado corresponde a una firma integradora conformada por seis ingenieros mecatrónicos egresados de la Universidad Nacional de Colombia, con un año de experiencia profesional en proyectos industriales.
@@ -163,10 +166,12 @@ Los salarios son el costo interno de Cremia; al cliente no se le cobra nómina, 
 
 | Componente de la tarifa | Porcentaje | Base de aplicación |
 | --- | --- | --- |
-| Administración (oficina, licencias de herramientas de ingeniería, equipos de cómputo y pólizas) | 15 % | Costo directo de personal |
+| Administración (oficina, licencias de las herramientas de ingeniería de Cremia, equipos de cómputo y pólizas) | 15 % | Costo directo de personal |
 | Imprevistos | 5 % | Costo directo más administración |
 | Utilidad | 15 % | Costo más administración e imprevistos |
 | Factor multiplicador resultante | 1,39 | Costo directo de personal |
+
+Las licencias que Cremia usa para desarrollar y probar (puestos de Studio 5000 Logix Designer, FactoryTalk Logix Echo y Tecnomatix Plant Simulation) son herramientas de la empresa y se pagan con la administración; no se cobran aparte al cliente. La licencia que queda en la planta para su propio uso sí se cobra de forma explícita, como rubro 20 de la inversión (sección 6.1).
 
 | Cargo | Costo por hora (COP) | Tarifa mínima con el factor 1,39 (COP/h) |
 | --- | --- | --- |
@@ -230,7 +235,9 @@ El valor facturado cubre la nómina completa de las 26 semanas, aunque el proyec
 
 ### 6.1 Rubros
 
-La celda robotizada de encanastado y paletizado (robot ABB, unos COP 180 millones) queda diseñada, con su espacio y su interfaz reservados, pero se compra en una etapa posterior, cuando el volumen de producción la justifique; mientras tanto, el encajonado es manual con una mesa acumuladora. Tabla generada:
+La celda robotizada de encanastado y paletizado (robot ABB, unos COP 180 millones) queda diseñada, con su espacio y su interfaz reservados, pero se compra en una etapa posterior, cuando el volumen de producción la justifique; mientras tanto, el encajonado es manual con una mesa acumuladora.
+
+El rubro 20 es la licencia de Studio 5000 Logix Designer que queda a nombre de La Hacienda. El programa del PLC es del cliente, y sin esta licencia la planta no puede abrirlo, conectarse en línea al controlador para diagnosticar una falla ni respaldar o restaurar el programa; dependería de Cremia para cualquiera de esas tareas. Se elige la edición Professional, que trae el conjunto completo de instrucciones que usa el programa (fases ISA-88, texto estructurado y diagramas de bloques de función), con un precio de referencia de USD 5.000 a 7.000 por puesto en licencia perpetua y un mantenimiento anual (TechConnect) de USD 1.000 a 2.000, que da acceso a las versiones nuevas y al soporte del fabricante ([plc.company, precios de Studio 5000 en 2026](https://www.plc.company/studio-5000-cost)). La propuesta se evalúa con el extremo alto de los dos rangos, USD 7.000 (COP 28,7 millones) y USD 2.000 al año (COP 8,2 millones), con USD 1 = COP 4.100. La licencia no lleva montaje ni mantenimiento preventivo, se deprecia a cinco años con el software y su precio se confirma con el distribuidor de Rockwell Automation en la procura (paquete 1.4.1). Tabla generada:
 
 <!-- tabla:capex -->
 | N.º | Rubro tecnológico o maquinaria cotizada | Valor estimado (millones de COP) |
@@ -254,14 +261,15 @@ La celda robotizada de encanastado y paletizado (robot ABB, unos COP 180 millone
 | 17 | Circuito de agua helada a la chaqueta de T-301: TV-304, XV-904 y tubería aislada | 10,0 |
 | 18 | Tanque refrigerado de leche TK-102 de 1.000 L con válvulas de selección XV-101 y XV-102 | 30,0 |
 | 19 | Mesa acumuladora para el encajonado de vasos | 6,0 |
-| | **Subtotal de equipos y software** | **947,0** |
+| 20 | Licencia perpetua de Studio 5000 Logix Designer, edición Professional, para la planta (un puesto) | 28,7 |
+| | **Subtotal de equipos y software** | **975,7** |
 | | Servicios de ingeniería de Cremia Automations (4.780 h en dos contratos, con tarifa por integrante) | 333,7 |
-| | Montaje mecánico y eléctrico por contratistas certificados (8 % de los equipos físicos) | 75,3 |
-| | **Subtotal** | **1.356,0** |
-| | Contingencia del proyecto (8 %) | 108,5 |
-| | **Inversión total** | **1.464,5** |
+| | Montaje mecánico y eléctrico por contratistas certificados (8 % de los equipos físicos, sin la nube ni la licencia) | 75,3 |
+| | **Subtotal** | **1.384,7** |
+| | Contingencia del proyecto (8 %) | 110,8 |
+| | **Inversión total** | **1.495,5** |
 | | Margen no percibido por 5 días de parada de planta durante el montaje | 7,3 |
-| | **Desembolso total del año 0** | **1.471,8** |
+| | **Desembolso total del año 0** | **1.502,8** |
 <!-- /tabla:capex -->
 
 ### 6.2 Composición de la inversión
@@ -271,15 +279,15 @@ Tabla generada:
 <!-- tabla:capex_grupos -->
 | Grupo | Rubros | Millones de COP | Participación |
 | --- | --- | --- | --- |
-| Equipos de proceso | 1, 3, 4, 5, 7, 13, 14, 15, 17 y 18 | 460,0 | 31,4 % |
-| Envasado, inspección y transporte | 6, 8, 9, 16 y 19 | 311,0 | 21,2 % |
-| Instrumentación, control, nodo de borde y nube | 2, 10, 11 y 12 | 176,0 | 12,0 % |
-| Ingeniería de Cremia (incluye 1.830 h de software) | — | 333,7 | 22,8 % |
-| Montaje y contingencia | — | 183,8 | 12,5 % |
-| **Total** | | **1.464,5** | **100 %** |
+| Equipos de proceso | 1, 3, 4, 5, 7, 13, 14, 15, 17 y 18 | 460,0 | 30,8 % |
+| Envasado, inspección y transporte | 6, 8, 9, 16 y 19 | 311,0 | 20,8 % |
+| Instrumentación, control, nodo de borde, nube y licencia del PLC | 2, 10, 11, 12 y 20 | 204,7 | 13,7 % |
+| Ingeniería de Cremia (incluye 1.830 h de software) | — | 333,7 | 22,3 % |
+| Montaje y contingencia | — | 186,1 | 12,4 % |
+| **Total** | | **1.495,5** | **100 %** |
 <!-- /tabla:capex_grupos -->
 
-Los valores de equipos son estimaciones de orden de magnitud a partir de catálogos y cotizaciones de referencia de proveedores del sector lácteo; la cotización formal de cada rubro es parte del paquete de procura de la EDT (1.4.1). La contingencia del 8 % cubre la incertidumbre de esas estimaciones, la variación de la tasa de cambio en los equipos importados y los cambios menores que puedan surgir por pedir los equipos de largo plazo en la semana 4.
+Los valores de equipos son estimaciones de orden de magnitud a partir de catálogos y cotizaciones de referencia de proveedores del sector lácteo; la cotización formal de cada rubro es parte del paquete de procura de la EDT (1.4.1). El valor de la oferta es un precio fijo, que incluye la contingencia del 8 %. Esa contingencia queda del lado de Cremia y cubre la incertidumbre de las estimaciones, la variación de la tasa de cambio en los equipos importados y los cambios menores que puedan surgir por pedir los equipos de largo plazo en la semana 4. Si el sobrecosto supera la contingencia, lo asume Cremia; el cliente solo paga más si pide cambios de alcance, que se cotizan aparte.
 
 ### 6.3 Desembolsos del cliente por hitos
 
@@ -288,11 +296,11 @@ Tabla generada:
 <!-- tabla:pagos -->
 | Hito | Semana | Porcentaje | Millones de COP |
 | --- | --- | --- | --- |
-| Firma del contrato (anticipo) | 1 | 30 % | 439,3 |
-| Pruebas FAT aprobadas | 14 | 30 % | 439,3 |
-| Pruebas SAT y puesta en marcha | 21 | 30 % | 439,3 |
-| Cierre y entrega | 26 | 10 % | 146,4 |
-| **Total** | | **100 %** | **1.464,5** |
+| Firma del contrato (anticipo) | 1 | 30 % | 448,6 |
+| Pruebas FAT aprobadas | 14 | 30 % | 448,6 |
+| Pruebas SAT y puesta en marcha | 21 | 30 % | 448,6 |
+| Cierre y entrega | 26 | 10 % | 149,5 |
+| **Total** | | **100 %** | **1.495,5** |
 <!-- /tabla:pagos -->
 
 ### 6.4 Costo completo del software de supervisión y gestión
@@ -308,7 +316,7 @@ El SCADA y la plataforma MES/ERP no tienen licencias de terceros, pero sí costo
 | Nube durante el proyecto (rubro 12) | Entornos de desarrollo, pruebas y producción en Huawei Cloud | — | 6,0 |
 | **Inversión inicial en supervisión y gestión de la producción** | | | **159,9** |
 
-Desde el año 1, el software cuesta COP 40,0 millones al año (sección 7.2).
+Desde el año 1, el software de supervisión y gestión cuesta COP 40,0 millones al año (sección 7.2). La licencia de Studio 5000 de la planta (rubro 20, COP 28,7 millones) y su mantenimiento anual (COP 8,2 millones) corresponden al software de control y se presentan aparte, en las secciones 6.1 y 7.
 
 ## 7. Beneficios y costos anuales de la propuesta
 
@@ -320,18 +328,19 @@ Tabla generada:
 | Margen de contribución anual con la propuesta (600 lotes, unidades conformes) | 1.285,8 |
 | Margen de contribución actual de la planta (300 lotes, unidades conformes) | −439,0 |
 | **Margen de contribución adicional** | **846,9** |
-| Mantenimiento preventivo de equipos de proceso y envasado | −24,8 |
+| Mantenimiento preventivo de equipos de proceso, instrumentación y envasado | −24,8 |
 | Plan de servicio Cremia: nube Huawei | −15,0 |
 | Plan de servicio Cremia: soporte y evolución del software y del control | −21,0 |
+| Mantenimiento anual de la licencia de Studio 5000 de la planta | −8,2 |
 | Conectividad doble (fibra y 4G) | −4,0 |
 | Operario adicional para el segundo lote | −33,6 |
 | Turno del domingo (horas extra dominicales) | −12,1 |
 | Horas extra por incubaciones largas y disponibilidad nocturna | −5,0 |
 | Laboratorio externo: microbiología por muestreo | −12,0 |
-| **Beneficio operativo anual a plena producción, antes de impuestos** | **719,3** |
+| **Beneficio operativo anual a plena producción, antes de impuestos** | **711,1** |
 <!-- /tabla:beneficio -->
 
-El mantenimiento preventivo es el 3 % anual de los equipos de proceso y envasado (COP 828,0 millones), con repuestos y electrodos de pH. El laboratorio externo hace unos 120 análisis microbiológicos al año, uno de cada cinco lotes, a unos COP 100.000 cada uno.
+El mantenimiento preventivo es el 3 % anual de los equipos de proceso, instrumentación y envasado (COP 828,0 millones), con repuestos, electrodos de pH y la calibración programada de los instrumentos críticos (TT-301, AT-301, las celdas de carga y las controladoras de peso); no se aplica al control, al nodo de borde, a la nube ni a la licencia. El mantenimiento anual de la licencia de Studio 5000 de la planta (TechConnect, USD 2.000) da acceso a las versiones nuevas del software, necesarias cuando se actualiza el firmware del PLC, y al soporte del fabricante. El laboratorio externo hace unos 120 análisis microbiológicos al año, uno de cada cinco lotes, a unos COP 100.000 cada uno.
 
 ### 7.1 Beneficios que no entran en el flujo de caja
 
@@ -345,7 +354,7 @@ La reducción del producto no conforme ya está en el flujo: la situación actua
 
 ### 7.2 Costo del ciclo de vida del software y sostenibilidad
 
-| Costo anual del software | Millones de COP por año |
+| Costo anual del software de supervisión y gestión | Millones de COP por año |
 | --- | --- |
 | Plan de servicio Cremia: nube Huawei (servidor virtual, base de datos principal y en espera, respaldos, IP y avisos; unos USD 300 al mes) | 15,0 |
 | Plan de servicio Cremia: soporte de segundo nivel del PLC, el SCADA y la plataforma, actualizaciones de seguridad, ajustes de recetas y reportes, copias de respaldo y revisión trimestral de indicadores (unas 0,2 personas de tiempo completo) | 21,0 |
@@ -354,11 +363,13 @@ La reducción del producto no conforme ya está en el flujo: la situación actua
 
 En cinco años, el software cuesta COP 359,9 millones: 159,9 de inversión inicial (desarrollo, hardware de borde y nube del proyecto) y 200,0 de costos recurrentes. Solo los tres módulos MES licenciados de la versión de octubre de 2026 cuestan unos COP 223 millones en la lista de precios del fabricante, sin el SCADA, el ERP ni su soporte anual.
 
+El software de control se cuenta aparte: la licencia de Studio 5000 de la planta cuesta COP 28,7 millones de inversión y COP 8,2 millones al año de mantenimiento, COP 69,7 millones en cinco años.
+
 **Por qué software propio.** Para una planta de una línea, las plataformas licenciadas traen más funciones y más costo de los que necesita. Cremia desarrolla un software de complejidad media, a la escala de la planta, con tecnologías abiertas (Python, Django, PostgreSQL, MQTT, OPC UA y Node-RED), y lo reutiliza en otras plantas del segmento.
 
 **Cómo se evita la dependencia de un solo proveedor.**
 - La Hacienda recibe una licencia de uso perpetua de la plataforma para su sitio; el código fuente se deposita con un tercero y se entrega al cliente si Cremia deja de prestar el servicio.
-- La planta es dueña de sus datos, que puede exportar completos en cualquier momento, y del programa del PLC, de los flujos de Node-RED y de las recetas, que se entregan con su documentación (paquete 1.10.3 de la EDT).
+- La planta es dueña de sus datos, que puede exportar completos en cualquier momento, y del programa del PLC, de los flujos de Node-RED y de las recetas, que se entregan con su documentación (paquete 1.10.3 de la EDT). Con su propia licencia de Studio 5000 (rubro 20), el técnico de la planta o cualquier integrador puede abrir, diagnosticar y respaldar el programa del PLC sin depender de Cremia.
 - Soporte en tres niveles: el técnico de primer nivel de la planta, Cremia en el segundo y los fabricantes de los equipos en el tercero.
 - Una actualización trimestral de seguridad de la plataforma y una anual del nodo de borde, probadas antes en el entorno de pruebas y aplicadas en una ventana sin producción.
 - Copias de respaldo diarias cifradas en la nube, con una prueba de restauración cada semestre.
@@ -372,9 +383,9 @@ El horizonte es de cinco años desde la entrega. Se modela una rampa de adopció
 Supuestos del flujo:
 
 - **Impuesto de renta** del 35 % sobre el resultado operativo menos la depreciación.
-- **Depreciación** en línea recta: 10 años para los equipos, el montaje y la ingeniería de la línea (COP 1.291,8 millones) y 5 años para el software y el hardware de borde (COP 172,7 millones), en ambos casos con su parte de la contingencia. La depreciación anual es de COP 163,7 millones.
+- **Depreciación** en línea recta: 10 años para los equipos, el montaje y la ingeniería de la línea (COP 1.291,8 millones) y 5 años para el software, el hardware de borde y la licencia del PLC de la planta (COP 203,7 millones), en ambos casos con su parte de la contingencia. La depreciación anual es de COP 169,9 millones.
 - **Capital de trabajo:** 30 días de cartera sobre las ventas adicionales y 15 días de inventario menos 30 días de proveedores sobre el costo variable adicional; COP 118,0 millones a plena producción, que se recuperan en el año 5.
-- **Valor residual** en el año 5: el valor en libros de los equipos, COP 645,9 millones. El software y el hardware de borde llegan al año 5 sin valor en libros.
+- **Valor residual** en el año 5: el valor en libros de la clase que se deprecia a 10 años (equipos, montaje e ingeniería de la línea, con su contingencia), COP 645,9 millones. El software, el hardware de borde y la licencia del PLC llegan al año 5 sin valor en libros.
 - **Tasa de descuento** del 15 %, la tasa de oportunidad del cliente.
 
 Valores en millones de COP. Tabla generada:
@@ -382,17 +393,17 @@ Valores en millones de COP. Tabla generada:
 <!-- tabla:flujo -->
 | Concepto financiero | Año 0 | Año 1 | Año 2 | Año 3 | Año 4 | Año 5 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Inversión y parada por montaje | −1.471,8 | — | — | — | — | — |
+| Inversión y parada por montaje | −1.502,8 | — | — | — | — | — |
 | Margen adicional (rampa de ventas) | — | 423,4 | 635,1 | 846,9 | 846,9 | 846,9 |
-| Costos de operación | — | −127,6 | −127,6 | −127,6 | −127,6 | −127,6 |
-| Resultado operativo (EBITDA) | — | 295,9 | 507,6 | 719,3 | 719,3 | 719,3 |
-| Depreciación (no es salida de caja) | — | 163,7 | 163,7 | 163,7 | 163,7 | 163,7 |
-| Impuesto de renta (35 %) | — | −46,3 | −120,4 | −194,5 | −194,5 | −194,5 |
+| Costos de operación | — | −135,8 | −135,8 | −135,8 | −135,8 | −135,8 |
+| Resultado operativo (EBITDA) | — | 287,7 | 499,4 | 711,1 | 711,1 | 711,1 |
+| Depreciación (no es salida de caja) | — | 169,9 | 169,9 | 169,9 | 169,9 | 169,9 |
+| Impuesto de renta (35 %) | — | −41,2 | −115,3 | −189,4 | −189,4 | −189,4 |
 | Variación del capital de trabajo | — | −59,0 | −29,5 | −29,5 | 0,0 | 0,0 |
 | Recuperación del capital de trabajo y valor residual en libros | — | 0,0 | 0,0 | 0,0 | 0,0 | 763,9 |
-| **Flujo neto antes de impuestos** | −1.471,8 | 236,9 | 478,1 | 689,8 | 719,3 | 1.483,2 |
-| **Flujo neto después de impuestos** | −1.471,8 | 190,6 | 357,7 | 495,3 | 524,8 | 1.288,7 |
-| Flujo acumulado después de impuestos | −1.471,8 | −1.281,2 | −923,4 | −428,1 | 96,7 | 1.385,5 |
+| **Flujo neto antes de impuestos** | −1.502,8 | 228,7 | 469,9 | 681,6 | 711,1 | 1.475,0 |
+| **Flujo neto después de impuestos** | −1.502,8 | 187,5 | 354,6 | 492,2 | 521,7 | 1.285,6 |
+| Flujo acumulado después de impuestos | −1.502,8 | −1.315,3 | −960,8 | −468,6 | 53,1 | 1.338,7 |
 <!-- /tabla:flujo -->
 
 ## 9. Indicadores financieros
@@ -402,15 +413,15 @@ Tabla generada:
 <!-- tabla:indicadores -->
 | Indicador | Después de impuestos (principal) | Antes de impuestos |
 | --- | --- | --- |
-| VPN al 15 % | COP 231,0 millones | COP 697,9 millones |
-| TIR | 19,8 % | 28,9 % |
-| Periodo de recuperación | 3,8 años | 3,1 años |
-| Relación beneficio-costo (valor presente de los flujos ÷ desembolso) | 1,16 | — |
-| Volumen de equilibrio (VPN = 0) | 89,6 % del plan | — |
-| Vasos de equilibrio, con las bolsas al 100 % | 84,1 % del plan | — |
+| VPN al 15 % | COP 189,4 millones | COP 639,4 millones |
+| TIR | 18,9 % | 27,5 % |
+| Periodo de recuperación | 3,9 años | 3,2 años |
+| Relación beneficio-costo (valor presente de los flujos ÷ desembolso) | 1,13 | — |
+| Volumen de equilibrio (VPN = 0) | 91,5 % del plan | — |
+| Vasos de equilibrio, con las bolsas al 100 % | 87,0 % del plan | — |
 <!-- /tabla:indicadores -->
 
-El indicador principal es el VPN después de impuestos: COP 231,0 millones, con una TIR de 19,8 % y recuperación en 3,8 años. El proyecto crea valor para el cliente, pero con menos holgura que la versión de octubre de 2026 (VPN de 602 millones antes de impuestos y sin valor residual), por tres razones: el flujo ahora paga impuestos, la propuesta incluye lo que necesita el segundo lote (TK-102, agua helada en la chaqueta, horas extra y laboratorio) y la ingeniería cubre la nómina completa de un proyecto de 26 semanas. La propuesta es más cara que en octubre, pero ahora sus cifras son completas.
+El indicador principal es el VPN después de impuestos: COP 189,4 millones, con una TIR de 18,9 % y recuperación en 3,9 años. El proyecto crea valor para el cliente, pero con menos holgura que la versión de octubre de 2026 (VPN de 602 millones antes de impuestos y sin valor residual), por cuatro razones: el flujo ahora paga impuestos, la propuesta incluye lo que necesita el segundo lote (TK-102, agua helada en la chaqueta, horas extra y laboratorio), la ingeniería cubre la nómina completa de un proyecto de 26 semanas y la planta compra su propia licencia de Studio 5000 con su mantenimiento anual, que restan unos COP 42 millones al VPN. La propuesta es más cara que en octubre, pero ahora sus cifras son completas.
 
 ## 10. Sensibilidad, alcance y financiación
 
@@ -421,60 +432,61 @@ El volumen se expresa como porcentaje de la producción de la propuesta que efec
 <!-- tabla:sensibilidad -->
 | Escenario | VPN al 15 % (millones de COP) | TIR | Recuperación |
 | --- | --- | --- | --- |
-| Base | 231,0 | 19,8 % | 3,8 años |
-| Volumen vendido al 90 % | 8,2 | 15,2 % | 4,1 años |
-| Volumen vendido al 80 % | −214,6 | 10,3 % | 4,4 años |
-| Vasos vendidos al 80 % (bolsas al 100 %) | −60,4 | 13,7 % | 4,2 años |
-| Precio de venta −5 % | 58,2 | 16,2 % | 4,1 años |
-| Precio de venta +5 % | 403,7 | 23,3 % | 3,5 años |
-| Leche cruda +10 % | 170,0 | 18,6 % | 4,0 años |
-| Leche cruda −10 % | 291,9 | 21,1 % | 3,7 años |
-| Inversión +10 % | 135,8 | 17,6 % | 4,0 años |
-| Inversión −10 % | 326,1 | 22,5 % | 3,6 años |
-| Horas de software +30 % | 200,2 | 19,1 % | 3,9 años |
-| Sin valor residual | −90,2 | 12,8 % | 3,8 años |
-| Solo preparación y bolsas: 600 lotes de YB-200 sin línea de vasos (inversión de 1.174,6) | −264,0 | 7,7 % | 4,5 años |
+| Base | 189,4 | 18,9 % | 3,9 años |
+| Volumen vendido al 90 % | −33,4 | 14,3 % | 4,2 años |
+| Volumen vendido al 80 % | −259,5 | 9,4 % | 4,4 años |
+| Vasos vendidos al 90 %, umbral de las cartas de intención (bolsas al 100 %) | 43,7 | 15,9 % | 4,1 años |
+| Vasos vendidos al 80 % (bolsas al 100 %) | −102,0 | 12,8 % | 4,2 años |
+| Precio de venta −5 % | 16,6 | 15,3 % | 4,1 años |
+| Precio de venta +5 % | 362,1 | 22,4 % | 3,6 años |
+| Leche cruda +10 % | 128,4 | 17,7 % | 4,0 años |
+| Leche cruda −10 % | 250,3 | 20,1 % | 3,8 años |
+| Inversión +10 % | 91,9 | 16,8 % | 4,1 años |
+| Inversión −10 % | 286,9 | 21,5 % | 3,7 años |
+| Horas de software +30 % | 158,7 | 18,2 % | 4,0 años |
+| Sin valor residual | −131,7 | 11,8 % | 3,9 años |
+| Solo preparación y bolsas: 600 lotes de YB-200 sin línea de vasos (inversión de 1.205,6) | −310,0 | 6,6 % | 4,6 años |
 <!-- /tabla:sensibilidad -->
 
 **Lectura.**
-- **El volumen es la variable más sensible.** Por debajo del 89,6 % del plan, el VPN es negativo. Si las bolsas se venden completas, el equilibrio de los vasos está en el 84,1 % de lo planeado.
+- **El volumen es la variable más sensible.** Por debajo del 91,5 % del plan, el VPN es negativo; con el 90 % del volumen ya es de −33,4 millones. Si las bolsas se venden completas, el equilibrio de los vasos está en el 87,0 % de lo planeado.
 - **El valor residual pesa.** Sin él, el VPN es negativo. Es razonable incluirlo porque los equipos de proceso tienen más de 10 años de vida útil y se valoran en libros, no a precio de mercado, pero el cliente debe saber que buena parte del valor llega al final del horizonte.
-- **El software propio aguanta un sobrecosto.** Con 30 % más de horas de software, el VPN sigue en COP 200,2 millones.
-- **Solo bolsas no es viable.** Duplicar las bolsas sin la línea de vasos da un VPN de −264,0 millones: el negocio de la propuesta depende de los vasos.
+- **El software propio aguanta un sobrecosto.** Con 30 % más de horas de software, el VPN sigue en COP 158,7 millones.
+- **Solo bolsas no es viable.** Duplicar las bolsas sin la línea de vasos da un VPN de −310,0 millones: el negocio de la propuesta depende de los vasos.
 
 ### 10.2 Alcance y condición para firmar
 
-Como el proyecto solo es viable con las referencias en vaso, la oferta exige, antes de firmar, cartas de intención de los distribuidores por al menos el 85 % del volumen de vasos del plan. Así, el cliente no se compromete con el anticipo sin haber validado la demanda que sostiene el VPN. La celda robotizada de encanastado y paletizado (unos COP 180 millones en equipos) queda para una etapa posterior, cuando el volumen la justifique.
+Como el proyecto solo es viable con las referencias en vaso, la oferta exige, antes de firmar, cartas de intención de los distribuidores por al menos el 90 % del volumen de vasos del plan. El umbral queda 3 puntos por encima del equilibrio de los vasos (87,0 %, con las bolsas al 100 %): con los vasos al 90 %, el VPN es de COP 43,7 millones. Así, el cliente no se compromete con el anticipo sin haber validado una demanda con la que el proyecto crea valor; el VPN completo del caso base (COP 189,4 millones) depende además de que el plan de lanzamiento lleve los vasos al 100 % del plan. La celda robotizada de encanastado y paletizado (unos COP 180 millones en equipos) queda para una etapa posterior, cuando el volumen la justifique.
 
 ### 10.3 Estructura de financiación
 
-Si el cliente financia el 70 % de la inversión (COP 1.025,1 millones) con un crédito de modernización industrial a cinco años, al 18 % efectivo anual, el crédito necesita un año de gracia con pago de intereses: sin él, la cuota de los años 1 a 5 superaría el flujo del año 1. Tabla generada (millones de COP):
+Si el cliente financia el 70 % de la inversión (COP 1.046,8 millones) con un crédito de modernización industrial a cinco años, al 18 % efectivo anual, el crédito necesita un año de gracia con pago de intereses: sin él, la cuota de los años 1 a 5 superaría el flujo del año 1. Tabla generada (millones de COP):
 
 <!-- tabla:credito -->
 | Año | Intereses | Abono a capital | Cuota | Saldo al final del año | Flujo del proyecto después de impuestos | Ahorro tributario de los intereses | Flujo después de la deuda |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 184,5 | 0,0 | 184,5 | 1.025,1 | 190,6 | 64,6 | 70,7 |
-| 2 | 184,5 | 196,6 | 381,1 | 828,6 | 357,7 | 64,6 | 41,2 |
-| 3 | 149,1 | 231,9 | 381,1 | 596,6 | 495,3 | 52,2 | 166,5 |
-| 4 | 107,4 | 273,7 | 381,1 | 323,0 | 524,8 | 37,6 | 181,4 |
-| 5 | 58,1 | 323,0 | 381,1 | 0,0 | 524,8 | 20,3 | 164,1 |
+| 1 | 188,4 | 0,0 | 188,4 | 1.046,8 | 187,5 | 66,0 | 65,0 |
+| 2 | 188,4 | 200,7 | 389,1 | 846,1 | 354,6 | 66,0 | 31,4 |
+| 3 | 152,3 | 236,8 | 389,1 | 609,3 | 492,2 | 53,3 | 156,3 |
+| 4 | 109,7 | 279,5 | 389,1 | 329,8 | 521,7 | 38,4 | 170,9 |
+| 5 | 59,4 | 329,8 | 389,1 | 0,0 | 521,7 | 20,8 | 153,3 |
 <!-- /tabla:credito -->
 
-El flujo después de la deuda es positivo todos los años, aunque el año 2 es estrecho (COP 41,2 millones). El 30 % restante (COP 439,3 millones) lo aporta el cliente con recursos propios y coincide con el anticipo a la firma del contrato.
+El flujo después de la deuda es positivo todos los años, aunque el año 2 es estrecho (COP 31,4 millones). En el año 5, la columna del flujo del proyecto no incluye la recuperación del capital de trabajo ni el valor residual (COP 763,9 millones), porque no son caja disponible para pagar la cuota. El 30 % restante (COP 448,6 millones) lo aporta el cliente con recursos propios y coincide con el anticipo a la firma del contrato.
 
 ## 11. Riesgos y mitigación
 
 | Riesgo | Efecto | Probabilidad | Mitigación |
 | --- | --- | --- | --- |
-| Las referencias en vaso se venden menos de lo previsto | VPN negativo por debajo del 84,1 % de los vasos del plan | Media | Cartas de intención por el 85 % del volumen de vasos antes de firmar; plan de lanzamiento con los distribuidores |
-| Baja del precio de venta en el canal | Una baja del 5 % reduce el VPN a 58,2 millones | Media | Contratos de suministro con precio indexado; mezcla con más vasos |
-| Sobrecosto de equipos importados por tasa de cambio | Un 10 % más de inversión reduce el VPN a 135,8 millones | Media | Contingencia del 8 %; cotizaciones con validez de 90 días |
+| Las referencias en vaso se venden menos de lo previsto | VPN negativo por debajo del 87,0 % de los vasos del plan | Media | Cartas de intención por el 90 % del volumen de vasos antes de firmar; plan de lanzamiento con los distribuidores |
+| Baja del precio de venta en el canal | Una baja del 5 % reduce el VPN a 16,6 millones | Media | Contratos de suministro con precio indexado; mezcla con más vasos |
+| Sobrecosto de equipos importados por tasa de cambio | Con precio fijo, el sobrecosto lo asume Cremia hasta agotar la contingencia del 8 % y también por encima de ella; para el cliente, el riesgo es un cambio de alcance (un 10 % más de inversión reduciría su VPN a 91,9 millones) | Media | Precio fijo con contingencia del 8 % del lado de Cremia; cotizaciones con validez de 90 días y compra de los equipos importados en la semana 4 |
 | Retraso en la fabricación, el transporte o la nacionalización | La entrega se corre más allá de la semana 26 | Media | Pedido en la semana 4 con hojas de datos aprobadas, seguimiento semanal, FAT antes del despacho y agente de aduanas desde la orden de compra |
-| El desarrollo del software toma más horas | Un 30 % más de horas reduce el VPN a 200,2 millones | Media | Dos versiones: si el desarrollo se atrasa, se corren funciones a la versión 2 y no el arranque; pruebas en el gemelo digital |
+| El desarrollo del software toma más horas | Un 30 % más de horas reduce el VPN a 158,7 millones | Media | Dos versiones: si la versión 1 se atrasa, se pasan a la versión 2 funciones que no se necesitan para producir y no el arranque; como la versión 2 no tiene holgura, el traslado se compensa con horas del equipo; pruebas en el gemelo digital |
 | Falla de la nube o de internet | Pérdida temporal de la gestión de la producción | Baja | El PLC y el nodo de borde producen sin internet durante 72 h; base de datos con réplica en espera; conectividad doble |
 | Incidente de ciberseguridad | Parada de producción o pérdida de datos | Baja | Zonas según IEC 62443, solo conexiones salientes, certificados por dispositivo, doble factor y respaldos cifrados |
 | El lote 2 nocturno sale fuera de especificación | Lote no conforme o retenido | Media | pH de corte de 4,6, enfriamiento con agua helada, respaldo con agua de red, alarmas por SMS y acidez de confirmación a las 7:00; validación en el arranque con un lote nocturno de cada referencia |
-| Dependencia del software de Cremia | La planta no puede mantener la plataforma si Cremia desaparece | Baja | Licencia perpetua, depósito del código fuente y exportación completa de datos |
+| Dependencia del software de Cremia | La planta no puede mantener la plataforma si Cremia desaparece | Baja | Licencia perpetua de la plataforma, depósito del código fuente, exportación completa de datos y licencia propia de Studio 5000 para el programa del PLC |
 | Resistencia del personal al cambio | Rendimiento menor al esperado en el primer año | Media | Plan de gestión del cambio (EDT 1.10.1), capacitación por rol (1.10.2), seis semanas de estabilización y rampa de adopción del 50 % y 75 % |
 
 ## 12. Modelo de negocio
@@ -497,7 +509,7 @@ El flujo después de la deuda es positivo todos los años, aunque el año 2 es e
 | Dimensión | Hoy | Con la propuesta | Cambio |
 | --- | --- | --- | --- |
 | Productividad | 2.898 bolsas conformes por día; 724 por operario | 6.505 unidades conformes por día en promedio; 1.301 por operario | +124 % de producción conforme y +80 % por operario |
-| Ingresos y margen | Ventas de COP 1.043,3 millones y margen de 439,0 millones al año | Ventas de COP 3.028,4 millones y margen de 1.285,8 millones al año | +846,9 millones de margen y +719,3 millones de beneficio operativo al año |
+| Ingresos y margen | Ventas de COP 1.043,3 millones y margen de 439,0 millones al año | Ventas de COP 3.028,4 millones y margen de 1.285,8 millones al año | +846,9 millones de margen y +711,1 millones de beneficio operativo al año |
 | Costo de mano de obra por unidad conforme | 155 COP | 95 COP | −39 % |
 | Calidad | 5,06 % de producto no conforme; peso de una de cada cinco bolsas | 1,5 % o menos; peso del 100 % y puntos críticos con registro continuo | Menos producto perdido, ya incluido en el flujo |
 | Eficiencia de la empacadora (OEE) | ≈ 65 % | 82 % | Menos paradas y peso en línea |
@@ -513,7 +525,7 @@ La propuesta de valor y el plan de gestión del cambio se desarrollan en el docu
 2. **Portafolio ampliado de mayor margen:** de una a tres referencias, con vasos de 150 y 300 ml con fruta que dejan hasta 1.280 COP de margen por unidad.
 3. **Calidad uniforme y menos desperdicio:** dosificación por celdas de carga, control automático de temperatura y pH, y control de peso del 100 % en línea. Meta de producto no conforme: 1,5 % o menos, frente al 5,06 % actual.
 4. **Trazabilidad integral ISA-88 e ISA-95:** registro electrónico por lote desde la cantina de leche cruda hasta el despacho, sin papel.
-5. **Software a la escala de la planta, sin licencias de terceros:** SCADA en Node-RED y plataforma Cremia MES/ERP en Huawei Cloud, que sigue disponible aunque falle la planta y avisa si se pierde la señal del lote nocturno.
+5. **Software a la escala de la planta, sin licencias de terceros en la supervisión y la gestión:** SCADA en Node-RED y plataforma Cremia MES/ERP en Huawei Cloud, que sigue disponible aunque falle la planta y avisa si se pierde la señal del lote nocturno.
 6. **Menor riesgo de puesta en marcha:** el programa del PLC, el SCADA y la plataforma se validan en un gemelo digital antes del montaje físico.
 7. **Personas preparadas para operar la nueva línea:** gestión del cambio desde la semana 1, capacitación por rol en el gemelo digital, procedimientos actualizados y seis semanas de estabilización con producción.
 
@@ -521,13 +533,13 @@ La propuesta de valor y el plan de gestión del cambio se desarrollan en el docu
 
 | Elemento contractual | Condición ofertada |
 | --- | --- |
-| Alcance del suministro | Ingeniería, suministro de equipos, montaje, programación del PLC, SCADA en Node-RED, plataforma Cremia MES/ERP en Huawei Cloud, pruebas FAT y SAT, puesta en marcha, gestión del cambio, capacitación y estabilización |
-| Valor total de la oferta | COP 1.464,5 millones, sin IVA |
+| Alcance del suministro | Ingeniería, suministro de equipos, montaje, programación del PLC, licencia de Studio 5000 para la planta, SCADA en Node-RED, plataforma Cremia MES/ERP en Huawei Cloud, pruebas FAT (remotas) y SAT, puesta en marcha, gestión del cambio, capacitación y estabilización |
+| Valor total de la oferta | COP 1.495,5 millones, sin IVA, a precio fijo: incluye la contingencia del 8 %, que queda del lado de Cremia |
 | Servicios de ingeniería | COP 333,7 millones en dos contratos: diseño, procura y gestión de compras (62,1) e implementación, software, puesta en marcha y adopción (271,6), con tarifa según el valor que aporta cada integrante |
-| Condición para firmar | Cartas de intención de los distribuidores por al menos el 85 % del volumen de vasos del plan |
+| Condición para firmar | Cartas de intención de los distribuidores por al menos el 90 % del volumen de vasos del plan |
 | Plazo de ejecución | 26 semanas, del 18 de enero al 16 de julio de 2027 |
 | Forma de pago por hitos | 30 % de anticipo a la firma, 30 % contra pruebas FAT (semana 14), 30 % con la puesta en marcha y las pruebas SAT (semana 21) y 10 % al cierre (semana 26) |
-| Software | Licencia perpetua de la plataforma Cremia MES/ERP para el sitio, código fuente en depósito con un tercero y exportación completa de datos |
+| Software | Licencia perpetua de la plataforma Cremia MES/ERP para el sitio, código fuente en depósito con un tercero y exportación completa de datos; licencia perpetua de Studio 5000 Logix Designer (edición Professional) a nombre de La Hacienda, con su mantenimiento anual de USD 2.000 a cargo de la planta desde el año 1 |
 | Garantía y servicio | 12 meses de garantía integral sobre la integración, seis semanas de estabilización dentro del proyecto y plan de servicio anual de COP 36,0 millones (nube y soporte), incluido en los costos de operación |
 | Etapa posterior opcional | Celda robotizada de encanastado y paletizado, con espacio e interfaz ya diseñados |
 
@@ -544,4 +556,5 @@ La propuesta de valor y el plan de gestión del cambio se desarrollan en el docu
 9. Oficina Internacional del Trabajo (OIT). (2005). Introducción al estudio del trabajo (4.ª ed. revisada). México: Limusa.
 10. Project Management Institute. (2021). Guía de los fundamentos para la dirección de proyectos (Guía del PMBOK), 7.ª ed. Newtown Square, PA: PMI.
 11. Sapag Chain, N., Sapag Chain, R. y Sapag, J. M. (2014). Preparación y evaluación de proyectos (6.ª ed.). México: McGraw-Hill.
-12. Sepasoft. Lista de precios de los módulos MES (alternativa descartada), consultada en noviembre de 2026: https://www.sepasoft.com/pricing/
+12. PLC Company. (2026). How much does Studio 5000 cost? 2026 pricing guide. Consultado en noviembre de 2026: https://www.plc.company/studio-5000-cost
+13. Sepasoft. Lista de precios de los módulos MES (alternativa descartada), consultada en noviembre de 2026: https://www.sepasoft.com/pricing/

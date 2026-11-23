@@ -34,7 +34,7 @@ La EDT sigue la Guía del PMBOK (7.ª edición) y el Practice Standard for Work 
 - Se agrega la cuenta 1.6, Plataforma Cremia MES/ERP (1.500 h), y el SCADA en Node-RED pasa a la cuenta 1.5 (paquetes 1.5.3 a 1.5.5, 330 h). Las cuentas siguientes se renumeran: el gemelo digital pasa a 1.7, el montaje a 1.8, las pruebas a 1.9 y la gestión del cambio a 1.10.
 - Las horas suben a 4.780 y se reparten para que nadie supere el 80 % de su capacidad en el proyecto ni 42 h en ninguna semana, descontando los festivos (la Semana Santa deja la semana 10 con dos días hábiles).
 - Las tarifas suben para que el valor facturado cubra la nómina completa de las 26 semanas con el factor mínimo de 1,39.
-- La estabilización con producción (semanas 21 a 26) queda dentro del proyecto y con horas asignadas.
+- La estabilización con producción (semanas 21 a 26; la semana 21 solapa con el arranque y la validación) queda dentro del proyecto y con horas asignadas.
 - La celda robotizada sigue fuera del alcance; el paquete 1.3.4 diseña la estación de encanastado y reserva el espacio para la celda.
 
 ## 4. Resumen
@@ -155,6 +155,8 @@ La carga semanal se calcula repartiendo las horas de cada paquete entre sus sema
 
 ## 6. Diccionario de la EDT
 
+La columna «Depende de» indica de qué paquete toma insumos cada uno. El plan usa ejecución rápida: salvo que se diga otra cosa, la dependencia es de comienzo a comienzo, con un desfase, y no exige que el predecesor termine. Así, la puesta en marcha virtual integra los paquetes de software a medida que terminan (semanas 16 a 18); la capacitación empieza con versiones preliminares de los procedimientos, que se cierran después de la SAT; y los procedimientos se escriben desde la semana 19 y se ajustan con los resultados de la SAT y del arranque. Las dependencias de fin a comienzo, que sí exigen que el predecesor termine, son el pedido de equipos (después de aprobar las hojas de datos en la semana 3), la FAT (después de la fabricación), la instalación de los equipos importados (después de su llegada en la semana 18) y el arranque con producto, que empieza en la semana 21 a medida que concluyen las pruebas SAT de los equipos de preparación y envasado; el acta de aprobación de la SAT y de la puesta en marcha (11 de junio, hito del pago) se firma con los primeros lotes del arranque.
+
 <!-- tabla:edt_diccionario -->
 | Código | Paquete de trabajo | Entregable verificable | Responsable (horas) | Horas | Semanas | Depende de |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -174,7 +176,7 @@ La carga semanal se calcula repartiendo las horas de cada paquete entre sus sema
 | 1.3.5 | Distribución en planta | Plano de distribución con TK-102 | Ana Orozco (45), David Cárdenas (5) | 50 | 3–8 | 1.3.1 |
 | 1.4.1 | Cotizaciones y selección de proveedores | Cuadro comparativo de proveedores | Cristian Hoyos | 50 | 1–3 | Ingeniería conceptual de la oferta |
 | 1.4.2 | Órdenes de compra, seguimiento de fabricación e importación | Órdenes emitidas en la semana 4, plan de entregas y nacionalización | Cristian Hoyos | 70 | 4–18 | 1.3.1, 1.4.1 |
-| 1.4.3 | Pruebas FAT | Protocolos FAT firmados | José Andrés Zapata (15), Ana Orozco (45) | 60 | 13–14 | 1.4.2 |
+| 1.4.3 | Pruebas FAT | Protocolos FAT ejecutados por el fabricante y aprobados de forma remota, por videoconferencia | José Andrés Zapata (15), Ana Orozco (45) | 60 | 13–14 | 1.4.2 |
 | 1.5.1 | Programa del PLC: fases del proceso y lote nocturno | Programa de fases, lazos PID, enfriamiento nocturno y enclavamientos probado en el emulador | David Cortés (140), Jesús Rivera (60) | 200 | 5–13 | 1.3.2, 1.2.4 |
 | 1.5.2 | Programa del PLC: envasado y transporte | Programa de envasado, peso y transporte probado | Jesús Rivera (90), David Cortés (60) | 150 | 6–14 | 1.3.2 |
 | 1.5.3 | SCADA Node-RED: guía de estilo ISA-101 y pantallas | Guía de estilo y pantallas de HMI-01 y HMI-02 | David Cárdenas (30), Ana Orozco (10), David Cortés (50) | 90 | 3–6 | 1.2.4 |
@@ -199,13 +201,13 @@ La carga semanal se calcula repartiendo las horas de cada paquete entre sus sema
 | 1.8.3 | Red industrial, nodo de borde y nube de producción | Red, nodo de borde, conectividad doble y entorno de producción en servicio | Jesús Rivera (20), David Cárdenas (30) | 50 | 16–18 | 1.6.1, 1.5.5 |
 | 1.8.4 | Línea de vasos | Llenadora, dosificación de fruta, controladora, codificador y mesa acumuladora instalados | Ana Orozco (40), José Andrés Zapata (20) | 60 | 18–19 | 1.4.3 |
 | 1.9.1 | Pruebas de lazo y de E/S | Protocolos de lazo firmados | Jesús Rivera (40), Ana Orozco (5), José Andrés Zapata (5) | 50 | 19–20 | 1.8.2 |
-| 1.9.2 | Pruebas SAT | Protocolos SAT firmados, incluido un corte de internet en planta | David Cortés (55), Jesús Rivera (20), David Cárdenas (5) | 80 | 20–21 | 1.9.1, 1.7.3 |
-| 1.9.3 | Arranque con producto | Lotes conformes de YB-200, YV-150 y YV-300, incluido un lote 2 nocturno de cada referencia | José Andrés Zapata (65), Ana Orozco (35) | 100 | 20–22 | 1.9.2 |
+| 1.9.2 | Pruebas SAT | Protocolos SAT firmados, incluido un corte de internet en planta | David Cortés (55), Jesús Rivera (10), José Andrés Zapata (10), David Cárdenas (5) | 80 | 20–21 | 1.9.1, 1.7.3 |
+| 1.9.3 | Arranque con producto | Lotes conformes de YB-200, YV-150 y YV-300, incluido un lote 2 nocturno de cada referencia | José Andrés Zapata (55), Ana Orozco (35), Jesús Rivera (10) | 100 | 21–22 | 1.9.2 |
 | 1.9.4 | Validación de calidad e inocuidad | Registros de puntos críticos, curvas de enfriamiento nocturno y primeros lotes liberados por registro de proceso | José Andrés Zapata (5), David Cárdenas (45) | 50 | 21–23 | 1.9.3 |
 | 1.10.1 | Gestión del cambio y comunicación | Plan de gestión del cambio, comunicaciones y medición de adopción | Cristian Hoyos | 130 | 1–26 | 1.1.1 |
 | 1.10.2 | Capacitación por rol | Personal capacitado y evaluado por rol, en el gemelo digital y en la plataforma | David Cárdenas (75), Ana Orozco (35), José Andrés Zapata (10), Cristian Hoyos (10) | 130 | 17–20 | 1.7.3 |
-| 1.10.3 | Procedimientos, documentación y manuales | Procedimientos operativos, planos finales, manuales y depósito del código fuente | David Cárdenas (95), Jesús Rivera (5) | 100 | 19–25 | 1.9.2 |
-| 1.10.4 | Estabilización y entrega | Acompañamiento con producción en las semanas 22–26, dentro de la estabilización de seis semanas (21–26), acta de entrega y metas de adopción medidas | David Cortés (75), José Andrés Zapata (45), David Cárdenas (25), Ana Orozco (5) | 150 | 22–26 | 1.9.4, 1.10.2, 1.10.3 |
+| 1.10.3 | Procedimientos, documentación y manuales | Procedimientos operativos, planos finales, manuales, depósito del código fuente y programa del PLC entregado con la licencia de Studio 5000 de la planta activada | David Cárdenas (95), Jesús Rivera (5) | 100 | 19–25 | 1.9.2 |
+| 1.10.4 | Estabilización y entrega | Acompañamiento con producción en las semanas 22–26, dentro de la estabilización de seis semanas (21–26; el paquete cubre 22–26 y la semana 21 es de arranque/validación), acta de entrega y metas de adopción medidas | David Cortés (75), José Andrés Zapata (45), David Cárdenas (25), Ana Orozco (5) | 150 | 22–26 | 1.9.4, 1.10.2, 1.10.3 |
 <!-- /tabla:edt_diccionario -->
 
 ## 7. Contratos y valor de la ingeniería
@@ -234,21 +236,23 @@ La ingeniería se factura en dos contratos, con las horas de la EDT a una tarifa
 
 ## 8. Articulación con el cronograma y el presupuesto
 
-**Ruta crítica.** Validación de la ingeniería básica (semanas 1 a 3) → pedido de los equipos de largo plazo (semana 4) → fabricación (semanas 4 a 13) → FAT (semanas 13 y 14) → transporte y nacionalización (semanas 15 a 18) → montaje con preinstalación desde la semana 14 y parada en la semana 19 → pruebas de lazo y SAT (semanas 19 a 21) → arranque y validación (semanas 20 a 23) → estabilización (semanas 21 a 26) → entrega (semana 26).
+**Ruta crítica.** Validación de la ingeniería básica (semanas 1 a 3) → pedido de los equipos de largo plazo (semana 4) → fabricación (semanas 4 a 13) → FAT (semanas 13 y 14) → transporte y nacionalización (semanas 15 a 18) → montaje con preinstalación desde la semana 14 y parada en la semana 19 → pruebas de lazo y SAT (semanas 19 a 21) → arranque y validación (semanas 21 a 23) → estabilización (semanas 21 a 26) → entrega (semana 26).
 
-El software tiene su propia cadena: núcleo de la plataforma (semanas 2 a 7) → recetas, registro de lote, calidad e integración (semanas 7 a 17) → puesta en marcha virtual (semanas 16 a 19) → SAT (semanas 20 y 21). Tiene una holgura de una semana frente a la ruta crítica; si se consume, se corren funciones de la versión 2 de la plataforma, no el arranque.
+El software tiene su propia cadena: núcleo de la plataforma (semanas 2 a 7) → recetas, registro de lote, calidad e integración (semanas 7 a 17) → puesta en marcha virtual (semanas 16 a 19) → SAT (semanas 20 y 21). Tiene una holgura de una semana frente a las pruebas de lazo; si se consume, se pasan a la versión 2 funciones que no se necesitan para producir, no el arranque.
+
+La versión 2 forma una segunda cadena sin holgura que también termina en la semana 26: arranque con producto (semanas 21 y 22) → OEE, paradas y horas de equipo (semanas 21 a 25) → tablero gerencial y reportes (semanas 23 a 26). El pago del 10 % de la entrega depende de ella, así que un traslado de funciones desde la versión 1 se compensa con horas del equipo en las semanas 23 a 26, no con plazo.
 
 <!-- tabla:pagos -->
 | Hito | Semana | Porcentaje | Millones de COP |
 | --- | --- | --- | --- |
-| Firma del contrato (anticipo) | 1 | 30 % | 439,3 |
-| Pruebas FAT aprobadas | 14 | 30 % | 439,3 |
-| Pruebas SAT y puesta en marcha | 21 | 30 % | 439,3 |
-| Cierre y entrega | 26 | 10 % | 146,4 |
-| **Total** | | **100 %** | **1.464,5** |
+| Firma del contrato (anticipo) | 1 | 30 % | 448,6 |
+| Pruebas FAT aprobadas | 14 | 30 % | 448,6 |
+| Pruebas SAT y puesta en marcha | 21 | 30 % | 448,6 |
+| Cierre y entrega | 26 | 10 % | 149,5 |
+| **Total** | | **100 %** | **1.495,5** |
 <!-- /tabla:pagos -->
 
-Con los equipos y el software (947,0), la ingeniería (333,7), el montaje (75,3) y la contingencia (108,5), la inversión total es de COP 1.464,5 millones. Para el cliente, el VPN al 15 % después de impuestos es de COP 231,0 millones, la TIR de 19,8 % y la recuperación de 3,8 años, según la propuesta económica.
+Con los equipos y el software (975,7, incluida la licencia de Studio 5000 de la planta), la ingeniería (333,7), el montaje (75,3) y la contingencia (110,8), la inversión total es de COP 1.495,5 millones. Para el cliente, el VPN al 15 % después de impuestos es de COP 189,4 millones, la TIR de 18,9 % y la recuperación de 3,9 años, según la propuesta económica.
 
 ## 9. Criterios de la descomposición
 

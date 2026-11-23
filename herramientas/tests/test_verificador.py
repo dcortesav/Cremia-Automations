@@ -25,9 +25,9 @@ def test_no_confunde_cifras_parecidas():
 
 
 def test_cifras_canonicas(tmp_path):
-    (tmp_path / "a.md").write_text("VPN de 231,0 millones", encoding="utf-8")
+    (tmp_path / "a.md").write_text("VPN de 189,4 millones", encoding="utf-8")
     (tmp_path / "b.md").write_text("Sin la cifra", encoding="utf-8")
-    errores = V.verificar(tmp_path, {"231,0": ["a.md", "b.md", "c.md"]})
+    errores = V.verificar(tmp_path, {"189,4": ["a.md", "b.md", "c.md"]})
     assert any("b.md" in e for e in errores)
     assert any("c.md: no existe" in e for e in errores)
     assert not any(e.startswith("a.md") for e in errores)

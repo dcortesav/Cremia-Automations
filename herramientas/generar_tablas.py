@@ -39,7 +39,7 @@ ENTREGABLES = {
     "1.3.5": ("Plano de distribución con TK-102", "1.3.1"),
     "1.4.1": ("Cuadro comparativo de proveedores", "Ingeniería conceptual de la oferta"),
     "1.4.2": ("Órdenes emitidas en la semana 4, plan de entregas y nacionalización", "1.3.1, 1.4.1"),
-    "1.4.3": ("Protocolos FAT firmados", "1.4.2"),
+    "1.4.3": ("Protocolos FAT ejecutados por el fabricante y aprobados de forma remota, por videoconferencia", "1.4.2"),
     "1.5.1": ("Programa de fases, lazos PID, enfriamiento nocturno y enclavamientos probado en el emulador", "1.3.2, 1.2.4"),
     "1.5.2": ("Programa de envasado, peso y transporte probado", "1.3.2"),
     "1.5.3": ("Guía de estilo y pantallas de HMI-01 y HMI-02", "1.2.4"),
@@ -69,8 +69,8 @@ ENTREGABLES = {
     "1.9.4": ("Registros de puntos críticos, curvas de enfriamiento nocturno y primeros lotes liberados por registro de proceso", "1.9.3"),
     "1.10.1": ("Plan de gestión del cambio, comunicaciones y medición de adopción", "1.1.1"),
     "1.10.2": ("Personal capacitado y evaluado por rol, en el gemelo digital y en la plataforma", "1.7.3"),
-    "1.10.3": ("Procedimientos operativos, planos finales, manuales y depósito del código fuente", "1.9.2"),
-    "1.10.4": ("Acompañamiento con producción en las semanas 22–26, dentro de la estabilización de seis semanas (21–26), acta de entrega y metas de adopción medidas", "1.9.4, 1.10.2, 1.10.3"),
+    "1.10.3": ("Procedimientos operativos, planos finales, manuales, depósito del código fuente y programa del PLC entregado con la licencia de Studio 5000 de la planta activada", "1.9.2"),
+    "1.10.4": ("Acompañamiento con producción en las semanas 22–26, dentro de la estabilización de seis semanas (21–26; el paquete cubre 22–26 y la semana 21 es de arranque/validación), acta de entrega y metas de adopción medidas", "1.9.4, 1.10.2, 1.10.3"),
 }
 
 
@@ -165,7 +165,7 @@ def tablas(r: dict) -> dict[str, str]:
         filas.append(f"| {k} | {x['nombre']} | {M.m(x['valor'])} |")
     filas += [f"| | **Subtotal de equipos y software** | **{M.m(cap['equipos'])}** |",
               f"| | Servicios de ingeniería de Cremia Automations ({M.m(ing['horas'], 0)} h en dos contratos, con tarifa por integrante) | {M.m(cap['ingenieria'])} |",
-              f"| | Montaje mecánico y eléctrico por contratistas certificados ({M.pct(p['capex']['montaje_pct'], 0)} de los equipos físicos) | {M.m(cap['montaje'])} |",
+              f"| | Montaje mecánico y eléctrico por contratistas certificados ({M.pct(p['capex']['montaje_pct'], 0)} de los equipos físicos, sin la nube ni la licencia) | {M.m(cap['montaje'])} |",
               f"| | **Subtotal** | **{M.m(cap['subtotal'])}** |",
               f"| | Contingencia del proyecto ({M.pct(p['capex']['contingencia_pct'], 0)}) | {M.m(cap['contingencia'])} |",
               f"| | **Inversión total** | **{M.m(cap['total'])}** |",
@@ -175,9 +175,13 @@ def tablas(r: dict) -> dict[str, str]:
 
     g = cap["grupos"]
     filas = ["| Grupo | Rubros | Millones de COP | Participación |", "| --- | --- | --- | --- |"]
-    grupos = [("Equipos de proceso", "proceso", "1, 3, 4, 5, 7, 13, 14, 15, 17 y 18"),
-              ("Envasado, inspección y transporte", "envasado", "6, 8, 9, 16 y 19"),
-              ("Instrumentación, control, nodo de borde y nube", None, "2, 10, 11 y 12")]
+    def _lista(grupos_rub):
+        ks = [str(k) for k, x in p["capex"]["rubros"].items() if x["grupo"] in grupos_rub]
+        return ", ".join(ks[:-1]) + " y " + ks[-1] if len(ks) > 1 else ks[0]
+    grupos = [("Equipos de proceso", "proceso", _lista({"proceso"})),
+              ("Envasado, inspección y transporte", "envasado", _lista({"envasado"})),
+              ("Instrumentación, control, nodo de borde, nube y licencia del PLC", None,
+               _lista({"instrumentacion", "control"}))]
     for nombre, clave, rub in grupos:
         v = g[clave] if clave else g["instrumentacion"] + g["control"]
         filas.append(f"| {nombre} | {rub} | {M.m(v)} | {M.pct(v / cap['total'])} |")

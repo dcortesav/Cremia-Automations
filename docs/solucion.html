@@ -143,7 +143,7 @@ flowchart TD
             <article><h3>Dos lotes al día</h3><p>El lote 1 se enfría en placas y libera el tanque a las 15:05; el lote 2 incuba y se enfría de noche, sin operario, con alarmas por SMS.</p></article>
             <article><h3>Peso del 100 %</h3><p>Controladoras de peso con rechazo automático en bolsas y vasos.</p></article>
             <article><h3>Trazabilidad</h3><p>Lote y vencimiento impresos en cada unidad y registro electrónico de cada lote.</p></article>
-            <article><h3>Software propio</h3><p>SCADA en Node-RED en la planta y plataforma Cremia MES/ERP en Huawei Cloud, sin licencias de terceros; 25 sensores, 22 actuadores y 68 señales de E/S.</p></article>
+            <article><h3>Software propio</h3><p>SCADA en Node-RED en la planta y plataforma Cremia MES/ERP en Huawei Cloud, sin licencias de terceros en la supervisión y la gestión, y licencia de Studio 5000 a nombre de la planta para el programa del PLC; 25 sensores, 22 actuadores y 68 señales de E/S.</p></article>
           </div>
         </div>
 
@@ -178,8 +178,8 @@ flowchart TD
             <table class="data-table">
               <thead><tr><th>Capa</th><th>Plataforma</th><th>Por qué la elegimos</th></tr></thead>
               <tbody>
-                <tr><td>Control</td><td>Allen-Bradley CompactLogix 5380 (Studio 5000), Stratix 5700 y variadores PowerFlex</td><td>Fases ISA-88 nativas, anillo DLR, servidor OPC UA y soporte local; un controlador cubre las 68 señales</td></tr>
-                <tr><td>Supervisión</td><td>SCADA desarrollado por Cremia en Node-RED, con InfluxDB como historiador, en un PC industrial con otro de repuesto</td><td>Sin licencias; pantallas web en cualquier panel; alarmas remotas del lote nocturno</td></tr>
+                <tr><td>Control</td><td>Allen-Bradley CompactLogix 5380 (Studio 5000), Stratix 5700 y variadores PowerFlex</td><td>Fases ISA-88 nativas, anillo DLR, servidor OPC UA y soporte local; un controlador cubre las 68 señales; la planta recibe una licencia perpetua de Studio 5000 para abrir y diagnosticar su programa</td></tr>
+                <tr><td>Supervisión</td><td>SCADA desarrollado por Cremia en Node-RED, con InfluxDB como historiador, en un PC industrial con otro de repuesto</td><td>Sin licencias en la supervisión (la del PLC es aparte); pantallas web en cualquier panel; alarmas remotas del lote nocturno</td></tr>
                 <tr><td>MES y ERP</td><td>Plataforma Cremia MES/ERP (Python, Django y PostgreSQL), con licencia perpetua para el sitio y código en depósito</td><td>A la escala de una pyme: recetas, registro de lote, calidad, OEE, inventario, compras, despacho y costo por lote en una sola base de datos</td></tr>
                 <tr><td>Nube</td><td>Huawei Cloud, región de Ciudad de México: servidor virtual, PostgreSQL gestionado con réplica, respaldos y avisos</td><td>La gestión sigue disponible si falla la planta; México tiene nivel adecuado de protección de datos según la SIC</td></tr>
                 <tr><td>Gemelo digital</td><td>Tecnomatix Plant Simulation y FactoryTalk Logix Echo</td><td>El programa del PLC, el SCADA y la plataforma se prueban contra el modelo antes de la parada</td></tr>

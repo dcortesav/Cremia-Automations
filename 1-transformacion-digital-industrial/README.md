@@ -16,7 +16,7 @@ Entregables de la línea de yogur. Los documentos de este repositorio son la ver
 ## Decisiones de la versión de noviembre de 2026
 
 - **Segundo lote viable.** El lote 2 se enfría de noche con agua helada en la chaqueta del tanque (TV-304) y su leche espera a 4 °C en un tanque refrigerado nuevo (TK-102). Los tiempos de pasteurización (95 min) y de envasado (124 min por lote de bolsas, con la meta de OEE) se recalcularon; el tiempo estándar por lote es de unos 563 min.
-- **Software propio.** El SCADA se desarrolla en Node-RED y corre en un nodo de borde en la planta; el MES y el ERP son una sola plataforma desarrollada por Cremia, la plataforma Cremia MES/ERP, que corre en Huawei Cloud. No hay licencias de terceros para la supervisión ni para la gestión.
+- **Software propio.** El SCADA se desarrolla en Node-RED y corre en un nodo de borde en la planta; el MES y el ERP son una sola plataforma desarrollada por Cremia, la plataforma Cremia MES/ERP, que corre en Huawei Cloud. No hay licencias de terceros para la supervisión ni para la gestión. Para el control, la inversión incluye una licencia perpetua de Studio 5000 a nombre de la planta, con la que La Hacienda abre, diagnostica y respalda el programa del PLC.
 - **Inventario.** 28 equipos (9 existentes y 19 nuevos), 25 sensores, 22 actuadores, 68 señales de E/S (83 con reserva) y 20 nodos EtherNet/IP; la celda R-501 queda para una etapa posterior.
 
 ## Estrategia de control

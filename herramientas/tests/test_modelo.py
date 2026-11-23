@@ -76,9 +76,32 @@ def test_tarifas_cubren_nomina_con_aiu(p):
 
 def test_capex_suma(p):
     cap = M.capex(p)
-    assert cap["equipos"] == pytest.approx(sum(r["valor"] for r in p["capex"]["rubros"].values()))
-    assert cap["total"] == pytest.approx((cap["equipos"] + cap["ingenieria"] + cap["montaje"]) * 1.08)
+    c = p["capex"]
+    assert cap["equipos"] == pytest.approx(sum(r["valor"] for r in c["rubros"].values()))
+    assert cap["total"] == pytest.approx((cap["equipos"] + cap["ingenieria"] + cap["montaje"])
+                                         * (1 + c["contingencia_pct"]))
     assert cap["clase_equipos"] + cap["clase_software"] == pytest.approx(cap["total"])
+
+
+def test_licencia_del_plc(p):
+    c = p["capex"]
+    lic = [k for k, r in c["rubros"].items() if r.get("licencia")]
+    assert lic, "falta el rubro de la licencia de Studio 5000 de la planta"
+    for k in lic:
+        r = c["rubros"][k]
+        assert r["valor"] == pytest.approx(r["valor_usd"] * p["general"]["tasa_cambio_cop_usd"] / 1e6)
+        assert r.get("software"), "la licencia se deprecia a 5 años con el software"
+        assert k in c["rubros_sin_mantenimiento"]
+    fisicos = sum(r["valor"] for r in c["rubros"].values() if not (r.get("nube") or r.get("licencia")))
+    assert M.capex(p)["montaje"] == pytest.approx(c["montaje_pct"] * fisicos)
+    op = M.opex(p, M.capex(p))
+    assert op["licencia"] == pytest.approx(
+        p["operacion"]["licencia_studio5000_anual_usd"] * p["general"]["tasa_cambio_cop_usd"] / 1e6)
+
+
+def test_cartas_de_intencion_cubren_el_equilibrio(r):
+    assert r["eq_vasos"] < r["umbral_cartas"]
+    assert r["vpn_umbral_cartas"] > 0
 
 
 def test_indicadores_principales(r):

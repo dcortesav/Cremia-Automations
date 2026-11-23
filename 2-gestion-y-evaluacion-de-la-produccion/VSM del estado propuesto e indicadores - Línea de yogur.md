@@ -50,10 +50,10 @@ flowchart LR
 | Inicio (recepción de la leche) | 7:05 | 7:25 | 7:30 |
 | Fin (lote envasado) | 17:10 del mismo día | 12:35 del día siguiente | Mañana del día siguiente |
 | Tiempo de entrega | ≈ 605 min (10,1 h) | ≈ 1.750 min (29,2 h) | ≈ 1.625 min (27,1 h) |
-| Tiempo con valor agregado (YB-200) | 531 min | 531 min | 537,5 min |
-| Relación de valor agregado | 88 % | 30 % | 33 % |
+| Tiempo con valor agregado (YB-200) | 531 min | 537 min | 537,5 min |
+| Relación de valor agregado | 88 % | 31 % | 33 % |
 
-El tiempo con valor agregado de la propuesta suma el tratamiento térmico (12 de precalentamiento, 95 de homogeneización y pasteurización, 25 de enfriamiento y 5 de inoculación), la incubación (240), el acondicionamiento (5 de ruptura y saborizado y 25 de enfriamiento y transferencia) y el envasado (124). El lote 2 tiene más espera que el actual porque su leche espera en TK-102 hasta las 15:45 y porque el yogur espera en el tanque y en el tanque pulmón hasta el envasado de la mañana. Esa espera es el precio de producir dos lotes con un solo tanque: en promedio, el tiempo de entrega baja de 27,1 h a unas 19,6 h y la relación de valor agregado sube de 33 % a 45 % (1.062 min de valor agregado en 2.355 min de los dos lotes).
+El tiempo con valor agregado de la propuesta suma el tratamiento térmico (12 de precalentamiento en el lote 1 y 18 en el lote 2, que parte de leche a 4 °C; 95 de homogeneización y pasteurización, 25 de enfriamiento y 5 de inoculación), la incubación (240), el acondicionamiento (5 de ruptura y saborizado y 25 de enfriamiento y transferencia) y el envasado (124). El lote 2 tiene más espera que el actual porque su leche espera en TK-102 hasta las 15:45 y porque el yogur espera en el tanque y en el tanque pulmón hasta el envasado de la mañana. Esa espera es el precio de producir dos lotes con un solo tanque: en promedio, el tiempo de entrega baja de 27,1 h a unas 19,6 h y la relación de valor agregado sube de 33 % a 45 % (1.068 min de valor agregado en 2.355 min de los dos lotes).
 
 ## 5. Indicadores
 

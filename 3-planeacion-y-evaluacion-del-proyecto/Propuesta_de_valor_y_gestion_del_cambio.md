@@ -37,7 +37,7 @@ La Transformación Digital Industrial cambia la forma en que la empresa produce 
 | Trazabilidad | Registros en papel; un retiro de producto afecta varios días de producción | Registro electrónico de cada lote, desde la cantina de leche hasta la estiba | Tiempo para reconstruir la genealogía de un lote: de horas a minutos |
 | Disponibilidad de información | No hay datos: la programación es verbal y los registros son manuales | Tablero diario con OEE, rendimiento, no conformes, consumos, paradas y alarmas, en la nube, que sigue disponible aunque falle la planta | Indicadores disponibles el mismo día |
 | Toma de decisiones | Por experiencia del operario y sin datos | Qué referencia producir según su margen, cuánta leche comprar según el plan semanal y cuándo intervenir un equipo según sus horas de trabajo | Reunión semanal de indicadores con la gerencia |
-| Resultado financiero | Margen de contribución de COP 439,0 millones al año | Beneficio operativo adicional de COP 719,3 millones al año; VPN al 15 % después de impuestos de COP 231,0 millones, TIR de 19,8 % y recuperación en 3,8 años | Flujo de caja real frente al proyectado |
+| Resultado financiero | Margen de contribución de COP 439,0 millones al año | Beneficio operativo adicional de COP 711,1 millones al año; VPN al 15 % después de impuestos de COP 189,4 millones, TIR de 18,9 % y recuperación en 3,9 años | Flujo de caja real frente al proyectado |
 
 Las cifras de producción salen del documento de recetas y lotes (ciclo de referencia de 10 lotes, 600 lotes al año en 300 días) y las financieras, de la propuesta económica; todas se calculan con `herramientas/modelo.py`. El costo de mano de obra por unidad conforme usa COP 33,6 millones al año por operario: 4 operarios para 869.400 unidades conformes hoy, y 5 operarios más las horas extra del domingo y de las incubaciones largas (COP 17,1 millones) para 1.951.600 unidades conformes con la propuesta.
 
@@ -65,7 +65,7 @@ Recoger datos no es el objetivo. El valor está en que cada dato llegue a una pe
 | Tiempo real de cada fase frente al estándar (historiador) | Jefe de producción, cada semana | Ajustar consignas y atacar la fase que más se demora | Tiempo por lote de 601 a 563 min; dos lotes por día |
 | Horas de trabajo y paradas por equipo | Técnico de mantenimiento, cada mes | Mantenimiento preventivo por horas en lugar de correctivo | Menos paradas no programadas |
 | Consumo real de insumos e inventario por lote y vencimiento (ERP de la plataforma) | Compras, cada día | Comprar a tiempo y rotar por fecha de vencimiento | Cumplimiento del plan de 95 % o más |
-| Costo real por lote y margen por referencia (ERP de la plataforma) | Gerencia, cada semana y cada mes | Qué referencia producir, cuánta leche comprar y qué mejora financiar | Beneficio operativo adicional de COP 719,3 millones al año |
+| Costo real por lote y margen por referencia (ERP de la plataforma) | Gerencia, cada semana y cada mes | Qué referencia producir, cuánta leche comprar y qué mejora financiar | Beneficio operativo adicional de COP 711,1 millones al año |
 
 ### 2.4 Qué no cambia
 
@@ -81,13 +81,13 @@ Recoger datos no es el objetivo. El valor está en que cada dato llegue a una pe
 
 | Grupo | Qué cambia para ellos | Qué necesitan | Nivel de impacto |
 | --- | --- | --- | --- |
-| Dueños y gerencia | Deciden con indicadores diarios; invierten COP 1.464,5 millones | Ver el retorno y entender el tablero | Medio |
+| Dueños y gerencia | Deciden con indicadores diarios; invierten COP 1.495,5 millones | Ver el retorno y entender el tablero | Medio |
 | Jefe de producción | Programa lotes en la plataforma, sigue el avance desde cualquier lugar y recibe las alarmas del lote nocturno; lidera la reunión diaria | Dominio de la plataforma y de los indicadores | Alto |
 | Operarios (hoy 4) | Dejan de pesar insumos y abrir válvulas a mano; operan desde la HMI y atienden alarmas | Capacitación práctica y seguridad sobre su puesto | Alto |
 | Operario nuevo del segundo lote | Se integra con la línea ya automatizada | Inducción completa | Alto |
 | Calidad | Libera lotes en la plataforma con el registro electrónico y verifica la calibración de los instrumentos críticos | Criterios de liberación y manejo de la plataforma | Medio |
 | Compras y ventas | Compran con el requerimiento de materiales y despachan desde el inventario por lote | Manejo del ERP de la plataforma | Medio |
-| Mantenimiento (contratado o interno) | Atiende instrumentos, variadores, PLC, nodo de borde y máquinas de envasado | Formación técnica y repuestos | Alto |
+| Mantenimiento (contratado o interno) | Atiende instrumentos, variadores, PLC, nodo de borde y máquinas de envasado; consulta y respalda el programa del PLC con la licencia de Studio 5000 de la planta | Formación técnica y repuestos | Alto |
 | Proveedores de leche | Reciben resultados de laboratorio por cantina registrados en el sistema | Información clara sobre la calidad de su leche | Bajo |
 
 ### 3.2 Roles de operación
@@ -132,7 +132,7 @@ La compra del robot se justifica por el crecimiento del volumen, no por reducir 
 | Envasado | Una de cada cinco bolsas en gramera | Peso del 100 %, rechazo automático y codificado de lote y fecha | Cambio de referencia y control de peso |
 | Liberación del lote | Sin criterio documentado | Calidad revisa el registro electrónico y la acidez y libera en la plataforma; la microbiología se verifica por muestreo | Liberación de lote |
 | Limpieza | Manual, sin registro | CIP con verificación de conductividad y registro | Limpieza CIP |
-| Mantenimiento | Correctivo | Autónomo diario, preventivo por horas y calibración programada | Mantenimiento autónomo y calibración |
+| Mantenimiento | Correctivo | Autónomo diario, preventivo por horas y calibración programada, incluida en el costo de mantenimiento preventivo | Mantenimiento autónomo y calibración |
 
 Los procedimientos se escriben con los operarios durante las semanas 19 a 25 (paquete 1.10.3 de la EDT), se prueban en el gemelo digital y se ajustan en el arranque y la estabilización.
 
@@ -147,21 +147,21 @@ El plan sigue el modelo ADKAR (conciencia, deseo, conocimiento, habilidad y refu
 | Conciencia | Que todos entiendan por qué cambia la línea | Reunión de lanzamiento con dueños y operarios; recorrido por el VSM y por los problemas actuales (noche de enfriamiento, 5,06 % de no conformes) | 1 y 2 |
 | Deseo | Que las personas quieran participar | Compromiso escrito de los dueños de que no hay despidos; agentes de cambio entre los operarios; participación en la validación de recetas, pantallas y alarmas | 2 a 16 |
 | Conocimiento | Que cada rol sepa qué hacer | Capacitación por rol en aula, en el gemelo digital y en la plataforma | 17 a 20 |
-| Habilidad | Que cada persona lo haga bien en la planta | Práctica guiada en el arranque, incluido un lote nocturno de cada referencia; certificación interna antes de operar sin acompañamiento | 20 a 23 |
+| Habilidad | Que cada persona lo haga bien en la planta | Práctica guiada en el arranque, incluido un lote nocturno de cada referencia; certificación interna antes de operar sin acompañamiento | 21 a 23 |
 | Refuerzo | Que la nueva forma de trabajar se mantenga | Reunión diaria con el tablero, reconocimiento de logros, estabilización con producción y revisión trimestral después de la entrega | 22 a 26 y después |
 
 ### 5.2 Roles del cambio
 
 - **Patrocinador:** el dueño o gerente de La Hacienda. Comunica el porqué, aprueba los recursos y asiste a los hitos.
 - **Líder del cambio:** el jefe de producción, con el apoyo de Cristian Hoyos por parte de Cremia (paquete 1.10.1).
-- **Agentes de cambio:** dos operarios con experiencia, uno de preparación y uno de envasado. Participan en las pruebas FAT y SAT, revisan las pantallas y los procedimientos y apoyan a sus compañeros.
+- **Agentes de cambio:** dos operarios con experiencia, uno de preparación y uno de envasado. Participan en las pruebas FAT, que se siguen de forma remota por videoconferencia desde Colombia, y en las SAT en planta; revisan las pantallas y los procedimientos y apoyan a sus compañeros.
 
 ### 5.3 Plan de capacitación por rol
 
 | Rol | Contenido | Horas | Dónde | Evaluación |
 | --- | --- | --- | --- | --- |
 | Operadores (5) | Nueva línea, recetas, HMI según ISA-101, alarmas, lote nocturno, CIP, buenas prácticas y registro de lote | 24 por persona: 8 en aula, 8 en el gemelo digital y 8 en planta | Planta y gemelo digital | Práctica en el gemelo y certificación antes de operar solo |
-| Técnico de mantenimiento | Instrumentación, calibración, variadores, diagnóstico básico del PLC y del nodo de borde, cambio al PC de repuesto, seguridad de las máquinas y mantenimiento autónomo | 32 | Planta y proveedores | Prueba práctica |
+| Técnico de mantenimiento | Instrumentación, calibración, variadores, diagnóstico básico del PLC en línea con la licencia de Studio 5000 de la planta, respaldo y restauración del programa, diagnóstico del nodo de borde, cambio al PC de repuesto, seguridad de las máquinas y mantenimiento autónomo | 32 | Planta y proveedores | Prueba práctica |
 | Jefe de producción | Plataforma: órdenes, recetas, registro de lote, indicadores y alarmas remotas; SCADA | 16 | Gemelo digital y planta | Programación de una semana real |
 | Calidad | Liberación de lotes en la plataforma, puntos críticos, curvas del lote nocturno y verificación de instrumentos | 12 | Planta | Liberación supervisada de lotes de prueba |
 | Compras y ventas | ERP de la plataforma: inventario por lote, requerimiento de materiales, pedidos y despacho | 8 | Oficina | Un ciclo real de compra y despacho |

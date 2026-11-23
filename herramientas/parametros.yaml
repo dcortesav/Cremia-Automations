@@ -128,8 +128,8 @@ edt:
   "1.8.4": {nombre: "Línea de vasos", semanas: "18–19", h: {AO: 40, JZ: 20}}
   "1.9":  {nombre: "Pruebas y puesta en marcha"}
   "1.9.1": {nombre: "Pruebas de lazo y de E/S", semanas: "19–20", h: {JR: 40, AO: 5, JZ: 5}}
-  "1.9.2": {nombre: "Pruebas SAT", semanas: "20–21", h: {DC: 55, JR: 20, DF: 5}}
-  "1.9.3": {nombre: "Arranque con producto", semanas: "20–22", h: {JZ: 65, AO: 35}}
+  "1.9.2": {nombre: "Pruebas SAT", semanas: "20–21", h: {DC: 55, JR: 10, JZ: 10, DF: 5}}
+  "1.9.3": {nombre: "Arranque con producto", semanas: "21–22", h: {JZ: 55, AO: 35, JR: 10}}
   "1.9.4": {nombre: "Validación de calidad e inocuidad", semanas: "21–23", h: {JZ: 5, DF: 45}}
   "1.10": {nombre: "Gestión del cambio, capacitación, estabilización y cierre"}
   "1.10.1": {nombre: "Gestión del cambio y comunicación", semanas: "1–26", h: {CH: 130}}
@@ -165,14 +165,21 @@ capex:
     17: {nombre: "Circuito de agua helada a la chaqueta de T-301: TV-304, XV-904 y tubería aislada", valor: 10.0, grupo: proceso}
     18: {nombre: "Tanque refrigerado de leche TK-102 de 1.000 L con válvulas de selección XV-101 y XV-102", valor: 30.0, grupo: proceso}
     19: {nombre: "Mesa acumuladora para el encajonado de vasos", valor: 6.0, grupo: envasado, vasos: 1.0}
-  montaje_pct: 0.08           # sobre equipos físicos (todos menos la nube)
+    # Licencia de la planta para abrir, diagnosticar y respaldar el programa del PLC, que es suyo.
+    # Precio de referencia de la edición Professional: USD 5.000–7.000 (https://www.plc.company/studio-5000-cost);
+    # se evalúa con el extremo alto. El valor en COP lo calcula modelo.cargar() con la tasa de cambio.
+    20: {nombre: "Licencia perpetua de Studio 5000 Logix Designer, edición Professional, para la planta (un puesto)", valor_usd: 7000, grupo: control, software: true, licencia: true}
+  montaje_pct: 0.08           # sobre equipos físicos (todos menos la nube y la licencia)
   contingencia_pct: 0.08      # sobre equipos, ingeniería y montaje
   dias_parada: 5
-  rubros_sin_mantenimiento: [10, 11, 12]
+  rubros_sin_mantenimiento: [10, 11, 12, 20]
 
 operacion:
-  mantenimiento_pct: 0.03     # sobre equipos de proceso y envasado
+  mantenimiento_pct: 0.03     # sobre equipos de proceso, instrumentación y envasado
   plan_servicio_cremia: {nube_huawei: 15.0, soporte_y_evolucion: 21.0}
+  # Mantenimiento anual (TechConnect) de la licencia de la planta: USD 1.000–2.000 por puesto
+  # (https://www.plc.company/studio-5000-cost); se evalúa con el extremo alto.
+  licencia_studio5000_anual_usd: 2000
   conectividad: 4.0           # fibra y respaldo 4G
   laboratorio_externo: {analisis: 120, costo_cop: 100000}
 
@@ -182,6 +189,7 @@ finanzas:
   vida_equipos: 10
   vida_software: 5
   horizonte: 5
+  cartas_intencion_vasos: 0.90   # volumen de vasos que deben cubrir las cartas de intención para firmar
   rampa: [0.50, 0.75, 1.00, 1.00, 1.00]
   capital_trabajo: {cartera_dias: 30, inventario_dias: 15, proveedores_dias: 30, base_dias: 360}
   credito: {porcentaje: 0.70, tasa: 0.18, anos: 5, gracia_anos: 1}

@@ -200,7 +200,7 @@ A diferencia de la pasteurización de quesería (que busca preservar las enzimas
 - **Mecanismo Fisicoquímico:** Desnaturaliza más del 80 % de la **$\beta$-lactoglobulina** del suero. Los grupos tiol ($-SH$) libres de la $\beta$-lactoglobulina reaccionan con los residuos de cisteína de la **$\kappa$-caseína** en la superficie de la micela mediante enlaces disulfuro covalentes. Este complejo $\beta\text{-Lg}/\kappa\text{-caseína}$ retiene masivamente las moléculas de agua libre, incrementando la firmeza del gel y reduciendo la sinéresis en más de un 60 %.
 
 ### 2.4 Balance de Materia y Formulación del Lote de Referencia (550 L)
-El lote industrial estándar documentado en la planta La Hacienda procesa **550 L de leche cruda** por ciclo en un tanque reactor encamisado de 600 L de capacidad útil.
+El lote industrial estándar documentado en la planta La Hacienda procesa **550 L de leche cruda** por ciclo en un tanque reactor encamisado de 600 L nominales (capacidad real a confirmar en planta).
 
 ```
 Entradas del lote base (caso La Hacienda, tabla 6; masa total: 642,69 kg):

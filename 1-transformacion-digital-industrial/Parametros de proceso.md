@@ -36,7 +36,7 @@ Este documento reúne los parámetros de proceso de la línea de yogur: los que 
 | Homogeneización y pasteurización | 77,4 (sin homogeneizar; sostenimiento de 15) | 95 | Calentar a 62 °C (26), recircular por H-301 (45), calentar a 87 °C (17) y sostener (7); el sostenimiento final se valida con pruebas |
 | Enfriamiento hasta la inoculación | 26,2 (incluye la inoculación) | 25 | Agua de red en la chaqueta con control automático |
 | Inoculación | Incluida en el anterior | 5 | Agitación de 5 min y parada |
-| **Incubación** | **240** | **240 (termina por pH)** | Tiempo fijo del proceso; máximo de 300 min con alarma |
+| **Incubación** | **240** | **240 (termina por pH)** | Tiempo de diseño; la fase termina cuando AT-301 llega al pH de corte, con un máximo de 300 min y alarma |
 | Ruptura del coágulo, acidez y saborizado | 10,0 | 5 | La acidez de confirmación se toma en paralelo |
 | Enfriamiento, filtrado y transferencia | 23,6, más el enfriamiento nocturno | 25 en el lote 1 | Intercambiador de placas a 1.500 L/h. El lote 2 se enfría de noche en la chaqueta y se transfiere a las 7:00 |
 | Envasado y control de peso | 148,9 (YB-200) | 124 (YB-200), 117 (YV-150), 78 (YV-300) | Velocidad nominal con la meta de OEE: disponibilidad de 92 % y rendimiento de 90 % |

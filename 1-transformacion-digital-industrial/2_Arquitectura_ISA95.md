@@ -29,19 +29,19 @@ El MES y el ERP son una sola aplicación con una sola base de datos. Su modelo d
 
 ### 2.1 Plataformas seleccionadas
 
-Como integradora, Cremia selecciona y justifica cada plataforma. El criterio común es que una planta pequeña pueda pagarla y mantenerla: pocos proveedores, sin licencias por usuario, tecnologías abiertas y estándares abiertos (ISA-88, ISA-95, OPC UA y MQTT) en las fronteras entre sistemas.
+Como integradora, Cremia selecciona y justifica cada plataforma. El criterio común es que una planta pequeña pueda pagarla y mantenerla: pocos proveedores, sin licencias por usuario en la supervisión y la gestión, tecnologías abiertas y estándares abiertos (ISA-88, ISA-95, OPC UA y MQTT) en las fronteras entre sistemas.
 
 | Capa | Plataforma seleccionada | Función en la línea | Por qué |
 | --- | --- | --- | --- |
 | Control (nivel 2) | Allen-Bradley CompactLogix 5380, programado en Studio 5000 Logix Designer | Fases ISA-88 con PhaseManager, lazos PID, enclavamientos y alarmas de proceso; servidor OPC UA | Fases ISA-88 nativas, EtherNet/IP con anillo DLR, repuestos y soporte local; un solo controlador cubre las 68 señales con reserva |
 | Red de control | Conmutador Stratix 5700, dos estaciones de E/S remotas EtherNet/IP y variadores PowerFlex | Anillo DLR entre PLC, E/S remotas, variadores y máquinas | Mismo fabricante del PLC: diagnóstico de toda la red desde Studio 5000 |
-| Supervisión (nivel 2) | SCADA desarrollado por Cremia en Node-RED, con InfluxDB como historiador local, en un PC industrial (nodo de borde) con un PC de repuesto | HMI-01 y HMI-02, alarmas según ISA-18.2, tendencias, historiador, descarga de recetas al PLC y alarmas remotas de la incubación nocturna | Sin licencias; las pantallas son páginas web que se ven en cualquier panel o navegador; Node-RED es de código abierto y conocido por muchos integradores |
+| Supervisión (nivel 2) | SCADA desarrollado por Cremia en Node-RED, con InfluxDB como historiador local, en un PC industrial (nodo de borde) con un PC de repuesto | HMI-01 y HMI-02, alarmas según ISA-18.2, tendencias, historiador, descarga de recetas al PLC y alarmas remotas de la incubación nocturna | Sin licencias en la supervisión; las pantallas son páginas web que se ven en cualquier panel o navegador; Node-RED es de código abierto y conocido por muchos integradores |
 | Gestión de operaciones y empresarial (niveles 3 y 4) | Plataforma Cremia MES/ERP (Python, Django y PostgreSQL), desarrollada por Cremia | Recetas, órdenes, registro de lote, genealogía, calidad, OEE, inventario, compras, pedidos, despacho y costo por lote | Hecha a la escala de la planta; la planta tiene licencia perpetua, el código está en depósito con un tercero y los datos se exportan completos |
 | Nube | Huawei Cloud, región de Ciudad de México: servidor virtual (ECS), PostgreSQL gestionado (RDS) principal y en espera, almacenamiento de respaldos (OBS) y avisos (SMN) | Aloja la plataforma y vigila el nodo de borde | Servicios gestionados que reducen la administración; México tiene nivel adecuado de protección de datos según la SIC |
 | Integración | MQTT sobre TLS entre el nodo de borde y la nube; OPC UA entre el nodo de borde y el PLC | Mensajes de lote, consumos, alarmas, recetas y señal de vida, con almacenamiento y reenvío | La planta solo abre conexiones salientes; MQTT tolera conexiones intermitentes |
 | Gemelo digital | Siemens Tecnomatix Plant Simulation y FactoryTalk Logix Echo (emulador del CompactLogix), conectados por OPC UA | Capacidad de la línea y puesta en marcha virtual del programa del PLC, del SCADA y de la plataforma | El mismo programa que va a la planta se prueba contra el modelo antes de la parada |
 
-Las licencias de Studio 5000, Logix Echo y Tecnomatix son herramientas de ingeniería de Cremia, incluidas en su costo de administración; la planta no las necesita para operar.
+Las licencias de Studio 5000, Logix Echo y Tecnomatix con las que Cremia desarrolla y prueba son herramientas de ingeniería de la empresa, incluidas en su costo de administración. La planta no necesita licencias para operar: el PLC ejecuta el programa y el SCADA corre en Node-RED. Como el programa del PLC es del cliente, la inversión incluye además una licencia perpetua de Studio 5000 Logix Designer, edición Professional, a nombre de La Hacienda (rubro 20, COP 28,7 millones, con un mantenimiento anual de COP 8,2 millones), para que su técnico pueda abrir el programa, diagnosticar en línea y respaldarlo sin depender de Cremia; el detalle está en la sección 6.1 de la propuesta económica.
 
 ### 2.2 La arquitectura en cifras
 
@@ -51,7 +51,7 @@ Las licencias de Studio 5000, Logix Echo y Tecnomatix son herramientas de ingeni
 | 3 · Gestión de operaciones | Programación verbal | MES de la plataforma Cremia MES/ERP en Huawei Cloud, con caché y cola en la planta |
 | 2 · Control y supervisión | Ninguno: válvulas manuales | 1 PLC (PLC-01), 6 máquinas con controlador propio (CK-401, CK-402, CD-401, CD-402, LL-402 y EMP-401), la unidad de frío de TK-102, 1 nodo de borde con SCADA en Node-RED (más 1 de repuesto) y 2 HMI |
 | 1 · Medición y actuación | Termómetro, acidómetro y gramera | 25 sensores y 22 actuadores: 15 entradas analógicas, 4 salidas analógicas, 3 entradas de pulsos, 4 puertos IO-Link, 23 entradas y 19 salidas digitales (68 señales; 83 con reserva del 20 %) y 20 nodos EtherNet/IP, de ellos 11 variadores. El proyecto compra 24 sensores, 20 actuadores y 19 nodos; la celda R-501 tiene sus señales reservadas |
-| 0 · Proceso | 9 equipos, un lote diario | 28 equipos en 8 unidades ISA-88: 9 existentes y 19 nuevos, de los cuales el proyecto compra 18 |
+| 0 · Proceso | 9 equipos, un lote diario | 28 equipos, en las 8 unidades ISA-88 y en los recursos compartidos (caldera, enfriador, CIP y laboratorio): 9 existentes y 19 nuevos, de los cuales el proyecto compra 18 |
 | Robots | Ninguno | 1 robot de paletizado de cuatro ejes (R-501) que encanasta, encajona y estiba; diseñado en el proyecto y comprado en una etapa posterior |
 
 ## 3. Redes y protocolos
@@ -86,7 +86,7 @@ El PLC no depende del nodo de borde ni de la nube para terminar una fase: si se 
 | --- | --- | --- | --- |
 | Plan de producción semanal: referencias y cantidades | ERP de la plataforma | MES de la plataforma | Semanal y cuando cambia la demanda |
 | Disponibilidad de leche, insumos y material de envase | ERP | MES | Diaria y antes de liberar cada orden |
-| Orden de producción y receta de control | MES | Nodo de borde (caché) y PLC | Al liberar el lote, con 48 h de anticipación como máximo |
+| Orden de producción y receta de control | MES | Nodo de borde (caché) y PLC | Al liberar la orden, con 48 h de anticipación como máximo, con las cantidades planificadas; al cargar el lote se escala con la cantidad real de leche |
 | Código de lote y fecha de vencimiento | MES | Codificadores CD-401 y CD-402, a través del nodo de borde | Al arrancar el envasado |
 | Consignas y mandos del operador | HMI-01 y HMI-02 | PLC | Durante el lote |
 

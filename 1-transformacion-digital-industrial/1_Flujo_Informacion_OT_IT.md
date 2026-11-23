@@ -30,7 +30,7 @@ Hoy la información de la línea se programa de forma verbal y se registra en pa
 | F-03 | Orden de producción y receta de control | MES | Nodo de borde (caché) y PLC-01 | MQTT sobre TLS hasta el nodo; OPC UA hasta el PLC | Al liberar el lote | Ejecutar las fases con la fórmula escalada |
 | F-04 | Código de lote y fecha de vencimiento | MES | CD-401 y CD-402 | MQTT hasta el nodo; EtherNet/IP por el PLC | Al arrancar el envasado | Imprimir lote y vencimiento en cada unidad |
 | F-05 | Análisis de la leche por cantina | HMI-01 | MES | MQTT | Por cantina | Aceptar la leche y asociarla al lote |
-| F-06 | Peso y caudal de leche cargada | WT-101 y FT-101 | PLC-01 y MES | 4–20 mA; MQTT | Por lote | Escalar la fórmula |
+| F-06 | Peso, nivel y caudal de leche cargada | WT-101 y FT-101 (lote 1); LT-102 y FT-101 (lote 2) | PLC-01 y MES | 4–20 mA; MQTT | Por lote | Escalar la fórmula |
 | F-07 | Cantidades dosificadas y lote de cada insumo | WT-201, WT-202, WT-205, WT-206, FQ-203 y FQ-204 | MES | OPC UA y MQTT | Por dosificación | Consumo real y trazabilidad de insumos |
 | F-08 | Temperatura del tanque (TT-301) | Sensor y PLC-01 | Historiador local; curva del punto crítico al MES | OPC UA; MQTT al cerrar la fase | Cada segundo | Curva de pasteurización, punto crítico |
 | F-09 | pH de fin de incubación (AT-301) | Sensor y PLC-01 | Historiador local y MES | OPC UA y MQTT | Cada 5 s | Terminar la incubación y liberar el lote |
@@ -51,7 +51,7 @@ Hoy la información de la línea se programa de forma verbal y se registra en pa
 
 1. El ERP genera el plan semanal a partir de los pedidos; el MES programa los dos lotes del día y verifica la disponibilidad de leche, insumos y envases.
 2. El operario registra el análisis de cada cantina en HMI-01; el MES asocia la leche aprobada al lote 1 (TK-101) o al lote 2 (TK-102).
-3. Al liberar el lote, el MES escala la fórmula con el peso real de la leche y envía la receta de control al nodo de borde, que la descarga al PLC.
+3. Al liberar la orden, hasta con 48 h de anticipación, el MES envía al nodo de borde la receta de control con las cantidades planificadas para 550 L. Al cargar el lote, la cantidad real de leche (WT-101 y FT-101 en el lote 1, desde TK-101; LT-102 y FT-101 en el lote 2, desde TK-102) llega al MES, que escala la fórmula en proporción (sin internet, el nodo de borde hace el mismo escalado con la receta en caché), y el nodo de borde descarga la receta escalada al PLC.
 4. El PLC ejecuta las fases y reporta cada inicio, fin, cantidad y alarma; el historiador local guarda las curvas y el nodo de borde envía a la nube las del registro de lote.
 5. Los codificadores imprimen el lote y el vencimiento; las controladoras de peso reportan conformes y rechazos.
 6. Calidad revisa el registro electrónico y los análisis, y libera el lote en la plataforma.

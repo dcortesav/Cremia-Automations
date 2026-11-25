@@ -206,7 +206,7 @@ La columna «Depende de» indica de qué paquete toma insumos cada uno. El plan 
 | 1.9.4 | Validación de calidad e inocuidad | Registros de puntos críticos, curvas de enfriamiento nocturno y primeros lotes liberados por registro de proceso | José Andrés Zapata (5), David Cárdenas (45) | 50 | 21–23 | 1.9.3 |
 | 1.10.1 | Gestión del cambio y comunicación | Plan de gestión del cambio, comunicaciones y medición de adopción | Cristian Hoyos | 130 | 1–26 | 1.1.1 |
 | 1.10.2 | Capacitación por rol | Personal capacitado y evaluado por rol, en el gemelo digital y en la plataforma | David Cárdenas (75), Ana Orozco (35), José Andrés Zapata (10), Cristian Hoyos (10) | 130 | 17–20 | 1.7.3 |
-| 1.10.3 | Procedimientos, documentación y manuales | Procedimientos operativos, planos finales, manuales, depósito del código fuente y programa del PLC entregado con la licencia de Studio 5000 de la planta activada | David Cárdenas (95), Jesús Rivera (5) | 100 | 19–25 | 1.9.2 |
+| 1.10.3 | Procedimientos, documentación y manuales | Procedimientos operativos, planos finales, manuales, depósito del código fuente y programa del PLC entregado con la licencia de Studio 5000 de la planta activada | David Cárdenas (95), Jesús Rivera (5) | 100 | 19–25 | 1.7.3, 1.9.2 |
 | 1.10.4 | Estabilización y entrega | Acompañamiento con producción en las semanas 22–26, dentro de la estabilización de seis semanas (21–26; el paquete cubre 22–26 y la semana 21 es de arranque/validación), acta de entrega y metas de adopción medidas | David Cortés (75), José Andrés Zapata (45), David Cárdenas (25), Ana Orozco (5) | 150 | 22–26 | 1.9.4, 1.10.2, 1.10.3 |
 <!-- /tabla:edt_diccionario -->
 

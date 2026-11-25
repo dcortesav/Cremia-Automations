@@ -472,7 +472,7 @@ Si el cliente financia el 70 % de la inversión (COP 1.046,8 millones) con un cr
 | 5 | 59,4 | 329,8 | 389,1 | 0,0 | 521,7 | 20,8 | 153,3 |
 <!-- /tabla:credito -->
 
-El flujo después de la deuda es positivo todos los años, aunque el año 2 es estrecho (COP 31,4 millones). En el año 5, la columna del flujo del proyecto no incluye la recuperación del capital de trabajo ni el valor residual (COP 763,9 millones), porque no son caja disponible para pagar la cuota. El 30 % restante (COP 448,6 millones) lo aporta el cliente con recursos propios y coincide con el anticipo a la firma del contrato.
+El flujo después de la deuda es positivo todos los años, aunque el año 2 es estrecho (COP 31,4 millones). El ahorro tributario de los intereses del año 1 (COP 66,0 millones) supone que La Hacienda compensa la pérdida fiscal del proyecto con utilidades de otras líneas; sin esa compensación, el flujo después de la deuda del año 1 sería de COP 40,3 millones, igual positivo. En el año 5, la columna del flujo del proyecto no incluye la recuperación del capital de trabajo ni el valor residual (COP 763,9 millones), porque no son caja disponible para pagar la cuota. El 30 % restante (COP 448,6 millones) lo aporta el cliente con recursos propios y coincide con el anticipo a la firma del contrato.
 
 ## 11. Riesgos y mitigación
 

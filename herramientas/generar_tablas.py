@@ -69,7 +69,7 @@ ENTREGABLES = {
     "1.9.4": ("Registros de puntos críticos, curvas de enfriamiento nocturno y primeros lotes liberados por registro de proceso", "1.9.3"),
     "1.10.1": ("Plan de gestión del cambio, comunicaciones y medición de adopción", "1.1.1"),
     "1.10.2": ("Personal capacitado y evaluado por rol, en el gemelo digital y en la plataforma", "1.7.3"),
-    "1.10.3": ("Procedimientos operativos, planos finales, manuales, depósito del código fuente y programa del PLC entregado con la licencia de Studio 5000 de la planta activada", "1.9.2"),
+    "1.10.3": ("Procedimientos operativos, planos finales, manuales, depósito del código fuente y programa del PLC entregado con la licencia de Studio 5000 de la planta activada", "1.7.3, 1.9.2"),
     "1.10.4": ("Acompañamiento con producción en las semanas 22–26, dentro de la estabilización de seis semanas (21–26; el paquete cubre 22–26 y la semana 21 es de arranque/validación), acta de entrega y metas de adopción medidas", "1.9.4, 1.10.2, 1.10.3"),
 }
 

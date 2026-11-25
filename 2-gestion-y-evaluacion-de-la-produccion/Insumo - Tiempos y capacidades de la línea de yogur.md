@@ -29,17 +29,17 @@ flowchart TD
         O1(["O-1 Descargar cantinas · 3,05 min"]) --> I1["I-1 Analizar la leche cruda · 16,59 min"] --> T1>"T-1 Transportar al tanque de proceso · 28,43 min"]
     end
     subgraph ALI["Alistamiento de materias primas"]
-        A1[/"A-1 Almacén de materias primas"/] --> I2["I-2 Calcular y pesar azúcar y estabilizante · 2,95 min"] --> T2>"T-2 Transportar al cuarto del yogur · 3,71 min"] --> I3["I-3 Calcular y pesar colorante, saborizante y cultivo · 3,55 min"]
+        A1[/"A-1 Almacén de materias primas"/] --> IO1(["IO-1 Calcular y pesar azúcar y estabilizante · 2,95 min"]) --> T2>"T-2 Transportar al cuarto del yogur · 3,71 min"] --> IO2(["IO-2 Calcular y pesar colorante, saborizante y cultivo · 3,55 min"])
     end
     subgraph PRE["Preparación del yogur"]
-        IO1(["IO-1 Precalentar · 11,08 min"]) --> O2(["O-2 Adicionar azúcar y estabilizante · 2,84 min"]) --> IO2(["IO-2 Pasteurizar · 77,43 min"]) --> IO3(["IO-3 Enfriar e inocular · 26,20 min"]) --> D1{{"D-1 Incubar · 240 min"}} --> O3(["O-3 Romper el coágulo con el agitador · 2,36 min"]) --> I4["I-4 Prueba de acidez · 2,58 min"] --> O4(["O-4 Adicionar saborizante y colorante · 5,07 min"]) --> O5(["O-5 Filtrar y bombear al tanque pulmón · 23,63 min"])
+        O2(["O-2 Precalentar · 11,08 min"]) --> O3(["O-3 Adicionar azúcar y estabilizante · 2,84 min"]) --> O4(["O-4 Pasteurizar · 77,43 min"]) --> O5(["O-5 Enfriar e inocular · 26,20 min"]) --> D1{{"D-1 Incubar · 240 min"}} --> D2{{"D-2 Enfriamiento nocturno"}} --> O6(["O-6 Romper el coágulo con el agitador · 2,36 min"]) --> I2["I-2 Prueba de acidez · 2,58 min"] --> O7(["O-7 Adicionar saborizante y colorante · 5,07 min"]) --> O8(["O-8 Filtrar y transferir al tanque pulmón · 23,63 min"])
     end
     subgraph EMP["Empaque y almacenamiento"]
-        IO4(["IO-4 Empacar y controlar la calidad · 148,93 min"]) --> T3>"T-3 Trasladar al cuarto frío · 2,92 min"] --> A2[/"A-2 Cuarto frío"/]
+        IO3(["IO-3 Empacar y controlar la calidad · 148,93 min"]) --> T3>"T-3 Trasladar al cuarto frío · 2,92 min"] --> A2[/"A-2 Cuarto frío"/]
     end
-    T1 --> IO1
-    I3 --> IO1
-    O5 --> IO4
+    T1 --> O2
+    IO2 --> O2
+    O8 --> IO3
 ```
 
 | Tarea | Elemento | Tiempo estándar (min/lote) | Tipo |
@@ -70,7 +70,7 @@ Hoy la jornada empieza con la parte final del lote del día anterior: se rompe e
 | Alistamiento de materias primas | 10,21 | 1,7 % |
 | **Preparación del yogur (cuello de botella)** | **391,19** | **65,1 %** |
 | Empaque y almacenamiento | 151,85 | 25,3 % |
-| **Total** | **601,32 (10 h 2 min)** | **100 %** |
+| **Total** | **601,32 (10 h 1 min)** | **100 %** |
 
 ### P&ID del estado actual
 
@@ -83,7 +83,7 @@ flowchart LR
     VAP["Vapor de CAL-901"] -->|HV-301 válvula manual| T301
     AGUA["Agua de red"] -->|HV-302 válvula manual| T301
     T301 -.->|muestra| LAB["LAB-101<br/>acidez con acidómetro"]
-    T301 --> P301["Bomba centrífuga"] --> F301["F-301 filtro"] --> T302["T-302 tanque pulmón de 650 L<br/>LI-302 visor de nivel"]
+    T301 -->|descarga y filtrado manual| F301["F-301 filtro"] --> T302["T-302 tanque pulmón de 650 L<br/>LI-302 visor de nivel"]
     T302 -->|HV-401 válvula manual| EMP["EMP-401 empacadora de bolsas<br/>WI-401 gramera: 1 de cada 5 bolsas"]
     EMP --> CF["CF-501 cuarto frío<br/>TI-501 termómetro"]
 ```
@@ -132,12 +132,12 @@ La propuesta crea un segundo lote diario con el mismo tanque de proceso y agrega
 
 | Hora | Lote 1 | Lote 2 y lote 2 del día anterior |
 | --- | --- | --- |
-| 7:00–7:45 | Recepción de 28 cantinas: 14 a TK-101 y 14 a TK-102 | Acidez y transferencia del lote 2 anterior a T-302 (7:00–7:25) |
+| 7:00–7:45 | Recepción de 28 cantinas (7:05–7:45): 14 a TK-101 y 14 a TK-102 | Acidez (7:00–7:05) y transferencia del lote 2 anterior a T-302 (7:00–7:25; retenido en T-302 hasta confirmar acidez) |
 | 7:25–8:05 | CIP de T-301 | — |
 | 8:05–10:35 | Carga, dosificación, homogeneización, pasteurización e inoculación | — |
 | 10:35–14:35 | Incubación | Envasado del lote 2 anterior (10:30–12:35) y CIP de T-302 |
 | 14:35–15:05 | Ruptura, saborizado, enfriamiento en placas y transferencia | — |
-| 15:05–17:10 | Envasado | CIP de T-301, carga desde TK-102, homogeneización y pasteurización (15:05–17:50) |
+| 15:05–17:10 | Envasado | CIP de T-301, carga desde TK-102, precalentamiento desde 4 °C, homogeneización y pasteurización (15:05–17:50) |
 | 17:10–17:50 | CIP de fin de día de T-302 y de la línea de envasado | Pasteurización |
 | 17:50–18:20 | — | Enfriamiento a 43 °C e inoculación |
 | 18:20–22:20 | — | Incubación sin operario, con alarmas remotas |

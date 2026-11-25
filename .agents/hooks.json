@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "write_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd /c \"if exist ..\\.venv\\Scripts\\python.exe (..\\.venv\\Scripts\\python.exe -X utf8 scripts\\check_ssot.py) else (python -X utf8 scripts\\check_ssot.py)\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

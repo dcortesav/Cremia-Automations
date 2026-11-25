@@ -267,7 +267,7 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 | Lazo | Proceso | Estrategia | Por qué esa estrategia |
 | --- | --- | --- | --- |
 | TIC-301 | Precalentamiento, homogeneización, pasteurización, enfriamiento a inoculación, incubación y enfriamiento nocturno del lote 2 en T-301 | PID con rango dividido sobre vapor (TV-301) y agua (TV-302 de red o TV-304 helada, según la fase) | Un solo controlador mueve actuadores opuestos sin que se abran al tiempo |
-| TIC-302 | Salida del intercambiador E-301 | PID con prealimentación del caudal de P-301 | El caudal es la perturbación principal y se mide antes de que cambie la temperatura |
+| TIC-302 | Salida del intercambiador E-301 | PID con prealimentación del caudal estimado desde el variador de P-301 | El caudal es la perturbación principal y se estima a partir de la velocidad del variador de P-301 antes de que cambie la temperatura |
 | FFC-403 | Dosificación de fruta | Control de relación sobre la velocidad de la llenadora | La fruta debe seguir al yogur en proporción fija (8 % o 12 %) |
 | PIC-302 | Presión del homogeneizador | PI sobre el variador de M-302 | Una sola variable con respuesta rápida |
 | WIC-201/202/206 | Dosificación de azúcar, estabilizante y leche en polvo | Dos velocidades con corte anticipado | El material en vuelo se compensa sin modelo dinámico |
@@ -279,7 +279,7 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 | Lazo | Variable medida | Elemento final | Estrategia | Observación |
 | --- | --- | --- | --- | --- |
 | TIC-301 | TT-301 | TV-301 (vapor), TV-302 (agua de red) y TV-304 (agua helada) | PID con rango dividido: de 0 a 50 % de salida abre el agua y de 50 a 100 % el vapor, con zona muerta en el centro. La fase define qué válvula de agua usa: TV-302 para bajar a 43 °C y TV-304 en el enfriamiento nocturno | La consigna cambia por fase: 25, 62, 87, 43 y 13 °C |
-| TIC-302 | TT-302 | TV-303 (agua helada) | PID con prealimentación del caudal de P-301 | Mantiene 15–20 °C aunque cambie el caudal |
+| TIC-302 | TT-302 | TV-303 (agua helada) | PID con prealimentación del caudal estimado desde el variador de P-301 | Mantiene 15–20 °C aunque cambie el caudal |
 | PIC-302 | PT-302 | Variador de M-302 | PI sobre la velocidad del homogeneizador | Limita la rampa de arranque para proteger la bomba |
 | FFC-403 | Velocidad de LL-402 (vasos/min × dosis) | Variador de P-403 | Control de relación: caudal de fruta = 8 % o 12 % del caudal de yogur que entra a la llenadora | Relación tomada de la receta de control |
 | LIC-302 | LT-302 | Variador de P-301 | Control de nivel por bandas: transfiere hasta el nivel alto y habilita el envasado sobre el nivel mínimo | Evita que la llenadora trabaje en vacío |
@@ -309,9 +309,9 @@ Un control avanzado solo se justificaría si la línea cambiara a pasteurizació
 ### 8.4 Seguridad de personas y máquinas
 
 - La celda R-501 cumple ISO 10218 para robots industriales: vallado perimetral, puertas con interruptor de seguridad, cortinas de luz en la entrada y salida de estibas, y funciones de seguridad con nivel de desempeño PL d según ISO 13849.
-- Las líneas de vapor tienen aislamiento térmico, válvula de seguridad y trampa de vapor; el mando de TV-301 se bloquea mientras la tapa del tanque está abierta.
-- El homogeneizador trabaja a 200 bar: tiene válvula de alivio, guardas sobre las partes móviles y bloqueo de arranque sin flujo de entrada.
-- El CIP maneja soda y ácido calientes: la estación tiene bandeja de contención, ducha de emergencia y enclavamiento que impide abrir tapas de tanques durante el lavado.
+- Las líneas de vapor tienen aislamiento térmico, válvula de seguridad y trampa de vapor; el mando de TV-301 se bloquea mientras la tapa del tanque está abierta mediante el enclavamiento local incluido en el paquete del tanque y del CIP (sin agregar sensores a las E/S del PLC).
+- El homogeneizador trabaja a 200 bar: su paquete de fábrica integra válvula de alivio, guardas sobre las partes móviles y bloqueo interno de arranque sin flujo de entrada (protección propia del equipo, sin sensores adicionales en las E/S del PLC).
+- El CIP maneja soda y ácido calientes: la estación incluye bandeja de contención, ducha de emergencia y el enclavamiento integrado en el paquete CIP-901 que impide abrir tapas de tanques durante el lavado (sin agregar puntos a la lista de E/S del PLC).
 
 ## 9. Comunicaciones
 

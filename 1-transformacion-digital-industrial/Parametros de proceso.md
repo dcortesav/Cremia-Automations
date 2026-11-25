@@ -82,7 +82,9 @@ Las velocidades del agitador y de los equipos nuevos son valores de diseño y se
 | PCC | Peligro | Límite crítico | Vigilancia | Acción correctiva |
 | --- | --- | --- | --- | --- |
 | Pasteurización | Supervivencia de microorganismos patógenos | 85 °C o más durante el sostenimiento | TT-301 con registro continuo | Reiniciar el sostenimiento; el lote no avanza sin cumplirlo |
-| Enfriamiento y almacenamiento | Crecimiento microbiano y sobreacidificación | Lote 1: 20 °C o menos a la salida de E-301. Lote 2: 15 °C o menos dentro de las 4 h siguientes al fin de la incubación. Envasado a 20 °C o menos; cuarto frío a 4 °C | TT-301, TT-302, TT-303 y TT-501 | Retener el lote y evaluar |
+| Enfriamiento y almacenamiento | Crecimiento microbiano y sobreacidificación | Lote 1: 20 °C o menos a la salida de E-301. Lote 2: 15 °C o menos dentro de las 4 h siguientes al fin de la incubación. Envasado a 20 °C o menos; cuarto frío a 4 °C | TT-301, TT-302 y TT-501 | Retener el lote y evaluar |
+
+El sensor TT-303 no es un punto crítico de control: actúa como alarma operativa de temperatura del tanque pulmón T-302 (> 20 °C).
 
 ## 7. Limpieza CIP
 

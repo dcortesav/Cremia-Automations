@@ -34,13 +34,13 @@ Hoy la información de la línea se programa de forma verbal y se registra en pa
 | F-07 | Cantidades dosificadas y lote de cada insumo | WT-201, WT-202, WT-205, WT-206, FQ-203 y FQ-204 | MES | OPC UA y MQTT | Por dosificación | Consumo real y trazabilidad de insumos |
 | F-08 | Temperatura del tanque (TT-301) | Sensor y PLC-01 | Historiador local; curva del punto crítico al MES | OPC UA; MQTT al cerrar la fase | Cada segundo | Curva de pasteurización, punto crítico |
 | F-09 | pH de fin de incubación (AT-301) | Sensor y PLC-01 | Historiador local y MES | OPC UA y MQTT | Cada 5 s | Terminar la incubación y liberar el lote |
-| F-10 | Presión de homogeneización (PT-302) | Sensor y PLC-01 | Historiador local | OPC UA | Cada segundo | Registro de lote |
+| F-10 | Presión de homogeneización (PT-302) | Sensor y PLC-01 | Historiador local y MES | OPC UA y MQTT | Cada segundo; curva al cerrar la fase | Registro de lote |
 | F-11 | Temperatura de salida del enfriador (TT-302) y del enfriamiento nocturno (TT-301) | Sensores y PLC-01 | Historiador local y MES | OPC UA y MQTT | Cada segundo | Segundo punto crítico |
 | F-12 | Inicio y fin de fases, alarmas y desviaciones | PLC-01 | Nodo de borde y MES | OPC UA y MQTT | Por evento | Seguimiento del lote y análisis de paradas |
 | F-13 | Unidades conformes y rechazadas, con causa | CK-401 y CK-402 | MES | EtherNet/IP, OPC UA y MQTT | Por unidad, agregado cada minuto | Producto no conforme y OEE |
 | F-14 | Estado y paradas de EMP-401 y LL-402 | Máquinas y PLC-01 | MES | OPC UA y MQTT | Por evento | Disponibilidad de la máquina |
 | F-15 | Ciclo CIP y conductividad de enjuague | CIP-901 y CT-901 | MES | OPC UA y MQTT | Por ciclo | Verificar limpieza antes del lote |
-| F-16 | Temperatura del cuarto frío (TT-501) y de TK-102 (TT-102) | Sensores y PLC-01 | Nodo de borde y MES | OPC UA y MQTT | Cada minuto | Cadena de frío de la leche y del producto |
+| F-16 | Temperatura del cuarto frío (TT-501), de TK-102 (TT-102) y del tanque pulmón T-302 (TT-303) | Sensores y PLC-01 | Nodo de borde y MES | OPC UA y MQTT | Cada minuto | Cadena de frío de la leche y del producto, y alarma de temperatura del tanque pulmón (> 20 °C; TT-303 es alarma operativa, no punto crítico de control) |
 | F-17 | Lote liberado por calidad | MES | ERP | Misma base de datos | Por lote | Habilitar el despacho |
 | F-18 | Producción terminada, consumos e inventario | MES | ERP | Misma base de datos | Al cerrar el lote | Inventarios, costos y compras |
 | F-19 | Indicadores del día | Plataforma | Tablero de la gerencia | HTTPS | Diaria | Decisiones de producción y compras |

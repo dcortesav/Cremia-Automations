@@ -83,7 +83,7 @@ El objetivo del despliegue en la nube es que la gestión de la producción siga 
 | Falla la planta durante el lote 2 nocturno | La nube deja de recibir la señal de vida del nodo de borde (cada minuto) y a los 5 min envía SMS y correo al jefe de producción | El jefe de producción revisa el estado desde su teléfono o va a la planta |
 | Falla el servidor en la nube | Respaldos automáticos diarios y volcados periódicos de PostgreSQL en OBS permiten recrear el servidor virtual (ECS) y restaurar los datos | Recuperación en menos de 4 h desde OBS; los datos recientes de planta permanecen en la cola del nodo de borde hasta por 72 h |
 
-Metas de servicio de la plataforma: disponibilidad mensual de 99,5 %, punto de recuperación de hasta 24 h y tiempo de recuperación de 4 h. Los respaldos de la base de datos son diarios, cifrados y se conservan 30 días, con una prueba de restauración cada semestre.
+Metas de servicio de la plataforma: disponibilidad mensual de 99,5 %, punto de recuperación de hasta 24 h para transacciones de la plataforma web (respaldos diarios en OBS; sin pérdida de datos de planta gracias a la cola local de 72 h del nodo de borde) y tiempo de recuperación de 4 h. Los respaldos de la base de datos son diarios, cifrados y se conservan 30 días, con una prueba de restauración cada semestre.
 
 **Región y datos personales.** La plataforma guarda datos de proveedores de leche y de clientes, así que está sujeta a la Ley 1581 de 2012. Se despliega en la región de Huawei Cloud en Ciudad de México, porque México está en la lista de países con nivel adecuado de protección de datos de la Superintendencia de Industria y Comercio (Circular Externa 005 de 2017). La región y la latencia se confirman en la ingeniería básica (paquete 1.2.3).
 

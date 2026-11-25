@@ -39,7 +39,7 @@ La parte 2 de la norma (ANSI/ISA-88.00.02) define las estructuras de datos de la
 | Resolución 2310 de 1986 | Define el yogur como leche higienizada fermentada por Streptococcus thermophilus y Lactobacillus delbrueckii subsp. bulgaricus, con o sin fruta, edulcorantes y estabilizantes autorizados | Cultivo termófilo DVS en las tres referencias; aditivos declarados en la fórmula |
 | NTC 805 | Requisitos fisicoquímicos de las leches fermentadas: grasa, proteína láctea, sólidos no grasos, acidez y recuento de bacterias lácticas | Especificación de la sección 3.2 y verificación por lote |
 | Resolución 2674 de 2013 | Buenas prácticas de manufactura: diseño sanitario, limpieza, control de procesos y registros | Equipos en acero inoxidable AISI 316L, CIP con registro y registro electrónico de lote |
-| Resolución 1407 de 2022 | Criterios microbiológicos de los alimentos, con planes de muestreo por clases | Plan de muestreo de la sección 8.3 para liberar el lote |
+| Resolución 1407 de 2022 | Criterios microbiológicos de los alimentos, con planes de muestreo por clases | Verificación periódica por muestreo en laboratorio externo (1 de cada 5 lotes, sección 8.3; no condiciona la liberación de cada lote) |
 | Resolución 5109 de 2005 | Rotulado: número de lote y fecha de vencimiento legibles en cada envase | Codificadores CD-401 y CD-402 con los datos que envía el MES |
 | Resolución 810 de 2021 y Resolución 2492 de 2022 | Etiquetado nutricional y sellos frontales de advertencia | Las tres referencias llevan sello de exceso en azúcares por el azúcar añadido; la fórmula y el rótulo se revisan juntos en cada cambio de versión |
 
@@ -191,7 +191,7 @@ El tiempo estándar baja solo 6 %, de 601 a 563 min, porque la incubación (240 
 | Codificado | Sin codificado automático | Lote y fecha de vencimiento impresos en cada unidad, con los datos que envía el MES |
 | Registro | Papel | Registro electrónico de lote en el MES |
 
-Los valores de la propuesta siguen la referencia de proceso industrial del yogur: tratamiento térmico de 85–90 °C durante 5 a 10 minutos, que desnaturaliza la mayor parte de la β-lactoglobulina y da un gel más firme y con menos separación de suero; inoculación a 42–45 °C; pH final de 4,4 a 4,6, punto en el que la caseína coagula; y enfriamiento rápido para detener la fermentación. El lote 2 se enfría más despacio que el lote 1 y sigue acidificando mientras baja de 43 a unos 30 °C; por eso su pH de corte es 4,6, el límite superior del rango, y la acidez se confirma a las 7:00 antes de transferirlo. El enfriamiento en el tanque con agitación lenta es la práctica habitual en plantas pequeñas sin intercambiador; su efecto en la textura se valida en el arranque con producto (paquete 1.9.3 de la EDT).
+Los valores de la propuesta siguen la referencia de proceso industrial del yogur: tratamiento térmico de 85–90 °C durante 5 a 10 minutos, que desnaturaliza la mayor parte de la β-lactoglobulina y da un gel más firme y con menos separación de suero; inoculación a 42–45 °C; pH final de 4,4 a 4,6, punto en el que la caseína coagula; y enfriamiento rápido para detener la fermentación. El lote 2 se enfría más despacio que el lote 1 y sigue acidificando mientras baja de 43 a unos 30 °C; por eso su pH de corte es 4,6, el límite superior del rango, y la acidez se confirma a las 7:00 en paralelo con la transferencia a T-302, donde el producto queda retenido (sin habilitar envasado) hasta confirmar 80–90 °Th. El enfriamiento en el tanque con agitación lenta es la práctica habitual en plantas pequeñas sin intercambiador; su efecto en la textura se valida en el arranque con producto (paquete 1.9.3 de la EDT).
 
 ### 5.3 Parámetros que cambian con la referencia
 
@@ -281,7 +281,7 @@ Cada receta maestra tiene cinco partes:
 | Velocidad de la llenadora | Envasar | 45 | 30 | 45 | vasos/min |
 | Vasos por caja | Empacar | 24 | 24 | 24 | und |
 
-Requisitos de equipo de RM-YV-150: U1 a U5 (T-301, H-301, E-301, P-301, T-302) y la ruta U7 (P-403, MX-403, LL-402, CD-402, CK-402 y CV-402), más la estación de encanastado (la celda R-501 en una etapa posterior). Las recetas RM-YB-200 y RM-YV-300 tienen la misma estructura con los valores de las secciones 4 y 5.
+Requisitos de equipo de RM-YV-150: U1 a U5 (T-301, H-301, E-301, P-301, T-302) y la ruta U7 (P-403, MX-403, LL-402, CD-402, CK-402 y CV-402), más la mesa acumuladora MA-501 y la estación de encanastado (la celda R-501 en una etapa posterior). Las recetas RM-YB-200 y RM-YV-300 tienen la misma estructura con los valores de las secciones 4 y 5.
 
 ### 6.4 Ciclo de vida y control de versiones
 
@@ -320,7 +320,7 @@ Las tres recetas comparten el procedimiento y los equipos de preparación y ferm
 | PU5 · Dosificar fruta | U7: P-403, MX-403 | No aplica | 8 % (57,2 kg) | 12 % (88,8 kg) |
 | PU5 · Envasar | U6: EMP-401 · U7: LL-402 | XV-401 a la empacadora: 200 ml, 30 bolsas/min nominales, 124 min | XV-402 a la llenadora: 150 ml, 45 vasos/min nominales, 117 min | XV-402 a la llenadora: 300 ml, 35 vasos/min nominales, 78 min |
 | PU5 · Pesar y codificar | U6: CK-401, CD-401 · U7: CK-402, CD-402, ZS-403 | Peso del 100 % y código en la película | Peso del 100 %, tapa verificada y código en la tapa | Igual que YV-150 |
-| PU6 · Empacar y almacenar | U8: CV-501, CF-501 | 26 canastas de 120 bolsas | 183 cajas de 24 vasos | 113 cajas de 20 vasos |
+| PU6 · Empacar y almacenar | U8: CV-501, MA-501, CF-501 | 26 canastas de 120 bolsas | 183 cajas de 24 vasos | 113 cajas de 20 vasos |
 
 ## 7. Lotes de producción
 
@@ -340,7 +340,7 @@ Las tres recetas comparten el procedimiento y los equipos de preparación y ferm
 | Leche aprobada | Las cantinas pasan el análisis y se cargan al tanque | Operario en HMI-01 |
 | Base preparada | Las dosis están completas y la homogeneización registrada | PLC |
 | Pasteurizado | El sostenimiento se cumple sin interrupciones | PLC e historiador |
-| Fermentado conforme | AT-301 llega al pH de corte y laboratorio confirma la acidez (en el lote 2, a las 7:00) | PLC y calidad |
+| Fermentado conforme | AT-301 llega al pH de corte y laboratorio confirma la acidez (en el lote 2, a las 7:00 mientras el lote queda retenido en T-302) | PLC y calidad |
 | Acondicionado | El producto está en T-302 a 20 °C o menos | PLC |
 | Envasado | La máquina termina el lote y las controladoras reportan conformes y rechazos | PLC y MES |
 | Liberado | Calidad aprueba el registro electrónico del lote, sin desviaciones abiertas en los puntos críticos | Calidad en el MES |
@@ -368,19 +368,19 @@ La ocupación del lote 1 es la suma de carga (12 min), precalentamiento y dosifi
 
 | Hora | Lote 1 | Lote 2 y lote 2 del día anterior |
 | --- | --- | --- |
-| 7:00–7:25 | — | Muestra y acidez de confirmación del lote 2 anterior (7:00–7:05) y su transferencia por E-301 a T-302 |
+| 7:00–7:25 | — | Muestra y acidez de confirmación del lote 2 anterior (7:00–7:05) en paralelo con su transferencia por E-301 a T-302; el producto queda retenido en T-302 hasta confirmar la acidez (80–90 °Th) |
 | 7:05–7:45 | Recepción y análisis de 14 cantinas hacia TK-101 (7:05–7:25) | Recepción y análisis de 14 cantinas hacia TK-102, que las enfría a 4 °C (7:25–7:45) |
-| 7:25–8:05 | CIP de T-301 | El lote 2 anterior espera en T-302 a 12–15 °C hasta las 10:30 |
+| 7:25–8:05 | CIP de T-301 | El lote 2 anterior espera en T-302 a 12–15 °C hasta las 10:30 (retenido para envasado hasta confirmar la acidez) |
 | 8:05–10:35 | Carga (12 min), precalentamiento y dosificación (12), homogeneización y pasteurización (95), enfriamiento a 43 °C (25) e inoculación (5) | — |
 | 10:35–14:35 | Incubación hasta pH 4,5, con control automático | Envasado del lote 2 anterior (10:30–12:35 en bolsas; 117 min en vasos de 150 ml y 78 min en vasos de 300 ml) y CIP de T-302 y de la línea (12:35–13:15) |
-| 14:35–15:05 | Ruptura, saborizado y acidez de confirmación (14:35–14:40); enfriamiento en placas y transferencia a T-302 (14:40–15:05) | — |
+| 14:35–15:05 | Ruptura, saborizado y muestra de acidez de confirmación (14:35–14:40); enfriamiento en placas y transferencia a T-302 (14:40–15:05), donde queda retenido hasta confirmar la acidez antes de envasar | — |
 | 15:05–17:10 | Envasado | CIP de T-301 (15:05–15:45), carga desde TK-102 (15:45–15:55), precalentamiento desde 4 °C (15:55–16:15), homogeneización y pasteurización (16:15–17:50) |
 | 17:10–17:50 | CIP de fin de día de T-302 y de la línea de envasado | Pasteurización |
 | 17:50–18:20 | — | Enfriamiento a 43 °C (17:50–18:15) e inoculación (18:15–18:20) |
 | 18:20–22:20 | — | Incubación sin operario hasta pH 4,6, con alarmas remotas |
 | 22:20–7:00 | — | Ruptura y saborizado automáticos (22:20–22:25); agua helada en la chaqueta (TIC-301 sobre TV-304) hasta 15 °C hacia la 1:30 y mantenimiento a 12–15 °C |
 
-El segundo lote es posible porque el lote 1 se enfría en el intercambiador de placas y libera el tanque a las 15:05. El lote 2 termina la incubación a las 22:20, sin operario: el PLC rompe el coágulo, dosifica el saborizante y el colorante y lo enfría con el agua helada del enfriador CH-901, que de noche no atiende el intercambiador. A las 7:00, laboratorio confirma su acidez y el lote pasa por E-301 al tanque pulmón, donde espera a 12–15 °C hasta el envasado de las 10:30. El tanque pulmón tiene alarma si el yogur supera 20 °C o lleva más de 6 h sin envasar.
+El segundo lote es posible porque el lote 1 se enfría en el intercambiador de placas y libera el tanque a las 15:05. El lote 2 termina la incubación a las 22:20, sin operario: el PLC rompe el coágulo, dosifica el saborizante y el colorante y lo enfría con el agua helada del enfriador CH-901, que de noche no atiende el intercambiador. A las 7:00 inicia en paralelo la muestra de laboratorio (7:00–7:05) y el paso del lote por E-301 al tanque pulmón T-302, donde el producto queda retenido (sin habilitar el envasado de las 10:30) a 12–15 °C hasta confirmar la acidez en 80–90 °Th. El tanque pulmón tiene alarma si el yogur supera 20 °C o lleva más de 6 h sin envasar.
 
 Las horas de la tabla están redondeadas a 5 min; las exactas están en `herramientas/resultados.md`. El programa se verifica con `herramientas/programa.py`: ningún equipo (T-301, T-302, CIP-901 y E-301) tiene dos usos a la vez y cada tarea cae dentro del turno de su responsable. Con la incubación máxima de 300 min, el envasado del lote 1 termina 40 min después del fin del turno y el lote 2 se inocula 20 min después de las 19:00; esas horas extra están en el presupuesto de operación.
 
@@ -448,7 +448,9 @@ El programa diario reserva 40 min para cada CIP, de modo que funciona con cualqu
 | PCC | Peligro | Límite crítico | Vigilancia | Acción correctiva |
 | --- | --- | --- | --- | --- |
 | Pasteurización | Supervivencia de microorganismos patógenos de la leche cruda | 85 °C o más durante todo el sostenimiento | TT-301 con registro continuo en el historiador | Reiniciar el sostenimiento; el lote no avanza sin cumplirlo |
-| Enfriamiento y almacenamiento | Crecimiento microbiano y sobreacidificación | Lote 1: 20 °C o menos a la salida de E-301. Lote 2: 15 °C o menos dentro de las 4 h siguientes al fin de la incubación. Envasado a 20 °C o menos; cuarto frío a 4 °C | TT-301, TT-302, TT-303 y TT-501 | Retener el lote y evaluar |
+| Enfriamiento y almacenamiento | Crecimiento microbiano y sobreacidificación | Lote 1: 20 °C o menos a la salida de E-301. Lote 2: 15 °C o menos dentro de las 4 h siguientes al fin de la incubación. Envasado a 20 °C o menos; cuarto frío a 4 °C | TT-301, TT-302 y TT-501 | Retener el lote y evaluar |
+
+El transmisor TT-303 no hace parte de los puntos críticos de control: funciona como alarma operativa del tanque pulmón T-302 (> 20 °C) para avisar si el producto se calienta durante la espera antes del envasado.
 
 ### 8.2 Controles en proceso
 
@@ -511,7 +513,7 @@ La trazabilidad va en las dos direcciones. Hacia atrás, desde una unidad en el 
 
 | Indicador | Cálculo | Referencia |
 | --- | --- | --- |
-| Rendimiento | Litros envasados conformes ÷ litros de leche | 1,12 (YB-200), 1,19 (YV-150), 1,23 (YV-300) |
+| Rendimiento | Litros envasados totales ÷ litros de leche (antes de rechazo por peso; sección 4.2) | 1,12 (YB-200), 1,19 (YV-150), 1,23 (YV-300) |
 | Desviación de dosificación | Cantidad real ÷ cantidad de la fórmula − 1 | ± 1 % |
 | Producto no conforme | Unidades rechazadas ÷ unidades llenadas | 1,5 % o menos |
 | Tiempo de ciclo del lote 1 | Fin del envasado − inicio de la carga | ≈ 543 min (de 8:05 a 17:10, en YB-200) |

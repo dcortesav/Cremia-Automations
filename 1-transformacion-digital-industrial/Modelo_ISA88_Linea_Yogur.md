@@ -62,7 +62,7 @@ flowchart TB
         FR["P-403 y MX-403 fruta"] --> LL["LL-402 llenadora<br/>CD-402 · CK-402"]
     end
     subgraph U8["U8 Encanastado y almacenamiento"]
-        CV["CV-501 banda · CF-501 cuarto frío a 4 °C<br/>celda R-501 en etapa posterior"]
+        CV["CV-501 banda · MA-501 mesa acumuladora · CF-501 cuarto frío a 4 °C<br/>celda R-501 en etapa posterior"]
     end
     P101 --> T301
     DS --> T301
@@ -103,7 +103,7 @@ Empresa: Productos Alimenticios La Hacienda
 | **U5 Tanque pulmón de envasado** | Almacenar temporalmente y habilitar la alimentación a la ruta de envasado | T-302 tanque pulmón de 650 L; derivaciones hacia bolsas o vasos | LT-302 nivel; TT-303 temperatura; XV-401 ruta a U6; XV-402 ruta a U7 |
 | **U6 Envasado de bolsas** | Formar, llenar, sellar, pesar y rechazar bolsas YB-200 | EMP-401 empacadora; CD-401 codificador; CK-401 controladora de peso; CV-401 banda | WT-401 peso; XY-401 expulsor de rechazo; ZS-401 presencia de producto; M-401 accionamiento |
 | **U7 Envasado de vasos** | Dosificar fruta, llenar, sellar, pesar y rechazar vasos YV-150/YV-300 | P-403 bomba de preparado; MX-403 mezclador estático en línea; LL-402 llenadora-selladora; CD-402 codificador; CK-402; CV-402 | WT-402 peso; XY-402 expulsor de rechazo; ZS-402 presencia de producto; ZS-403 tapa sellada; M-402 accionamiento |
-| **U8 Encanastado y paletizado** | Agrupar, encajonar o encanastar, paletizar y transportar a frío | Estación de encanastado manual y CV-501 banda hacia CF-501; la celda robotizada R-501 se agrega en una etapa posterior | ZS-501 estado (con la celda, en la etapa posterior); M-501 accionamiento; TT-501 temperatura del cuarto frío |
+| **U8 Encanastado y paletizado** | Agrupar, encajonar o encanastar, paletizar y transportar a frío | Estación de encanastado manual con MA-501 mesa acumuladora y CV-501 banda hacia CF-501; la celda robotizada R-501 se agrega en una etapa posterior | ZS-501 estado (con la celda, en la etapa posterior); M-501 accionamiento; TT-501 temperatura del cuarto frío |
 
 ### 2.3 Recursos compartidos
 
@@ -181,7 +181,7 @@ El procedimiento de lote común a las tres referencias se organiza en seis proce
 |---|---|---|---|
 | **3.1 Inocular** | Adicionar cultivo DVS según la receta; agitar aproximadamente 5 min; detener el agitador | U2/U3 | Cultivo adicionado, lote registrado y mezcla uniforme |
 | **3.2 Fermentar** | Incubar a 41–45 °C sin agitación; vigilar pH y tiempo | U3 | pH de corte de la receta: 4,5 en el lote 1 y 4,6 en el lote 2 |
-| **3.3 Controlar coagulación** | Verificar pH, acidez, firmeza, textura y ausencia de sinéresis excesiva. En el lote 2, la acidez se confirma a las 7:00, antes de transferir | U3 | Lote conforme o desviación documentada antes del corte |
+| **3.3 Controlar coagulación** | Verificar pH, acidez, firmeza, textura y ausencia de sinéresis excesiva. En el lote 2, la muestra se toma a las 7:00 en paralelo con la transferencia y el producto queda retenido en T-302 (sin habilitar envasado) hasta confirmar la acidez | U3 | Lote conforme o desviación documentada antes del corte |
 | **3.4 Terminar la fermentación** | Detener la incubación al llegar al pH de corte. En el lote 2 (nocturno), la ruptura y el saborizado son automáticos y el agua helada de la chaqueta (TV-304) baja el producto a 15 °C en unas 3 h y lo mantiene a 12–15 °C hasta las 7:00 | U3 | pH de corte alcanzado; el enfriamiento del lote 1 ocurre en E-301 durante la operación 4.3 |
 
 #### PU4 - Acondicionamiento
@@ -190,7 +190,7 @@ El procedimiento de lote común a las tres referencias se organiza en seis proce
 |---|---|---|---|
 | **4.1 Romper el coágulo** | Agitar a la velocidad de la receta hasta obtener textura homogénea | U3 | Coágulo roto sin deterioro no previsto de la textura |
 | **4.2 Saborizar** | Dosificar saborizante y colorante; para YV-150/YV-300 preparar la incorporación de fruta en la ruta de vasos | U2/U3 | Dosis completa y mezcla homogénea |
-| **4.3 Enfriar y transferir** | Bombear con P-301 por E-301; filtrar con F-301; llenar T-302. El lote 1 se transfiere a las 14:40; el lote 2, ya frío, a las 7:00 del día siguiente | U4/U5 | T-301 vacío y producto en T-302 a 20 °C o menos, con nivel habilitante para envasar |
+| **4.3 Enfriar y transferir** | Bombear con P-301, filtrar con F-301, enfriar en E-301 y llenar T-302. El lote 1 se transfiere a las 14:40; el lote 2, ya frío, a las 7:00 del día siguiente, quedando retenido en T-302 hasta confirmar la acidez | U4/U5 | T-301 vacío y producto en T-302 a 20 °C o menos; el envasado se habilita solo con nivel suficiente y acidez confirmada |
 
 #### PU5 - Envasado
 

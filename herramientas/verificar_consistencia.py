@@ -15,7 +15,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 
-EXCLUIR = (".git", ".venv", "0-estado-del-arte/queso", "0-estado-del-arte/kumis",
+EXCLUIR = (".git", ".venv", ".agents", "AGENTS.md", "0-estado-del-arte/queso", "0-estado-del-arte/kumis",
            "3-planeacion-y-evaluacion-del-proyecto/actas-de-reunion", "herramientas/tests",
            "herramientas/README.md")
 EXTENSIONES = (".md", ".html")
@@ -64,6 +64,8 @@ PROHIBIDOS = {
     r"85 % del volumen de vasos": "las cartas de intención cubren ahora el 90 % del volumen de vasos",
     r"19 rubros": "ahora son 20 rubros, con la licencia de Studio 5000",
     r"85–95|85-95": "pasteurización fuera de la ventana 85–90 °C",
+    r"\bDjango\b": "reemplazado por FastAPI en la plataforma Cremia MES/ERP",
+    r"\bRDS\b|PostgreSQL gestionado|réplica en espera|principal y en espera": "PostgreSQL corre ahora en el mismo ECS sin servicio RDS",
 }
 
 # cifra canónica -> documentos que deben citarla
@@ -112,6 +114,14 @@ CANONICAS = {
                "1-transformacion-digital-industrial/Modelo_ISA88_Linea_Yogur.md",
                "1-transformacion-digital-industrial/Recetas_y_Lotes_ISA88.md",
                "3-planeacion-y-evaluacion-del-proyecto/EDTs/Proceso/EDT_Proceso_Yogur.md"],
+    "FastAPI": ["1-transformacion-digital-industrial/2_Arquitectura_ISA95.md",
+                "1-transformacion-digital-industrial/Plataforma_MES_ERP_y_SCADA.md",
+                "3-planeacion-y-evaluacion-del-proyecto/Propuesta_Economica_y_Comercial.md",
+                "docs/solucion.html"],
+    "Siemens NX Mechatronics Concept Designer": ["1-transformacion-digital-industrial/2_Arquitectura_ISA95.md",
+                                                 "3-planeacion-y-evaluacion-del-proyecto/Propuesta_Economica_y_Comercial.md",
+                                                 "3-planeacion-y-evaluacion-del-proyecto/EDTs/Proyecto/4_EDT_Proyecto_TDI_Yogur.md",
+                                                 "docs/solucion.html"],
 }
 
 

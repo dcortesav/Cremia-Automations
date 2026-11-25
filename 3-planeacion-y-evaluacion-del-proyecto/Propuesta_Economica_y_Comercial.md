@@ -171,7 +171,7 @@ Los salarios son el costo interno de Cremia; al cliente no se le cobra nómina, 
 | Utilidad | 15 % | Costo más administración e imprevistos |
 | Factor multiplicador resultante | 1,39 | Costo directo de personal |
 
-Las licencias que Cremia usa para desarrollar y probar (puestos de Studio 5000 Logix Designer, FactoryTalk Logix Echo y Tecnomatix Plant Simulation) son herramientas de la empresa y se pagan con la administración; no se cobran aparte al cliente. La licencia que queda en la planta para su propio uso sí se cobra de forma explícita, como rubro 20 de la inversión (sección 6.1).
+Las licencias que Cremia usa para desarrollar y probar (puestos de Studio 5000 Logix Designer, FactoryTalk Logix Echo, Tecnomatix Plant Simulation y Siemens NX Mechatronics Concept Designer) son herramientas de la empresa y se pagan con la administración; no se cobran aparte al cliente. La licencia que queda en la planta para su propio uso sí se cobra de forma explícita, como rubro 20 de la inversión (sección 6.1).
 
 | Cargo | Costo por hora (COP) | Tarifa mínima con el factor 1,39 (COP/h) |
 | --- | --- | --- |
@@ -356,7 +356,7 @@ La reducción del producto no conforme ya está en el flujo: la situación actua
 
 | Costo anual del software de supervisión y gestión | Millones de COP por año |
 | --- | --- |
-| Plan de servicio Cremia: nube Huawei (servidor virtual, base de datos principal y en espera, respaldos, IP y avisos; unos USD 300 al mes) | 15,0 |
+| Plan de servicio Cremia: nube Huawei (servidor virtual ECS con la aplicación y PostgreSQL, respaldos en OBS, IP y avisos; unos USD 300 al mes) | 15,0 |
 | Plan de servicio Cremia: soporte de segundo nivel del PLC, el SCADA y la plataforma, actualizaciones de seguridad, ajustes de recetas y reportes, copias de respaldo y revisión trimestral de indicadores (unas 0,2 personas de tiempo completo) | 21,0 |
 | Conectividad doble de la planta: fibra y respaldo 4G | 4,0 |
 | **Total anual** | **40,0** |
@@ -365,7 +365,7 @@ En cinco años, el software cuesta COP 359,9 millones: 159,9 de inversión inici
 
 El software de control se cuenta aparte: la licencia de Studio 5000 de la planta cuesta COP 28,7 millones de inversión y COP 8,2 millones al año de mantenimiento, COP 69,7 millones en cinco años.
 
-**Por qué software propio.** Para una planta de una línea, las plataformas licenciadas traen más funciones y más costo de los que necesita. Cremia desarrolla un software de complejidad media, a la escala de la planta, con tecnologías abiertas (Python, Django, PostgreSQL, MQTT, OPC UA y Node-RED), y lo reutiliza en otras plantas del segmento.
+**Por qué software propio.** Para una planta de una línea, las plataformas licenciadas traen más funciones y más costo de los que necesita. Cremia desarrolla un software de complejidad media, a la escala de la planta, con tecnologías abiertas (Python, FastAPI, PostgreSQL, MQTT, OPC UA y Node-RED), y lo reutiliza en otras plantas del segmento.
 
 **Cómo se evita la dependencia de un solo proveedor.**
 - La Hacienda recibe una licencia de uso perpetua de la plataforma para su sitio; el código fuente se deposita con un tercero y se entrega al cliente si Cremia deja de prestar el servicio.
@@ -483,7 +483,7 @@ El flujo después de la deuda es positivo todos los años, aunque el año 2 es e
 | Sobrecosto de equipos importados por tasa de cambio | Con precio fijo, el sobrecosto lo asume Cremia hasta agotar la contingencia del 8 % y también por encima de ella; para el cliente, el riesgo es un cambio de alcance (un 10 % más de inversión reduciría su VPN a 91,9 millones) | Media | Precio fijo con contingencia del 8 % del lado de Cremia; cotizaciones con validez de 90 días y compra de los equipos importados en la semana 4 |
 | Retraso en la fabricación, el transporte o la nacionalización | La entrega se corre más allá de la semana 26 | Media | Pedido en la semana 4 con hojas de datos aprobadas, seguimiento semanal, FAT antes del despacho y agente de aduanas desde la orden de compra |
 | El desarrollo del software toma más horas | Un 30 % más de horas reduce el VPN a 158,7 millones | Media | Dos versiones: si la versión 1 se atrasa, se pasan a la versión 2 funciones que no se necesitan para producir y no el arranque; como la versión 2 no tiene holgura, el traslado se compensa con horas del equipo; pruebas en el gemelo digital |
-| Falla de la nube o de internet | Pérdida temporal de la gestión de la producción | Baja | El PLC y el nodo de borde producen sin internet durante 72 h; base de datos con réplica en espera; conectividad doble |
+| Falla de la nube o de internet | Pérdida temporal de la gestión de la producción | Baja | El PLC y el nodo de borde producen sin internet durante 72 h; respaldos diarios cifrados en OBS para restauración rápida del servidor ECS; conectividad doble |
 | Incidente de ciberseguridad | Parada de producción o pérdida de datos | Baja | Zonas según IEC 62443, solo conexiones salientes, certificados por dispositivo, doble factor y respaldos cifrados |
 | El lote 2 nocturno sale fuera de especificación | Lote no conforme o retenido | Media | pH de corte de 4,6, enfriamiento con agua helada, respaldo con agua de red, alarmas por SMS y acidez de confirmación a las 7:00; validación en el arranque con un lote nocturno de cada referencia |
 | Dependencia del software de Cremia | La planta no puede mantener la plataforma si Cremia desaparece | Baja | Licencia perpetua de la plataforma, depósito del código fuente, exportación completa de datos y licencia propia de Studio 5000 para el programa del PLC |

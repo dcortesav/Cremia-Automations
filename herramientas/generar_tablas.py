@@ -56,7 +56,7 @@ ENTREGABLES = {
     "1.6.9": ("Compras, requerimiento de materiales, costo por lote y exportación al facturador (versión 2)", "1.6.8"),
     "1.6.10": ("Tablero diario y reportes aprobados por la gerencia (versión 2)", "1.6.6, 1.6.9"),
     "1.6.11": ("Informes de pruebas unitarias, de integración, de carga y de seguridad; manuales", "1.6.2"),
-    "1.7.1": ("Gemelo digital con sensores y actuadores virtuales", "1.2.2"),
+    "1.7.1": ("Gemelo digital en Siemens NX Mechatronics Concept Designer y Tecnomatix con sensores y actuadores virtuales", "1.2.2"),
     "1.7.2": ("Simulación de las líneas de bolsas y vasos y del encajonado manual", "1.3.4"),
     "1.7.3": ("Informe de validación con lotes, recetas y cortes de internet simulados", "1.5.1–1.5.5, 1.6.3–1.6.5, 1.6.7, 1.7.1"),
     "1.8.1": ("Equipos, TK-102, tuberías y soportes instalados", "1.3.5; 1.4.3 para los equipos importados"),

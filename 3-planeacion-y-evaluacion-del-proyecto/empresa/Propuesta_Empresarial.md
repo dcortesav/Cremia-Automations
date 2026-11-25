@@ -34,7 +34,7 @@ Cremia se dirige a las plantas pequeñas y medianas de derivados lácteos de Col
 | Integrante | Rol | Principal contribución |
 | --- | --- | --- |
 | David Santiago Cortés Ávila | Gerente de proyecto | Coordinación del equipo, análisis del caso de estudio, modelos físico y procedimental ISA-88, programa de fases del PLC, repositorio y página web |
-| Ana María Orozco Reyes | Líder de simulación y mejora | VSM, indicadores productivos, simulación en Tecnomatix, gemelo digital, OEE y pruebas del software |
+| Ana María Orozco Reyes | Líder de simulación y mejora | VSM, indicadores productivos, simulación en Tecnomatix, gemelo digital en Siemens NX Mechatronics Concept Designer, OEE y pruebas del software |
 | Jesús Alberto Rivera Molina | Líder de arquitectura digital | Estado del arte de las tres líneas, arquitectura ISA-95, red OT/IT, ciberseguridad, infraestructura en Huawei Cloud y nodo de borde |
 | David Felipe Cárdenas Cubides | Líder de gestión de producción | Tiempos y capacidades, necesidades de información, SCADA en Node-RED y núcleo y registro de lote de la plataforma Cremia MES/ERP |
 | Cristian Stiven Hoyos Peralta | Líder financiero y comercial | Salarios, margen, presupuesto, análisis económico, modelo de negocio, gestión del cambio y ERP ligero de la plataforma (inventario, compras y costos) |

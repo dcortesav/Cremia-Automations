@@ -26,7 +26,7 @@ El desarrollo propio también es un producto para Cremia: la plataforma se reuti
 **Riesgo de dependencia y cómo se mitiga.** Un software a la medida deja a la planta dependiendo de quien lo programó. Para reducir ese riesgo:
 
 - **Licencia perpetua y depósito del código.** Cremia conserva la propiedad intelectual de la plataforma, pero La Hacienda recibe una licencia de uso perpetua para su sitio. El código fuente, los scripts de despliegue y la documentación se depositan con un tercero (depósito de código fuente, *escrow*) y se entregan al cliente si Cremia deja de prestar el servicio.
-- **Tecnologías abiertas y comunes.** Python con Django, PostgreSQL, MQTT, OPC UA y Node-RED, todas de código abierto con licencias permisivas y con una comunidad amplia de desarrolladores en Colombia.
+- **Tecnologías abiertas y comunes.** Python con FastAPI, PostgreSQL, MQTT, OPC UA y Node-RED, todas de código abierto con licencias permisivas y con una comunidad amplia de desarrolladores en Colombia.
 - **Datos del cliente.** La base de datos es de La Hacienda: puede exportarse completa en cualquier momento (SQL y CSV), y el modelo de datos sigue los objetos de ISA-95 parte 2 (material, equipo, personal, segmento de proceso y respuesta de producción), de modo que otro integrador puede entenderlo.
 - **Programas de control.** El programa del PLC y los flujos de Node-RED son del cliente y se entregan con su documentación. Para que la planta pueda abrir y diagnosticar el programa del PLC, la inversión incluye una licencia perpetua de Studio 5000 Logix Designer a su nombre (rubro 20 de la propuesta económica); los flujos de Node-RED se abren con cualquier navegador, sin licencia.
 
@@ -35,8 +35,8 @@ El desarrollo propio también es un producto para Cremia: la plataforma se reuti
 ```mermaid
 flowchart TB
     subgraph NUBE["Huawei Cloud · región de Ciudad de México"]
-        APP["Cremia MES/ERP<br/>Django en contenedores sobre un servidor virtual (ECS)"]
-        DB[("PostgreSQL gestionado (RDS)<br/>principal y en espera")]
+        APP["Cremia MES/ERP<br/>FastAPI en contenedores sobre un servidor virtual (ECS)"]
+        DB[("PostgreSQL<br/>en el mismo servidor virtual (ECS)")]
         MQ["Intermediario MQTT (Mosquitto)"]
         OBS["Respaldos cifrados (OBS)"]
         VIG["Vigilancia del nodo de borde y avisos por SMS y correo (SMN)"]
@@ -64,7 +64,7 @@ flowchart TB
 | --- | --- | --- | --- |
 | Control | PLC-01, en la planta | Fases ISA-88, lazos PID, enclavamientos y alarmas de proceso. Opera solo, sin depender de la red | Studio 5000 Logix Designer, PhaseManager |
 | Supervisión (SCADA) | Nodo de borde, en la planta | Pantallas de HMI-01 y HMI-02, alarmas, tendencias, historiador local, usuarios del piso de planta, descarga de recetas al PLC | Node-RED con su tablero web, InfluxDB como historiador local, cliente OPC UA |
-| Gestión de operaciones (MES) | Huawei Cloud | Recetas maestras y versiones, órdenes, receta de control, registro electrónico de lote, genealogía, liberación, OEE y paradas | Plataforma Cremia MES/ERP (Python, Django, PostgreSQL) |
+| Gestión de operaciones (MES) | Huawei Cloud | Recetas maestras y versiones, órdenes, receta de control, registro electrónico de lote, genealogía, liberación, OEE y paradas | Plataforma Cremia MES/ERP (Python, FastAPI, PostgreSQL) |
 | Gestión empresarial (ERP ligero) | Huawei Cloud | Pedidos, plan semanal, requerimiento de materiales, compras, inventario por lote y vencimiento, despacho y costo por lote | Misma plataforma y misma base de datos |
 | Integración | Nodo de borde y nube | Mensajes entre la planta y la nube, con almacenamiento y reenvío | MQTT sobre TLS (Mosquitto en la nube) |
 
@@ -81,7 +81,7 @@ El objetivo del despliegue en la nube es que la gestión de la producción siga 
 | Falla el PC industrial del nodo de borde | El PLC sigue ejecutando la fase en curso y sus enclavamientos | Se cambia por el PC de repuesto, que tiene la misma imagen del sistema, en menos de 1 h |
 | Corte de energía en la planta | La UPS mantiene el PLC, el nodo de borde y el router unos 30 min; la nube detecta la pérdida y avisa | La nube sigue disponible para ventas, inventario, despacho y consulta de trazabilidad |
 | Falla la planta durante el lote 2 nocturno | La nube deja de recibir la señal de vida del nodo de borde (cada minuto) y a los 5 min envía SMS y correo al jefe de producción | El jefe de producción revisa el estado desde su teléfono o va a la planta |
-| Falla el servidor en la nube | La base de datos tiene una réplica en espera en otra zona de disponibilidad | Recuperación en menos de 4 h; pérdida de datos de la nube menor de 5 min (los datos de la planta siguen en la cola del nodo) |
+| Falla el servidor en la nube | Respaldos automáticos diarios y volcados periódicos de PostgreSQL en OBS permiten recrear el servidor virtual (ECS) y restaurar los datos | Recuperación en menos de 4 h desde OBS; los datos recientes de planta permanecen en la cola del nodo de borde hasta por 72 h |
 
 Metas de servicio de la plataforma: disponibilidad mensual de 99,5 %, punto de recuperación de 5 min y tiempo de recuperación de 4 h. Los respaldos de la base de datos son diarios, cifrados y se conservan 30 días, con una prueba de restauración cada semestre.
 
@@ -103,7 +103,7 @@ La plataforma se entrega en dos versiones. La versión 1 sale con la SAT y el ar
 
 | Paquete de la EDT | Funciones | Versión | Horas |
 | --- | --- | --- | --- |
-| 1.6.1 Infraestructura en Huawei Cloud | Servidor virtual, base de datos principal y en espera, intermediario MQTT, respaldos, monitoreo, despliegue continuo y entornos de desarrollo, pruebas y producción | 1 | 120 |
+| 1.6.1 Infraestructura en Huawei Cloud | Servidor virtual (ECS) con la aplicación y la base de datos PostgreSQL, intermediario MQTT, respaldos, monitoreo, despliegue continuo y entornos de desarrollo, pruebas y producción | 1 | 120 |
 | 1.6.2 Núcleo | Datos maestros (materiales, equipos, proveedores, clientes), usuarios y roles, auditoría y API | 1 | 180 |
 | 1.6.3 Recetas y órdenes | Recetas maestras con versiones y aprobación (sección 6.4 del documento de recetas), plan semanal, órdenes, receta de control escalada y secuencia de los dos lotes diarios | 1 | 200 |
 | 1.6.4 Registro de lote y genealogía | Expediente electrónico de lote con fases, consumos, curvas de los puntos críticos, alarmas y paradas; genealogía desde la cantina hasta la estiba | 1 | 140 |
@@ -129,7 +129,7 @@ El SCADA no compra licencias: Node-RED, su tablero web, InfluxDB y el cliente OP
 
 ### 7.1 Desarrollo
 
-El equipo de Cremia es junior (un año de experiencia). Por eso la estimación usa tecnologías que reducen trabajo repetitivo (Django trae administración, autenticación y acceso a datos; Node-RED trae el tablero web), deja fuera la contabilidad y la facturación electrónica, y divide el alcance en dos versiones.
+El equipo de Cremia es junior (un año de experiencia). Por eso la estimación usa tecnologías que reducen trabajo repetitivo (FastAPI agiliza la construcción de la API con validación automática de esquemas y documentación OpenAPI, junto con ORM y migraciones sobre PostgreSQL; Node-RED trae el tablero web), deja fuera la contabilidad y la facturación electrónica, y divide el alcance en dos versiones.
 
 | Concepto | Valor |
 | --- | --- |
@@ -146,7 +146,7 @@ Con un sobrecosto de 30 % en las horas de software, el VPN del proyecto después
 
 | Costo anual | Millones de COP |
 | --- | --- |
-| Nube Huawei: servidor virtual, base de datos principal y en espera, almacenamiento de respaldos, IP pública y mensajes de aviso (unos USD 300 al mes) | 15,0 |
+| Nube Huawei: servidor virtual (ECS) con la aplicación y PostgreSQL, almacenamiento de respaldos (OBS), IP pública y mensajes de aviso (unos USD 300 al mes) | 15,0 |
 | Soporte y evolución: soporte de segundo nivel del PLC, el SCADA y la plataforma, actualizaciones de seguridad, ajustes de recetas y reportes, y revisión trimestral de indicadores (unas 0,2 personas de tiempo completo) | 21,0 |
 | **Plan de servicio Cremia** | **36,0** |
 | Conectividad doble de la planta: fibra y respaldo 4G | 4,0 |

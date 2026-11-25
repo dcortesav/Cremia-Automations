@@ -12,6 +12,7 @@ Entregables de la línea de yogur. Los documentos de este repositorio son la ver
 | Flujo de información entre OT e IT | [`1_Flujo_Informacion_OT_IT.md`](1_Flujo_Informacion_OT_IT.md) |
 | Equipos, sensores, actuadores, variables, estrategia de control y comunicaciones | [`Equipos_Sensores_Actuadores_Variables_Comunicaciones.md`](Equipos_Sensores_Actuadores_Variables_Comunicaciones.md) |
 | Plataforma Cremia MES/ERP en Huawei Cloud y SCADA en Node-RED: diseño, continuidad y costo | [`Plataforma_MES_ERP_y_SCADA.md`](Plataforma_MES_ERP_y_SCADA.md) |
+| Justificación técnica y económica de la celda robotizada R-501 (diseño completo y etapa posterior) | [`Justificacion_Celda_Robotizada_R501.md`](Justificacion_Celda_Robotizada_R501.md) |
 
 ## Decisiones de la versión de noviembre de 2026
 

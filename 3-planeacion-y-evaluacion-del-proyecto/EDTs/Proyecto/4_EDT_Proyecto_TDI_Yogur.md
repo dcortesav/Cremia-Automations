@@ -193,7 +193,7 @@ La columna «Depende de» indica de qué paquete toma insumos cada uno. El plan 
 | 1.6.9 | ERP ligero II: compras, requerimiento de materiales, costo por lote y exportación al facturador | Compras, requerimiento de materiales, costo por lote y exportación al facturador (versión 2) | Cristian Hoyos | 140 | 20–25 | 1.6.8 |
 | 1.6.10 | Tablero gerencial y reportes | Tablero diario y reportes aprobados por la gerencia (versión 2) | Ana Orozco (50), Jesús Rivera (30) | 80 | 23–26 | 1.6.6, 1.6.9 |
 | 1.6.11 | Pruebas y documentación del software | Informes de pruebas unitarias, de integración, de carga y de seguridad; manuales | Ana Orozco (120), Jesús Rivera (25), Cristian Hoyos (15) | 160 | 10–25 | 1.6.2 |
-| 1.7.1 | Gemelo digital de la línea | Gemelo digital con sensores y actuadores virtuales | Ana Orozco | 160 | 4–12 | 1.2.2 |
+| 1.7.1 | Gemelo digital de la línea | Gemelo digital en Siemens NX Mechatronics Concept Designer y Tecnomatix con sensores y actuadores virtuales | Ana Orozco | 160 | 4–12 | 1.2.2 |
 | 1.7.2 | Simulación del envasado y el encanastado | Simulación de las líneas de bolsas y vasos y del encajonado manual | Ana Orozco | 60 | 9–16 | 1.3.4 |
 | 1.7.3 | Puesta en marcha virtual: PLC, SCADA y MES/ERP | Informe de validación con lotes, recetas y cortes de internet simulados | David Cortés (115), David Cárdenas (5) | 120 | 16–19 | 1.5.1–1.5.5, 1.6.3–1.6.5, 1.6.7, 1.7.1 |
 | 1.8.1 | Montaje mecánico | Equipos, TK-102, tuberías y soportes instalados | José Andrés Zapata | 110 | 14–19 | 1.3.5; 1.4.3 para los equipos importados |

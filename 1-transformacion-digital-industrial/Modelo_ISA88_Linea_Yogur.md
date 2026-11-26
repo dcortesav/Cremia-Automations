@@ -75,6 +75,10 @@ flowchart TB
     SH["Recursos compartidos<br/>CAL-901 vapor · CH-901 agua helada a E-301 y a la chaqueta<br/>CIP-901 limpieza · LAB-101 laboratorio"] -.-> T301
 ```
 
+![Modelo físico ISA-88 de la línea de yogur: unidades U1–U8 y recursos compartidos](imagenes/ISA-88-modelo-fisico.png)
+
+*Figura 1. Modelo físico ISA-88 (U1–U8) de la línea de yogur. Versión ilustrativa; el diagrama Mermaid anterior es la fuente editable.*
+
 ### 2.1 Jerarquía física de la línea
 
 ```text
@@ -138,6 +142,10 @@ flowchart TD
     V2 --> PU6
     CIP["Procedimiento transversal<br/>CIP-901 entre lotes y registro del lote en el MES"] -.-> PU1
 ```
+
+![Modelo procedimental ISA-88 de la línea de yogur: procedimientos de unidad PU1–PU6](imagenes/ISA-88-modelo-procedimental.png)
+
+*Figura 2. Modelo procedimental ISA-88 (PU1–PU6 y CIP transversal). Versión ilustrativa; el diagrama Mermaid anterior es la fuente editable.*
 
 Las cantidades y los parámetros que cambian entre las tres recetas, fase por fase y con su equipo, están en la sección 6.6 del documento de recetas y lotes.
 
